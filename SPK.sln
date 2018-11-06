@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPK", "SPK\SPK.csproj", "{12708A05-1CD9-445B-A5DC-EAFF7444C52E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB", "DB\DB.csproj", "{63D6E8E9-A261-410A-B742-F628D35FEDEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12708A05-1CD9-445B-A5DC-EAFF7444C52E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12708A05-1CD9-445B-A5DC-EAFF7444C52E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12708A05-1CD9-445B-A5DC-EAFF7444C52E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12708A05-1CD9-445B-A5DC-EAFF7444C52E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63D6E8E9-A261-410A-B742-F628D35FEDEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63D6E8E9-A261-410A-B742-F628D35FEDEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63D6E8E9-A261-410A-B742-F628D35FEDEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63D6E8E9-A261-410A-B742-F628D35FEDEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF183DC0-C266-4E0B-B16D-D65F91D757FA}
+	EndGlobalSection
+EndGlobal
