@@ -95,6 +95,9 @@
     <Compile Include="UserControls\Buttons\ButtonWithoutMenu.Designer.cs">
       <DependentUpon>ButtonWithoutMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Panels\ExtendedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UserControls\SubForms\Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -195,6 +198,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-money-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons8_flat_businessman.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\student5.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\class.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\subject.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\result5.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fees.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\staff.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\command.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

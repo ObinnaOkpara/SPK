@@ -18,7 +18,7 @@ namespace SPK.UserControls.Buttons
         private Color _HoverColor { get; set; } = Color.FromArgb(8, 15, 23);
         private Image _Icon { get; set; } = Properties.Resources.icons8_person_64;
         private string _BtnText { get; set; } = "Button";
-        private bool _Hover { get; set; } = false;
+        public event EventHandler ClickEvent;
 
         public Color SideColor
         {
@@ -49,17 +49,7 @@ namespace SPK.UserControls.Buttons
                 NotifyPropertyChanged("Icon");
             }
         }
-
-        public bool Hover
-        {
-            get { return _Hover; }
-            set
-            {
-                _Hover = value;
-                NotifyPropertyChanged("Hover");
-            }
-        }
-
+        
         public string BtnText
         {
             get { return _BtnText; }
@@ -85,20 +75,7 @@ namespace SPK.UserControls.Buttons
                 case "BtnText":
                     label1.Text = _BtnText;
                     break;
-
-                case "Hover":
-                    if (_Hover)
-                    {
-                        panel1.Visible = true;
-                        BackColor = HoverColor;
-                    }
-                    else
-                    {
-                        panel1.Visible = false;
-                        BackColor = NormalColor;
-                    }
-                    break;
-
+                    
                 default:
                     break;
             }
@@ -117,6 +94,29 @@ namespace SPK.UserControls.Buttons
             NormalColor = BackColor;
             imgLeft.Top = (Height - imgLeft.Height) / 2;
         }
-        
+
+        private void panTop_MouseHover(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+            BackColor = HoverColor;
+        }
+
+        private void panTop_MouseLeave(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+            BackColor = NormalColor;
+        }
+
+        private void panTop_Click(object sender, EventArgs e)
+        {
+            raiseControlClicked(e);
+        }
+
+        protected virtual void raiseControlClicked(EventArgs e)
+        {
+            var handler = ClickEvent;
+            if (handler != null)
+                handler(this, e);
+        }
     }
 }

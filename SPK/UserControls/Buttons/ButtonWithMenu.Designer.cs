@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.imgLeft = new System.Windows.Forms.PictureBox();
             this.imgRight = new System.Windows.Forms.PictureBox();
+            this.panTop = new SPK.UserControls.Panels.ExtendedPanel();
             ((System.ComponentModel.ISupportInitialize)(this.imgLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgRight)).BeginInit();
             this.SuspendLayout();
@@ -80,10 +81,24 @@
             this.imgRight.TabIndex = 2;
             this.imgRight.TabStop = false;
             // 
+            // panTop
+            // 
+            this.panTop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panTop.Location = new System.Drawing.Point(1, 1);
+            this.panTop.Name = "panTop";
+            this.panTop.Size = new System.Drawing.Size(198, 48);
+            this.panTop.TabIndex = 4;
+            this.panTop.Click += new System.EventHandler(this.panTop_Click);
+            this.panTop.MouseLeave += new System.EventHandler(this.panTop_MouseLeave);
+            this.panTop.MouseHover += new System.EventHandler(this.panTop_MouseHover);
+            // 
             // ButtonWithMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.Controls.Add(this.panTop);
             this.Controls.Add(this.imgLeft);
             this.Controls.Add(this.imgRight);
             this.Controls.Add(this.label1);
@@ -105,5 +120,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox imgRight;
         private System.Windows.Forms.PictureBox imgLeft;
+        private Panels.ExtendedPanel panTop;
     }
 }
