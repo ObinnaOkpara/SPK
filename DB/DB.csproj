@@ -136,45 +136,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="access.cs" />
-    <Compile Include="accountant.cs" />
-    <Compile Include="administrative.cs" />
-    <Compile Include="annual_result.cs" />
-    <Compile Include="behavioral.cs" />
-    <Compile Include="class.cs" />
-    <Compile Include="current_season.cs" />
-    <Compile Include="date.cs" />
-    <Compile Include="debtor.cs" />
-    <Compile Include="expens.cs" />
-    <Compile Include="fee_allocation.cs" />
-    <Compile Include="fee_payment.cs" />
-    <Compile Include="inventory.cs" />
-    <Compile Include="jss.cs" />
-    <Compile Include="jss_subject_number.cs" />
-    <Compile Include="mail.cs" />
+    <Compile Include="Entities\access.cs" />
+    <Compile Include="Entities\accountant.cs" />
+    <Compile Include="Entities\administrative.cs" />
+    <Compile Include="Entities\annual_result.cs" />
+    <Compile Include="Entities\behavioral.cs" />
+    <Compile Include="Entities\class.cs" />
+    <Compile Include="Entities\current_season.cs" />
+    <Compile Include="Entities\date.cs" />
+    <Compile Include="Entities\debtor.cs" />
+    <Compile Include="Entities\expens.cs" />
+    <Compile Include="Entities\fee_allocation.cs" />
+    <Compile Include="Entities\fee_payment.cs" />
+    <Compile Include="Entities\inventory.cs" />
+    <Compile Include="Entities\jss.cs" />
+    <Compile Include="Entities\jss_subject_number.cs" />
+    <Compile Include="Entities\mail.cs" />
     <Compile Include="Model1.cs" />
-    <Compile Include="news.cs" />
-    <Compile Include="pin1.cs" />
-    <Compile Include="pin2.cs" />
-    <Compile Include="pin3.cs" />
-    <Compile Include="portal_request.cs" />
-    <Compile Include="position.cs" />
-    <Compile Include="principal.cs" />
+    <Compile Include="Entities\news.cs" />
+    <Compile Include="Entities\pin1.cs" />
+    <Compile Include="Entities\pin2.cs" />
+    <Compile Include="Entities\pin3.cs" />
+    <Compile Include="Entities\portal_request.cs" />
+    <Compile Include="Entities\position.cs" />
+    <Compile Include="Entities\principal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="results1.cs" />
-    <Compile Include="school_subjects.cs" />
-    <Compile Include="session.cs" />
-    <Compile Include="sss.cs" />
-    <Compile Include="sss_subject_number.cs" />
-    <Compile Include="staff_payroll.cs" />
-    <Compile Include="student.cs" />
-    <Compile Include="student_attendance.cs" />
-    <Compile Include="subject.cs" />
-    <Compile Include="teacher.cs" />
-    <Compile Include="teachers_classes.cs" />
-    <Compile Include="unused_pins.cs" />
-    <Compile Include="used_pins.cs" />
-    <Compile Include="user.cs" />
+    <Compile Include="Entities\results1.cs" />
+    <Compile Include="Entities\school_subjects.cs" />
+    <Compile Include="Entities\session.cs" />
+    <Compile Include="Entities\sss.cs" />
+    <Compile Include="Entities\sss_subject_number.cs" />
+    <Compile Include="Entities\staff_payroll.cs" />
+    <Compile Include="Entities\student.cs" />
+    <Compile Include="Entities\student_attendance.cs" />
+    <Compile Include="Entities\subject.cs" />
+    <Compile Include="Entities\teacher.cs" />
+    <Compile Include="Entities\teachers_classes.cs" />
+    <Compile Include="Entities\unused_pins.cs" />
+    <Compile Include="Entities\used_pins.cs" />
+    <Compile Include="Entities\user.cs" />
+    <Compile Include="Services\DataRepository\DataRepository.Entities\StudentRepository.cs" />
+    <Compile Include="Services\DataRepository\DataRepository.Entities\TeacherRepository.cs" />
+    <Compile Include="Services\DataRepository\Repository.cs" />
+    <Compile Include="Services\DataRepository\UnitOfWork.cs" />
+    <Compile Include="Services\Interfaces\Interfaces.Entities\IStudentRepository.cs" />
+    <Compile Include="Services\Interfaces\Interfaces.Entities\ITeacherRepository.cs" />
+    <Compile Include="Services\Interfaces\IRepository.cs" />
+    <Compile Include="Services\Interfaces\IUnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
@@ -182,5 +190,6 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
