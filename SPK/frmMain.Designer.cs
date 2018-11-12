@@ -35,6 +35,14 @@
             this.picClose = new System.Windows.Forms.PictureBox();
             this.picMinimise = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblUserType = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.schoolProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveSchoolInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewSchoolInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panContainer = new System.Windows.Forms.Panel();
             this.buttonWithMenu11 = new SPK.UserControls.Buttons.ButtonWithMenu();
             this.buttonWithMenu10 = new SPK.UserControls.Buttons.ButtonWithMenu();
             this.buttonWithMenu9 = new SPK.UserControls.Buttons.ButtonWithMenu();
@@ -48,14 +56,6 @@
             this.buttonWithoutMenu2 = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.buttonWithoutMenu1 = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.buttonWithMenu1 = new SPK.UserControls.Buttons.ButtonWithMenu();
-            this.lblUserType = new System.Windows.Forms.Label();
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.schoolProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveSchoolInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewSchoolInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panContainer = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
@@ -159,240 +159,6 @@
             this.panel3.Size = new System.Drawing.Size(310, 785);
             this.panel3.TabIndex = 19;
             // 
-            // buttonWithMenu11
-            // 
-            this.buttonWithMenu11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonWithMenu11.BtnText = "Teachers";
-            this.buttonWithMenu11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonWithMenu11.ForeColor = System.Drawing.Color.White;
-            this.buttonWithMenu11.Hover = false;
-            this.buttonWithMenu11.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.buttonWithMenu11.Icon = global::SPK.Properties.Resources.icons8_person_64;
-            this.buttonWithMenu11.Location = new System.Drawing.Point(0, 710);
-            this.buttonWithMenu11.Name = "buttonWithMenu11";
-            this.buttonWithMenu11.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu11.Size = new System.Drawing.Size(310, 50);
-            this.buttonWithMenu11.TabIndex = 23;
-            this.buttonWithMenu11.MouseLeave += new System.EventHandler(this.buttonWithMenu11_MouseLeave);
-            this.buttonWithMenu11.MouseHover += new System.EventHandler(this.buttonWithMenu11_MouseHover);
-            // 
-            // buttonWithMenu10
-            // 
-            this.buttonWithMenu10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonWithMenu10.BtnText = "Principal";
-            this.buttonWithMenu10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonWithMenu10.ForeColor = System.Drawing.Color.White;
-            this.buttonWithMenu10.Hover = false;
-            this.buttonWithMenu10.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.buttonWithMenu10.Icon = global::SPK.Properties.Resources.icons8_person_64;
-            this.buttonWithMenu10.Location = new System.Drawing.Point(0, 660);
-            this.buttonWithMenu10.Name = "buttonWithMenu10";
-            this.buttonWithMenu10.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu10.Size = new System.Drawing.Size(310, 50);
-            this.buttonWithMenu10.TabIndex = 22;
-            this.buttonWithMenu10.MouseLeave += new System.EventHandler(this.buttonWithMenu11_MouseLeave);
-            this.buttonWithMenu10.MouseHover += new System.EventHandler(this.buttonWithMenu11_MouseHover);
-            // 
-            // buttonWithMenu9
-            // 
-            this.buttonWithMenu9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonWithMenu9.BtnText = "Admin";
-            this.buttonWithMenu9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonWithMenu9.ForeColor = System.Drawing.Color.White;
-            this.buttonWithMenu9.Hover = false;
-            this.buttonWithMenu9.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.buttonWithMenu9.Icon = global::SPK.Properties.Resources.icons8_person_64;
-            this.buttonWithMenu9.Location = new System.Drawing.Point(0, 610);
-            this.buttonWithMenu9.Name = "buttonWithMenu9";
-            this.buttonWithMenu9.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu9.Size = new System.Drawing.Size(310, 50);
-            this.buttonWithMenu9.TabIndex = 21;
-            this.buttonWithMenu9.MouseLeave += new System.EventHandler(this.buttonWithMenu11_MouseLeave);
-            this.buttonWithMenu9.MouseHover += new System.EventHandler(this.buttonWithMenu11_MouseHover);
-            // 
-            // buttonWithMenu8
-            // 
-            this.buttonWithMenu8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonWithMenu8.BtnText = "Fees Management";
-            this.buttonWithMenu8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonWithMenu8.ForeColor = System.Drawing.Color.White;
-            this.buttonWithMenu8.Hover = false;
-            this.buttonWithMenu8.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.buttonWithMenu8.Icon = global::SPK.Properties.Resources.icons8_money_64;
-            this.buttonWithMenu8.Location = new System.Drawing.Point(0, 560);
-            this.buttonWithMenu8.Name = "buttonWithMenu8";
-            this.buttonWithMenu8.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu8.Size = new System.Drawing.Size(310, 50);
-            this.buttonWithMenu8.TabIndex = 20;
-            this.buttonWithMenu8.MouseLeave += new System.EventHandler(this.buttonWithMenu11_MouseLeave);
-            this.buttonWithMenu8.MouseHover += new System.EventHandler(this.buttonWithMenu11_MouseHover);
-            // 
-            // buttonWithMenu7
-            // 
-            this.buttonWithMenu7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonWithMenu7.BtnText = "Result Management";
-            this.buttonWithMenu7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonWithMenu7.ForeColor = System.Drawing.Color.White;
-            this.buttonWithMenu7.Hover = false;
-            this.buttonWithMenu7.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.buttonWithMenu7.Icon = global::SPK.Properties.Resources.icons8_book_52;
-            this.buttonWithMenu7.Location = new System.Drawing.Point(0, 510);
-            this.buttonWithMenu7.Name = "buttonWithMenu7";
-            this.buttonWithMenu7.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu7.Size = new System.Drawing.Size(310, 50);
-            this.buttonWithMenu7.TabIndex = 19;
-            this.buttonWithMenu7.MouseLeave += new System.EventHandler(this.buttonWithMenu11_MouseLeave);
-            this.buttonWithMenu7.MouseHover += new System.EventHandler(this.buttonWithMenu11_MouseHover);
-            // 
-            // buttonWithMenu6
-            // 
-            this.buttonWithMenu6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonWithMenu6.BtnText = "Subject Management";
-            this.buttonWithMenu6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonWithMenu6.ForeColor = System.Drawing.Color.White;
-            this.buttonWithMenu6.Hover = false;
-            this.buttonWithMenu6.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.buttonWithMenu6.Icon = global::SPK.Properties.Resources.icons8_file_64;
-            this.buttonWithMenu6.Location = new System.Drawing.Point(0, 460);
-            this.buttonWithMenu6.Name = "buttonWithMenu6";
-            this.buttonWithMenu6.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu6.Size = new System.Drawing.Size(310, 50);
-            this.buttonWithMenu6.TabIndex = 18;
-            this.buttonWithMenu6.MouseLeave += new System.EventHandler(this.buttonWithMenu11_MouseLeave);
-            this.buttonWithMenu6.MouseHover += new System.EventHandler(this.buttonWithMenu11_MouseHover);
-            // 
-            // buttonWithMenu5
-            // 
-            this.buttonWithMenu5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonWithMenu5.BtnText = "Class Management";
-            this.buttonWithMenu5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonWithMenu5.ForeColor = System.Drawing.Color.White;
-            this.buttonWithMenu5.Hover = false;
-            this.buttonWithMenu5.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.buttonWithMenu5.Icon = global::SPK.Properties.Resources.icons8_people_64;
-            this.buttonWithMenu5.Location = new System.Drawing.Point(0, 410);
-            this.buttonWithMenu5.Name = "buttonWithMenu5";
-            this.buttonWithMenu5.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu5.Size = new System.Drawing.Size(310, 50);
-            this.buttonWithMenu5.TabIndex = 17;
-            this.buttonWithMenu5.MouseLeave += new System.EventHandler(this.buttonWithMenu11_MouseLeave);
-            this.buttonWithMenu5.MouseHover += new System.EventHandler(this.buttonWithMenu11_MouseHover);
-            // 
-            // buttonWithMenu4
-            // 
-            this.buttonWithMenu4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonWithMenu4.BtnText = "Behavioural Analysis";
-            this.buttonWithMenu4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonWithMenu4.ForeColor = System.Drawing.Color.White;
-            this.buttonWithMenu4.Hover = false;
-            this.buttonWithMenu4.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.buttonWithMenu4.Icon = global::SPK.Properties.Resources.icons8_edit_64;
-            this.buttonWithMenu4.Location = new System.Drawing.Point(0, 360);
-            this.buttonWithMenu4.Name = "buttonWithMenu4";
-            this.buttonWithMenu4.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu4.Size = new System.Drawing.Size(310, 50);
-            this.buttonWithMenu4.TabIndex = 16;
-            this.buttonWithMenu4.MouseLeave += new System.EventHandler(this.buttonWithMenu11_MouseLeave);
-            this.buttonWithMenu4.MouseHover += new System.EventHandler(this.buttonWithMenu11_MouseHover);
-            // 
-            // buttonWithMenu3
-            // 
-            this.buttonWithMenu3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonWithMenu3.BtnText = "Attendance Manager";
-            this.buttonWithMenu3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonWithMenu3.ForeColor = System.Drawing.Color.White;
-            this.buttonWithMenu3.Hover = false;
-            this.buttonWithMenu3.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.buttonWithMenu3.Icon = global::SPK.Properties.Resources.icons8_todo_list_64;
-            this.buttonWithMenu3.Location = new System.Drawing.Point(0, 310);
-            this.buttonWithMenu3.Name = "buttonWithMenu3";
-            this.buttonWithMenu3.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu3.Size = new System.Drawing.Size(310, 50);
-            this.buttonWithMenu3.TabIndex = 15;
-            this.buttonWithMenu3.MouseLeave += new System.EventHandler(this.buttonWithMenu11_MouseLeave);
-            this.buttonWithMenu3.MouseHover += new System.EventHandler(this.buttonWithMenu11_MouseHover);
-            // 
-            // buttonWithMenu2
-            // 
-            this.buttonWithMenu2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonWithMenu2.BtnText = "Student Management";
-            this.buttonWithMenu2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonWithMenu2.ForeColor = System.Drawing.Color.White;
-            this.buttonWithMenu2.Hover = false;
-            this.buttonWithMenu2.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.buttonWithMenu2.Icon = global::SPK.Properties.Resources.icons8_laptop_64;
-            this.buttonWithMenu2.Location = new System.Drawing.Point(0, 260);
-            this.buttonWithMenu2.Name = "buttonWithMenu2";
-            this.buttonWithMenu2.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu2.Size = new System.Drawing.Size(310, 50);
-            this.buttonWithMenu2.TabIndex = 14;
-            this.buttonWithMenu2.MouseLeave += new System.EventHandler(this.buttonWithMenu11_MouseLeave);
-            this.buttonWithMenu2.MouseHover += new System.EventHandler(this.buttonWithMenu11_MouseHover);
-            // 
-            // buttonWithoutMenu2
-            // 
-            this.buttonWithoutMenu2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonWithoutMenu2.BtnText = "Profile";
-            this.buttonWithoutMenu2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonWithoutMenu2.ForeColor = System.Drawing.Color.White;
-            this.buttonWithoutMenu2.Hover = false;
-            this.buttonWithoutMenu2.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.buttonWithoutMenu2.Icon = global::SPK.Properties.Resources.icons8_person_64;
-            this.buttonWithoutMenu2.Location = new System.Drawing.Point(0, 160);
-            this.buttonWithoutMenu2.Name = "buttonWithoutMenu2";
-            this.buttonWithoutMenu2.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithoutMenu2.Size = new System.Drawing.Size(310, 50);
-            this.buttonWithoutMenu2.TabIndex = 12;
-            this.buttonWithoutMenu2.MouseLeave += new System.EventHandler(this.buttonWithoutMenu11_MouseLeave);
-            this.buttonWithoutMenu2.MouseHover += new System.EventHandler(this.buttonWithoutMenu11_MouseHover);
-            // 
-            // buttonWithoutMenu1
-            // 
-            this.buttonWithoutMenu1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonWithoutMenu1.BtnText = "Dashboard";
-            this.buttonWithoutMenu1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonWithoutMenu1.ForeColor = System.Drawing.Color.White;
-            this.buttonWithoutMenu1.Hover = false;
-            this.buttonWithoutMenu1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.buttonWithoutMenu1.Icon = global::SPK.Properties.Resources.icons8_dashboard_64;
-            this.buttonWithoutMenu1.Location = new System.Drawing.Point(0, 110);
-            this.buttonWithoutMenu1.Name = "buttonWithoutMenu1";
-            this.buttonWithoutMenu1.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithoutMenu1.Size = new System.Drawing.Size(310, 50);
-            this.buttonWithoutMenu1.TabIndex = 11;
-            this.buttonWithoutMenu1.MouseLeave += new System.EventHandler(this.buttonWithoutMenu11_MouseLeave);
-            this.buttonWithoutMenu1.MouseHover += new System.EventHandler(this.buttonWithoutMenu11_MouseHover);
-            // 
-            // buttonWithMenu1
-            // 
-            this.buttonWithMenu1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonWithMenu1.BtnText = "School Information";
-            this.buttonWithMenu1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonWithMenu1.ForeColor = System.Drawing.Color.White;
-            this.buttonWithMenu1.Hover = false;
-            this.buttonWithMenu1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.buttonWithMenu1.Icon = global::SPK.Properties.Resources.icons8_laptop_64;
-            this.buttonWithMenu1.Location = new System.Drawing.Point(0, 210);
-            this.buttonWithMenu1.Name = "buttonWithMenu1";
-            this.buttonWithMenu1.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu1.Size = new System.Drawing.Size(310, 50);
-            this.buttonWithMenu1.TabIndex = 10;
-            this.buttonWithMenu1.MouseLeave += new System.EventHandler(this.buttonWithMenu11_MouseLeave);
-            this.buttonWithMenu1.MouseHover += new System.EventHandler(this.buttonWithMenu11_MouseHover);
-            // 
             // lblUserType
             // 
             this.lblUserType.AutoSize = true;
@@ -460,6 +226,215 @@
             this.panContainer.Name = "panContainer";
             this.panContainer.Size = new System.Drawing.Size(1105, 784);
             this.panContainer.TabIndex = 20;
+            // 
+            // buttonWithMenu11
+            // 
+            this.buttonWithMenu11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonWithMenu11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.buttonWithMenu11.BtnText = "Teachers";
+            this.buttonWithMenu11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonWithMenu11.ForeColor = System.Drawing.Color.White;
+            this.buttonWithMenu11.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.buttonWithMenu11.Icon = global::SPK.Properties.Resources.icons8_person_64;
+            this.buttonWithMenu11.Location = new System.Drawing.Point(0, 710);
+            this.buttonWithMenu11.Name = "buttonWithMenu11";
+            this.buttonWithMenu11.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.buttonWithMenu11.Size = new System.Drawing.Size(310, 50);
+            this.buttonWithMenu11.TabIndex = 23;
+            // 
+            // buttonWithMenu10
+            // 
+            this.buttonWithMenu10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonWithMenu10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.buttonWithMenu10.BtnText = "Principal";
+            this.buttonWithMenu10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonWithMenu10.ForeColor = System.Drawing.Color.White;
+            this.buttonWithMenu10.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.buttonWithMenu10.Icon = global::SPK.Properties.Resources.icons8_person_64;
+            this.buttonWithMenu10.Location = new System.Drawing.Point(0, 660);
+            this.buttonWithMenu10.Name = "buttonWithMenu10";
+            this.buttonWithMenu10.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.buttonWithMenu10.Size = new System.Drawing.Size(310, 50);
+            this.buttonWithMenu10.TabIndex = 22;
+            // 
+            // buttonWithMenu9
+            // 
+            this.buttonWithMenu9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonWithMenu9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.buttonWithMenu9.BtnText = "Admin";
+            this.buttonWithMenu9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonWithMenu9.ForeColor = System.Drawing.Color.White;
+            this.buttonWithMenu9.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.buttonWithMenu9.Icon = global::SPK.Properties.Resources.icons8_person_64;
+            this.buttonWithMenu9.Location = new System.Drawing.Point(0, 610);
+            this.buttonWithMenu9.Name = "buttonWithMenu9";
+            this.buttonWithMenu9.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.buttonWithMenu9.Size = new System.Drawing.Size(310, 50);
+            this.buttonWithMenu9.TabIndex = 21;
+            // 
+            // buttonWithMenu8
+            // 
+            this.buttonWithMenu8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonWithMenu8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.buttonWithMenu8.BtnText = "Fees Management";
+            this.buttonWithMenu8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonWithMenu8.ForeColor = System.Drawing.Color.White;
+            this.buttonWithMenu8.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.buttonWithMenu8.Icon = global::SPK.Properties.Resources.icons8_money_64;
+            this.buttonWithMenu8.Location = new System.Drawing.Point(0, 560);
+            this.buttonWithMenu8.Name = "buttonWithMenu8";
+            this.buttonWithMenu8.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.buttonWithMenu8.Size = new System.Drawing.Size(310, 50);
+            this.buttonWithMenu8.TabIndex = 20;
+            // 
+            // buttonWithMenu7
+            // 
+            this.buttonWithMenu7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonWithMenu7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.buttonWithMenu7.BtnText = "Result Management";
+            this.buttonWithMenu7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonWithMenu7.ForeColor = System.Drawing.Color.White;
+            this.buttonWithMenu7.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.buttonWithMenu7.Icon = global::SPK.Properties.Resources.icons8_book_52;
+            this.buttonWithMenu7.Location = new System.Drawing.Point(0, 510);
+            this.buttonWithMenu7.Name = "buttonWithMenu7";
+            this.buttonWithMenu7.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.buttonWithMenu7.Size = new System.Drawing.Size(310, 50);
+            this.buttonWithMenu7.TabIndex = 19;
+            // 
+            // buttonWithMenu6
+            // 
+            this.buttonWithMenu6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonWithMenu6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.buttonWithMenu6.BtnText = "Subject Management";
+            this.buttonWithMenu6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonWithMenu6.ForeColor = System.Drawing.Color.White;
+            this.buttonWithMenu6.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.buttonWithMenu6.Icon = global::SPK.Properties.Resources.icons8_file_64;
+            this.buttonWithMenu6.Location = new System.Drawing.Point(0, 460);
+            this.buttonWithMenu6.Name = "buttonWithMenu6";
+            this.buttonWithMenu6.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.buttonWithMenu6.Size = new System.Drawing.Size(310, 50);
+            this.buttonWithMenu6.TabIndex = 18;
+            // 
+            // buttonWithMenu5
+            // 
+            this.buttonWithMenu5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonWithMenu5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.buttonWithMenu5.BtnText = "Class Management";
+            this.buttonWithMenu5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonWithMenu5.ForeColor = System.Drawing.Color.White;
+            this.buttonWithMenu5.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.buttonWithMenu5.Icon = global::SPK.Properties.Resources.icons8_people_64;
+            this.buttonWithMenu5.Location = new System.Drawing.Point(0, 410);
+            this.buttonWithMenu5.Name = "buttonWithMenu5";
+            this.buttonWithMenu5.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.buttonWithMenu5.Size = new System.Drawing.Size(310, 50);
+            this.buttonWithMenu5.TabIndex = 17;
+            // 
+            // buttonWithMenu4
+            // 
+            this.buttonWithMenu4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonWithMenu4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.buttonWithMenu4.BtnText = "Behavioural Analysis";
+            this.buttonWithMenu4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonWithMenu4.ForeColor = System.Drawing.Color.White;
+            this.buttonWithMenu4.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.buttonWithMenu4.Icon = global::SPK.Properties.Resources.icons8_edit_64;
+            this.buttonWithMenu4.Location = new System.Drawing.Point(0, 360);
+            this.buttonWithMenu4.Name = "buttonWithMenu4";
+            this.buttonWithMenu4.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.buttonWithMenu4.Size = new System.Drawing.Size(310, 50);
+            this.buttonWithMenu4.TabIndex = 16;
+            // 
+            // buttonWithMenu3
+            // 
+            this.buttonWithMenu3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonWithMenu3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.buttonWithMenu3.BtnText = "Attendance Manager";
+            this.buttonWithMenu3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonWithMenu3.ForeColor = System.Drawing.Color.White;
+            this.buttonWithMenu3.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.buttonWithMenu3.Icon = global::SPK.Properties.Resources.icons8_todo_list_64;
+            this.buttonWithMenu3.Location = new System.Drawing.Point(0, 310);
+            this.buttonWithMenu3.Name = "buttonWithMenu3";
+            this.buttonWithMenu3.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.buttonWithMenu3.Size = new System.Drawing.Size(310, 50);
+            this.buttonWithMenu3.TabIndex = 15;
+            this.buttonWithMenu3.ClickEvent += new System.EventHandler(this.buttonWithMenu3_Click);
+            // 
+            // buttonWithMenu2
+            // 
+            this.buttonWithMenu2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonWithMenu2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.buttonWithMenu2.BtnText = "Student Management";
+            this.buttonWithMenu2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonWithMenu2.ForeColor = System.Drawing.Color.White;
+            this.buttonWithMenu2.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.buttonWithMenu2.Icon = global::SPK.Properties.Resources.icons8_laptop_64;
+            this.buttonWithMenu2.Location = new System.Drawing.Point(0, 260);
+            this.buttonWithMenu2.Name = "buttonWithMenu2";
+            this.buttonWithMenu2.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.buttonWithMenu2.Size = new System.Drawing.Size(310, 50);
+            this.buttonWithMenu2.TabIndex = 14;
+            // 
+            // buttonWithoutMenu2
+            // 
+            this.buttonWithoutMenu2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonWithoutMenu2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.buttonWithoutMenu2.BtnText = "Profile";
+            this.buttonWithoutMenu2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonWithoutMenu2.ForeColor = System.Drawing.Color.White;
+            this.buttonWithoutMenu2.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.buttonWithoutMenu2.Icon = global::SPK.Properties.Resources.icons8_person_64;
+            this.buttonWithoutMenu2.Location = new System.Drawing.Point(0, 160);
+            this.buttonWithoutMenu2.Name = "buttonWithoutMenu2";
+            this.buttonWithoutMenu2.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.buttonWithoutMenu2.Size = new System.Drawing.Size(310, 50);
+            this.buttonWithoutMenu2.TabIndex = 12;
+            // 
+            // buttonWithoutMenu1
+            // 
+            this.buttonWithoutMenu1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonWithoutMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.buttonWithoutMenu1.BtnText = "Dashboard";
+            this.buttonWithoutMenu1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonWithoutMenu1.ForeColor = System.Drawing.Color.White;
+            this.buttonWithoutMenu1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.buttonWithoutMenu1.Icon = global::SPK.Properties.Resources.icons8_dashboard_64;
+            this.buttonWithoutMenu1.Location = new System.Drawing.Point(0, 110);
+            this.buttonWithoutMenu1.Name = "buttonWithoutMenu1";
+            this.buttonWithoutMenu1.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.buttonWithoutMenu1.Size = new System.Drawing.Size(310, 50);
+            this.buttonWithoutMenu1.TabIndex = 11;
+            // 
+            // buttonWithMenu1
+            // 
+            this.buttonWithMenu1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonWithMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.buttonWithMenu1.BtnText = "School Information";
+            this.buttonWithMenu1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonWithMenu1.ForeColor = System.Drawing.Color.White;
+            this.buttonWithMenu1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.buttonWithMenu1.Icon = global::SPK.Properties.Resources.icons8_laptop_64;
+            this.buttonWithMenu1.Location = new System.Drawing.Point(0, 210);
+            this.buttonWithMenu1.Name = "buttonWithMenu1";
+            this.buttonWithMenu1.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.buttonWithMenu1.Size = new System.Drawing.Size(310, 50);
+            this.buttonWithMenu1.TabIndex = 10;
             // 
             // frmMain
             // 

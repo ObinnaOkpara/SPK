@@ -82,6 +82,11 @@ namespace SPK
             picMinimise.BackColor = Color.FromArgb(0, 125, 113);
         }
 
+        private void buttonWithMenu3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Testing");
+        }
+
         private void picMinimise_MouseLeave(object sender, EventArgs e)
         {
             picMinimise.BackColor = Color.FromArgb(0, 150, 136);
@@ -121,30 +126,6 @@ namespace SPK
                 Location = new Point(curpos.X - startpt.X, curpos.Y - startpt.Y);
             }
         }
-
-        private void buttonWithMenu11_MouseHover(object sender, EventArgs e)
-        {
-            var btn = (ButtonWithMenu)sender;
-            btn.Hover = true;
-        }
-
-        private void buttonWithMenu11_MouseLeave(object sender, EventArgs e)
-        {
-            var btn = (ButtonWithMenu)sender;
-            btn.Hover = false;
-        }
-
-        private void buttonWithoutMenu11_MouseHover(object sender, EventArgs e)
-        {
-            var btn = (ButtonWithoutMenu)sender;
-            btn.Hover = true;
-        }
-
-        private void buttonWithoutMenu11_MouseLeave(object sender, EventArgs e)
-        {
-            var btn = (ButtonWithoutMenu)sender;
-            btn.Hover = false;
-        }
-
+        
     }
 }
