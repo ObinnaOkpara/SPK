@@ -77,6 +77,7 @@
             this.panTop.Name = "panTop";
             this.panTop.Size = new System.Drawing.Size(198, 48);
             this.panTop.TabIndex = 8;
+            this.panTop.Click += new System.EventHandler(this.panTop_Click);
             this.panTop.MouseLeave += new System.EventHandler(this.panTop_MouseLeave);
             this.panTop.MouseHover += new System.EventHandler(this.panTop_MouseHover);
             // 

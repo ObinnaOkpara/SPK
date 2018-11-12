@@ -18,6 +18,7 @@ namespace SPK.UserControls.Buttons
         private Color _HoverColor { get; set; } = Color.FromArgb(8, 15, 23);
         private Image _Icon { get; set; } = Properties.Resources.icons8_person_64;
         private string _BtnText { get; set; } = "Button";
+        public event EventHandler ClickEvent;
 
         public Color SideColor
         {
@@ -104,6 +105,18 @@ namespace SPK.UserControls.Buttons
         {
             panel1.Visible = false;
             BackColor = NormalColor;
+        }
+
+        private void panTop_Click(object sender, EventArgs e)
+        {
+            raiseControlClicked(e);
+        }
+
+        protected virtual void raiseControlClicked(EventArgs e)
+        {
+            var handler = ClickEvent;
+            if (handler != null)
+                handler(this, e);
         }
     }
 }
