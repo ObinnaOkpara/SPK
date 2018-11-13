@@ -56,6 +56,7 @@
             this.buttonWithoutMenu2 = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.buttonWithoutMenu1 = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.buttonWithMenu1 = new SPK.UserControls.Buttons.ButtonWithMenu();
+            this.dashboard1 = new SPK.UserControls.SubForms.Dashboard();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
@@ -63,6 +64,7 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            this.panContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -222,9 +224,10 @@
             this.panContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panContainer.Location = new System.Drawing.Point(313, 60);
+            this.panContainer.Controls.Add(this.dashboard1);
+            this.panContainer.Location = new System.Drawing.Point(316, 63);
             this.panContainer.Name = "panContainer";
-            this.panContainer.Size = new System.Drawing.Size(1105, 784);
+            this.panContainer.Size = new System.Drawing.Size(1100, 780);
             this.panContainer.TabIndex = 20;
             // 
             // buttonWithMenu11
@@ -436,6 +439,18 @@
             this.buttonWithMenu1.Size = new System.Drawing.Size(310, 50);
             this.buttonWithMenu1.TabIndex = 10;
             // 
+            // dashboard1
+            // 
+            this.dashboard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.dashboard1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dashboard1.Location = new System.Drawing.Point(0, 0);
+            this.dashboard1.Name = "dashboard1";
+            this.dashboard1.ProfilePic = null;
+            this.dashboard1.School = "SCHOOL NAME";
+            this.dashboard1.Session = "Third Term - 2017/2018 Session";
+            this.dashboard1.Size = new System.Drawing.Size(1100, 780);
+            this.dashboard1.TabIndex = 0;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -457,6 +472,7 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.panContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -490,6 +506,7 @@
         private UserControls.Buttons.ButtonWithMenu buttonWithMenu9;
         private UserControls.Buttons.ButtonWithMenu buttonWithMenu8;
         private System.Windows.Forms.Panel panContainer;
+        private UserControls.SubForms.Dashboard dashboard1;
     }
 }
 
