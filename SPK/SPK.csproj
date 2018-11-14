@@ -96,6 +96,12 @@
     <Compile Include="UserControls\SubForms\Profile.Designer.cs">
       <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\ViewClasses.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ViewClasses.Designer.cs">
+      <DependentUpon>ViewClasses.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\ViewClasses.resx">
+      <DependentUpon>ViewClasses.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
