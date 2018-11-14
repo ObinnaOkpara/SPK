@@ -31,10 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.picStudentImage = new System.Windows.Forms.PictureBox();
-            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.btnUploadStudentImage = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -93,11 +90,14 @@
             this.cBoxCountry = new System.Windows.Forms.ComboBox();
             this.dtpDoB = new System.Windows.Forms.DateTimePicker();
             this.cBoxSex = new System.Windows.Forms.ComboBox();
+            this.picSchoolLogo = new System.Windows.Forms.PictureBox();
+            this.picStudentImage = new System.Windows.Forms.PictureBox();
+            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picStudentImage)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picStudentImage)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -131,17 +131,6 @@
             this.lblTitle.Size = new System.Drawing.Size(366, 31);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "STUDENT MANAGEMENT";
-            // 
-            // picSchoolLogo
-            // 
-            this.picSchoolLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.picSchoolLogo.Image = global::SPK.Properties.Resources.icons8_people_64;
-            this.picSchoolLogo.Location = new System.Drawing.Point(108, 31);
-            this.picSchoolLogo.Name = "picSchoolLogo";
-            this.picSchoolLogo.Size = new System.Drawing.Size(40, 40);
-            this.picSchoolLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSchoolLogo.TabIndex = 0;
-            this.picSchoolLogo.TabStop = false;
             // 
             // panel3
             // 
@@ -211,27 +200,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(834, 939);
             this.panel3.TabIndex = 4;
-            // 
-            // picStudentImage
-            // 
-            this.picStudentImage.Location = new System.Drawing.Point(652, 0);
-            this.picStudentImage.Name = "picStudentImage";
-            this.picStudentImage.Size = new System.Drawing.Size(120, 120);
-            this.picStudentImage.TabIndex = 12;
-            this.picStudentImage.TabStop = false;
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnSave.BtnText = "SAVE CHANGES";
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnSave.Icon = global::SPK.Properties.Resources.icons8_save_64;
-            this.btnSave.Location = new System.Drawing.Point(302, 872);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnSave.Size = new System.Drawing.Size(250, 50);
-            this.btnSave.TabIndex = 11;
             // 
             // btnUploadStudentImage
             // 
@@ -919,21 +887,53 @@
             this.cBoxSex.Size = new System.Drawing.Size(254, 28);
             this.cBoxSex.TabIndex = 73;
             // 
+            // picSchoolLogo
+            // 
+            this.picSchoolLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.picSchoolLogo.Image = global::SPK.Properties.Resources.icons8_people_64;
+            this.picSchoolLogo.Location = new System.Drawing.Point(108, 31);
+            this.picSchoolLogo.Name = "picSchoolLogo";
+            this.picSchoolLogo.Size = new System.Drawing.Size(40, 40);
+            this.picSchoolLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSchoolLogo.TabIndex = 0;
+            this.picSchoolLogo.TabStop = false;
+            // 
+            // picStudentImage
+            // 
+            this.picStudentImage.Location = new System.Drawing.Point(652, 0);
+            this.picStudentImage.Name = "picStudentImage";
+            this.picStudentImage.Size = new System.Drawing.Size(120, 120);
+            this.picStudentImage.TabIndex = 12;
+            this.picStudentImage.TabStop = false;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnSave.BtnText = "SAVE CHANGES";
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnSave.Icon = global::SPK.Properties.Resources.icons8_save_64;
+            this.btnSave.Location = new System.Drawing.Point(302, 872);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnSave.Size = new System.Drawing.Size(250, 50);
+            this.btnSave.TabIndex = 11;
+            // 
             // NewStudent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "NewStudent";
             this.Size = new System.Drawing.Size(1100, 780);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picStudentImage)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picStudentImage)).EndInit();
             this.ResumeLayout(false);
 
         }

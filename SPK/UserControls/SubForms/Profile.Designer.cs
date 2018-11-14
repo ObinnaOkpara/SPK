@@ -101,7 +101,7 @@
             this.panel3.Controls.Add(this.txtName);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(218, 189);
+            this.panel3.Location = new System.Drawing.Point(218, 180);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(650, 521);
             this.panel3.TabIndex = 3;
@@ -248,8 +248,8 @@
             // 
             // Profile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Name = "Profile";
