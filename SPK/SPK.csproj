@@ -72,6 +72,12 @@
     <Compile Include="UserControls\Panels\ExtendedPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UserControls\SubForms\AddSubject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\AddSubject.Designer.cs">
+      <DependentUpon>AddSubject.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Buttons\ButtonWithoutMenu.resx">
       <DependentUpon>ButtonWithoutMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\AddSubject.resx">
+      <DependentUpon>AddSubject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
