@@ -51,7 +51,7 @@
             this.panel3.Controls.Add(this.txtSubject);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(236, 275);
+            this.panel3.Location = new System.Drawing.Point(236, 163);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(629, 231);
             this.panel3.TabIndex = 5;
