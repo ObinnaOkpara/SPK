@@ -35,14 +35,6 @@
             this.picClose = new System.Windows.Forms.PictureBox();
             this.picMinimise = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblUserType = new System.Windows.Forms.Label();
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.schoolProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveSchoolInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewSchoolInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panContainer = new System.Windows.Forms.Panel();
             this.buttonWithMenu11 = new SPK.UserControls.Buttons.ButtonWithMenu();
             this.buttonWithMenu10 = new SPK.UserControls.Buttons.ButtonWithMenu();
             this.buttonWithMenu9 = new SPK.UserControls.Buttons.ButtonWithMenu();
@@ -56,6 +48,14 @@
             this.buttonWithoutMenu2 = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.buttonWithoutMenu1 = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.buttonWithMenu1 = new SPK.UserControls.Buttons.ButtonWithMenu();
+            this.lblUserType = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.schoolProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveSchoolInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewSchoolInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panContainer = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
@@ -74,8 +74,9 @@
             this.panel1.Controls.Add(this.picClose);
             this.panel1.Controls.Add(this.picMinimise);
             this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1416, 58);
+            this.panel1.Size = new System.Drawing.Size(1062, 47);
             this.panel1.TabIndex = 18;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -86,18 +87,20 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(1, 1);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(310, 57);
+            this.panel2.Size = new System.Drawing.Size(232, 46);
             this.panel2.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lucida Calligraphy", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(9, 10);
+            this.label1.Location = new System.Drawing.Point(7, 8);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(261, 32);
+            this.label1.Size = new System.Drawing.Size(173, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "School Portal Kit";
             // 
@@ -106,9 +109,10 @@
             this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picClose.BackColor = System.Drawing.Color.Red;
             this.picClose.Image = global::SPK.Properties.Resources.close;
-            this.picClose.Location = new System.Drawing.Point(1375, 9);
+            this.picClose.Location = new System.Drawing.Point(1031, 7);
+            this.picClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picClose.Name = "picClose";
-            this.picClose.Size = new System.Drawing.Size(30, 30);
+            this.picClose.Size = new System.Drawing.Size(22, 24);
             this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picClose.TabIndex = 2;
             this.picClose.TabStop = false;
@@ -121,9 +125,10 @@
             this.picMinimise.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picMinimise.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.picMinimise.Image = global::SPK.Properties.Resources.minimise;
-            this.picMinimise.Location = new System.Drawing.Point(1339, 9);
+            this.picMinimise.Location = new System.Drawing.Point(1004, 7);
+            this.picMinimise.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picMinimise.Name = "picMinimise";
-            this.picMinimise.Size = new System.Drawing.Size(30, 30);
+            this.picMinimise.Size = new System.Drawing.Size(22, 24);
             this.picMinimise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picMinimise.TabIndex = 5;
             this.picMinimise.TabStop = false;
@@ -154,78 +159,11 @@
             this.panel3.Controls.Add(this.lblUsername);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.ForeColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(3, 59);
+            this.panel3.Location = new System.Drawing.Point(2, 48);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(310, 785);
+            this.panel3.Size = new System.Drawing.Size(232, 638);
             this.panel3.TabIndex = 19;
-            // 
-            // lblUserType
-            // 
-            this.lblUserType.AutoSize = true;
-            this.lblUserType.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserType.Location = new System.Drawing.Point(71, 56);
-            this.lblUserType.Name = "lblUserType";
-            this.lblUserType.Size = new System.Drawing.Size(65, 24);
-            this.lblUserType.TabIndex = 9;
-            this.lblUserType.Text = "Admin";
-            // 
-            // lblUsername
-            // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(69, 25);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(120, 31);
-            this.lblUsername.TabIndex = 8;
-            this.lblUsername.Text = "SPK Guest";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SPK.Properties.Resources.icons8_circled_user_female_skin_type_6_96;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.schoolProfileToolStripMenuItem,
-            this.saveSchoolInfoToolStripMenuItem,
-            this.viewSchoolInfoToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(190, 76);
-            // 
-            // schoolProfileToolStripMenuItem
-            // 
-            this.schoolProfileToolStripMenuItem.Name = "schoolProfileToolStripMenuItem";
-            this.schoolProfileToolStripMenuItem.Size = new System.Drawing.Size(189, 24);
-            this.schoolProfileToolStripMenuItem.Text = "School Profile";
-            // 
-            // saveSchoolInfoToolStripMenuItem
-            // 
-            this.saveSchoolInfoToolStripMenuItem.Name = "saveSchoolInfoToolStripMenuItem";
-            this.saveSchoolInfoToolStripMenuItem.Size = new System.Drawing.Size(189, 24);
-            this.saveSchoolInfoToolStripMenuItem.Text = "Save School Info";
-            // 
-            // viewSchoolInfoToolStripMenuItem
-            // 
-            this.viewSchoolInfoToolStripMenuItem.Name = "viewSchoolInfoToolStripMenuItem";
-            this.viewSchoolInfoToolStripMenuItem.Size = new System.Drawing.Size(189, 24);
-            this.viewSchoolInfoToolStripMenuItem.Text = "View School info";
-            // 
-            // panContainer
-            // 
-            this.panContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panContainer.Location = new System.Drawing.Point(313, 60);
-            this.panContainer.Name = "panContainer";
-            this.panContainer.Size = new System.Drawing.Size(1105, 784);
-            this.panContainer.TabIndex = 20;
             // 
             // buttonWithMenu11
             // 
@@ -237,10 +175,11 @@
             this.buttonWithMenu11.ForeColor = System.Drawing.Color.White;
             this.buttonWithMenu11.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
             this.buttonWithMenu11.Icon = global::SPK.Properties.Resources.icons8_person_64;
-            this.buttonWithMenu11.Location = new System.Drawing.Point(0, 710);
+            this.buttonWithMenu11.Location = new System.Drawing.Point(0, 577);
+            this.buttonWithMenu11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonWithMenu11.Name = "buttonWithMenu11";
             this.buttonWithMenu11.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu11.Size = new System.Drawing.Size(310, 50);
+            this.buttonWithMenu11.Size = new System.Drawing.Size(232, 41);
             this.buttonWithMenu11.TabIndex = 23;
             // 
             // buttonWithMenu10
@@ -253,10 +192,11 @@
             this.buttonWithMenu10.ForeColor = System.Drawing.Color.White;
             this.buttonWithMenu10.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
             this.buttonWithMenu10.Icon = global::SPK.Properties.Resources.icons8_person_64;
-            this.buttonWithMenu10.Location = new System.Drawing.Point(0, 660);
+            this.buttonWithMenu10.Location = new System.Drawing.Point(0, 536);
+            this.buttonWithMenu10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonWithMenu10.Name = "buttonWithMenu10";
             this.buttonWithMenu10.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu10.Size = new System.Drawing.Size(310, 50);
+            this.buttonWithMenu10.Size = new System.Drawing.Size(232, 41);
             this.buttonWithMenu10.TabIndex = 22;
             // 
             // buttonWithMenu9
@@ -269,10 +209,11 @@
             this.buttonWithMenu9.ForeColor = System.Drawing.Color.White;
             this.buttonWithMenu9.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
             this.buttonWithMenu9.Icon = global::SPK.Properties.Resources.icons8_person_64;
-            this.buttonWithMenu9.Location = new System.Drawing.Point(0, 610);
+            this.buttonWithMenu9.Location = new System.Drawing.Point(0, 496);
+            this.buttonWithMenu9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonWithMenu9.Name = "buttonWithMenu9";
             this.buttonWithMenu9.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu9.Size = new System.Drawing.Size(310, 50);
+            this.buttonWithMenu9.Size = new System.Drawing.Size(232, 41);
             this.buttonWithMenu9.TabIndex = 21;
             // 
             // buttonWithMenu8
@@ -285,10 +226,11 @@
             this.buttonWithMenu8.ForeColor = System.Drawing.Color.White;
             this.buttonWithMenu8.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
             this.buttonWithMenu8.Icon = global::SPK.Properties.Resources.icons8_money_64;
-            this.buttonWithMenu8.Location = new System.Drawing.Point(0, 560);
+            this.buttonWithMenu8.Location = new System.Drawing.Point(0, 455);
+            this.buttonWithMenu8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonWithMenu8.Name = "buttonWithMenu8";
             this.buttonWithMenu8.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu8.Size = new System.Drawing.Size(310, 50);
+            this.buttonWithMenu8.Size = new System.Drawing.Size(232, 41);
             this.buttonWithMenu8.TabIndex = 20;
             // 
             // buttonWithMenu7
@@ -301,10 +243,11 @@
             this.buttonWithMenu7.ForeColor = System.Drawing.Color.White;
             this.buttonWithMenu7.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
             this.buttonWithMenu7.Icon = global::SPK.Properties.Resources.icons8_book_52;
-            this.buttonWithMenu7.Location = new System.Drawing.Point(0, 510);
+            this.buttonWithMenu7.Location = new System.Drawing.Point(0, 414);
+            this.buttonWithMenu7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonWithMenu7.Name = "buttonWithMenu7";
             this.buttonWithMenu7.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu7.Size = new System.Drawing.Size(310, 50);
+            this.buttonWithMenu7.Size = new System.Drawing.Size(232, 41);
             this.buttonWithMenu7.TabIndex = 19;
             // 
             // buttonWithMenu6
@@ -317,10 +260,11 @@
             this.buttonWithMenu6.ForeColor = System.Drawing.Color.White;
             this.buttonWithMenu6.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
             this.buttonWithMenu6.Icon = global::SPK.Properties.Resources.icons8_file_64;
-            this.buttonWithMenu6.Location = new System.Drawing.Point(0, 460);
+            this.buttonWithMenu6.Location = new System.Drawing.Point(0, 374);
+            this.buttonWithMenu6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonWithMenu6.Name = "buttonWithMenu6";
             this.buttonWithMenu6.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu6.Size = new System.Drawing.Size(310, 50);
+            this.buttonWithMenu6.Size = new System.Drawing.Size(232, 41);
             this.buttonWithMenu6.TabIndex = 18;
             // 
             // buttonWithMenu5
@@ -333,10 +277,11 @@
             this.buttonWithMenu5.ForeColor = System.Drawing.Color.White;
             this.buttonWithMenu5.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
             this.buttonWithMenu5.Icon = global::SPK.Properties.Resources.icons8_people_64;
-            this.buttonWithMenu5.Location = new System.Drawing.Point(0, 410);
+            this.buttonWithMenu5.Location = new System.Drawing.Point(0, 333);
+            this.buttonWithMenu5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonWithMenu5.Name = "buttonWithMenu5";
             this.buttonWithMenu5.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu5.Size = new System.Drawing.Size(310, 50);
+            this.buttonWithMenu5.Size = new System.Drawing.Size(232, 41);
             this.buttonWithMenu5.TabIndex = 17;
             // 
             // buttonWithMenu4
@@ -349,10 +294,11 @@
             this.buttonWithMenu4.ForeColor = System.Drawing.Color.White;
             this.buttonWithMenu4.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
             this.buttonWithMenu4.Icon = global::SPK.Properties.Resources.icons8_edit_64;
-            this.buttonWithMenu4.Location = new System.Drawing.Point(0, 360);
+            this.buttonWithMenu4.Location = new System.Drawing.Point(0, 292);
+            this.buttonWithMenu4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonWithMenu4.Name = "buttonWithMenu4";
             this.buttonWithMenu4.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu4.Size = new System.Drawing.Size(310, 50);
+            this.buttonWithMenu4.Size = new System.Drawing.Size(232, 41);
             this.buttonWithMenu4.TabIndex = 16;
             // 
             // buttonWithMenu3
@@ -365,10 +311,11 @@
             this.buttonWithMenu3.ForeColor = System.Drawing.Color.White;
             this.buttonWithMenu3.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
             this.buttonWithMenu3.Icon = global::SPK.Properties.Resources.icons8_todo_list_64;
-            this.buttonWithMenu3.Location = new System.Drawing.Point(0, 310);
+            this.buttonWithMenu3.Location = new System.Drawing.Point(0, 252);
+            this.buttonWithMenu3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonWithMenu3.Name = "buttonWithMenu3";
             this.buttonWithMenu3.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu3.Size = new System.Drawing.Size(310, 50);
+            this.buttonWithMenu3.Size = new System.Drawing.Size(232, 41);
             this.buttonWithMenu3.TabIndex = 15;
             this.buttonWithMenu3.ClickEvent += new System.EventHandler(this.buttonWithMenu3_Click);
             // 
@@ -382,10 +329,11 @@
             this.buttonWithMenu2.ForeColor = System.Drawing.Color.White;
             this.buttonWithMenu2.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
             this.buttonWithMenu2.Icon = global::SPK.Properties.Resources.icons8_laptop_64;
-            this.buttonWithMenu2.Location = new System.Drawing.Point(0, 260);
+            this.buttonWithMenu2.Location = new System.Drawing.Point(0, 211);
+            this.buttonWithMenu2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonWithMenu2.Name = "buttonWithMenu2";
             this.buttonWithMenu2.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu2.Size = new System.Drawing.Size(310, 50);
+            this.buttonWithMenu2.Size = new System.Drawing.Size(232, 41);
             this.buttonWithMenu2.TabIndex = 14;
             // 
             // buttonWithoutMenu2
@@ -398,10 +346,11 @@
             this.buttonWithoutMenu2.ForeColor = System.Drawing.Color.White;
             this.buttonWithoutMenu2.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
             this.buttonWithoutMenu2.Icon = global::SPK.Properties.Resources.icons8_person_64;
-            this.buttonWithoutMenu2.Location = new System.Drawing.Point(0, 160);
+            this.buttonWithoutMenu2.Location = new System.Drawing.Point(0, 130);
+            this.buttonWithoutMenu2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonWithoutMenu2.Name = "buttonWithoutMenu2";
             this.buttonWithoutMenu2.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithoutMenu2.Size = new System.Drawing.Size(310, 50);
+            this.buttonWithoutMenu2.Size = new System.Drawing.Size(232, 41);
             this.buttonWithoutMenu2.TabIndex = 12;
             // 
             // buttonWithoutMenu1
@@ -414,10 +363,11 @@
             this.buttonWithoutMenu1.ForeColor = System.Drawing.Color.White;
             this.buttonWithoutMenu1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
             this.buttonWithoutMenu1.Icon = global::SPK.Properties.Resources.icons8_dashboard_64;
-            this.buttonWithoutMenu1.Location = new System.Drawing.Point(0, 110);
+            this.buttonWithoutMenu1.Location = new System.Drawing.Point(0, 89);
+            this.buttonWithoutMenu1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonWithoutMenu1.Name = "buttonWithoutMenu1";
             this.buttonWithoutMenu1.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithoutMenu1.Size = new System.Drawing.Size(310, 50);
+            this.buttonWithoutMenu1.Size = new System.Drawing.Size(232, 41);
             this.buttonWithoutMenu1.TabIndex = 11;
             // 
             // buttonWithMenu1
@@ -430,22 +380,96 @@
             this.buttonWithMenu1.ForeColor = System.Drawing.Color.White;
             this.buttonWithMenu1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
             this.buttonWithMenu1.Icon = global::SPK.Properties.Resources.icons8_laptop_64;
-            this.buttonWithMenu1.Location = new System.Drawing.Point(0, 210);
+            this.buttonWithMenu1.Location = new System.Drawing.Point(0, 171);
+            this.buttonWithMenu1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonWithMenu1.Name = "buttonWithMenu1";
             this.buttonWithMenu1.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu1.Size = new System.Drawing.Size(310, 50);
+            this.buttonWithMenu1.Size = new System.Drawing.Size(232, 41);
             this.buttonWithMenu1.TabIndex = 10;
+            // 
+            // lblUserType
+            // 
+            this.lblUserType.AutoSize = true;
+            this.lblUserType.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserType.Location = new System.Drawing.Point(53, 46);
+            this.lblUserType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUserType.Name = "lblUserType";
+            this.lblUserType.Size = new System.Drawing.Size(50, 19);
+            this.lblUserType.TabIndex = 9;
+            this.lblUserType.Text = "Admin";
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(52, 20);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(95, 24);
+            this.lblUsername.TabIndex = 8;
+            this.lblUsername.Text = "SPK Guest";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SPK.Properties.Resources.icons8_circled_user_female_skin_type_6_96;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 20);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 49);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.schoolProfileToolStripMenuItem,
+            this.saveSchoolInfoToolStripMenuItem,
+            this.viewSchoolInfoToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(163, 70);
+            // 
+            // schoolProfileToolStripMenuItem
+            // 
+            this.schoolProfileToolStripMenuItem.Name = "schoolProfileToolStripMenuItem";
+            this.schoolProfileToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.schoolProfileToolStripMenuItem.Text = "School Profile";
+            // 
+            // saveSchoolInfoToolStripMenuItem
+            // 
+            this.saveSchoolInfoToolStripMenuItem.Name = "saveSchoolInfoToolStripMenuItem";
+            this.saveSchoolInfoToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.saveSchoolInfoToolStripMenuItem.Text = "Save School Info";
+            // 
+            // viewSchoolInfoToolStripMenuItem
+            // 
+            this.viewSchoolInfoToolStripMenuItem.Name = "viewSchoolInfoToolStripMenuItem";
+            this.viewSchoolInfoToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.viewSchoolInfoToolStripMenuItem.Text = "View School info";
+            // 
+            // panContainer
+            // 
+            this.panContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panContainer.Location = new System.Drawing.Point(235, 49);
+            this.panContainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panContainer.Name = "panContainer";
+            this.panContainer.Size = new System.Drawing.Size(829, 637);
+            this.panContainer.TabIndex = 20;
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1421, 847);
+            this.ClientSize = new System.Drawing.Size(1040, 640);
             this.Controls.Add(this.panContainer);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel1.ResumeLayout(false);

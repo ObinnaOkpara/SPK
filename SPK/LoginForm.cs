@@ -1,9 +1,12 @@
 ﻿using DB;
+using DB.Services.DataRepository;
+using DB.Services.Interfaces;
 using SPK.AuthorizedUser;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,58 +17,82 @@ namespace SPK
 {
     public partial class LoginForm : Form
     {
+        private readonly IUnitOfWork _unitOfWork;
         public LoginForm()
         {
             InitializeComponent();
+            _unitOfWork = new UnitOfWork(new Model1());
         }
 
-        private bool Login<TEntity>() where TEntity: class
+        private async Task<bool> Login<TEntity>() where TEntity : class
         {
             using (var db = new Model1())
             {
-                
+
                 if (typeof(TEntity) == typeof(principal))
                 {
-                   var user = db.principals.
-                            FirstOrDefault
-                            (pr => pr.email == txtUsername.Text && pr.password == txtPassword.Text);
+                    var user = await _unitOfWork.PrincipalRepository.LoginPrincipal(txtUsername.Text, txtPassword.Text);
 
-                    AuthorizedUser<principal>.CurrentUser = user;
 
-                    return true;
+                    if (user != null)
+                    {
+                        AuthorizedUser<principal>.CurrentUser = user;
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
                 }
-                else if (typeof(TEntity) ==typeof(teacher) )
+                else if (typeof(TEntity) == typeof(teacher))
                 {
-                    var user = db.teachers.
-                            FirstOrDefault
-                            (pr => pr.email == txtUsername.Text && pr.password == txtPassword.Text);
+                    var user = await _unitOfWork.TeacherRepository.LoginTeacher(txtUsername.Text, txtPassword.Text);
+                    //var user = await db.teachers.
+                    //        FirstOrDefaultAsync
+                    //        (pr => pr.email == txtUsername.Text && pr.password == txtPassword.Text);
 
-                    AuthorizedUser<teacher>.CurrentUser = user;
-                    return true;
+                    if (user != null)
+                    {
+                        AuthorizedUser<teacher>.CurrentUser = user;
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
                 else if (typeof(TEntity) == typeof(user))
                 {
-                    var user = db.users.
-                            FirstOrDefault
-                            (pr => pr.email == txtUsername.Text && pr.password == txtPassword.Text);
+                    var user = await _unitOfWork.UserRepository.LoginAdmin(txtUsername.Text, txtPassword.Text);
 
-                    AuthorizedUser<user>.CurrentUser = user;
-                    return true;
+                    if (user != null)
+                    {
+                        AuthorizedUser<user>.CurrentUser = user;
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
-                else
-                {
-                    return false;
-                }
-               
+
+                return false;
+
             }
         }
         private void button1_Click(object sender, EventArgs e)
         {
             if (rdbAdmin.Checked)
             {
-                if (Login<user>())
+                var task = Login<user>();
+
+                task.Wait();
+
+                var loginResult = task.Result;
+                if (loginResult)
                 {
-                    //admin logged in
+                    MessageBox.Show("admin logged in");
                 }
                 else
                 {
@@ -75,9 +102,14 @@ namespace SPK
             }
             else if (rdbPrincipal.Checked)
             {
-                if (Login<principal>())
+                var task = Login<principal>();
+
+                task.Wait();
+
+                var loginResult = task.Result;
+                if (loginResult)
                 {
-                    //principal logged in
+                    MessageBox.Show("principal logged in");
                 }
                 else
                 {
@@ -87,9 +119,14 @@ namespace SPK
             }
             else if (rdbTeacher.Checked)
             {
-                if (Login<teacher>())
+                var task = Login<teacher>();
+
+                task.Wait();
+
+                var loginResult = task.Result;
+                if (loginResult)
                 {
-                    //teacher logged in
+                    MessageBox.Show("teacher logged in");
                 }
                 else
                 {
@@ -103,9 +140,7 @@ namespace SPK
                 return;
             }
 
-
-            
-           
+           // _unitOfWork.Dispose();
         }
     }
 }
