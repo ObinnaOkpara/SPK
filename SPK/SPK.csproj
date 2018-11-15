@@ -120,6 +120,12 @@
     <Compile Include="UserControls\SubForms\SpecifySssSubject.Designer.cs">
       <DependentUpon>SpecifySssSubject.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\SpecifySubjectNumber.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\SpecifySubjectNumber.Designer.cs">
+      <DependentUpon>SpecifySubjectNumber.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\ViewClasses.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -180,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\SpecifySssSubject.resx">
       <DependentUpon>SpecifySssSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\SpecifySubjectNumber.resx">
+      <DependentUpon>SpecifySubjectNumber.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\ViewClasses.resx">
       <DependentUpon>ViewClasses.cs</DependentUpon>

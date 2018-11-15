@@ -54,7 +54,7 @@
             this.panel2.Controls.Add(this.dGridSubjecs);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(163, 270);
+            this.panel2.Location = new System.Drawing.Point(163, 263);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(774, 506);
             this.panel2.TabIndex = 21;
@@ -89,7 +89,7 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(78, 151);
+            this.panel3.Location = new System.Drawing.Point(78, 144);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(945, 109);
             this.panel3.TabIndex = 20;
