@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
-            this.dGridAllClass = new System.Windows.Forms.DataGridView();
+            this.dGridAllSubject = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cBoxSession = new System.Windows.Forms.ComboBox();
@@ -40,15 +39,16 @@
             this.cBoxSubject = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cBoxClass = new System.Windows.Forms.ComboBox();
-            this.btnSearch = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
+            this.btnSearch = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGridAllClass)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGridAllSubject)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
@@ -59,7 +59,7 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.btnSave);
-            this.panel2.Controls.Add(this.dGridAllClass);
+            this.panel2.Controls.Add(this.dGridAllSubject);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(163, 269);
@@ -67,28 +67,15 @@
             this.panel2.Size = new System.Drawing.Size(774, 506);
             this.panel2.TabIndex = 14;
             // 
-            // btnSave
+            // dGridAllSubject
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnSave.BtnText = "SAVE CHANGES";
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnSave.Icon = global::SPK.Properties.Resources.icons8_save_64;
-            this.btnSave.Location = new System.Drawing.Point(255, 453);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnSave.Size = new System.Drawing.Size(250, 50);
-            this.btnSave.TabIndex = 16;
-            // 
-            // dGridAllClass
-            // 
-            this.dGridAllClass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.dGridAllClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGridAllClass.Location = new System.Drawing.Point(16, 40);
-            this.dGridAllClass.Name = "dGridAllClass";
-            this.dGridAllClass.RowTemplate.Height = 24;
-            this.dGridAllClass.Size = new System.Drawing.Size(743, 407);
-            this.dGridAllClass.TabIndex = 15;
+            this.dGridAllSubject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dGridAllSubject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGridAllSubject.Location = new System.Drawing.Point(16, 40);
+            this.dGridAllSubject.Name = "dGridAllSubject";
+            this.dGridAllSubject.RowTemplate.Height = 24;
+            this.dGridAllSubject.Size = new System.Drawing.Size(743, 407);
+            this.dGridAllSubject.TabIndex = 15;
             // 
             // label3
             // 
@@ -201,19 +188,6 @@
             this.cBoxClass.Size = new System.Drawing.Size(157, 28);
             this.cBoxClass.TabIndex = 74;
             // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnSearch.BtnText = "SEARCH";
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnSearch.Icon = global::SPK.Properties.Resources.search_3;
-            this.btnSearch.Location = new System.Drawing.Point(776, 48);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnSearch.Size = new System.Drawing.Size(154, 49);
-            this.btnSearch.TabIndex = 15;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -268,6 +242,32 @@
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "SUBJECT MANAGEMENT";
             // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnSave.BtnText = "SAVE CHANGES";
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnSave.Icon = global::SPK.Properties.Resources.icons8_save_64;
+            this.btnSave.Location = new System.Drawing.Point(255, 453);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnSave.Size = new System.Drawing.Size(250, 50);
+            this.btnSave.TabIndex = 16;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnSearch.BtnText = "SEARCH";
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnSearch.Icon = global::SPK.Properties.Resources.search_3;
+            this.btnSearch.Location = new System.Drawing.Point(776, 48);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnSearch.Size = new System.Drawing.Size(154, 49);
+            this.btnSearch.TabIndex = 15;
+            // 
             // picSchoolLogo
             // 
             this.picSchoolLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
@@ -281,8 +281,7 @@
             // 
             // RegisterSubject
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
@@ -291,7 +290,7 @@
             this.Size = new System.Drawing.Size(1100, 780);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGridAllClass)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGridAllSubject)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -304,7 +303,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dGridAllClass;
+        private System.Windows.Forms.DataGridView dGridAllSubject;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
         private Buttons.ButtonWithoutMenu btnSearch;

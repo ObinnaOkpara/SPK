@@ -108,6 +108,12 @@
     <Compile Include="UserControls\SubForms\RegisterSubject.Designer.cs">
       <DependentUpon>RegisterSubject.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\SpecifyJssSubject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\SpecifyJssSubject.Designer.cs">
+      <DependentUpon>SpecifyJssSubject.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\ViewClasses.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\RegisterSubject.resx">
       <DependentUpon>RegisterSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\SpecifyJssSubject.resx">
+      <DependentUpon>SpecifyJssSubject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\ViewClasses.resx">
       <DependentUpon>ViewClasses.cs</DependentUpon>
