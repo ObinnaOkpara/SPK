@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SPK.UserControls.SubForms
 {
-    public partial class Profile : UserControl
+    public partial class SchoolInfo : UserControl
     {
-        public Profile()
+        public SchoolInfo()
         {
             InitializeComponent();
         }

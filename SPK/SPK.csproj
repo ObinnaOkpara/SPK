@@ -102,17 +102,23 @@
     <Compile Include="UserControls\SubForms\NewStudent.Designer.cs">
       <DependentUpon>NewStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\SubForms\Profile.cs">
+    <Compile Include="UserControls\SubForms\SchoolInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\SubForms\Profile.Designer.cs">
-      <DependentUpon>Profile.cs</DependentUpon>
+    <Compile Include="UserControls\SubForms\SchoolInfo.Designer.cs">
+      <DependentUpon>SchoolInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SubForms\RegisterSubject.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\SubForms\RegisterSubject.Designer.cs">
       <DependentUpon>RegisterSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubForms\SaveSchoolStartnEndDate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\SaveSchoolStartnEndDate.Designer.cs">
+      <DependentUpon>SaveSchoolStartnEndDate.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SubForms\SpecifyJssSubject.cs">
       <SubType>UserControl</SubType>
@@ -190,11 +196,14 @@
     <EmbeddedResource Include="UserControls\SubForms\NewStudent.resx">
       <DependentUpon>NewStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\SubForms\Profile.resx">
-      <DependentUpon>Profile.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\SubForms\SchoolInfo.resx">
+      <DependentUpon>SchoolInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\RegisterSubject.resx">
       <DependentUpon>RegisterSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\SaveSchoolStartnEndDate.resx">
+      <DependentUpon>SaveSchoolStartnEndDate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\SpecifyJssSubject.resx">
       <DependentUpon>SpecifyJssSubject.cs</DependentUpon>
