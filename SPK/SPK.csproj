@@ -114,6 +114,12 @@
     <Compile Include="UserControls\SubForms\ViewClasses.Designer.cs">
       <DependentUpon>ViewClasses.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\ViewRegisteredStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ViewRegisteredStudent.Designer.cs">
+      <DependentUpon>ViewRegisteredStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\ViewSubjects.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\ViewClasses.resx">
       <DependentUpon>ViewClasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\ViewRegisteredStudent.resx">
+      <DependentUpon>ViewRegisteredStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\ViewSubjects.resx">
       <DependentUpon>ViewSubjects.cs</DependentUpon>

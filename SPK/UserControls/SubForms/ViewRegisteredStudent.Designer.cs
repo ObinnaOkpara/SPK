@@ -1,6 +1,6 @@
 ﻿namespace SPK.UserControls.SubForms
 {
-    partial class RegisterSubject
+    partial class ViewRegisteredStudent
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
-            this.dGridAllClass = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblSubTitle = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cBoxSession = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -43,63 +43,58 @@
             this.btnSearch = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblSubTitle = new System.Windows.Forms.Label();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.picSchoolLogo = new System.Windows.Forms.PictureBox();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGridAllClass)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dGridAllClass = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGridAllClass)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel2
+            // panel1
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.btnSave);
-            this.panel2.Controls.Add(this.dGridAllClass);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(163, 269);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(774, 506);
-            this.panel2.TabIndex = 14;
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lblSubTitle);
+            this.panel1.Controls.Add(this.lblTitle);
+            this.panel1.Controls.Add(this.picSchoolLogo);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1100, 130);
+            this.panel1.TabIndex = 13;
             // 
-            // btnSave
+            // lblSubTitle
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnSave.BtnText = "SAVE CHANGES";
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnSave.Icon = global::SPK.Properties.Resources.icons8_save_64;
-            this.btnSave.Location = new System.Drawing.Point(255, 453);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnSave.Size = new System.Drawing.Size(250, 50);
-            this.btnSave.TabIndex = 16;
+            this.lblSubTitle.AutoSize = true;
+            this.lblSubTitle.Font = new System.Drawing.Font("Lucida Sans", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubTitle.Location = new System.Drawing.Point(107, 75);
+            this.lblSubTitle.Name = "lblSubTitle";
+            this.lblSubTitle.Size = new System.Drawing.Size(296, 19);
+            this.lblSubTitle.TabIndex = 2;
+            this.lblSubTitle.Text = "View Registered Student Subject";
             // 
-            // dGridAllClass
+            // lblTitle
             // 
-            this.dGridAllClass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.dGridAllClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGridAllClass.Location = new System.Drawing.Point(16, 40);
-            this.dGridAllClass.Name = "dGridAllClass";
-            this.dGridAllClass.RowTemplate.Height = 24;
-            this.dGridAllClass.Size = new System.Drawing.Size(743, 407);
-            this.dGridAllClass.TabIndex = 15;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Lucida Sans", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(149, 38);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(352, 31);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "SUBJECT MANAGEMENT";
             // 
-            // label3
+            // picSchoolLogo
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.label3.Location = new System.Drawing.Point(91, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(602, 23);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Delete students that should not register for this subject";
+            this.picSchoolLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.picSchoolLogo.Image = global::SPK.Properties.Resources.icons8_people_64;
+            this.picSchoolLogo.Location = new System.Drawing.Point(108, 31);
+            this.picSchoolLogo.Name = "picSchoolLogo";
+            this.picSchoolLogo.Size = new System.Drawing.Size(40, 40);
+            this.picSchoolLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSchoolLogo.TabIndex = 0;
+            this.picSchoolLogo.TabStop = false;
             // 
             // panel3
             // 
@@ -116,10 +111,10 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(78, 145);
+            this.panel3.Location = new System.Drawing.Point(78, 138);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(945, 109);
-            this.panel3.TabIndex = 13;
+            this.panel3.TabIndex = 14;
             // 
             // cBoxSession
             // 
@@ -204,7 +199,7 @@
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnSearch.BtnText = "SEARCH";
+            this.btnSearch.BtnText = "SHOW";
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
             this.btnSearch.Icon = global::SPK.Properties.Resources.search_3;
@@ -219,11 +214,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.label2.Location = new System.Drawing.Point(362, 9);
+            this.label2.Location = new System.Drawing.Point(340, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(228, 23);
+            this.label2.Size = new System.Drawing.Size(274, 23);
             this.label2.TabIndex = 14;
-            this.label2.Text = "Subject Registration";
+            this.label2.Text = "View Registered Student";
             // 
             // label1
             // 
@@ -236,50 +231,40 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Class";
             // 
-            // panel1
+            // panel2
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.lblSubTitle);
-            this.panel1.Controls.Add(this.lblTitle);
-            this.panel1.Controls.Add(this.picSchoolLogo);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1100, 130);
-            this.panel1.TabIndex = 12;
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.dGridAllClass);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(163, 257);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(774, 506);
+            this.panel2.TabIndex = 15;
             // 
-            // lblSubTitle
+            // dGridAllClass
             // 
-            this.lblSubTitle.AutoSize = true;
-            this.lblSubTitle.Font = new System.Drawing.Font("Lucida Sans", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubTitle.Location = new System.Drawing.Point(107, 75);
-            this.lblSubTitle.Name = "lblSubTitle";
-            this.lblSubTitle.Size = new System.Drawing.Size(272, 19);
-            this.lblSubTitle.TabIndex = 2;
-            this.lblSubTitle.Text = "Register subjects for students";
+            this.dGridAllClass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dGridAllClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGridAllClass.Location = new System.Drawing.Point(16, 40);
+            this.dGridAllClass.Name = "dGridAllClass";
+            this.dGridAllClass.RowTemplate.Height = 24;
+            this.dGridAllClass.Size = new System.Drawing.Size(743, 448);
+            this.dGridAllClass.TabIndex = 15;
             // 
-            // lblTitle
+            // label3
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Lucida Sans", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(149, 38);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(352, 31);
-            this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "SUBJECT MANAGEMENT";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.label3.Location = new System.Drawing.Point(279, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(215, 23);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Registered student";
             // 
-            // picSchoolLogo
-            // 
-            this.picSchoolLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.picSchoolLogo.Image = global::SPK.Properties.Resources.icons8_people_64;
-            this.picSchoolLogo.Location = new System.Drawing.Point(108, 31);
-            this.picSchoolLogo.Name = "picSchoolLogo";
-            this.picSchoolLogo.Size = new System.Drawing.Size(40, 40);
-            this.picSchoolLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSchoolLogo.TabIndex = 0;
-            this.picSchoolLogo.TabStop = false;
-            // 
-            // RegisterSubject
+            // ViewRegisteredStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -287,33 +272,27 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Name = "RegisterSubject";
+            this.Name = "ViewRegisteredStudent";
             this.Size = new System.Drawing.Size(1100, 780);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGridAllClass)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGridAllClass)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dGridAllClass;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel3;
-        private Buttons.ButtonWithoutMenu btnSearch;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblSubTitle;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox picSchoolLogo;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox cBoxSession;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cBoxTerm;
@@ -321,6 +300,11 @@
         private System.Windows.Forms.ComboBox cBoxSubject;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cBoxClass;
-        private Buttons.ButtonWithoutMenu btnSave;
+        private Buttons.ButtonWithoutMenu btnSearch;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView dGridAllClass;
+        private System.Windows.Forms.Label label3;
     }
 }
