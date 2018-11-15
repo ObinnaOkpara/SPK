@@ -36,10 +36,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.picSchoolLogo = new System.Windows.Forms.PictureBox();
-            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.cBoxSubject = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
+            this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridSubjecs)).BeginInit();
             this.panel3.SuspendLayout();
@@ -137,30 +137,6 @@
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "SUBJECT MANAGEMENT";
             // 
-            // picSchoolLogo
-            // 
-            this.picSchoolLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.picSchoolLogo.Image = global::SPK.Properties.Resources.icons8_people_64;
-            this.picSchoolLogo.Location = new System.Drawing.Point(108, 31);
-            this.picSchoolLogo.Name = "picSchoolLogo";
-            this.picSchoolLogo.Size = new System.Drawing.Size(40, 40);
-            this.picSchoolLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSchoolLogo.TabIndex = 0;
-            this.picSchoolLogo.TabStop = false;
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnSave.BtnText = "SAVE";
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnSave.Icon = global::SPK.Properties.Resources.icons8_save_64;
-            this.btnSave.Location = new System.Drawing.Point(647, 47);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnSave.Size = new System.Drawing.Size(158, 50);
-            this.btnSave.TabIndex = 80;
-            // 
             // cBoxSubject
             // 
             this.cBoxSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -182,6 +158,30 @@
             this.label4.Size = new System.Drawing.Size(79, 20);
             this.label4.TabIndex = 78;
             this.label4.Text = "Subject";
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnSave.BtnText = "SAVE";
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnSave.Icon = global::SPK.Properties.Resources.icons8_save_64;
+            this.btnSave.Location = new System.Drawing.Point(647, 47);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnSave.Size = new System.Drawing.Size(158, 50);
+            this.btnSave.TabIndex = 80;
+            // 
+            // picSchoolLogo
+            // 
+            this.picSchoolLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.picSchoolLogo.Image = global::SPK.Properties.Resources.icons8_file_64;
+            this.picSchoolLogo.Location = new System.Drawing.Point(108, 31);
+            this.picSchoolLogo.Name = "picSchoolLogo";
+            this.picSchoolLogo.Size = new System.Drawing.Size(40, 40);
+            this.picSchoolLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSchoolLogo.TabIndex = 0;
+            this.picSchoolLogo.TabStop = false;
             // 
             // SpecifyJssSubject
             // 

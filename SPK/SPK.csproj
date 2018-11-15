@@ -114,6 +114,12 @@
     <Compile Include="UserControls\SubForms\SpecifyJssSubject.Designer.cs">
       <DependentUpon>SpecifyJssSubject.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\SpecifySssSubject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\SpecifySssSubject.Designer.cs">
+      <DependentUpon>SpecifySssSubject.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\ViewClasses.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\SpecifyJssSubject.resx">
       <DependentUpon>SpecifyJssSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\SpecifySssSubject.resx">
+      <DependentUpon>SpecifySssSubject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\ViewClasses.resx">
       <DependentUpon>ViewClasses.cs</DependentUpon>
