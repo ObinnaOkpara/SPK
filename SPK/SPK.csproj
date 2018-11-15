@@ -84,6 +84,12 @@
     <Compile Include="UserControls\SubForms\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\EnterStudentResult.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\EnterStudentResult.Designer.cs">
+      <DependentUpon>EnterStudentResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\NewClass.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\EnterStudentResult.resx">
+      <DependentUpon>EnterStudentResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\NewClass.resx">
       <DependentUpon>NewClass.cs</DependentUpon>
