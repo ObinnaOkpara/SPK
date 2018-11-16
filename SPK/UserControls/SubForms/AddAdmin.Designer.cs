@@ -104,7 +104,7 @@
             // picSchoolLogo
             // 
             this.picSchoolLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.picSchoolLogo.Image = global::SPK.Properties.Resources.icons8_people_64;
+            this.picSchoolLogo.Image = global::SPK.Properties.Resources.Icons8_flat_businessman_svg;
             this.picSchoolLogo.Location = new System.Drawing.Point(108, 31);
             this.picSchoolLogo.Name = "picSchoolLogo";
             this.picSchoolLogo.Size = new System.Drawing.Size(40, 40);

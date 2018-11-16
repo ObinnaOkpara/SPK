@@ -156,6 +156,12 @@
     <Compile Include="UserControls\SubForms\SpecifySubjectNumber.Designer.cs">
       <DependentUpon>SpecifySubjectNumber.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\ViewAdmins.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ViewAdmins.Designer.cs">
+      <DependentUpon>ViewAdmins.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\ViewAllResult.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -246,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\SpecifySubjectNumber.resx">
       <DependentUpon>SpecifySubjectNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\ViewAdmins.resx">
+      <DependentUpon>ViewAdmins.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\ViewAllResult.resx">
       <DependentUpon>ViewAllResult.cs</DependentUpon>
