@@ -102,6 +102,12 @@
     <Compile Include="UserControls\SubForms\NewStudent.Designer.cs">
       <DependentUpon>NewStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\PublishUploadedResult.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\PublishUploadedResult.Designer.cs">
+      <DependentUpon>PublishUploadedResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\SchoolInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -195,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\NewStudent.resx">
       <DependentUpon>NewStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\PublishUploadedResult.resx">
+      <DependentUpon>PublishUploadedResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\SchoolInfo.resx">
       <DependentUpon>SchoolInfo.cs</DependentUpon>
@@ -331,6 +340,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-cancel-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-news-64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
