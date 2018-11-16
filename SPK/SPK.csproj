@@ -78,6 +78,12 @@
     <Compile Include="UserControls\SubForms\AddAdmin.Designer.cs">
       <DependentUpon>AddAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\AddPrincipal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\AddPrincipal.Designer.cs">
+      <DependentUpon>AddPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\AddSubject.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -162,6 +168,12 @@
     <Compile Include="UserControls\SubForms\ViewAdmins.Designer.cs">
       <DependentUpon>ViewAdmins.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\ViewAllPrincipal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ViewAllPrincipal.Designer.cs">
+      <DependentUpon>ViewAllPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\ViewAllResult.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -214,6 +226,9 @@
     <EmbeddedResource Include="UserControls\SubForms\AddAdmin.resx">
       <DependentUpon>AddAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\AddPrincipal.resx">
+      <DependentUpon>AddPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\AddSubject.resx">
       <DependentUpon>AddSubject.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\ViewAdmins.resx">
       <DependentUpon>ViewAdmins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\ViewAllPrincipal.resx">
+      <DependentUpon>ViewAllPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\ViewAllResult.resx">
       <DependentUpon>ViewAllResult.cs</DependentUpon>
