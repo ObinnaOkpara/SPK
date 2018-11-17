@@ -24,9 +24,9 @@ namespace SPK.UserControls.SubForms
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            if (ValidateTextboxes.Check(_txtPassword.Text, _txtConfirmPassword.Text, Controls, errorProvider1))
+            if (ValidateFomControls.CheckTextboxes(this, errorProvider1) 
+                && ValidateFomControls.CheckPassword(_txtPassword.Text, _txtConfirmPassword.Text))
             {
-
                 var principal = CreatePrincipal();
 
                 if (principal != null)
@@ -34,6 +34,7 @@ namespace SPK.UserControls.SubForms
                     _unitOfWork = new UnitOfWork(new Model1());
                     _unitOfWork.PrincipalRepository.Add(principal);
                     await _unitOfWork.Save();
+                    _unitOfWork.Dispose();
                     MessageBox.Show("Admin added");
                 }
                 else
@@ -42,6 +43,7 @@ namespace SPK.UserControls.SubForms
                 }
             }
         }
+
         private principal CreatePrincipal()
         {
             var pr = new principal()
