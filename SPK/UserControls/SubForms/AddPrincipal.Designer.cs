@@ -154,9 +154,9 @@
             this.panel3.Controls.Add(this.txtSurname);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(-6, 3);
+            this.panel3.Location = new System.Drawing.Point(8, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(780, 536);
+            this.panel3.Size = new System.Drawing.Size(760, 536);
             this.panel3.TabIndex = 4;
             // 
             // txtUsername

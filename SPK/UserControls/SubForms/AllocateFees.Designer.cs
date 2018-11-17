@@ -168,16 +168,18 @@
             this.panel2.Controls.Add(this.dGridStudents);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(7, 218);
+            this.panel2.Location = new System.Drawing.Point(5, 218);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(789, 359);
+            this.panel2.Size = new System.Drawing.Size(791, 359);
             this.panel2.TabIndex = 25;
             // 
             // dGridStudents
             // 
-            this.dGridStudents.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dGridStudents.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dGridStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGridStudents.Location = new System.Drawing.Point(6, 30);
+            this.dGridStudents.Location = new System.Drawing.Point(5, 30);
             this.dGridStudents.Name = "dGridStudents";
             this.dGridStudents.RowTemplate.Height = 24;
             this.dGridStudents.Size = new System.Drawing.Size(780, 326);
