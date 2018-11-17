@@ -126,6 +126,12 @@
     <Compile Include="UserControls\SubForms\AddAdmin.Designer.cs">
       <DependentUpon>AddAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\AddNewSession.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\AddNewSession.Designer.cs">
+      <DependentUpon>AddNewSession.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\AddPrincipal.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -302,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\AddAdmin.resx">
       <DependentUpon>AddAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\AddNewSession.resx">
+      <DependentUpon>AddNewSession.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\AddPrincipal.resx">
       <DependentUpon>AddPrincipal.cs</DependentUpon>
