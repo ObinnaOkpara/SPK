@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDeleteAll = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.dGridStudents = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -36,6 +37,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnSearch = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.cBoxSession = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cBoxTerm = new System.Windows.Forms.ComboBox();
@@ -43,8 +45,6 @@
             this.cBoxClass = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnSearch = new SPK.UserControls.Buttons.ButtonWithoutMenu();
-            this.btnDeleteAll = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridStudents)).BeginInit();
             this.panel1.SuspendLayout();
@@ -60,19 +60,32 @@
             this.panel2.Controls.Add(this.dGridStudents);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(73, 247);
+            this.panel2.Location = new System.Drawing.Point(6, 199);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(952, 527);
+            this.panel2.Size = new System.Drawing.Size(791, 378);
             this.panel2.TabIndex = 21;
+            // 
+            // btnDeleteAll
+            // 
+            this.btnDeleteAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnDeleteAll.BtnText = "Delete All";
+            this.btnDeleteAll.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteAll.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnDeleteAll.Icon = global::SPK.Properties.Resources.icons8_cancel_64;
+            this.btnDeleteAll.Location = new System.Drawing.Point(380, 476);
+            this.btnDeleteAll.Name = "btnDeleteAll";
+            this.btnDeleteAll.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnDeleteAll.Size = new System.Drawing.Size(193, 46);
+            this.btnDeleteAll.TabIndex = 82;
             // 
             // dGridStudents
             // 
             this.dGridStudents.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dGridStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGridStudents.Location = new System.Drawing.Point(5, 35);
+            this.dGridStudents.Location = new System.Drawing.Point(3, 28);
             this.dGridStudents.Name = "dGridStudents";
             this.dGridStudents.RowTemplate.Height = 24;
-            this.dGridStudents.Size = new System.Drawing.Size(942, 437);
+            this.dGridStudents.Size = new System.Drawing.Size(785, 347);
             this.dGridStudents.TabIndex = 15;
             // 
             // label3
@@ -80,9 +93,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.label3.Location = new System.Drawing.Point(384, 7);
+            this.label3.Location = new System.Drawing.Point(307, 7);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(164, 23);
+            this.label3.Size = new System.Drawing.Size(137, 18);
             this.label3.TabIndex = 14;
             this.label3.Text = "SCORE SHEET";
             // 
@@ -95,16 +108,16 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1100, 130);
+            this.panel1.Size = new System.Drawing.Size(800, 100);
             this.panel1.TabIndex = 19;
             // 
             // lblSubTitle
             // 
             this.lblSubTitle.AutoSize = true;
             this.lblSubTitle.Font = new System.Drawing.Font("Lucida Sans", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubTitle.Location = new System.Drawing.Point(107, 75);
+            this.lblSubTitle.Location = new System.Drawing.Point(31, 57);
             this.lblSubTitle.Name = "lblSubTitle";
-            this.lblSubTitle.Size = new System.Drawing.Size(205, 19);
+            this.lblSubTitle.Size = new System.Drawing.Size(167, 16);
             this.lblSubTitle.TabIndex = 2;
             this.lblSubTitle.Text = "View Published Result";
             // 
@@ -112,9 +125,9 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Lucida Sans", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(149, 38);
+            this.lblTitle.Location = new System.Drawing.Point(73, 20);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(339, 31);
+            this.lblTitle.Size = new System.Drawing.Size(269, 25);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "RESULT MANAGEMENT";
             // 
@@ -122,7 +135,7 @@
             // 
             this.picSchoolLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.picSchoolLogo.Image = global::SPK.Properties.Resources.icons8_file_64;
-            this.picSchoolLogo.Location = new System.Drawing.Point(108, 31);
+            this.picSchoolLogo.Location = new System.Drawing.Point(32, 13);
             this.picSchoolLogo.Name = "picSchoolLogo";
             this.picSchoolLogo.Size = new System.Drawing.Size(40, 40);
             this.picSchoolLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -142,10 +155,23 @@
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(74, 135);
+            this.panel3.Location = new System.Drawing.Point(6, 106);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(952, 106);
+            this.panel3.Size = new System.Drawing.Size(791, 87);
             this.panel3.TabIndex = 23;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnSearch.BtnText = "SHOW";
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnSearch.Icon = global::SPK.Properties.Resources.search_3;
+            this.btnSearch.Location = new System.Drawing.Point(622, 28);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnSearch.Size = new System.Drawing.Size(154, 47);
+            this.btnSearch.TabIndex = 88;
             // 
             // cBoxSession
             // 
@@ -153,9 +179,9 @@
             this.cBoxSession.FormattingEnabled = true;
             this.cBoxSession.Items.AddRange(new object[] {
             "--Select--"});
-            this.cBoxSession.Location = new System.Drawing.Point(517, 61);
+            this.cBoxSession.Location = new System.Drawing.Point(423, 51);
             this.cBoxSession.Name = "cBoxSession";
-            this.cBoxSession.Size = new System.Drawing.Size(214, 28);
+            this.cBoxSession.Size = new System.Drawing.Size(180, 24);
             this.cBoxSession.TabIndex = 87;
             // 
             // label6
@@ -163,9 +189,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label6.Location = new System.Drawing.Point(513, 38);
+            this.label6.Location = new System.Drawing.Point(419, 28);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 20);
+            this.label6.Size = new System.Drawing.Size(68, 16);
             this.label6.TabIndex = 86;
             this.label6.Text = "Session";
             // 
@@ -178,9 +204,9 @@
             "First Term",
             "Second Term",
             "Third Term"});
-            this.cBoxTerm.Location = new System.Drawing.Point(278, 61);
+            this.cBoxTerm.Location = new System.Drawing.Point(221, 51);
             this.cBoxTerm.Name = "cBoxTerm";
-            this.cBoxTerm.Size = new System.Drawing.Size(212, 28);
+            this.cBoxTerm.Size = new System.Drawing.Size(179, 24);
             this.cBoxTerm.TabIndex = 85;
             // 
             // label5
@@ -188,9 +214,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label5.Location = new System.Drawing.Point(274, 38);
+            this.label5.Location = new System.Drawing.Point(217, 28);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 20);
+            this.label5.Size = new System.Drawing.Size(47, 16);
             this.label5.TabIndex = 84;
             this.label5.Text = "Term";
             // 
@@ -200,9 +226,9 @@
             this.cBoxClass.FormattingEnabled = true;
             this.cBoxClass.Items.AddRange(new object[] {
             "--Select--"});
-            this.cBoxClass.Location = new System.Drawing.Point(43, 61);
+            this.cBoxClass.Location = new System.Drawing.Point(16, 51);
             this.cBoxClass.Name = "cBoxClass";
-            this.cBoxClass.Size = new System.Drawing.Size(206, 28);
+            this.cBoxClass.Size = new System.Drawing.Size(185, 24);
             this.cBoxClass.TabIndex = 83;
             // 
             // label1
@@ -210,9 +236,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label1.Location = new System.Drawing.Point(39, 38);
+            this.label1.Location = new System.Drawing.Point(12, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 20);
+            this.label1.Size = new System.Drawing.Size(51, 16);
             this.label1.TabIndex = 81;
             this.label1.Text = "Class";
             // 
@@ -221,37 +247,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.label2.Location = new System.Drawing.Point(331, 9);
+            this.label2.Location = new System.Drawing.Point(286, 4);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(257, 23);
+            this.label2.Size = new System.Drawing.Size(214, 18);
             this.label2.TabIndex = 14;
             this.label2.Text = "View Published Results";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnSearch.BtnText = "SHOW";
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnSearch.Icon = global::SPK.Properties.Resources.search_3;
-            this.btnSearch.Location = new System.Drawing.Point(769, 47);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnSearch.Size = new System.Drawing.Size(154, 49);
-            this.btnSearch.TabIndex = 88;
-            // 
-            // btnDeleteAll
-            // 
-            this.btnDeleteAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnDeleteAll.BtnText = "Delete All";
-            this.btnDeleteAll.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteAll.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnDeleteAll.Icon = global::SPK.Properties.Resources.icons8_cancel_64;
-            this.btnDeleteAll.Location = new System.Drawing.Point(380, 476);
-            this.btnDeleteAll.Name = "btnDeleteAll";
-            this.btnDeleteAll.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnDeleteAll.Size = new System.Drawing.Size(193, 46);
-            this.btnDeleteAll.TabIndex = 82;
             // 
             // ViewPublishedResult
             // 
@@ -261,7 +261,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "ViewPublishedResult";
-            this.Size = new System.Drawing.Size(1100, 780);
+            this.Size = new System.Drawing.Size(800, 580);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridStudents)).EndInit();

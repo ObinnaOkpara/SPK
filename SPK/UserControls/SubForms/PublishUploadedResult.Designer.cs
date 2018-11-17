@@ -60,9 +60,9 @@
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(71, 176);
+            this.panel3.Location = new System.Drawing.Point(3, 141);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(952, 123);
+            this.panel3.Size = new System.Drawing.Size(794, 99);
             this.panel3.TabIndex = 22;
             // 
             // cBoxSession
@@ -71,9 +71,9 @@
             this.cBoxSession.FormattingEnabled = true;
             this.cBoxSession.Items.AddRange(new object[] {
             "--Select--"});
-            this.cBoxSession.Location = new System.Drawing.Point(517, 76);
+            this.cBoxSession.Location = new System.Drawing.Point(417, 54);
             this.cBoxSession.Name = "cBoxSession";
-            this.cBoxSession.Size = new System.Drawing.Size(214, 28);
+            this.cBoxSession.Size = new System.Drawing.Size(194, 24);
             this.cBoxSession.TabIndex = 87;
             // 
             // label6
@@ -81,9 +81,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label6.Location = new System.Drawing.Point(513, 53);
+            this.label6.Location = new System.Drawing.Point(413, 31);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 20);
+            this.label6.Size = new System.Drawing.Size(68, 16);
             this.label6.TabIndex = 86;
             this.label6.Text = "Session";
             // 
@@ -96,9 +96,9 @@
             "First Term",
             "Second Term",
             "Third Term"});
-            this.cBoxTerm.Location = new System.Drawing.Point(278, 76);
+            this.cBoxTerm.Location = new System.Drawing.Point(204, 54);
             this.cBoxTerm.Name = "cBoxTerm";
-            this.cBoxTerm.Size = new System.Drawing.Size(212, 28);
+            this.cBoxTerm.Size = new System.Drawing.Size(199, 24);
             this.cBoxTerm.TabIndex = 85;
             // 
             // label5
@@ -106,9 +106,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label5.Location = new System.Drawing.Point(274, 53);
+            this.label5.Location = new System.Drawing.Point(200, 31);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 20);
+            this.label5.Size = new System.Drawing.Size(47, 16);
             this.label5.TabIndex = 84;
             this.label5.Text = "Term";
             // 
@@ -118,9 +118,9 @@
             this.cBoxClass.FormattingEnabled = true;
             this.cBoxClass.Items.AddRange(new object[] {
             "--Select--"});
-            this.cBoxClass.Location = new System.Drawing.Point(43, 76);
+            this.cBoxClass.Location = new System.Drawing.Point(7, 54);
             this.cBoxClass.Name = "cBoxClass";
-            this.cBoxClass.Size = new System.Drawing.Size(206, 28);
+            this.cBoxClass.Size = new System.Drawing.Size(181, 24);
             this.cBoxClass.TabIndex = 83;
             // 
             // btnPublish
@@ -130,10 +130,10 @@
             this.btnPublish.ForeColor = System.Drawing.Color.White;
             this.btnPublish.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
             this.btnPublish.Icon = global::SPK.Properties.Resources.icons8_news_64;
-            this.btnPublish.Location = new System.Drawing.Point(759, 56);
+            this.btnPublish.Location = new System.Drawing.Point(625, 31);
             this.btnPublish.Name = "btnPublish";
             this.btnPublish.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnPublish.Size = new System.Drawing.Size(163, 49);
+            this.btnPublish.Size = new System.Drawing.Size(163, 47);
             this.btnPublish.TabIndex = 82;
             // 
             // label1
@@ -141,9 +141,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label1.Location = new System.Drawing.Point(39, 53);
+            this.label1.Location = new System.Drawing.Point(3, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 20);
+            this.label1.Size = new System.Drawing.Size(51, 16);
             this.label1.TabIndex = 81;
             this.label1.Text = "Class";
             // 
@@ -152,9 +152,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.label2.Location = new System.Drawing.Point(331, 9);
+            this.label2.Location = new System.Drawing.Point(268, 4);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(282, 23);
+            this.label2.Size = new System.Drawing.Size(234, 18);
             this.label2.TabIndex = 14;
             this.label2.Text = "Publish Uploaded Results";
             // 
@@ -167,16 +167,16 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1100, 130);
+            this.panel1.Size = new System.Drawing.Size(800, 100);
             this.panel1.TabIndex = 21;
             // 
             // lblSubTitle
             // 
             this.lblSubTitle.AutoSize = true;
             this.lblSubTitle.Font = new System.Drawing.Font("Lucida Sans", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubTitle.Location = new System.Drawing.Point(107, 75);
+            this.lblSubTitle.Location = new System.Drawing.Point(36, 60);
             this.lblSubTitle.Name = "lblSubTitle";
-            this.lblSubTitle.Size = new System.Drawing.Size(234, 19);
+            this.lblSubTitle.Size = new System.Drawing.Size(188, 16);
             this.lblSubTitle.TabIndex = 2;
             this.lblSubTitle.Text = "Publish Uploaded Results";
             // 
@@ -184,9 +184,9 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Lucida Sans", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(149, 38);
+            this.lblTitle.Location = new System.Drawing.Point(78, 23);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(339, 31);
+            this.lblTitle.Size = new System.Drawing.Size(269, 25);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "RESULT MANAGEMENT";
             // 
@@ -194,7 +194,7 @@
             // 
             this.picSchoolLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.picSchoolLogo.Image = global::SPK.Properties.Resources.icons8_file_64;
-            this.picSchoolLogo.Location = new System.Drawing.Point(108, 31);
+            this.picSchoolLogo.Location = new System.Drawing.Point(37, 16);
             this.picSchoolLogo.Name = "picSchoolLogo";
             this.picSchoolLogo.Size = new System.Drawing.Size(40, 40);
             this.picSchoolLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -206,9 +206,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.label3.Location = new System.Drawing.Point(83, 134);
+            this.label3.Location = new System.Drawing.Point(2, 106);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(935, 40);
+            this.label3.Size = new System.Drawing.Size(796, 32);
             this.label3.TabIndex = 23;
             this.label3.Text = "NOTE: Before Publishing The Result of any Class, \r\nMake Sure that All the results" +
     " for each subject for that particular Class have been Uploaded Properly.";
@@ -222,7 +222,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Name = "PublishUploadedResult";
-            this.Size = new System.Drawing.Size(1100, 780);
+            this.Size = new System.Drawing.Size(800, 580);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
