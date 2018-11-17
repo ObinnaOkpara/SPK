@@ -50,16 +50,16 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1100, 130);
+            this.panel1.Size = new System.Drawing.Size(800, 100);
             this.panel1.TabIndex = 7;
             // 
             // lblSubTitle
             // 
             this.lblSubTitle.AutoSize = true;
             this.lblSubTitle.Font = new System.Drawing.Font("Lucida Sans", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubTitle.Location = new System.Drawing.Point(107, 75);
+            this.lblSubTitle.Location = new System.Drawing.Point(48, 64);
             this.lblSubTitle.Name = "lblSubTitle";
-            this.lblSubTitle.Size = new System.Drawing.Size(149, 19);
+            this.lblSubTitle.Size = new System.Drawing.Size(116, 16);
             this.lblSubTitle.TabIndex = 2;
             this.lblSubTitle.Text = "View all admin";
             // 
@@ -67,9 +67,9 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Lucida Sans", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(149, 38);
+            this.lblTitle.Location = new System.Drawing.Point(90, 27);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(331, 31);
+            this.lblTitle.Size = new System.Drawing.Size(260, 25);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "ADMIN MANAGEMENT";
             // 
@@ -77,7 +77,7 @@
             // 
             this.picSchoolLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.picSchoolLogo.Image = global::SPK.Properties.Resources.Icons8_flat_businessman_svg;
-            this.picSchoolLogo.Location = new System.Drawing.Point(108, 31);
+            this.picSchoolLogo.Location = new System.Drawing.Point(49, 20);
             this.picSchoolLogo.Name = "picSchoolLogo";
             this.picSchoolLogo.Size = new System.Drawing.Size(40, 40);
             this.picSchoolLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -86,25 +86,29 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.dGridAdmins);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(77, 176);
+            this.panel2.Location = new System.Drawing.Point(27, 106);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(952, 527);
+            this.panel2.Size = new System.Drawing.Size(747, 458);
             this.panel2.TabIndex = 26;
             // 
             // dGridAdmins
             // 
-            this.dGridAdmins.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dGridAdmins.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dGridAdmins.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.dGridAdmins.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGridAdmins.Location = new System.Drawing.Point(5, 35);
+            this.dGridAdmins.Location = new System.Drawing.Point(15, 35);
             this.dGridAdmins.Name = "dGridAdmins";
             this.dGridAdmins.RowTemplate.Height = 24;
-            this.dGridAdmins.Size = new System.Drawing.Size(942, 480);
+            this.dGridAdmins.Size = new System.Drawing.Size(718, 411);
             this.dGridAdmins.TabIndex = 15;
             // 
             // label3
@@ -112,9 +116,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.label3.Location = new System.Drawing.Point(364, 9);
+            this.label3.Location = new System.Drawing.Point(284, 7);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(183, 23);
+            this.label3.Size = new System.Drawing.Size(153, 18);
             this.label3.TabIndex = 14;
             this.label3.Text = "Admin Accounts";
             // 
@@ -126,7 +130,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "ViewAdmins";
-            this.Size = new System.Drawing.Size(1100, 780);
+            this.Size = new System.Drawing.Size(800, 580);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).EndInit();
