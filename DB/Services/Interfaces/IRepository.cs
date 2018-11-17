@@ -9,7 +9,7 @@ namespace DB.Services.Interfaces
     public interface IRepository<TEntity> where TEntity : class
     {
         IQueryable<TEntity> FindAll();
-        TEntity FindById(int id);
+        Task<TEntity> FindById(int id);
 
         void Add(TEntity tEntity);
         void AddRange(IEnumerable<TEntity> tEntity);

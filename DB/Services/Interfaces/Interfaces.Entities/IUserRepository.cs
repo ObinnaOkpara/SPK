@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace DB.Services.Interfaces.Interfaces.Entities
 {
-    public interface ITeacherRepository : IRepository<teacher>
+    public interface IUserRepository : IRepository<user>
     {
-        IQueryable<teacher> GetTeacherByName(string name);
-        Task<teacher> LoginTeacher(string email, string password);
+        Task<user> LoginAdmin(string email, string password);
     }
 }

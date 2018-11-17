@@ -1,4 +1,5 @@
-﻿using DB.Services.Interfaces;
+﻿using DB.Services.DataRepository.DataRepository.Entities;
+using DB.Services.Interfaces;
 using DB.Services.Interfaces.Interfaces.Entities;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,9 @@ namespace DB.Services.DataRepository
         {
             _dbContext = dbContext;
             StudentRepository = new StudentRepository(_dbContext);
+            TeacherRepository = new TeacherRepository(_dbContext);
+            PrincipalRepository = new PrincipalRepository(_dbContext);
+            UserRepository = new UserRepository(_dbContext);
             //add other repositories here
         }
 
@@ -24,14 +28,32 @@ namespace DB.Services.DataRepository
         {
             get;
         }
+
+        public ITeacherRepository TeacherRepository
+        {
+            get;
+        }
+
+        public IPrincipalRepository PrincipalRepository
+        {
+            get;
+        }
+
+        public IUserRepository UserRepository
+        {
+            get;
+        }
+
+      
+
         public void Dispose()
         {
             _dbContext.Dispose();
         }
 
-        public int Save()
+        public Task<int> Save()
         {
-            return _dbContext.SaveChanges();
+            return _dbContext.SaveChangesAsync();
         }
     }
 

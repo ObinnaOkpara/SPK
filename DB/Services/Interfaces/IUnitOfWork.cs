@@ -10,9 +10,11 @@ namespace DB.Services.Interfaces
     public interface IUnitOfWork : IDisposable
     {
         IStudentRepository StudentRepository { get; }
-
+        ITeacherRepository TeacherRepository { get; }
+        IPrincipalRepository PrincipalRepository { get; }
+        IUserRepository UserRepository { get; }
         //add other repos here
-        int Save();
+        Task<int> Save();
     }
 
 }

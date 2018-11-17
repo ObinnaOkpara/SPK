@@ -30,9 +30,9 @@ namespace DB.Services.DataRepository
             return _dbContext.Set<TEntity>();
         }
 
-        public TEntity FindById(int id)
+        public Task<TEntity> FindById(int id)
         {
-            return _dbContext.Set<TEntity>().Find(id);
+            return _dbContext.Set<TEntity>().FindAsync(id);
         }
 
         public void Remove(TEntity tEntity)
