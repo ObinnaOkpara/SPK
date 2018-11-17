@@ -56,7 +56,7 @@
             this.saveSchoolInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewSchoolInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panContainer = new System.Windows.Forms.Panel();
-            this.dashboard1 = new SPK.UserControls.SubForms.Dashboard();
+            this.addSubject1 = new SPK.UserControls.SubForms.AddSubject();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
@@ -455,23 +455,22 @@
             this.panContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panContainer.Controls.Add(this.dashboard1);
+            this.panContainer.Controls.Add(this.addSubject1);
             this.panContainer.Location = new System.Drawing.Point(237, 53);
             this.panContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panContainer.Name = "panContainer";
             this.panContainer.Size = new System.Drawing.Size(800, 580);
             this.panContainer.TabIndex = 20;
             // 
-            // dashboard1
+            // addSubject1
             // 
-            this.dashboard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.dashboard1.Location = new System.Drawing.Point(3, 5);
-            this.dashboard1.Name = "dashboard1";
-            this.dashboard1.ProfilePic = global::SPK.Properties.Resources.command;
-            this.dashboard1.School = "SCHOOL NAME";
-            this.dashboard1.Session = "Third Term - 2017/2018 Session";
-            this.dashboard1.Size = new System.Drawing.Size(800, 580);
-            this.dashboard1.TabIndex = 0;
+            this.addSubject1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.addSubject1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addSubject1.Location = new System.Drawing.Point(0, 0);
+            this.addSubject1.Margin = new System.Windows.Forms.Padding(2);
+            this.addSubject1.Name = "addSubject1";
+            this.addSubject1.Size = new System.Drawing.Size(800, 580);
+            this.addSubject1.TabIndex = 0;
             // 
             // frmMain
             // 
@@ -528,7 +527,7 @@
         private UserControls.Buttons.ButtonWithMenu buttonWithMenu9;
         private UserControls.Buttons.ButtonWithMenu buttonWithMenu8;
         private System.Windows.Forms.Panel panContainer;
-        private UserControls.SubForms.Dashboard dashboard1;
+        private UserControls.SubForms.AddSubject addSubject1;
     }
 }
 
