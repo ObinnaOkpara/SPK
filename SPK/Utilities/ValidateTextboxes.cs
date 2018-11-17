@@ -10,22 +10,21 @@ namespace SPK.Utilities
 {
     public static class ValidateTextboxes
     {
-       public static bool Check(string first_password, string second_password, ControlCollection control, ErrorProvider ep)
+        public static bool Check(string first_password, string second_password, ControlCollection control, ErrorProvider ep)
         {
-            if (string.Equals(first_password, second_password))
-            {
-                var txtboxes = control.OfType<TextBox>().Where(box => box.Name.StartsWith("_"));
+            var txtboxes = control.OfType<TextBox>().Where(box => box.Name.StartsWith("_"));
 
-                foreach (var tbox in txtboxes)
+            foreach (var tbox in txtboxes)
+            {
+                if (string.IsNullOrWhiteSpace(tbox.Text))
                 {
-                    if (string.IsNullOrWhiteSpace(tbox.Text))
-                    {
-                        ep.SetError(tbox, "Please fill the required field");
-                        return false;
-                    }
+                    ep.SetError(tbox, "Please fill the required field");
+                    return false;
                 }
             }
-            else
+
+            //confirm password
+            if (!string.Equals(first_password, second_password))
             {
                 MessageBox.Show("Password not the same");
                 return false;
@@ -33,6 +32,6 @@ namespace SPK.Utilities
 
             return true;
         }
-        
+
     }
 }
