@@ -150,6 +150,12 @@
     <Compile Include="UserControls\SubForms\AllocateFees.Designer.cs">
       <DependentUpon>AllocateFees.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\CurrentTermNSession.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\CurrentTermNSession.Designer.cs">
+      <DependentUpon>CurrentTermNSession.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -215,6 +221,12 @@
     </Compile>
     <Compile Include="UserControls\SubForms\SpecifySubjectNumber.Designer.cs">
       <DependentUpon>SpecifySubjectNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubForms\TeacherEmploymentStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\TeacherEmploymentStatus.Designer.cs">
+      <DependentUpon>TeacherEmploymentStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SubForms\TeachertoClass.cs">
       <SubType>UserControl</SubType>
@@ -303,6 +315,9 @@
     <EmbeddedResource Include="UserControls\SubForms\AllocateFees.resx">
       <DependentUpon>AllocateFees.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\CurrentTermNSession.resx">
+      <DependentUpon>CurrentTermNSession.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -335,6 +350,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\SpecifySubjectNumber.resx">
       <DependentUpon>SpecifySubjectNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\TeacherEmploymentStatus.resx">
+      <DependentUpon>TeacherEmploymentStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\TeachertoClass.resx">
       <DependentUpon>TeachertoClass.cs</DependentUpon>
