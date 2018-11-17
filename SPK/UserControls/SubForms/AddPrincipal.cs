@@ -24,7 +24,7 @@ namespace SPK.UserControls.SubForms
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            if (ValidateTextboxes.Check(txtPassword.Text, txtConfirmPassword.Text, Controls, errorProvider1))
+            if (ValidateTextboxes.Check(_txtPassword.Text, _txtConfirmPassword.Text, Controls, errorProvider1))
             {
 
                 var principal = CreatePrincipal();
@@ -47,18 +47,18 @@ namespace SPK.UserControls.SubForms
             var pr = new principal()
             {
                 date_registered = DateTime.Today.ToString("d"),
-                email = txtEmail.Text,
-                firstname = txtFirstname.Text,
+                email = _txtEmail.Text,
+                firstname = _txtFirstname.Text,
                 lastname = txtOthernames.Text,
-                next_of_kin = txtFatherName.Text,
-                next_of_kin_phone = txtFatherPhone.Text,
-                next_of_kin_relationship = txtSponsorRelationship.Text,
-                password = txtPassword.Text,
-                phone = txtPhone.Text,
-                position = textBox1.Text,
+                next_of_kin = _txtFatherName.Text,
+                next_of_kin_phone = _txtFatherPhone.Text,
+                next_of_kin_relationship = _txtSponsorRelationship.Text,
+                password = _txtPassword.Text,
+                phone = _txtPhone.Text,
+                position = _textBox1.Text,
                 sex = cBoxSex.Text,
                 time_registered = DateTime.Now,
-                username = txtUsername.Text
+                username = _txtUsername.Text
             };
             return pr;
         }

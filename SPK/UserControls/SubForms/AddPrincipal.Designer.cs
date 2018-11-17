@@ -35,33 +35,33 @@
             this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtUsername = new System.Windows.Forms.TextBox();
+            this._txtUsername = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtSponsorRelationship = new System.Windows.Forms.TextBox();
+            this._txtSponsorRelationship = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.txtFatherPhone = new System.Windows.Forms.TextBox();
+            this._txtFatherPhone = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.txtFatherName = new System.Windows.Forms.TextBox();
+            this._txtFatherName = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.cBoxSex = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this._textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
+            this._txtEmail = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
+            this._txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
+            this._txtPassword = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.txtPhone = new System.Windows.Forms.TextBox();
+            this._txtPhone = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtOthernames = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtFirstname = new System.Windows.Forms.TextBox();
+            this._txtFirstname = new System.Windows.Forms.TextBox();
             this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtSurname = new System.Windows.Forms.TextBox();
+            this._txtSurname = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
@@ -128,48 +128,48 @@
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.txtUsername);
+            this.panel3.Controls.Add(this._txtUsername);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.txtSponsorRelationship);
+            this.panel3.Controls.Add(this._txtSponsorRelationship);
             this.panel3.Controls.Add(this.label25);
-            this.panel3.Controls.Add(this.txtFatherPhone);
+            this.panel3.Controls.Add(this._txtFatherPhone);
             this.panel3.Controls.Add(this.label18);
-            this.panel3.Controls.Add(this.txtFatherName);
+            this.panel3.Controls.Add(this._txtFatherName);
             this.panel3.Controls.Add(this.label20);
             this.panel3.Controls.Add(this.cBoxSex);
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this._textBox1);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.txtEmail);
+            this.panel3.Controls.Add(this._txtEmail);
             this.panel3.Controls.Add(this.label24);
-            this.panel3.Controls.Add(this.txtConfirmPassword);
+            this.panel3.Controls.Add(this._txtConfirmPassword);
             this.panel3.Controls.Add(this.label16);
-            this.panel3.Controls.Add(this.txtPassword);
+            this.panel3.Controls.Add(this._txtPassword);
             this.panel3.Controls.Add(this.label17);
-            this.panel3.Controls.Add(this.txtPhone);
+            this.panel3.Controls.Add(this._txtPhone);
             this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.txtOthernames);
             this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.txtFirstname);
+            this.panel3.Controls.Add(this._txtFirstname);
             this.panel3.Controls.Add(this.btnSave);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.txtSurname);
+            this.panel3.Controls.Add(this._txtSurname);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(-15, 3);
+            this.panel3.Location = new System.Drawing.Point(-24, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(780, 536);
             this.panel3.TabIndex = 4;
             // 
-            // txtUsername
+            // _txtUsername
             // 
-            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.txtUsername.Location = new System.Drawing.Point(13, 374);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(255, 23);
-            this.txtUsername.TabIndex = 85;
+            this._txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this._txtUsername.Location = new System.Drawing.Point(13, 374);
+            this._txtUsername.Name = "_txtUsername";
+            this._txtUsername.Size = new System.Drawing.Size(255, 23);
+            this._txtUsername.TabIndex = 85;
             // 
             // label5
             // 
@@ -182,14 +182,14 @@
             this.label5.TabIndex = 84;
             this.label5.Text = "Username";
             // 
-            // txtSponsorRelationship
+            // _txtSponsorRelationship
             // 
-            this.txtSponsorRelationship.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSponsorRelationship.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.txtSponsorRelationship.Location = new System.Drawing.Point(269, 281);
-            this.txtSponsorRelationship.Name = "txtSponsorRelationship";
-            this.txtSponsorRelationship.Size = new System.Drawing.Size(225, 23);
-            this.txtSponsorRelationship.TabIndex = 83;
+            this._txtSponsorRelationship.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._txtSponsorRelationship.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this._txtSponsorRelationship.Location = new System.Drawing.Point(269, 281);
+            this._txtSponsorRelationship.Name = "_txtSponsorRelationship";
+            this._txtSponsorRelationship.Size = new System.Drawing.Size(225, 23);
+            this._txtSponsorRelationship.TabIndex = 83;
             // 
             // label25
             // 
@@ -202,14 +202,14 @@
             this.label25.TabIndex = 82;
             this.label25.Text = "Relationship with NoK";
             // 
-            // txtFatherPhone
+            // _txtFatherPhone
             // 
-            this.txtFatherPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFatherPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.txtFatherPhone.Location = new System.Drawing.Point(532, 281);
-            this.txtFatherPhone.Name = "txtFatherPhone";
-            this.txtFatherPhone.Size = new System.Drawing.Size(225, 23);
-            this.txtFatherPhone.TabIndex = 81;
+            this._txtFatherPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._txtFatherPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this._txtFatherPhone.Location = new System.Drawing.Point(532, 281);
+            this._txtFatherPhone.Name = "_txtFatherPhone";
+            this._txtFatherPhone.Size = new System.Drawing.Size(225, 23);
+            this._txtFatherPhone.TabIndex = 81;
             // 
             // label18
             // 
@@ -222,14 +222,14 @@
             this.label18.TabIndex = 80;
             this.label18.Text = "NoK\'s Phone Number";
             // 
-            // txtFatherName
+            // _txtFatherName
             // 
-            this.txtFatherName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFatherName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.txtFatherName.Location = new System.Drawing.Point(13, 281);
-            this.txtFatherName.Name = "txtFatherName";
-            this.txtFatherName.Size = new System.Drawing.Size(225, 23);
-            this.txtFatherName.TabIndex = 77;
+            this._txtFatherName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._txtFatherName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this._txtFatherName.Location = new System.Drawing.Point(13, 281);
+            this._txtFatherName.Name = "_txtFatherName";
+            this._txtFatherName.Size = new System.Drawing.Size(225, 23);
+            this._txtFatherName.TabIndex = 77;
             // 
             // label20
             // 
@@ -266,14 +266,14 @@
             this.label9.TabIndex = 74;
             this.label9.Text = "Sex";
             // 
-            // textBox1
+            // _textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.textBox1.Location = new System.Drawing.Point(13, 139);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(225, 23);
-            this.textBox1.TabIndex = 60;
+            this._textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this._textBox1.Location = new System.Drawing.Point(13, 139);
+            this._textBox1.Name = "_textBox1";
+            this._textBox1.Size = new System.Drawing.Size(225, 23);
+            this._textBox1.TabIndex = 60;
             // 
             // label4
             // 
@@ -286,14 +286,14 @@
             this.label4.TabIndex = 59;
             this.label4.Text = "Position";
             // 
-            // txtEmail
+            // _txtEmail
             // 
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.txtEmail.Location = new System.Drawing.Point(13, 195);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(481, 23);
-            this.txtEmail.TabIndex = 58;
+            this._txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this._txtEmail.Location = new System.Drawing.Point(13, 195);
+            this._txtEmail.Name = "_txtEmail";
+            this._txtEmail.Size = new System.Drawing.Size(481, 23);
+            this._txtEmail.TabIndex = 58;
             // 
             // label24
             // 
@@ -306,15 +306,15 @@
             this.label24.TabIndex = 57;
             this.label24.Text = "Email";
             // 
-            // txtConfirmPassword
+            // _txtConfirmPassword
             // 
-            this.txtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(393, 435);
-            this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.PasswordChar = '#';
-            this.txtConfirmPassword.Size = new System.Drawing.Size(364, 23);
-            this.txtConfirmPassword.TabIndex = 38;
+            this._txtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._txtConfirmPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this._txtConfirmPassword.Location = new System.Drawing.Point(393, 435);
+            this._txtConfirmPassword.Name = "_txtConfirmPassword";
+            this._txtConfirmPassword.PasswordChar = '#';
+            this._txtConfirmPassword.Size = new System.Drawing.Size(364, 23);
+            this._txtConfirmPassword.TabIndex = 38;
             // 
             // label16
             // 
@@ -327,15 +327,15 @@
             this.label16.TabIndex = 37;
             this.label16.Text = "Confirm Password";
             // 
-            // txtPassword
+            // _txtPassword
             // 
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.txtPassword.Location = new System.Drawing.Point(13, 435);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '#';
-            this.txtPassword.Size = new System.Drawing.Size(350, 23);
-            this.txtPassword.TabIndex = 36;
+            this._txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this._txtPassword.Location = new System.Drawing.Point(13, 435);
+            this._txtPassword.Name = "_txtPassword";
+            this._txtPassword.PasswordChar = '#';
+            this._txtPassword.Size = new System.Drawing.Size(350, 23);
+            this._txtPassword.TabIndex = 36;
             // 
             // label17
             // 
@@ -348,14 +348,14 @@
             this.label17.TabIndex = 35;
             this.label17.Text = "Password";
             // 
-            // txtPhone
+            // _txtPhone
             // 
-            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.txtPhone.Location = new System.Drawing.Point(532, 139);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(225, 23);
-            this.txtPhone.TabIndex = 32;
+            this._txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._txtPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this._txtPhone.Location = new System.Drawing.Point(532, 139);
+            this._txtPhone.Name = "_txtPhone";
+            this._txtPhone.Size = new System.Drawing.Size(225, 23);
+            this._txtPhone.TabIndex = 32;
             // 
             // label13
             // 
@@ -388,14 +388,14 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "Othername(s)";
             // 
-            // txtFirstname
+            // _txtFirstname
             // 
-            this.txtFirstname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFirstname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.txtFirstname.Location = new System.Drawing.Point(269, 67);
-            this.txtFirstname.Name = "txtFirstname";
-            this.txtFirstname.Size = new System.Drawing.Size(225, 23);
-            this.txtFirstname.TabIndex = 14;
+            this._txtFirstname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._txtFirstname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this._txtFirstname.Location = new System.Drawing.Point(269, 67);
+            this._txtFirstname.Name = "_txtFirstname";
+            this._txtFirstname.Size = new System.Drawing.Size(225, 23);
+            this._txtFirstname.TabIndex = 14;
             // 
             // btnSave
             // 
@@ -433,14 +433,14 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Add New Principal";
             // 
-            // txtSurname
+            // _txtSurname
             // 
-            this.txtSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSurname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.txtSurname.Location = new System.Drawing.Point(13, 67);
-            this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(225, 23);
-            this.txtSurname.TabIndex = 1;
+            this._txtSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._txtSurname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this._txtSurname.Location = new System.Drawing.Point(13, 67);
+            this._txtSurname.Name = "_txtSurname";
+            this._txtSurname.Size = new System.Drawing.Size(225, 23);
+            this._txtSurname.TabIndex = 1;
             // 
             // label1
             // 
@@ -484,33 +484,33 @@
         private System.Windows.Forms.PictureBox picSchoolLogo;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox _txtEmail;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox txtConfirmPassword;
+        private System.Windows.Forms.TextBox _txtConfirmPassword;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox _txtPassword;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.TextBox _txtPhone;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtOthernames;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtFirstname;
+        private System.Windows.Forms.TextBox _txtFirstname;
         private Buttons.ButtonWithoutMenu btnSave;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtSurname;
+        private System.Windows.Forms.TextBox _txtSurname;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox _textBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cBoxSex;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtFatherPhone;
+        private System.Windows.Forms.TextBox _txtFatherPhone;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtFatherName;
+        private System.Windows.Forms.TextBox _txtFatherName;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox _txtUsername;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtSponsorRelationship;
+        private System.Windows.Forms.TextBox _txtSponsorRelationship;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.ErrorProvider errorProvider1;
     }

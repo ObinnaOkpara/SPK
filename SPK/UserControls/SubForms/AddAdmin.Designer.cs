@@ -43,7 +43,7 @@
             this.cBoxState = new System.Windows.Forms.ComboBox();
             this._txtEmail = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
+            this._txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this._txtPassword = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -134,7 +134,7 @@
             this.panel3.Controls.Add(this.cBoxState);
             this.panel3.Controls.Add(this._txtEmail);
             this.panel3.Controls.Add(this.label24);
-            this.panel3.Controls.Add(this.txtConfirmPassword);
+            this.panel3.Controls.Add(this._txtConfirmPassword);
             this.panel3.Controls.Add(this.label16);
             this.panel3.Controls.Add(this._txtPassword);
             this.panel3.Controls.Add(this.label17);
@@ -155,7 +155,7 @@
             this.panel3.Controls.Add(this._txtSurname);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(3, 8);
+            this.panel3.Location = new System.Drawing.Point(-5, 8);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(753, 532);
             this.panel3.TabIndex = 4;
@@ -341,15 +341,15 @@
             this.label24.TabIndex = 57;
             this.label24.Text = "Email";
             // 
-            // txtConfirmPassword
+            // _txtConfirmPassword
             // 
-            this.txtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(15, 438);
-            this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.PasswordChar = '#';
-            this.txtConfirmPassword.Size = new System.Drawing.Size(376, 23);
-            this.txtConfirmPassword.TabIndex = 38;
+            this._txtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._txtConfirmPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this._txtConfirmPassword.Location = new System.Drawing.Point(15, 438);
+            this._txtConfirmPassword.Name = "_txtConfirmPassword";
+            this._txtConfirmPassword.PasswordChar = '#';
+            this._txtConfirmPassword.Size = new System.Drawing.Size(376, 23);
+            this._txtConfirmPassword.TabIndex = 38;
             // 
             // label16
             // 
@@ -587,7 +587,7 @@
         private System.Windows.Forms.ComboBox cBoxState;
         private System.Windows.Forms.TextBox _txtEmail;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox txtConfirmPassword;
+        private System.Windows.Forms.TextBox _txtConfirmPassword;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox _txtPassword;
         private System.Windows.Forms.Label label17;
