@@ -56,7 +56,7 @@
             this.saveSchoolInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewSchoolInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panContainer = new System.Windows.Forms.Panel();
-            this.addSubject1 = new SPK.UserControls.SubForms.AddSubject();
+            this.allocateFees1 = new SPK.UserControls.SubForms.AllocateFees();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
@@ -455,22 +455,22 @@
             this.panContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panContainer.Controls.Add(this.addSubject1);
+            this.panContainer.Controls.Add(this.allocateFees1);
             this.panContainer.Location = new System.Drawing.Point(237, 53);
             this.panContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panContainer.Name = "panContainer";
             this.panContainer.Size = new System.Drawing.Size(800, 580);
             this.panContainer.TabIndex = 20;
             // 
-            // addSubject1
+            // allocateFees1
             // 
-            this.addSubject1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.addSubject1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.addSubject1.Location = new System.Drawing.Point(0, 0);
-            this.addSubject1.Margin = new System.Windows.Forms.Padding(2);
-            this.addSubject1.Name = "addSubject1";
-            this.addSubject1.Size = new System.Drawing.Size(800, 580);
-            this.addSubject1.TabIndex = 0;
+            this.allocateFees1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.allocateFees1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.allocateFees1.Location = new System.Drawing.Point(0, 0);
+            this.allocateFees1.Name = "allocateFees1";
+            this.allocateFees1.Size = new System.Drawing.Size(800, 580);
+            this.allocateFees1.TabIndex = 0;
+            this.allocateFees1.Tag = "";
             // 
             // frmMain
             // 
@@ -527,7 +527,7 @@
         private UserControls.Buttons.ButtonWithMenu buttonWithMenu9;
         private UserControls.Buttons.ButtonWithMenu buttonWithMenu8;
         private System.Windows.Forms.Panel panContainer;
-        private UserControls.SubForms.AddSubject addSubject1;
+        private UserControls.SubForms.AllocateFees allocateFees1;
     }
 }
 
