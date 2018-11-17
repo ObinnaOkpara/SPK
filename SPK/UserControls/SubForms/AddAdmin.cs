@@ -98,7 +98,7 @@ namespace SPK.UserControls.SubForms
             }
             else
             {
-                MessageBox.Show("Pssword not the same");
+                MessageBox.Show("Password not the same");
                 return false;
             }
            
