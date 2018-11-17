@@ -20,10 +20,11 @@ namespace DB.Services.DataRepository
             TeacherRepository = new TeacherRepository(_dbContext);
             PrincipalRepository = new PrincipalRepository(_dbContext);
             UserRepository = new UserRepository(_dbContext);
+            School_SubjectsRepository = new School_SubjectsRepository(_dbContext);
             //add other repositories here
         }
 
-        //add other repos here
+        //add other repos interface here
         public IStudentRepository StudentRepository
         {
             get;
@@ -44,7 +45,10 @@ namespace DB.Services.DataRepository
             get;
         }
 
-      
+        public ISchool_SubjectsRepository School_SubjectsRepository
+        {
+            get;
+        }
 
         public void Dispose()
         {
