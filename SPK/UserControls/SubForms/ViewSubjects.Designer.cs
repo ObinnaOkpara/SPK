@@ -111,11 +111,11 @@
             // 
             this.dGridAllClass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dGridAllClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGridAllClass.Location = new System.Drawing.Point(12, 50);
+            this.dGridAllClass.Location = new System.Drawing.Point(12, 44);
             this.dGridAllClass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dGridAllClass.Name = "dGridAllClass";
             this.dGridAllClass.RowTemplate.Height = 24;
-            this.dGridAllClass.Size = new System.Drawing.Size(557, 295);
+            this.dGridAllClass.Size = new System.Drawing.Size(557, 301);
             this.dGridAllClass.TabIndex = 15;
             // 
             // label3
