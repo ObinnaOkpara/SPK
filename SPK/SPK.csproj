@@ -120,12 +120,49 @@
     <Compile Include="UserControls\Panels\ExtendedPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UserControls\SubForms\AddSubject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\AddSubject.Designer.cs">
+      <DependentUpon>AddSubject.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\SubForms\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\NewClass.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\NewClass.Designer.cs">
+      <DependentUpon>NewClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubForms\NewStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\NewStudent.Designer.cs">
+      <DependentUpon>NewStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubForms\Profile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ViewClasses.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ViewClasses.Designer.cs">
+      <DependentUpon>ViewClasses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ViewSubjects.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ViewSubjects.Designer.cs">
+      <DependentUpon>ViewSubjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\Utils.cs" />
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,8 +185,26 @@
     <EmbeddedResource Include="UserControls\Buttons\ButtonWithoutMenu.resx">
       <DependentUpon>ButtonWithoutMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\AddSubject.resx">
+      <DependentUpon>AddSubject.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\NewClass.resx">
+      <DependentUpon>NewClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\NewStudent.resx">
+      <DependentUpon>NewStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\ViewClasses.resx">
+      <DependentUpon>ViewClasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\ViewSubjects.resx">
+      <DependentUpon>ViewSubjects.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
