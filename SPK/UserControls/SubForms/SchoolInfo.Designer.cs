@@ -1,6 +1,6 @@
 ﻿namespace SPK.UserControls.SubForms
 {
-    partial class Profile
+    partial class SchoolInfo
     {
         /// <summary> 
         /// Required designer variable.

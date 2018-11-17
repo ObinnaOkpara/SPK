@@ -120,17 +120,41 @@
     <Compile Include="UserControls\Panels\ExtendedPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UserControls\SubForms\AddAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\AddAdmin.Designer.cs">
+      <DependentUpon>AddAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubForms\AddPrincipal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\AddPrincipal.Designer.cs">
+      <DependentUpon>AddPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\AddSubject.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\SubForms\AddSubject.Designer.cs">
       <DependentUpon>AddSubject.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\AllocateFees.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\AllocateFees.Designer.cs">
+      <DependentUpon>AllocateFees.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\SubForms\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubForms\EnterStudentResult.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\EnterStudentResult.Designer.cs">
+      <DependentUpon>EnterStudentResult.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SubForms\NewClass.cs">
       <SubType>UserControl</SubType>
@@ -144,17 +168,83 @@
     <Compile Include="UserControls\SubForms\NewStudent.Designer.cs">
       <DependentUpon>NewStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\SubForms\Profile.cs">
+    <Compile Include="UserControls\SubForms\PublishUploadedResult.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\SubForms\Profile.Designer.cs">
-      <DependentUpon>Profile.cs</DependentUpon>
+    <Compile Include="UserControls\SubForms\PublishUploadedResult.Designer.cs">
+      <DependentUpon>PublishUploadedResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubForms\SchoolInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\SchoolInfo.Designer.cs">
+      <DependentUpon>SchoolInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubForms\RegisterSubject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\RegisterSubject.Designer.cs">
+      <DependentUpon>RegisterSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubForms\SaveSchoolStartnEndDate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\SaveSchoolStartnEndDate.Designer.cs">
+      <DependentUpon>SaveSchoolStartnEndDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubForms\SpecifyJssSubject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\SpecifyJssSubject.Designer.cs">
+      <DependentUpon>SpecifyJssSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubForms\SpecifySssSubject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\SpecifySssSubject.Designer.cs">
+      <DependentUpon>SpecifySssSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubForms\SpecifySubjectNumber.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\SpecifySubjectNumber.Designer.cs">
+      <DependentUpon>SpecifySubjectNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ViewAdmins.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ViewAdmins.Designer.cs">
+      <DependentUpon>ViewAdmins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ViewAllPrincipal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ViewAllPrincipal.Designer.cs">
+      <DependentUpon>ViewAllPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ViewAllResult.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ViewAllResult.Designer.cs">
+      <DependentUpon>ViewAllResult.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SubForms\ViewClasses.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\SubForms\ViewClasses.Designer.cs">
       <DependentUpon>ViewClasses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ViewPublishedResult.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ViewPublishedResult.Designer.cs">
+      <DependentUpon>ViewPublishedResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ViewRegisteredStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ViewRegisteredStudent.Designer.cs">
+      <DependentUpon>ViewRegisteredStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SubForms\ViewSubjects.cs">
       <SubType>UserControl</SubType>
@@ -185,11 +275,23 @@
     <EmbeddedResource Include="UserControls\Buttons\ButtonWithoutMenu.resx">
       <DependentUpon>ButtonWithoutMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\AddAdmin.resx">
+      <DependentUpon>AddAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\AddPrincipal.resx">
+      <DependentUpon>AddPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\AddSubject.resx">
       <DependentUpon>AddSubject.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\AllocateFees.resx">
+      <DependentUpon>AllocateFees.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\EnterStudentResult.resx">
+      <DependentUpon>EnterStudentResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\NewClass.resx">
       <DependentUpon>NewClass.cs</DependentUpon>
@@ -197,11 +299,44 @@
     <EmbeddedResource Include="UserControls\SubForms\NewStudent.resx">
       <DependentUpon>NewStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\SubForms\Profile.resx">
-      <DependentUpon>Profile.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\SubForms\PublishUploadedResult.resx">
+      <DependentUpon>PublishUploadedResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\SchoolInfo.resx">
+      <DependentUpon>SchoolInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\RegisterSubject.resx">
+      <DependentUpon>RegisterSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\SaveSchoolStartnEndDate.resx">
+      <DependentUpon>SaveSchoolStartnEndDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\SpecifyJssSubject.resx">
+      <DependentUpon>SpecifyJssSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\SpecifySssSubject.resx">
+      <DependentUpon>SpecifySssSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\SpecifySubjectNumber.resx">
+      <DependentUpon>SpecifySubjectNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\ViewAdmins.resx">
+      <DependentUpon>ViewAdmins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\ViewAllPrincipal.resx">
+      <DependentUpon>ViewAllPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\ViewAllResult.resx">
+      <DependentUpon>ViewAllResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\ViewClasses.resx">
       <DependentUpon>ViewClasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\ViewPublishedResult.resx">
+      <DependentUpon>ViewPublishedResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\ViewRegisteredStudent.resx">
+      <DependentUpon>ViewRegisteredStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\ViewSubjects.resx">
       <DependentUpon>ViewSubjects.cs</DependentUpon>
@@ -318,6 +453,15 @@
   <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cancel-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-news-64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

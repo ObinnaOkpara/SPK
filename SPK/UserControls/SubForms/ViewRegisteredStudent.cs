@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace SPK.UserControls.SubForms
 {
-    public partial class Profile : UserControl
+    public partial class ViewRegisteredStudent : UserControl
     {
-        public Profile()
+        public ViewRegisteredStudent()
         {
             InitializeComponent();
         }
-
     }
 }

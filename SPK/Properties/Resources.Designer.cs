@@ -123,6 +123,16 @@ namespace SPK.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_cancel_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cancel-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_circled_user_female_skin_type_6_96 {
             get {
                 object obj = ResourceManager.GetObject("icons8-circled-user-female-skin-type-6-96", resourceCulture);
@@ -233,6 +243,16 @@ namespace SPK.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_news_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-news-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_people_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-people-64", resourceCulture);
@@ -316,6 +336,16 @@ namespace SPK.Properties {
         internal static System.Drawing.Bitmap result5 {
             get {
                 object obj = ResourceManager.GetObject("result5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search_3 {
+            get {
+                object obj = ResourceManager.GetObject("search-3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
