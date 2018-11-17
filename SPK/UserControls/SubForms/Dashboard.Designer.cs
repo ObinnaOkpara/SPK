@@ -46,19 +46,19 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.extendedPanel2 = new SPK.UserControls.Panels.ExtendedPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.extendedPanel1 = new SPK.UserControls.Panels.ExtendedPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.extendedPanel2 = new SPK.UserControls.Panels.ExtendedPanel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
             this.panel2.SuspendLayout();
@@ -71,13 +71,13 @@
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -179,7 +179,7 @@
             this.panel8.Controls.Add(this.pictureBox6);
             this.panel8.Controls.Add(this.label6);
             this.panel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.panel8.Location = new System.Drawing.Point(409, 207);
+            this.panel8.Location = new System.Drawing.Point(403, 207);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(150, 130);
             this.panel8.TabIndex = 6;
@@ -211,7 +211,7 @@
             this.panel9.Controls.Add(this.pictureBox7);
             this.panel9.Controls.Add(this.label7);
             this.panel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.panel9.Location = new System.Drawing.Point(204, 207);
+            this.panel9.Location = new System.Drawing.Point(214, 207);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(150, 130);
             this.panel9.TabIndex = 5;
@@ -280,6 +280,16 @@
             this.panel6.Size = new System.Drawing.Size(150, 130);
             this.panel6.TabIndex = 3;
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::SPK.Properties.Resources.subject;
+            this.pictureBox4.Location = new System.Drawing.Point(45, 62);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 4;
+            this.pictureBox4.TabStop = false;
+            // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -297,7 +307,7 @@
             this.panel5.Controls.Add(this.pictureBox3);
             this.panel5.Controls.Add(this.label3);
             this.panel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.panel5.Location = new System.Drawing.Point(409, 43);
+            this.panel5.Location = new System.Drawing.Point(403, 43);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(150, 130);
             this.panel5.TabIndex = 2;
@@ -330,10 +340,27 @@
             this.panel4.Controls.Add(this.pictureBox2);
             this.panel4.Controls.Add(this.label2);
             this.panel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.panel4.Location = new System.Drawing.Point(204, 43);
+            this.panel4.Location = new System.Drawing.Point(214, 43);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(150, 130);
             this.panel4.TabIndex = 1;
+            // 
+            // extendedPanel2
+            // 
+            this.extendedPanel2.Location = new System.Drawing.Point(0, 1);
+            this.extendedPanel2.Name = "extendedPanel2";
+            this.extendedPanel2.Size = new System.Drawing.Size(150, 130);
+            this.extendedPanel2.TabIndex = 7;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SPK.Properties.Resources.student5;
+            this.pictureBox2.Location = new System.Drawing.Point(45, 62);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
             // 
             // label2
             // 
@@ -358,15 +385,12 @@
             this.panel3.Size = new System.Drawing.Size(150, 130);
             this.panel3.TabIndex = 0;
             // 
-            // label1
+            // extendedPanel1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 56);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "PROFILE";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.extendedPanel1.Location = new System.Drawing.Point(0, 1);
+            this.extendedPanel1.Name = "extendedPanel1";
+            this.extendedPanel1.Size = new System.Drawing.Size(150, 130);
+            this.extendedPanel1.TabIndex = 6;
             // 
             // pictureBox1
             // 
@@ -378,39 +402,15 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // extendedPanel1
+            // label1
             // 
-            this.extendedPanel1.Location = new System.Drawing.Point(0, 1);
-            this.extendedPanel1.Name = "extendedPanel1";
-            this.extendedPanel1.Size = new System.Drawing.Size(150, 130);
-            this.extendedPanel1.TabIndex = 6;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::SPK.Properties.Resources.student5;
-            this.pictureBox2.Location = new System.Drawing.Point(45, 62);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(60, 60);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            // 
-            // extendedPanel2
-            // 
-            this.extendedPanel2.Location = new System.Drawing.Point(0, 1);
-            this.extendedPanel2.Name = "extendedPanel2";
-            this.extendedPanel2.Size = new System.Drawing.Size(150, 130);
-            this.extendedPanel2.TabIndex = 7;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::SPK.Properties.Resources.subject;
-            this.pictureBox4.Location = new System.Drawing.Point(45, 62);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(60, 60);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 4;
-            this.pictureBox4.TabStop = false;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(144, 56);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "PROFILE";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Dashboard
             // 
@@ -433,13 +433,13 @@
             this.panel10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
