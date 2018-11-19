@@ -283,7 +283,7 @@
       <DependentUpon>ViewSubjects.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\Utils.cs" />
-    <Compile Include="Utilities\ValidateTextboxes.cs" />
+    <Compile Include="Utilities\ValidateFomControls.cs" />
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>

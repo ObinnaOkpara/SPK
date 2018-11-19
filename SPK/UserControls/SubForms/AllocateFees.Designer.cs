@@ -81,10 +81,11 @@
             this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
             this.btnSave.Size = new System.Drawing.Size(134, 49);
             this.btnSave.TabIndex = 90;
+            this.btnSave.ClickEvent += new System.EventHandler(this.btnSave_ClickEvent);
             // 
             // txtFee
             // 
-            this.txtFee.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.txtFee.Location = new System.Drawing.Point(423, 62);
             this.txtFee.Name = "txtFee";
@@ -94,11 +95,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.label6.Location = new System.Drawing.Point(421, 38);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(117, 16);
+            this.label6.Size = new System.Drawing.Size(111, 17);
             this.label6.TabIndex = 86;
             this.label6.Text = "Fee Allocation";
             // 
@@ -120,11 +121,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.label5.Location = new System.Drawing.Point(205, 38);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 16);
+            this.label5.Size = new System.Drawing.Size(100, 17);
             this.label5.TabIndex = 84;
             this.label5.Text = "Student type";
             // 
@@ -132,8 +133,6 @@
             // 
             this.cBoxClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxClass.FormattingEnabled = true;
-            this.cBoxClass.Items.AddRange(new object[] {
-            "--Select--"});
             this.cBoxClass.Location = new System.Drawing.Point(8, 61);
             this.cBoxClass.Name = "cBoxClass";
             this.cBoxClass.Size = new System.Drawing.Size(183, 24);
@@ -142,22 +141,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.label1.Location = new System.Drawing.Point(4, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 16);
+            this.label1.Size = new System.Drawing.Size(47, 17);
             this.label1.TabIndex = 81;
             this.label1.Text = "Class";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.label2.Location = new System.Drawing.Point(288, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(207, 18);
+            this.label2.Size = new System.Drawing.Size(189, 20);
             this.label2.TabIndex = 14;
             this.label2.Text = "Allocate Fees to Class";
             // 
@@ -188,11 +187,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.label3.Location = new System.Drawing.Point(232, 7);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(321, 18);
+            this.label3.Size = new System.Drawing.Size(292, 20);
             this.label3.TabIndex = 14;
             this.label3.Text = "View Allocated Fees for each Class";
             // 
@@ -211,20 +210,20 @@
             // lblSubTitle
             // 
             this.lblSubTitle.AutoSize = true;
-            this.lblSubTitle.Font = new System.Drawing.Font("Lucida Sans", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubTitle.Location = new System.Drawing.Point(28, 59);
             this.lblSubTitle.Name = "lblSubTitle";
-            this.lblSubTitle.Size = new System.Drawing.Size(104, 16);
+            this.lblSubTitle.Size = new System.Drawing.Size(106, 17);
             this.lblSubTitle.TabIndex = 2;
             this.lblSubTitle.Text = "Allocate Fees";
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Lucida Sans", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(70, 22);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(235, 25);
+            this.lblTitle.Size = new System.Drawing.Size(248, 26);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "FEES MANAGEMENT";
             // 

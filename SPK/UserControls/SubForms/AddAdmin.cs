@@ -83,7 +83,7 @@ namespace SPK.UserControls.SubForms
 
         bool ValidateControls()
         {
-            if (string.Equals( txtConfirmPassword.Text,_txtPassword.Text))
+            if (string.Equals( _txtConfirmPassword.Text,_txtPassword.Text))
             {
                 var txtboxes = Controls.OfType<TextBox>().Where(box => box.Name.StartsWith("_"));
 
