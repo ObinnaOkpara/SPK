@@ -20,8 +20,6 @@ namespace SPK.UserControls.SubForms
         public AddSubject()
         {
             InitializeComponent();
-
-
         }
 
         private void btnSave_Click(object sender, EventArgs e)
