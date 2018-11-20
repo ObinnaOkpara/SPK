@@ -26,6 +26,22 @@ namespace SPK.Utilities
             return true;
         }
 
+        public static bool CheckComboBoxes(Control control, ErrorProvider ep)
+        {
+            //var txtboxes = control.OfType<TextBox>();//.Where(box => box.Name.StartsWith("_"));
+
+            foreach (var cmbox in GetAllChildren(control).OfType<ComboBox>())
+            {
+                if (cmbox.SelectedIndex == -1)
+                {
+                    ep.SetError(cmbox, "Please select the required field");
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         public static bool CheckPassword(string first_password, string second_password)
         {
             //confirm password
