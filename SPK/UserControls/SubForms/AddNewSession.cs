@@ -33,6 +33,16 @@ namespace SPK.UserControls.SubForms
                     time_added = DateTime.Now,
                 };
 
+                using (var db = new Model1())
+                {
+                    var check = db.sessions.FirstOrDefault(x=>x.sessions == _txtSession.Text);
+                    if (check != null)
+                    {
+                        MessageBox.Show("This session already exists.");
+                        return;
+                    }
+                }
+
                 _unitOfWork = new UnitOfWork(new Model1());
                 _unitOfWork.SessionRepository.Add(Session);
                 await _unitOfWork.Save();
