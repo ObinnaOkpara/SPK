@@ -73,7 +73,7 @@ namespace SPK.UserControls.SubForms
                 name = cBoxTeacher.Text,
                 subject = cBoxSubject.Text,
                 term = cBoxTerm.Text,
-                _class = cBoxClass.Text
+                _class = cBoxClass.Text,
             };
 
             return TsCs;
