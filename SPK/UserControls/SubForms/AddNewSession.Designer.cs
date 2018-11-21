@@ -28,25 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel3 = new System.Windows.Forms.Panel();
+            this._txtSession = new System.Windows.Forms.TextBox();
+            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTermNSession = new System.Windows.Forms.Label();
             this.lblSchool = new System.Windows.Forms.Label();
-            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.picSchoolLogo = new System.Windows.Forms.PictureBox();
-            this.txtSession = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.txtSession);
+            this.panel3.Controls.Add(this._txtSession);
             this.panel3.Controls.Add(this.btnSave);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
@@ -55,6 +58,29 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(550, 175);
             this.panel3.TabIndex = 9;
+            // 
+            // _txtSession
+            // 
+            this._txtSession.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._txtSession.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this._txtSession.Location = new System.Drawing.Point(83, 68);
+            this._txtSession.Name = "_txtSession";
+            this._txtSession.Size = new System.Drawing.Size(364, 23);
+            this._txtSession.TabIndex = 16;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnSave.BtnText = "SAVE CHANGES";
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnSave.Icon = global::SPK.Properties.Resources.icons8_save_64;
+            this.btnSave.Location = new System.Drawing.Point(140, 98);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnSave.Size = new System.Drawing.Size(250, 46);
+            this.btnSave.TabIndex = 15;
+            this.btnSave.ClickEvent += new System.EventHandler(this.btnSave_ClickEvent);
             // 
             // label2
             // 
@@ -110,19 +136,6 @@
             this.lblSchool.TabIndex = 1;
             this.lblSchool.Text = "ADMINISTRATIVE MANAGER";
             // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnSave.BtnText = "SAVE CHANGES";
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnSave.Icon = global::SPK.Properties.Resources.icons8_save_64;
-            this.btnSave.Location = new System.Drawing.Point(140, 98);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnSave.Size = new System.Drawing.Size(250, 46);
-            this.btnSave.TabIndex = 15;
-            // 
             // picSchoolLogo
             // 
             this.picSchoolLogo.Image = global::SPK.Properties.Resources.Icons8_flat_businessman_svg;
@@ -133,14 +146,9 @@
             this.picSchoolLogo.TabIndex = 0;
             this.picSchoolLogo.TabStop = false;
             // 
-            // txtSession
+            // errorProvider1
             // 
-            this.txtSession.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSession.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.txtSession.Location = new System.Drawing.Point(83, 68);
-            this.txtSession.Name = "txtSession";
-            this.txtSession.Size = new System.Drawing.Size(364, 23);
-            this.txtSession.TabIndex = 16;
+            this.errorProvider1.ContainerControl = this;
             // 
             // AddNewSession
             // 
@@ -155,6 +163,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -169,6 +178,7 @@
         private System.Windows.Forms.Label lblTermNSession;
         private System.Windows.Forms.Label lblSchool;
         private System.Windows.Forms.PictureBox picSchoolLogo;
-        private System.Windows.Forms.TextBox txtSession;
+        private System.Windows.Forms.TextBox _txtSession;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

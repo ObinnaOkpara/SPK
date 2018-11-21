@@ -21,6 +21,7 @@ namespace DB.Services.DataRepository
             PrincipalRepository = new PrincipalRepository(_dbContext);
             UserRepository = new UserRepository(_dbContext);
             School_SubjectsRepository = new School_SubjectsRepository(_dbContext);
+            SessionRepository = new SessionRepository(dbContext);
             //add other repositories here
         }
 
@@ -50,6 +51,10 @@ namespace DB.Services.DataRepository
             get;
         }
 
+        public ISessionRepository SessionRepository
+        {
+            get;
+        }
         public void Dispose()
         {
             _dbContext.Dispose();
