@@ -57,14 +57,14 @@
             this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnUpdate = new SPK.UserControls.Buttons.ButtonWithoutMenu();
-            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.allocateclassDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studenttypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.feeamountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateallocatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnUpdate = new SPK.UserControls.Buttons.ButtonWithoutMenu();
+            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridStudents)).BeginInit();
@@ -307,6 +307,7 @@
             this.dGridStudents.Size = new System.Drawing.Size(780, 326);
             this.dGridStudents.TabIndex = 15;
             this.dGridStudents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridStudents_CellClick);
+            this.dGridStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridStudents_CellContentClick);
             // 
             // feeallocationBindingSource
             // 
@@ -375,34 +376,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnUpdate.BtnText = "UPDATE";
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnUpdate.Icon = global::SPK.Properties.Resources.icons8_save_64;
-            this.btnUpdate.Location = new System.Drawing.Point(635, 123);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnUpdate.Size = new System.Drawing.Size(157, 47);
-            this.btnUpdate.TabIndex = 91;
-            this.btnUpdate.ClickEvent += new System.EventHandler(this.btnUpdate_ClickEvent);
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnSave.BtnText = "SAVE";
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnSave.Icon = global::SPK.Properties.Resources.icons8_save_64;
-            this.btnSave.Location = new System.Drawing.Point(635, 38);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnSave.Size = new System.Drawing.Size(134, 49);
-            this.btnSave.TabIndex = 90;
-            this.btnSave.ClickEvent += new System.EventHandler(this.btnSave_ClickEvent);
-            // 
             // id
             // 
             this.id.DataPropertyName = "id";
@@ -450,6 +423,34 @@
             this.Delete.ReadOnly = true;
             this.Delete.Text = "Delete";
             this.Delete.UseColumnTextForButtonValue = true;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnUpdate.BtnText = "UPDATE";
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnUpdate.Icon = global::SPK.Properties.Resources.icons8_save_64;
+            this.btnUpdate.Location = new System.Drawing.Point(635, 123);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnUpdate.Size = new System.Drawing.Size(157, 47);
+            this.btnUpdate.TabIndex = 91;
+            this.btnUpdate.ClickEvent += new System.EventHandler(this.btnUpdate_ClickEvent);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnSave.BtnText = "SAVE";
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnSave.Icon = global::SPK.Properties.Resources.icons8_save_64;
+            this.btnSave.Location = new System.Drawing.Point(635, 38);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnSave.Size = new System.Drawing.Size(134, 49);
+            this.btnSave.TabIndex = 90;
+            this.btnSave.ClickEvent += new System.EventHandler(this.btnSave_ClickEvent);
             // 
             // AllocateFees
             // 

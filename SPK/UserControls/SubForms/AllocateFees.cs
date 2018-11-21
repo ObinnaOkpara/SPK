@@ -166,6 +166,35 @@ namespace SPK.UserControls.SubForms
            
         }
 
+        private void dGridStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+            var es = senderGrid.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            {
+                var btn = (DataGridViewButtonColumn)senderGrid.Columns[e.ColumnIndex];
+
+                if (btn.Text == "Delete")
+                {
+                    var _id = (int)senderGrid.CurrentRow.Cells["id"].Value;
+                    using (var db = new Model1())
+                    {
+                        var feee_allo = new fee_allocation() { id = _id };
+                        db.fee_allocation.Attach(feee_allo);
+                        db.fee_allocation.Remove(feee_allo);
+                        db.SaveChanges();
+
+                        fees_allo = db.fee_allocation.ToList();
+                        MessageBox.Show("Deleted");
+                        dGridStudents.DataSource = fees_allo;
+
+                    }
+                }
+            }
+        }
+
         //private void dGridStudents_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         //    {
         //        if (_cellformat == false)
