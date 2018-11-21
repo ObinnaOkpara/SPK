@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace DB.Services.DataRepository.DataRepository.Entities
 {
-    public class SessionRepository : Repository<session>, ISessionRepository
+    class Teachers_ClassesRepository : Repository<teachers_classes>, ITeachers_ClassesRepository
     {
-        public SessionRepository(Model1 dbcontext) : base(dbcontext) { }
+        public Teachers_ClassesRepository(Model1 dbcontext) : base(dbcontext) { }
 
         public Model1 GetData
         {
@@ -19,9 +19,5 @@ namespace DB.Services.DataRepository.DataRepository.Entities
             }
         }
 
-        public bool CheckIfItExists(string session)
-        {
-            return GetData.sessions.Any(ss => ss.sessions == session);
-        }
     }
 }

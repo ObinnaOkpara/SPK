@@ -61,7 +61,8 @@ namespace SPK.UserControls.SubForms
         private async void btnSave_ClickEventAsync(object sender, EventArgs e)
         {
             if (ValidateFomControls.CheckTextboxes(this, errorProvider1)
-                && ValidateFomControls.CheckPassword(_txtPassword.Text, _txtConfirmPassword.Text))
+                && ValidateFomControls.CheckPassword(_txtPassword.Text, _txtConfirmPassword.Text) 
+                && ValidateFomControls.CheckComboBoxes(this, errorProvider1))
             {
                 var teacher = CreateTeacher();
 

@@ -389,7 +389,8 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DB.fee_allocation.datasource" />
-    <None Include="Properties\DataSources\DB.school_subjects.datasource" />
+    <None Include="Properties\DataSources\DB.teacher.datasource" />
+    <None Include="Properties\DataSources\DB.teachers_classes.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
