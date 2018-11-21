@@ -73,6 +73,6 @@ namespace DB
 
 
         [NotMapped]
-        public string Fullname { get { return this.lastname.Trim() + " " + this.firstname.Trim(); } }
+        public string Fullname { get { return this.firstname.Trim() + " " + this.lastname.Trim(); } }
     }
 }

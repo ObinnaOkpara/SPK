@@ -24,12 +24,15 @@ namespace SPK.UserControls.SubForms
         {
             InitializeComponent();
 
-            cBoxClass.Cursor = Cursors.WaitCursor;
-            cBoxSubject.Cursor = Cursors.WaitCursor;
-            cBoxTeacher.Cursor = Cursors.WaitCursor;
-            dGridTeachers_Class.Cursor = Cursors.WaitCursor;
+            if (LicenseManager.UsageMode != LicenseUsageMode.Designtime)
+            {
+                cBoxClass.Cursor = Cursors.WaitCursor;
+                cBoxSubject.Cursor = Cursors.WaitCursor;
+                cBoxTeacher.Cursor = Cursors.WaitCursor;
+                dGridTeachers_Class.Cursor = Cursors.WaitCursor;
 
-            backgroundWorker1.RunWorkerAsync();
+                backgroundWorker1.RunWorkerAsync();
+            }
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
@@ -49,10 +52,10 @@ namespace SPK.UserControls.SubForms
             cBoxClass.DisplayMember = "classes";
             
             cBoxSubject.DataSource = Subjects;
-            cBoxSubject.DataSource = "subjects";
+            cBoxSubject.DisplayMember = "subjects";
 
             cBoxTeacher.DataSource = Teachers;
-            cBoxTeacher.DataSource = "Fullname";
+            cBoxTeacher.DisplayMember = "Fullname";
 
             dGridTeachers_Class.DataSource = TnCs;
 
