@@ -30,9 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
+            this.txtFeeedit = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtedittype = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtIDedit = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txteditclas = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtFee = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cBoxType = new System.Windows.Forms.ComboBox();
@@ -42,13 +49,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dGridStudents = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.allocateclassDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studenttypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.feeamountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateallocatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.feeallocationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -57,6 +57,14 @@
             this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.allocateclassDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studenttypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.feeamountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateallocatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnUpdate = new SPK.UserControls.Buttons.ButtonWithoutMenu();
+            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridStudents)).BeginInit();
@@ -70,7 +78,17 @@
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.btnUpdate);
             this.panel3.Controls.Add(this.btnSave);
+            this.panel3.Controls.Add(this.txtFeeedit);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.txtedittype);
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.txtIDedit);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.txteditclas);
+            this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.txtFee);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.cBoxType);
@@ -81,22 +99,102 @@
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.Location = new System.Drawing.Point(5, 106);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(791, 106);
+            this.panel3.Size = new System.Drawing.Size(791, 173);
             this.panel3.TabIndex = 26;
             // 
-            // btnSave
+            // txtFeeedit
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnSave.BtnText = "SAVE";
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnSave.Icon = global::SPK.Properties.Resources.icons8_save_64;
-            this.btnSave.Location = new System.Drawing.Point(635, 38);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnSave.Size = new System.Drawing.Size(134, 49);
-            this.btnSave.TabIndex = 90;
-            this.btnSave.ClickEvent += new System.EventHandler(this.btnSave_ClickEvent);
+            this.txtFeeedit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFeeedit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.txtFeeedit.Location = new System.Drawing.Point(423, 147);
+            this.txtFeeedit.Name = "txtFeeedit";
+            this.txtFeeedit.Size = new System.Drawing.Size(191, 23);
+            this.txtFeeedit.TabIndex = 89;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label8.Location = new System.Drawing.Point(421, 123);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(111, 17);
+            this.label8.TabIndex = 86;
+            this.label8.Text = "Fee Allocation";
+            // 
+            // txtedittype
+            // 
+            this.txtedittype.Enabled = false;
+            this.txtedittype.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtedittype.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.txtedittype.Location = new System.Drawing.Point(296, 147);
+            this.txtedittype.Name = "txtedittype";
+            this.txtedittype.Size = new System.Drawing.Size(103, 23);
+            this.txtedittype.TabIndex = 89;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label9.Location = new System.Drawing.Point(306, 97);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(70, 17);
+            this.label9.TabIndex = 86;
+            this.label9.Text = "UPDATE";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label7.Location = new System.Drawing.Point(293, 123);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(105, 17);
+            this.label7.TabIndex = 86;
+            this.label7.Text = "Student Type";
+            // 
+            // txtIDedit
+            // 
+            this.txtIDedit.Enabled = false;
+            this.txtIDedit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDedit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.txtIDedit.Location = new System.Drawing.Point(26, 147);
+            this.txtIDedit.Name = "txtIDedit";
+            this.txtIDedit.Size = new System.Drawing.Size(103, 23);
+            this.txtIDedit.TabIndex = 89;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label10.Location = new System.Drawing.Point(23, 123);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(23, 17);
+            this.label10.TabIndex = 86;
+            this.label10.Text = "ID";
+            // 
+            // txteditclas
+            // 
+            this.txteditclas.Enabled = false;
+            this.txteditclas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txteditclas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.txteditclas.Location = new System.Drawing.Point(156, 147);
+            this.txteditclas.Name = "txteditclas";
+            this.txteditclas.Size = new System.Drawing.Size(103, 23);
+            this.txteditclas.TabIndex = 89;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label4.Location = new System.Drawing.Point(153, 123);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 17);
+            this.label4.TabIndex = 86;
+            this.label4.Text = "Class";
             // 
             // txtFee
             // 
@@ -182,13 +280,15 @@
             this.panel2.Controls.Add(this.dGridStudents);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(5, 218);
+            this.panel2.Location = new System.Drawing.Point(5, 285);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(791, 359);
+            this.panel2.Size = new System.Drawing.Size(791, 292);
             this.panel2.TabIndex = 25;
             // 
             // dGridStudents
             // 
+            this.dGridStudents.AllowUserToAddRows = false;
+            this.dGridStudents.AllowUserToDeleteRows = false;
             this.dGridStudents.AutoGenerateColumns = false;
             this.dGridStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGridStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -198,69 +298,16 @@
             this.studenttypeDataGridViewTextBoxColumn,
             this.feeamountDataGridViewTextBoxColumn,
             this.dateallocatedDataGridViewTextBoxColumn,
-            this.Edit,
             this.Delete});
             this.dGridStudents.DataSource = this.feeallocationBindingSource;
             this.dGridStudents.Location = new System.Drawing.Point(5, 30);
             this.dGridStudents.Name = "dGridStudents";
+            this.dGridStudents.ReadOnly = true;
             this.dGridStudents.RowTemplate.Height = 24;
             this.dGridStudents.Size = new System.Drawing.Size(780, 326);
             this.dGridStudents.TabIndex = 15;
+            this.dGridStudents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridStudents_CellClick);
             this.dGridStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridStudents_CellContentClick);
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // allocateclassDataGridViewTextBoxColumn
-            // 
-            this.allocateclassDataGridViewTextBoxColumn.DataPropertyName = "allocate_class";
-            this.allocateclassDataGridViewTextBoxColumn.HeaderText = "Class";
-            this.allocateclassDataGridViewTextBoxColumn.Name = "allocateclassDataGridViewTextBoxColumn";
-            // 
-            // studenttypeDataGridViewTextBoxColumn
-            // 
-            this.studenttypeDataGridViewTextBoxColumn.DataPropertyName = "student_type";
-            this.studenttypeDataGridViewTextBoxColumn.HeaderText = "Student Type";
-            this.studenttypeDataGridViewTextBoxColumn.Name = "studenttypeDataGridViewTextBoxColumn";
-            // 
-            // feeamountDataGridViewTextBoxColumn
-            // 
-            this.feeamountDataGridViewTextBoxColumn.DataPropertyName = "fee_amount";
-            this.feeamountDataGridViewTextBoxColumn.HeaderText = "Amount(#)";
-            this.feeamountDataGridViewTextBoxColumn.Name = "feeamountDataGridViewTextBoxColumn";
-            // 
-            // dateallocatedDataGridViewTextBoxColumn
-            // 
-            this.dateallocatedDataGridViewTextBoxColumn.DataPropertyName = "date_allocated";
-            this.dateallocatedDataGridViewTextBoxColumn.HeaderText = "Date Allocated";
-            this.dateallocatedDataGridViewTextBoxColumn.Name = "dateallocatedDataGridViewTextBoxColumn";
-            // 
-            // Edit
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            this.Edit.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
-            this.Edit.Text = "Edit";
-            this.Edit.UseColumnTextForButtonValue = true;
-            // 
-            // Delete
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.Text = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
             // 
             // feeallocationBindingSource
             // 
@@ -329,6 +376,82 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // allocateclassDataGridViewTextBoxColumn
+            // 
+            this.allocateclassDataGridViewTextBoxColumn.DataPropertyName = "allocate_class";
+            this.allocateclassDataGridViewTextBoxColumn.HeaderText = "Class";
+            this.allocateclassDataGridViewTextBoxColumn.Name = "allocateclassDataGridViewTextBoxColumn";
+            this.allocateclassDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // studenttypeDataGridViewTextBoxColumn
+            // 
+            this.studenttypeDataGridViewTextBoxColumn.DataPropertyName = "student_type";
+            this.studenttypeDataGridViewTextBoxColumn.HeaderText = "Student Type";
+            this.studenttypeDataGridViewTextBoxColumn.Name = "studenttypeDataGridViewTextBoxColumn";
+            this.studenttypeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // feeamountDataGridViewTextBoxColumn
+            // 
+            this.feeamountDataGridViewTextBoxColumn.DataPropertyName = "fee_amount";
+            this.feeamountDataGridViewTextBoxColumn.HeaderText = "Amount(#)";
+            this.feeamountDataGridViewTextBoxColumn.Name = "feeamountDataGridViewTextBoxColumn";
+            this.feeamountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateallocatedDataGridViewTextBoxColumn
+            // 
+            this.dateallocatedDataGridViewTextBoxColumn.DataPropertyName = "date_allocated";
+            this.dateallocatedDataGridViewTextBoxColumn.HeaderText = "Date Allocated";
+            this.dateallocatedDataGridViewTextBoxColumn.Name = "dateallocatedDataGridViewTextBoxColumn";
+            this.dateallocatedDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Delete
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnUpdate.BtnText = "UPDATE";
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnUpdate.Icon = global::SPK.Properties.Resources.icons8_save_64;
+            this.btnUpdate.Location = new System.Drawing.Point(635, 123);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnUpdate.Size = new System.Drawing.Size(157, 47);
+            this.btnUpdate.TabIndex = 91;
+            this.btnUpdate.ClickEvent += new System.EventHandler(this.btnUpdate_ClickEvent);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnSave.BtnText = "SAVE";
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnSave.Icon = global::SPK.Properties.Resources.icons8_save_64;
+            this.btnSave.Location = new System.Drawing.Point(635, 38);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnSave.Size = new System.Drawing.Size(134, 49);
+            this.btnSave.TabIndex = 90;
+            this.btnSave.ClickEvent += new System.EventHandler(this.btnSave_ClickEvent);
+            // 
             // AllocateFees
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -373,13 +496,22 @@
         private Buttons.ButtonWithoutMenu btnSave;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.BindingSource feeallocationBindingSource;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private Buttons.ButtonWithoutMenu btnUpdate;
+        private System.Windows.Forms.TextBox txtFeeedit;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtedittype;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txteditclas;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtIDedit;
+        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn allocateclassDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn studenttypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn feeamountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateallocatedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
