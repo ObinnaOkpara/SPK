@@ -14,9 +14,10 @@ namespace DB.Services.Interfaces
         IPrincipalRepository PrincipalRepository { get; }
         IUserRepository UserRepository { get; }
         ISchool_SubjectsRepository School_SubjectsRepository { get; }
-
         ISessionRepository SessionRepository { get; }
+        ITeachers_ClassesRepository Teachers_ClassesRepository { get; }
         //add other repos here
+
         Task<int> Save();
     }
 

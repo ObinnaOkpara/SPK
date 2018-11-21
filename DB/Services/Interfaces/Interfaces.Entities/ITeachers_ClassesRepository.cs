@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace DB.Services.Interfaces.Interfaces.Entities
 {
-    public interface ISessionRepository : IRepository<session>
+    public interface ITeachers_ClassesRepository : IRepository<teachers_classes>
     {
-        bool CheckIfItExists(string session);
+
     }
 }

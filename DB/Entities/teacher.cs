@@ -70,5 +70,9 @@ namespace DB
 
         [Column(TypeName = "timestamp")]
         public DateTime? time_registered { get; set; }
+
+
+        [NotMapped]
+        public string Fullname { get { return this.lastname.Trim() + " " + this.firstname.Trim(); } }
     }
 }
