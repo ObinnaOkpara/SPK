@@ -23,6 +23,7 @@ namespace DB.Services.DataRepository
             School_SubjectsRepository = new School_SubjectsRepository(_dbContext);
             SessionRepository = new SessionRepository(_dbContext);
             Teachers_ClassesRepository = new Teachers_ClassesRepository(_dbContext);
+            dClassRepository = new ClassRepository(_dbContext);
             //add other repositories here
         }
 
@@ -58,6 +59,16 @@ namespace DB.Services.DataRepository
         }
 
         public ITeachers_ClassesRepository Teachers_ClassesRepository
+        {
+            get;
+        }
+
+        public IClassRepository lassRepository
+        {
+            get;
+        }
+
+        public IClassRepository dClassRepository
         {
             get;
         }

@@ -156,6 +156,12 @@
     <Compile Include="UserControls\SubForms\AllocateFees.Designer.cs">
       <DependentUpon>AllocateFees.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\ClassAttendance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ClassAttendance.Designer.cs">
+      <DependentUpon>ClassAttendance.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\CurrentTermNSession.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -174,11 +180,11 @@
     <Compile Include="UserControls\SubForms\EnterStudentResult.Designer.cs">
       <DependentUpon>EnterStudentResult.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\SubForms\NewClass.cs">
+    <Compile Include="UserControls\SubForms\AddnViewClass.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\SubForms\NewClass.Designer.cs">
-      <DependentUpon>NewClass.cs</DependentUpon>
+    <Compile Include="UserControls\SubForms\AddnViewClass.Designer.cs">
+      <DependentUpon>AddnViewClass.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SubForms\NewStudent.cs">
       <SubType>UserControl</SubType>
@@ -258,12 +264,6 @@
     <Compile Include="UserControls\SubForms\ViewAllResult.Designer.cs">
       <DependentUpon>ViewAllResult.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\SubForms\ViewClasses.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\SubForms\ViewClasses.Designer.cs">
-      <DependentUpon>ViewClasses.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\SubForms\ViewPublishedResult.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -324,6 +324,9 @@
     <EmbeddedResource Include="UserControls\SubForms\AllocateFees.resx">
       <DependentUpon>AllocateFees.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\ClassAttendance.resx">
+      <DependentUpon>ClassAttendance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\CurrentTermNSession.resx">
       <DependentUpon>CurrentTermNSession.cs</DependentUpon>
     </EmbeddedResource>
@@ -333,8 +336,8 @@
     <EmbeddedResource Include="UserControls\SubForms\EnterStudentResult.resx">
       <DependentUpon>EnterStudentResult.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\SubForms\NewClass.resx">
-      <DependentUpon>NewClass.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\SubForms\AddnViewClass.resx">
+      <DependentUpon>AddnViewClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\NewStudent.resx">
       <DependentUpon>NewStudent.cs</DependentUpon>
@@ -375,9 +378,6 @@
     <EmbeddedResource Include="UserControls\SubForms\ViewAllResult.resx">
       <DependentUpon>ViewAllResult.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\SubForms\ViewClasses.resx">
-      <DependentUpon>ViewClasses.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\ViewPublishedResult.resx">
       <DependentUpon>ViewPublishedResult.cs</DependentUpon>
     </EmbeddedResource>
@@ -392,6 +392,7 @@
     <None Include="Properties\DataSources\DB.student.datasource" />
     <None Include="Properties\DataSources\DB.teacher.datasource" />
     <None Include="Properties\DataSources\DB.teachers_classes.datasource" />
+    <None Include="Properties\DataSources\DB._class.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

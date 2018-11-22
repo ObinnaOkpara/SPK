@@ -172,6 +172,7 @@
     <Compile Include="Entities\unused_pins.cs" />
     <Compile Include="Entities\used_pins.cs" />
     <Compile Include="Entities\user.cs" />
+    <Compile Include="Services\DataRepository\DataRepository.Entities\ClassRepository.cs" />
     <Compile Include="Services\DataRepository\DataRepository.Entities\PrincipalRepository.cs" />
     <Compile Include="Services\DataRepository\DataRepository.Entities\School_SubjectsRepository.cs" />
     <Compile Include="Services\DataRepository\DataRepository.Entities\SessionRepository.cs" />
@@ -181,6 +182,7 @@
     <Compile Include="Services\DataRepository\DataRepository.Entities\UserRepository.cs" />
     <Compile Include="Services\DataRepository\Repository.cs" />
     <Compile Include="Services\DataRepository\UnitOfWork.cs" />
+    <Compile Include="Services\Interfaces\Interfaces.Entities\IClassRepository.cs" />
     <Compile Include="Services\Interfaces\Interfaces.Entities\IPrincipalRepository.cs" />
     <Compile Include="Services\Interfaces\Interfaces.Entities\ISchool_SubjectsRepository.cs" />
     <Compile Include="Services\Interfaces\Interfaces.Entities\ISessionRepository.cs" />

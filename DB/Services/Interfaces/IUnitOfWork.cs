@@ -16,6 +16,7 @@ namespace DB.Services.Interfaces
         ISchool_SubjectsRepository School_SubjectsRepository { get; }
         ISessionRepository SessionRepository { get; }
         ITeachers_ClassesRepository Teachers_ClassesRepository { get; }
+        IClassRepository dClassRepository { get; }
         //add other repos here
 
         Task<int> Save();

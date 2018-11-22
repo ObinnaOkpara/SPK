@@ -120,5 +120,17 @@ namespace DB
 
         [Column(TypeName = "timestamp")]
         public DateTime? time_of_reg { get; set; }
+
+        [NotMapped]
+        public string Fullname { get
+            {
+                if (string.IsNullOrEmpty(firstname) || string.IsNullOrEmpty(othername)) return null;
+
+                return firstname.Trim() + " " + lastname.Trim() + " " + othername.Trim();
+            }
+        }
+        
+        [NotMapped]
+        public string AttendanceDummy { get; set; } = "Present";
     }
 }
