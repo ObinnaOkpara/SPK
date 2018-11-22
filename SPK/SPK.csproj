@@ -264,6 +264,12 @@
     <Compile Include="UserControls\SubForms\ViewAllResult.Designer.cs">
       <DependentUpon>ViewAllResult.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\ViewAttendance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ViewAttendance.Designer.cs">
+      <DependentUpon>ViewAttendance.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\ViewPublishedResult.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -378,6 +384,9 @@
     <EmbeddedResource Include="UserControls\SubForms\ViewAllResult.resx">
       <DependentUpon>ViewAllResult.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\ViewAttendance.resx">
+      <DependentUpon>ViewAttendance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\ViewPublishedResult.resx">
       <DependentUpon>ViewPublishedResult.cs</DependentUpon>
     </EmbeddedResource>
@@ -390,6 +399,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DB.fee_allocation.datasource" />
     <None Include="Properties\DataSources\DB.student.datasource" />
+    <None Include="Properties\DataSources\DB.student_attendance.datasource" />
     <None Include="Properties\DataSources\DB.teacher.datasource" />
     <None Include="Properties\DataSources\DB.teachers_classes.datasource" />
     <None Include="Properties\DataSources\DB._class.datasource" />

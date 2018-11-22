@@ -21,7 +21,8 @@ namespace SPK.Utilities
                     ep.SetError(tbox, "Please fill the required field");
                     return false;
                 }
-            }            
+                ep.SetError(tbox, null);
+            }
 
             return true;
         }
@@ -29,7 +30,6 @@ namespace SPK.Utilities
         public static bool CheckComboBoxes(Control control, ErrorProvider ep)
         {
             //var txtboxes = control.OfType<TextBox>();//.Where(box => box.Name.StartsWith("_"));
-
             foreach (var cmbox in GetAllChildren(control).OfType<ComboBox>())
             {
                 if (cmbox.SelectedIndex == -1)
@@ -37,6 +37,7 @@ namespace SPK.Utilities
                     ep.SetError(cmbox, "Please select the required field");
                     return false;
                 }
+                ep.SetError(cmbox, null);
             }
 
             return true;

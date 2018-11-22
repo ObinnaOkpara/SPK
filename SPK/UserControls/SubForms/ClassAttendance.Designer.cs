@@ -30,8 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
+            this.dGridClassMembers = new System.Windows.Forms.DataGridView();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.cBoxSession = new System.Windows.Forms.ComboBox();
@@ -41,24 +40,25 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.cBoxClass = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnShow = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.dGridClassMembers = new System.Windows.Forms.DataGridView();
             this.regnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fullnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.attendanceDummyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
+            this.btnShow = new SPK.UserControls.Buttons.ButtonWithoutMenu();
+            this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGridClassMembers)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dGridClassMembers)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -80,23 +80,24 @@
             this.panel2.Size = new System.Drawing.Size(782, 380);
             this.panel2.TabIndex = 9;
             // 
-            // studentBindingSource
+            // dGridClassMembers
             // 
-            this.studentBindingSource.DataSource = typeof(DB.student);
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnSave.BtnText = "SAVE";
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnSave.Icon = global::SPK.Properties.Resources.icons8_save_64;
-            this.btnSave.Location = new System.Drawing.Point(310, 339);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnSave.Size = new System.Drawing.Size(150, 38);
-            this.btnSave.TabIndex = 92;
-            this.btnSave.ClickEvent += new System.EventHandler(this.btnSave_ClickEvent);
+            this.dGridClassMembers.AllowUserToAddRows = false;
+            this.dGridClassMembers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dGridClassMembers.AutoGenerateColumns = false;
+            this.dGridClassMembers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dGridClassMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGridClassMembers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.regnumberDataGridViewTextBoxColumn,
+            this.fullnameDataGridViewTextBoxColumn,
+            this.classDataGridViewTextBoxColumn,
+            this.attendanceDummyDataGridViewTextBoxColumn});
+            this.dGridClassMembers.DataSource = this.studentBindingSource;
+            this.dGridClassMembers.Location = new System.Drawing.Point(5, 45);
+            this.dGridClassMembers.Name = "dGridClassMembers";
+            this.dGridClassMembers.RowTemplate.Height = 24;
+            this.dGridClassMembers.Size = new System.Drawing.Size(773, 293);
+            this.dGridClassMembers.TabIndex = 93;
             // 
             // dtpDate
             // 
@@ -194,21 +195,6 @@
             this.label1.TabIndex = 75;
             this.label1.Text = "Select Class :";
             // 
-            // btnShow
-            // 
-            this.btnShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnShow.BtnText = "DISPLAY STUDENTS";
-            this.btnShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShow.ForeColor = System.Drawing.Color.White;
-            this.btnShow.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnShow.Icon = global::SPK.Properties.Resources.search_3;
-            this.btnShow.Location = new System.Drawing.Point(451, 23);
-            this.btnShow.Name = "btnShow";
-            this.btnShow.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnShow.Size = new System.Drawing.Size(208, 41);
-            this.btnShow.TabIndex = 26;
-            this.btnShow.ClickEvent += new System.EventHandler(this.btnShow_ClickEvent);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -252,39 +238,10 @@
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "ATTENDANCE MANAGEMENT";
             // 
-            // picSchoolLogo
-            // 
-            this.picSchoolLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.picSchoolLogo.Image = global::SPK.Properties.Resources.icons8_people_64;
-            this.picSchoolLogo.Location = new System.Drawing.Point(28, 16);
-            this.picSchoolLogo.Name = "picSchoolLogo";
-            this.picSchoolLogo.Size = new System.Drawing.Size(40, 40);
-            this.picSchoolLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSchoolLogo.TabIndex = 0;
-            this.picSchoolLogo.TabStop = false;
-            // 
             // backgroundWorker1
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
-            // 
-            // dGridClassMembers
-            // 
-            this.dGridClassMembers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.dGridClassMembers.AutoGenerateColumns = false;
-            this.dGridClassMembers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dGridClassMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGridClassMembers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.regnumberDataGridViewTextBoxColumn,
-            this.fullnameDataGridViewTextBoxColumn,
-            this.classDataGridViewTextBoxColumn,
-            this.attendanceDummyDataGridViewTextBoxColumn});
-            this.dGridClassMembers.DataSource = this.studentBindingSource;
-            this.dGridClassMembers.Location = new System.Drawing.Point(5, 45);
-            this.dGridClassMembers.Name = "dGridClassMembers";
-            this.dGridClassMembers.RowTemplate.Height = 24;
-            this.dGridClassMembers.Size = new System.Drawing.Size(773, 293);
-            this.dGridClassMembers.TabIndex = 93;
             // 
             // regnumberDataGridViewTextBoxColumn
             // 
@@ -316,6 +273,51 @@
             this.attendanceDummyDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.attendanceDummyDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataSource = typeof(DB.student);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnSave.BtnText = "SAVE";
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnSave.Icon = global::SPK.Properties.Resources.icons8_save_64;
+            this.btnSave.Location = new System.Drawing.Point(310, 339);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnSave.Size = new System.Drawing.Size(150, 38);
+            this.btnSave.TabIndex = 92;
+            this.btnSave.ClickEvent += new System.EventHandler(this.btnSave_ClickEvent);
+            // 
+            // btnShow
+            // 
+            this.btnShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnShow.BtnText = "DISPLAY STUDENTS";
+            this.btnShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShow.ForeColor = System.Drawing.Color.White;
+            this.btnShow.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnShow.Icon = global::SPK.Properties.Resources.search_3;
+            this.btnShow.Location = new System.Drawing.Point(451, 23);
+            this.btnShow.Name = "btnShow";
+            this.btnShow.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnShow.Size = new System.Drawing.Size(208, 41);
+            this.btnShow.TabIndex = 26;
+            this.btnShow.ClickEvent += new System.EventHandler(this.btnShow_ClickEvent);
+            // 
+            // picSchoolLogo
+            // 
+            this.picSchoolLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.picSchoolLogo.Image = global::SPK.Properties.Resources.icons8_people_64;
+            this.picSchoolLogo.Location = new System.Drawing.Point(28, 16);
+            this.picSchoolLogo.Name = "picSchoolLogo";
+            this.picSchoolLogo.Size = new System.Drawing.Size(40, 40);
+            this.picSchoolLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSchoolLogo.TabIndex = 0;
+            this.picSchoolLogo.TabStop = false;
+            // 
             // ClassAttendance
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -327,13 +329,13 @@
             this.Size = new System.Drawing.Size(800, 580);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGridClassMembers)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dGridClassMembers)).EndInit();
             this.ResumeLayout(false);
 
         }
