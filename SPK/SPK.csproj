@@ -156,6 +156,12 @@
     <Compile Include="UserControls\SubForms\AllocateFees.Designer.cs">
       <DependentUpon>AllocateFees.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\ClassAttendance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ClassAttendance.Designer.cs">
+      <DependentUpon>ClassAttendance.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\CurrentTermNSession.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -318,6 +324,9 @@
     <EmbeddedResource Include="UserControls\SubForms\AllocateFees.resx">
       <DependentUpon>AllocateFees.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\ClassAttendance.resx">
+      <DependentUpon>ClassAttendance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\CurrentTermNSession.resx">
       <DependentUpon>CurrentTermNSession.cs</DependentUpon>
     </EmbeddedResource>
@@ -380,6 +389,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DB.fee_allocation.datasource" />
+    <None Include="Properties\DataSources\DB.student.datasource" />
     <None Include="Properties\DataSources\DB.teacher.datasource" />
     <None Include="Properties\DataSources\DB.teachers_classes.datasource" />
     <None Include="Properties\DataSources\DB._class.datasource" />

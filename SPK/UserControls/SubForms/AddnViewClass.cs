@@ -77,30 +77,7 @@ namespace SPK.UserControls.SubForms
 
         private void dGridAllClass_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var senderGrid = (DataGridView)sender;
 
-            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
-            {
-                var btn = (DataGridViewButtonColumn)senderGrid.Columns[e.ColumnIndex];
-                if (btn.Text == "Delete")
-                {
-                    if (MessageBox.Show("Are you sure you want to delete this item?", "Delete Item", MessageBoxButtons.YesNo) != DialogResult.Yes)
-                        return;
-
-                    var _id = (int)senderGrid.CurrentRow.Cells[0].Value;
-                    using (var db = new Model1())
-                    {
-                        var c = new _class() { id = _id };
-                        db.classes.Attach(c);
-                        db.classes.Remove(c);
-                        db.SaveChanges();
-
-                        classes = db.classes.ToList();
-                        dGridAllClass.DataSource = classes;
-
-                    }
-                }
-            }
         }
     }
 }
