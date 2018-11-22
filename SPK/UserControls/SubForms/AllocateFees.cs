@@ -31,6 +31,7 @@ namespace SPK.UserControls.SubForms
 
             backgroundWorker1.RunWorkerAsync();
             cBoxClass.Cursor = Cursors.WaitCursor;
+            dGridStudents.Cursor = Cursors.WaitCursor;
 
         }
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
@@ -50,6 +51,7 @@ namespace SPK.UserControls.SubForms
             dGridStudents.DataSource = fees_allo;
 
             cBoxClass.Cursor = Cursors.Arrow;
+            dGridStudents.Cursor = Cursors.Arrow;
             //  cBoxClass.Invalidate();
         }
 
