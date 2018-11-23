@@ -177,6 +177,7 @@
     <Compile Include="Services\DataRepository\DataRepository.Entities\School_SubjectsRepository.cs" />
     <Compile Include="Services\DataRepository\DataRepository.Entities\SessionRepository.cs" />
     <Compile Include="Services\DataRepository\DataRepository.Entities\StudentRepository.cs" />
+    <Compile Include="Services\DataRepository\DataRepository.Entities\SubjectsRepository.cs" />
     <Compile Include="Services\DataRepository\DataRepository.Entities\TeacherRepository.cs" />
     <Compile Include="Services\DataRepository\DataRepository.Entities\Teachers_ClassesRepository.cs" />
     <Compile Include="Services\DataRepository\DataRepository.Entities\UserRepository.cs" />
@@ -187,6 +188,7 @@
     <Compile Include="Services\Interfaces\Interfaces.Entities\ISchool_SubjectsRepository.cs" />
     <Compile Include="Services\Interfaces\Interfaces.Entities\ISessionRepository.cs" />
     <Compile Include="Services\Interfaces\Interfaces.Entities\IStudentRepository.cs" />
+    <Compile Include="Services\Interfaces\Interfaces.Entities\ISubjectsRepository.cs" />
     <Compile Include="Services\Interfaces\Interfaces.Entities\ITeacherRepository.cs" />
     <Compile Include="Services\Interfaces\Interfaces.Entities\ITeachers_ClassesRepository.cs" />
     <Compile Include="Services\Interfaces\Interfaces.Entities\IUserRepository.cs" />
