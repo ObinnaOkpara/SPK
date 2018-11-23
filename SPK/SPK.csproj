@@ -306,6 +306,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reports\studentSlip.rdlc" />
     <EmbeddedResource Include="UserControls\Buttons\ButtonWithMenu.resx">
       <DependentUpon>ButtonWithMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -397,6 +398,7 @@
       <DependentUpon>ViewSubjects.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\DB.administrative.datasource" />
     <None Include="Properties\DataSources\DB.fee_allocation.datasource" />
     <None Include="Properties\DataSources\DB.student.datasource" />
     <None Include="Properties\DataSources\DB.student_attendance.datasource" />
