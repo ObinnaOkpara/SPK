@@ -22,6 +22,7 @@ namespace SPK.UserControls.SubForms
         {
             InitializeComponent();
             _unitOfWork = new UnitOfWork(new Model1());
+            dGridPrincipals.Cursor = Cursors.WaitCursor;
             backgroundWorker1.RunWorkerAsync();           
             
         }
@@ -34,12 +35,13 @@ namespace SPK.UserControls.SubForms
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            dGridPrincipals.Cursor = Cursors.Arrow;
             dGridPrincipals.DataSource = _principalList;
         }
 
         private void dGridPrincipals_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            Utils.LoadSerial(dGridPrincipals);
+          //  Utils.LoadSerial(dGridPrincipals);
         }
 
         private void dGridPrincipals_CellContentClick(object sender, DataGridViewCellEventArgs e)
