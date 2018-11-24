@@ -433,6 +433,7 @@
     <None Include="Properties\DataSources\DB.results1.datasource" />
     <None Include="Properties\DataSources\DB.school_subjects1.datasource" />
     <None Include="Properties\DataSources\DB.session.datasource" />
+    <None Include="Properties\DataSources\DB.sss.datasource" />
     <None Include="Properties\DataSources\DB.student.datasource" />
     <None Include="Properties\DataSources\DB.subject.datasource" />
     <None Include="Properties\DataSources\DB.teacher.datasource" />
