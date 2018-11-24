@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTermNSession = new System.Windows.Forms.Label();
             this.lblSchool = new System.Windows.Forms.Label();
@@ -45,11 +46,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStamp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -139,10 +143,10 @@
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
             this.btnSave.Icon = global::SPK.Properties.Resources.icons8_save_64;
-            this.btnSave.Location = new System.Drawing.Point(205, 379);
+            this.btnSave.Location = new System.Drawing.Point(211, 379);
             this.btnSave.Name = "btnSave";
             this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnSave.Size = new System.Drawing.Size(250, 50);
+            this.btnSave.Size = new System.Drawing.Size(229, 50);
             this.btnSave.TabIndex = 11;
             // 
             // btnUploadStamp
@@ -172,6 +176,7 @@
             this.btnUploadLogo.TabIndex = 7;
             this.btnUploadLogo.Text = "Browse...";
             this.btnUploadLogo.UseVisualStyleBackColor = false;
+            this.btnUploadLogo.Click += new System.EventHandler(this.btnUploadLogo_Click);
             // 
             // label5
             // 
@@ -246,6 +251,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "SCHOOL NAME :";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // SchoolInfo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -261,6 +270,7 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStamp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -284,5 +294,7 @@
         private Buttons.ButtonWithoutMenu btnSave;
         private System.Windows.Forms.PictureBox picStamp;
         private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

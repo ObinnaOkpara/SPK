@@ -116,6 +116,12 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetup.Designer.cs">
+      <DependentUpon>frmSetup.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSlipReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,6 +324,9 @@
     <Compile Include="Utilities\ValidateFomControls.cs" />
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetup.resx">
+      <DependentUpon>frmSetup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSlipReport.resx">
       <DependentUpon>frmSlipReport.cs</DependentUpon>

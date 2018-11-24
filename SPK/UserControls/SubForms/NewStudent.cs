@@ -51,10 +51,10 @@ namespace SPK.UserControls.SubForms
 
                     filename = name + tic + ext;
 
-                    _pasportLocation = Path.Combine(appPath + filename);
+                    _pasportLocation = Path.Combine(appPath, filename);
                     string filePath = opFile.FileName;
                     File.Copy(filePath, _pasportLocation);
-                    picStudentImage.Image = new Bitmap(opFile.OpenFile());
+                    picStudentImage.Image = new Bitmap(_pasportLocation);
                 }
                 catch (Exception ex)
                 {

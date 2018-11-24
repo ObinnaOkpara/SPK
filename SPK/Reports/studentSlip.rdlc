@@ -81,6 +81,10 @@
           <DataField>id</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="ImgFullPath">
+          <DataField>ImgFullPath</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="last_class_passed">
           <DataField>last_class_passed</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -190,6 +194,10 @@
           <DataField>id</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="LogoFullPath">
+          <DataField>LogoFullPath</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="school_logo">
           <DataField>school_logo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -204,6 +212,10 @@
         </Field>
         <Field Name="school_stamp">
           <DataField>school_stamp</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StampFullPath">
+          <DataField>StampFullPath</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="upload_date">
@@ -228,7 +240,7 @@
         <ReportItems>
           <Image Name="Image1">
             <Source>External</Source>
-            <Value>=First(Fields!passport.Value, "StudentDataset")</Value>
+            <Value>=First(Fields!ImgFullPath.Value, "StudentDataset")</Value>
             <Sizing>FitProportional</Sizing>
             <Top>0.28in</Top>
             <Left>6.205in</Left>
@@ -242,7 +254,7 @@
           </Image>
           <Image Name="Image2">
             <Source>External</Source>
-            <Value>=First(Fields!school_logo.Value, "schoolDataset")</Value>
+            <Value>=First(Fields!LogoFullPath.Value, "schoolDataset")</Value>
             <Sizing>FitProportional</Sizing>
             <Top>0.405in</Top>
             <Left>0.28917in</Left>
