@@ -33,7 +33,7 @@ namespace SPK.UserControls.SubForms
             opFile.Title = "Select Image";
             opFile.Filter = "jpg files (*.jpg)|*.jpg|All files (*.*)|*.*";
 
-            string appPath = Path.GetDirectoryName(Application.ExecutablePath) + @"\StudentImages\";
+            string appPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures), @"spk\image\");
             if (Directory.Exists(appPath) == false)
             {
                 Directory.CreateDirectory(appPath);
@@ -44,10 +44,17 @@ namespace SPK.UserControls.SubForms
                 try
                 {
                     string filename = opFile.SafeFileName;
-                    string filePath = opFile.FileName;
-                    File.Copy(filePath, appPath + filename);
-                    picStudentImage.Image = new Bitmap(opFile.OpenFile());
+                    string tic = DateTime.Now.Ticks.ToString();
 
+                    var name = filename.Substring(0, filename.LastIndexOf('.'));
+                    var ext = filename.Substring(filename.LastIndexOf('.'));
+
+                    filename = name + tic + ext;
+
+                    _pasportLocation = Path.Combine(appPath + filename);
+                    string filePath = opFile.FileName;
+                    File.Copy(filePath, _pasportLocation);
+                    picStudentImage.Image = new Bitmap(opFile.OpenFile());
                 }
                 catch (Exception ex)
                 {
@@ -146,6 +153,11 @@ namespace SPK.UserControls.SubForms
 
 
             }
+        }
+
+        private void btnSave_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -5,6 +5,7 @@ namespace DB
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.IO;
 
     [Table("spkmodel.students")]
     public partial class student
@@ -129,7 +130,18 @@ namespace DB
                 return firstname.Trim() + " " + lastname.Trim() + " " + othername.Trim();
             }
         }
-        
+
+        [NotMapped]
+        public string ImgFullPath
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(passport)) return null;
+
+                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures), @"spk\image\", passport);
+            }
+        }
+
         [NotMapped]
         public string AttendanceDummy { get; set; } = "Present";
     }
