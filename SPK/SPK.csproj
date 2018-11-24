@@ -437,6 +437,7 @@
     <None Include="Properties\DataSources\DB.subject.datasource" />
     <None Include="Properties\DataSources\DB.teacher.datasource" />
     <None Include="Properties\DataSources\DB.teachers_classes.datasource" />
+    <None Include="Properties\DataSources\DB.user.datasource" />
     <None Include="Properties\DataSources\DB._class.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
