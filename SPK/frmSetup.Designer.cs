@@ -33,18 +33,24 @@
             this.radClient = new System.Windows.Forms.RadioButton();
             this.radServer = new System.Windows.Forms.RadioButton();
             this.btnSave = new System.Windows.Forms.Button();
-            this.txtIP = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panClient = new System.Windows.Forms.Panel();
+            this.btnTest = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panClient = new System.Windows.Forms.Panel();
+            this.txtIP = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panServer = new System.Windows.Forms.Panel();
+            this.lbIPs = new System.Windows.Forms.ListBox();
             this.txtServerName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lbIPs = new System.Windows.Forms.ListBox();
-            this.btnTest = new System.Windows.Forms.Button();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtDbName = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panClient.SuspendLayout();
@@ -55,22 +61,28 @@
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.panClient);
+            this.panel3.Controls.Add(this.txtDbName);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.txtUsername);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.txtPassword);
+            this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Controls.Add(this.btnSave);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.panClient);
             this.panel3.Controls.Add(this.panServer);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.Location = new System.Drawing.Point(33, 25);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(650, 395);
+            this.panel3.Size = new System.Drawing.Size(650, 413);
             this.panel3.TabIndex = 4;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.radClient);
             this.groupBox1.Controls.Add(this.radServer);
-            this.groupBox1.Location = new System.Drawing.Point(108, 87);
+            this.groupBox1.Location = new System.Drawing.Point(108, 42);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(404, 64);
             this.groupBox1.TabIndex = 9;
@@ -107,32 +119,13 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.btnSave.Location = new System.Drawing.Point(261, 319);
+            this.btnSave.Location = new System.Drawing.Point(261, 360);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(102, 41);
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
-            // 
-            // txtIP
-            // 
-            this.txtIP.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.txtIP.Location = new System.Drawing.Point(202, 55);
-            this.txtIP.Name = "txtIP";
-            this.txtIP.Size = new System.Drawing.Size(304, 23);
-            this.txtIP.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label3.Location = new System.Drawing.Point(5, 58);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(180, 16);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "SERVER IP ADDRESS :";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label2
             // 
@@ -145,11 +138,39 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "SCHOOL DETAILS";
             // 
+            // panClient
+            // 
+            this.panClient.Controls.Add(this.btnTest);
+            this.panClient.Controls.Add(this.txtName);
+            this.panClient.Controls.Add(this.label1);
+            this.panClient.Controls.Add(this.txtIP);
+            this.panClient.Controls.Add(this.label3);
+            this.panClient.Location = new System.Drawing.Point(15, 216);
+            this.panClient.Name = "panClient";
+            this.panClient.Size = new System.Drawing.Size(563, 126);
+            this.panClient.TabIndex = 10;
+            this.panClient.Visible = false;
+            // 
+            // btnTest
+            // 
+            this.btnTest.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnTest.BackColor = System.Drawing.Color.White;
+            this.btnTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnTest.Location = new System.Drawing.Point(456, 83);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(102, 27);
+            this.btnTest.TabIndex = 9;
+            this.btnTest.Text = "Test IP";
+            this.btnTest.UseVisualStyleBackColor = false;
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            // 
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.txtName.Location = new System.Drawing.Point(202, 18);
+            this.txtName.Location = new System.Drawing.Point(256, 17);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(304, 23);
             this.txtName.TabIndex = 1;
@@ -159,24 +180,31 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label1.Location = new System.Drawing.Point(53, 21);
+            this.label1.Location = new System.Drawing.Point(13, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 16);
+            this.label1.Size = new System.Drawing.Size(226, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "SERVER NAME :";
+            this.label1.Text = "SERVER COMPUTER NAME :";
             // 
-            // panClient
+            // txtIP
             // 
-            this.panClient.Controls.Add(this.btnTest);
-            this.panClient.Controls.Add(this.txtName);
-            this.panClient.Controls.Add(this.label1);
-            this.panClient.Controls.Add(this.txtIP);
-            this.panClient.Controls.Add(this.label3);
-            this.panClient.Location = new System.Drawing.Point(69, 161);
-            this.panClient.Name = "panClient";
-            this.panClient.Size = new System.Drawing.Size(509, 126);
-            this.panClient.TabIndex = 10;
-            this.panClient.Visible = false;
+            this.txtIP.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.txtIP.Location = new System.Drawing.Point(256, 54);
+            this.txtIP.Name = "txtIP";
+            this.txtIP.Size = new System.Drawing.Size(304, 23);
+            this.txtIP.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label3.Location = new System.Drawing.Point(59, 57);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(180, 16);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "SERVER IP ADDRESS :";
             // 
             // panServer
             // 
@@ -184,17 +212,26 @@
             this.panServer.Controls.Add(this.txtServerName);
             this.panServer.Controls.Add(this.label4);
             this.panServer.Controls.Add(this.label5);
-            this.panServer.Location = new System.Drawing.Point(70, 163);
+            this.panServer.Location = new System.Drawing.Point(70, 218);
             this.panServer.Name = "panServer";
             this.panServer.Size = new System.Drawing.Size(509, 136);
             this.panServer.TabIndex = 11;
             this.panServer.Visible = false;
             // 
+            // lbIPs
+            // 
+            this.lbIPs.FormattingEnabled = true;
+            this.lbIPs.ItemHeight = 16;
+            this.lbIPs.Location = new System.Drawing.Point(201, 57);
+            this.lbIPs.Name = "lbIPs";
+            this.lbIPs.Size = new System.Drawing.Size(264, 68);
+            this.lbIPs.TabIndex = 4;
+            // 
             // txtServerName
             // 
             this.txtServerName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtServerName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.txtServerName.Location = new System.Drawing.Point(206, 18);
+            this.txtServerName.Location = new System.Drawing.Point(201, 19);
             this.txtServerName.Name = "txtServerName";
             this.txtServerName.ReadOnly = true;
             this.txtServerName.Size = new System.Drawing.Size(264, 23);
@@ -205,7 +242,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label4.Location = new System.Drawing.Point(64, 21);
+            this.label4.Location = new System.Drawing.Point(52, 22);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(132, 16);
             this.label4.TabIndex = 0;
@@ -216,35 +253,71 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label5.Location = new System.Drawing.Point(16, 58);
+            this.label5.Location = new System.Drawing.Point(4, 59);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(180, 16);
             this.label5.TabIndex = 3;
             this.label5.Text = "SERVER IP ADDRESS :";
             // 
-            // lbIPs
+            // txtUsername
             // 
-            this.lbIPs.FormattingEnabled = true;
-            this.lbIPs.ItemHeight = 16;
-            this.lbIPs.Location = new System.Drawing.Point(206, 56);
-            this.lbIPs.Name = "lbIPs";
-            this.lbIPs.Size = new System.Drawing.Size(264, 68);
-            this.lbIPs.TabIndex = 4;
+            this.txtUsername.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.txtUsername.Location = new System.Drawing.Point(271, 155);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(304, 23);
+            this.txtUsername.TabIndex = 13;
             // 
-            // btnTest
+            // label6
             // 
-            this.btnTest.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnTest.BackColor = System.Drawing.Color.White;
-            this.btnTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.btnTest.Location = new System.Drawing.Point(383, 82);
-            this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(102, 27);
-            this.btnTest.TabIndex = 9;
-            this.btnTest.Text = "Test IP";
-            this.btnTest.UseVisualStyleBackColor = false;
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label6.Location = new System.Drawing.Point(120, 158);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(134, 16);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "DB USERNAME :";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.txtPassword.Location = new System.Drawing.Point(271, 192);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(304, 23);
+            this.txtPassword.TabIndex = 15;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label7.Location = new System.Drawing.Point(120, 195);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(134, 16);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "DB PASSWORD :";
+            // 
+            // txtDbName
+            // 
+            this.txtDbName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDbName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.txtDbName.Location = new System.Drawing.Point(271, 118);
+            this.txtDbName.Name = "txtDbName";
+            this.txtDbName.Size = new System.Drawing.Size(304, 23);
+            this.txtDbName.TabIndex = 17;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label8.Location = new System.Drawing.Point(163, 121);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(91, 16);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "DB NAME :";
             // 
             // frmSetup
             // 
@@ -286,5 +359,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnTest;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtDbName;
+        private System.Windows.Forms.Label label8;
     }
 }
