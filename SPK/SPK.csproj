@@ -393,6 +393,9 @@
     <EmbeddedResource Include="UserControls\SubForms\NewStudent.resx">
       <DependentUpon>NewStudent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\PromoteDemoteStudent.resx">
+      <DependentUpon>PromoteDemoteStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\PublishUploadedResult.resx">
       <DependentUpon>PublishUploadedResult.cs</DependentUpon>
     </EmbeddedResource>
