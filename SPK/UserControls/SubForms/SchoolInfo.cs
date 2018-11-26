@@ -18,10 +18,15 @@ namespace SPK.UserControls.SubForms
         string appPath = "";
         string _logoLocation = "";
         string _stampLocation = "";
+        administrative adm = new administrative();
+
         public SchoolInfo()
         {
             InitializeComponent();
+            backgroundWorker1.RunWorkerAsync();
+            Cursor = Cursors.WaitCursor;
             appPath = Properties.Settings.Default.ImagePath;
+
         }
 
         private void btnUploadLogo_Click(object sender, EventArgs e)
@@ -80,7 +85,7 @@ namespace SPK.UserControls.SubForms
                     _stampLocation = "admin/" + filename;
                     string filePath = opFile.FileName;
                     File.Copy(filePath, Path.Combine(appPath, _stampLocation));
-                    picLogo.Image = new Bitmap(filePath);
+                    picStamp.Image = new Bitmap(filePath);
                 }
                 catch (Exception ex)
                 {
@@ -115,7 +120,18 @@ namespace SPK.UserControls.SubForms
                     };
                     using (var db = new Model1())
                     {
-                        db.administratives.Add(admin);
+                        if (db.administratives.Count()<1) db.administratives.Add(admin);
+                        else
+                        {
+                            var cur = db.administratives.First();
+                            cur.school_logo = _logoLocation;
+                            cur.school_motto = _stampLocation;
+                            cur.school_name = _txtName.Text;
+                            cur.school_stamp = _txtAddress.Text;
+                            cur.upload_date = DateTime.Now.Date.ToString("d");
+                            cur.upload_time = DateTime.Now;
+                        }
+
                         db.SaveChanges();
                     }
                     MessageBox.Show("Scho0l Info was saved successfully.");
@@ -126,6 +142,29 @@ namespace SPK.UserControls.SubForms
             {
                 MessageBox.Show("An error occured.\n" + ex.Message);
             }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            using (var db = new Model1())
+            {
+                adm = db.administratives.FirstOrDefault();
+            }
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (adm !=null)
+            {
+                _txtAddress.Text = adm.school_motto;
+                _txtName.Text = adm.school_name;
+                picLogo.ImageLocation = Path.Combine(appPath, adm.school_logo);
+                picStamp.ImageLocation = Path.Combine(appPath, adm.school_stamp);
+                _logoLocation = adm.school_logo;
+                _stampLocation = adm.school_stamp;
+            }
+
+            Cursor = Cursors.Arrow;
         }
     }
 }
