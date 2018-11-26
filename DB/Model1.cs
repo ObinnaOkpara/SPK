@@ -8,7 +8,7 @@ namespace DB
     public partial class Model1 : DbContext
     {
         public Model1()
-            : base("name=SPK.Properties.Settings.spkmodelConnectionString")
+            : base("name=Model1")
         {
         }
 
