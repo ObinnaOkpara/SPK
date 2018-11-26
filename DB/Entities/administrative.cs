@@ -5,6 +5,7 @@ namespace DB
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.IO;
 
     [Table("spkmodel.administratives")]
     public partial class administrative

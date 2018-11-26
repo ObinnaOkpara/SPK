@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTermNSession = new System.Windows.Forms.Label();
             this.lblSchool = new System.Windows.Forms.Label();
@@ -35,21 +36,24 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.picStamp = new System.Windows.Forms.PictureBox();
             this.picLogo = new System.Windows.Forms.PictureBox();
-            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.btnUploadStamp = new System.Windows.Forms.Button();
             this.btnUploadLogo = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtAddress = new System.Windows.Forms.TextBox();
+            this._txtAddress = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
+            this._txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStamp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -105,10 +109,10 @@
             this.panel3.Controls.Add(this.btnUploadLogo);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.txtAddress);
+            this.panel3.Controls.Add(this._txtAddress);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.txtName);
+            this.panel3.Controls.Add(this._txtName);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.Location = new System.Drawing.Point(69, 111);
@@ -132,19 +136,6 @@
             this.picLogo.TabIndex = 12;
             this.picLogo.TabStop = false;
             // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnSave.BtnText = "SAVE CHANGES";
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnSave.Icon = global::SPK.Properties.Resources.icons8_save_64;
-            this.btnSave.Location = new System.Drawing.Point(205, 379);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnSave.Size = new System.Drawing.Size(250, 50);
-            this.btnSave.TabIndex = 11;
-            // 
             // btnUploadStamp
             // 
             this.btnUploadStamp.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -158,6 +149,7 @@
             this.btnUploadStamp.TabIndex = 8;
             this.btnUploadStamp.Text = "Browse...";
             this.btnUploadStamp.UseVisualStyleBackColor = false;
+            this.btnUploadStamp.Click += new System.EventHandler(this.btnUploadStamp_Click);
             // 
             // btnUploadLogo
             // 
@@ -172,6 +164,7 @@
             this.btnUploadLogo.TabIndex = 7;
             this.btnUploadLogo.Text = "Browse...";
             this.btnUploadLogo.UseVisualStyleBackColor = false;
+            this.btnUploadLogo.Click += new System.EventHandler(this.btnUploadLogo_Click);
             // 
             // label5
             // 
@@ -195,14 +188,14 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "SCHOOL LOGO :";
             // 
-            // txtAddress
+            // _txtAddress
             // 
-            this.txtAddress.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.txtAddress.Location = new System.Drawing.Point(205, 85);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(424, 23);
-            this.txtAddress.TabIndex = 4;
+            this._txtAddress.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._txtAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this._txtAddress.Location = new System.Drawing.Point(205, 85);
+            this._txtAddress.Name = "_txtAddress";
+            this._txtAddress.Size = new System.Drawing.Size(424, 23);
+            this._txtAddress.TabIndex = 4;
             // 
             // label3
             // 
@@ -226,14 +219,14 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "SCHOOL DETAILS";
             // 
-            // txtName
+            // _txtName
             // 
-            this.txtName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.txtName.Location = new System.Drawing.Point(205, 48);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(424, 23);
-            this.txtName.TabIndex = 1;
+            this._txtName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this._txtName.Location = new System.Drawing.Point(205, 48);
+            this._txtName.Name = "_txtName";
+            this._txtName.Size = new System.Drawing.Size(424, 23);
+            this._txtName.TabIndex = 1;
             // 
             // label1
             // 
@@ -245,6 +238,29 @@
             this.label1.Size = new System.Drawing.Size(135, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "SCHOOL NAME :";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnSave.BtnText = "SAVE CHANGES";
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnSave.Icon = global::SPK.Properties.Resources.icons8_save_64;
+            this.btnSave.Location = new System.Drawing.Point(211, 379);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnSave.Size = new System.Drawing.Size(229, 50);
+            this.btnSave.TabIndex = 11;
+            this.btnSave.ClickEvent += new System.EventHandler(this.btnSave_ClickEvent);
             // 
             // SchoolInfo
             // 
@@ -261,6 +277,7 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStamp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -272,17 +289,19 @@
         private System.Windows.Forms.Label lblSchool;
         private System.Windows.Forms.PictureBox picSchoolLogo;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox _txtName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnUploadStamp;
         private System.Windows.Forms.Button btnUploadLogo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox _txtAddress;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private Buttons.ButtonWithoutMenu btnSave;
         private System.Windows.Forms.PictureBox picStamp;
         private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
