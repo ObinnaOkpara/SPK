@@ -56,7 +56,7 @@
             this.buttonWithoutMenu2 = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.buttonWithoutMenu1 = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.buttonWithMenu1 = new SPK.UserControls.Buttons.ButtonWithMenu();
-            this.specifySssSubject1 = new SPK.UserControls.SubForms.SpecifySssSubject();
+            this.saveSchoolStartnEndDate1 = new SPK.UserControls.SubForms.SaveSchoolStartnEndDate();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
@@ -233,7 +233,7 @@
             this.panContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panContainer.Controls.Add(this.specifySssSubject1);
+            this.panContainer.Controls.Add(this.saveSchoolStartnEndDate1);
             this.panContainer.Location = new System.Drawing.Point(237, 53);
             this.panContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panContainer.Name = "panContainer";
@@ -462,14 +462,14 @@
             this.buttonWithMenu1.Size = new System.Drawing.Size(232, 41);
             this.buttonWithMenu1.TabIndex = 10;
             // 
-            // specifySssSubject1
+            // saveSchoolStartnEndDate1
             // 
-            this.specifySssSubject1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.specifySssSubject1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.specifySssSubject1.Location = new System.Drawing.Point(0, 0);
-            this.specifySssSubject1.Name = "specifySssSubject1";
-            this.specifySssSubject1.Size = new System.Drawing.Size(800, 580);
-            this.specifySssSubject1.TabIndex = 0;
+            this.saveSchoolStartnEndDate1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.saveSchoolStartnEndDate1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.saveSchoolStartnEndDate1.Location = new System.Drawing.Point(0, 0);
+            this.saveSchoolStartnEndDate1.Name = "saveSchoolStartnEndDate1";
+            this.saveSchoolStartnEndDate1.Size = new System.Drawing.Size(800, 580);
+            this.saveSchoolStartnEndDate1.TabIndex = 0;
             // 
             // frmMain
             // 
@@ -526,7 +526,7 @@
         private UserControls.Buttons.ButtonWithMenu buttonWithMenu9;
         private UserControls.Buttons.ButtonWithMenu buttonWithMenu8;
         private System.Windows.Forms.Panel panContainer;
-        private UserControls.SubForms.SpecifySssSubject specifySssSubject1;
+        private UserControls.SubForms.SaveSchoolStartnEndDate saveSchoolStartnEndDate1;
     }
 }
 
