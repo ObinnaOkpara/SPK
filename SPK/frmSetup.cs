@@ -25,7 +25,7 @@ namespace SPK
 
         private void frmSetup_Load(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.AppType == "Client")
+            if (Properties.Settings.Default.AppType == "client")
             {
                 radClient.Checked = true;
             }
@@ -192,7 +192,7 @@ namespace SPK
                     Properties.Settings.Default.DbPassword = txtPassword.Text.Trim();
                     Properties.Settings.Default.ServerIP = txtIP.Text.Trim();
                     Properties.Settings.Default.ServerName = txtName.Text.Trim();
-                    Properties.Settings.Default.AppType = "Client";
+                    Properties.Settings.Default.AppType = "client";
 
                     Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
                     config.ConnectionStrings.ConnectionStrings["Model1"].ConnectionString = 
@@ -208,9 +208,11 @@ namespace SPK
                     Properties.Settings.Default.DbPassword = txtPassword.Text;
                     Properties.Settings.Default.ServerIP = "127.0.0.1";
                     Properties.Settings.Default.ServerName = txtServerName.Text;
-                    Properties.Settings.Default.AppType = "Server";
+                    Properties.Settings.Default.AppType = "server";
 
-                    QshareFolder(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures), @"spk"), "spk", "School Portal Images");
+                    QshareFolder(@"c:\spk", "spk", "School Portal Images");
+                    Directory.CreateDirectory(@"c:\spk\admin");
+                    Directory.CreateDirectory(@"c:\spk\image");
 
                     Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
                     config.ConnectionStrings.ConnectionStrings["Model1"].ConnectionString =
@@ -226,6 +228,23 @@ namespace SPK
                 MessageBox.Show(ex.Message);
             }
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            try
+            {
+                var appPath = @"\\" + Path.Combine(txtName.Text, @"spk");
+                File.Copy(Path.Combine(Environment.CurrentDirectory, "small.png"), Path.Combine(appPath, "small.png"));
+                MessageBox.Show("Successful.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            Cursor = Cursors.Arrow;
         }
     }
 }
