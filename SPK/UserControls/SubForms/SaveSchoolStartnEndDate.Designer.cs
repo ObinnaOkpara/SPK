@@ -79,11 +79,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.label3.Location = new System.Drawing.Point(79, 117);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 16);
+            this.label3.Size = new System.Drawing.Size(132, 17);
             this.label3.TabIndex = 16;
             this.label3.Text = "Resumption Date";
             // 
@@ -99,26 +99,27 @@
             this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
             this.btnSave.Size = new System.Drawing.Size(250, 50);
             this.btnSave.TabIndex = 15;
+            this.btnSave.ClickEvent += new System.EventHandler(this.btnSave_ClickEvent);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.label2.Location = new System.Drawing.Point(93, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(358, 18);
+            this.label2.Size = new System.Drawing.Size(332, 20);
             this.label2.TabIndex = 14;
             this.label2.Text = "Save End of Term and Resumption Date";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.label1.Location = new System.Drawing.Point(79, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 16);
+            this.label1.Size = new System.Drawing.Size(136, 17);
             this.label1.TabIndex = 12;
             this.label1.Text = "End of Term Date";
             // 
@@ -137,20 +138,20 @@
             // lblTermNSession
             // 
             this.lblTermNSession.AutoSize = true;
-            this.lblTermNSession.Font = new System.Drawing.Font("Lucida Sans", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTermNSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTermNSession.Location = new System.Drawing.Point(27, 60);
             this.lblTermNSession.Name = "lblTermNSession";
-            this.lblTermNSession.Size = new System.Drawing.Size(315, 16);
+            this.lblTermNSession.Size = new System.Drawing.Size(321, 17);
             this.lblTermNSession.TabIndex = 5;
             this.lblTermNSession.Text = "Manage School End and Resumption Dates";
             // 
             // lblSchool
             // 
             this.lblSchool.AutoSize = true;
-            this.lblSchool.Font = new System.Drawing.Font("Lucida Sans", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSchool.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSchool.Location = new System.Drawing.Point(69, 23);
             this.lblSchool.Name = "lblSchool";
-            this.lblSchool.Size = new System.Drawing.Size(330, 25);
+            this.lblSchool.Size = new System.Drawing.Size(335, 26);
             this.lblSchool.TabIndex = 4;
             this.lblSchool.Text = "ADMINISTRATIVE MANAGER";
             // 
