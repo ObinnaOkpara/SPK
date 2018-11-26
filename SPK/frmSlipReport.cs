@@ -15,9 +15,11 @@ namespace SPK
     public partial class frmSlipReport : Form
     {
         string appPath = "";
-        public frmSlipReport()
+        int studentId;
+        public frmSlipReport(int StudentId)
         {
             InitializeComponent();
+            studentId = StudentId;
         }
 
         private void frmSlipReport_Load(object sender, EventArgs e)
@@ -30,7 +32,7 @@ namespace SPK
             using (var db = new Model1())
             {
                 sch =db.administratives.FirstOrDefault();
-                stu =db.students.FirstOrDefault();
+                stu =db.students.Find(studentId);
             }
 
             var p = new List<Microsoft.Reporting.WinForms.ReportParameter>();

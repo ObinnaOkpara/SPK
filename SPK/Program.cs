@@ -16,7 +16,7 @@ namespace SPK
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSlipReport());
+            Application.Run(new frmMain());
         }
         
     }
