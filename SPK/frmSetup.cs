@@ -194,6 +194,8 @@ namespace SPK
                     Properties.Settings.Default.ServerName = txtName.Text.Trim();
                     Properties.Settings.Default.AppType = "client";
 
+                    Properties.Settings.Default.ImagePath = @"\\" + Path.Combine(Properties.Settings.Default.ServerName, @"spk\");
+
                     Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
                     config.ConnectionStrings.ConnectionStrings["Model1"].ConnectionString = 
                         $"SERVER={txtIP.Text.Trim()}; DATABASE={txtDbName.Text.Trim()}; USER ID={txtUsername.Text.Trim()}; PASSWORD={txtPassword.Text.Trim()};";
@@ -209,19 +211,25 @@ namespace SPK
                     Properties.Settings.Default.ServerIP = "127.0.0.1";
                     Properties.Settings.Default.ServerName = txtServerName.Text;
                     Properties.Settings.Default.AppType = "server";
-
+                    
                     QshareFolder(@"c:\spk", "spk", "School Portal Images");
                     Directory.CreateDirectory(@"c:\spk\admin");
                     Directory.CreateDirectory(@"c:\spk\image");
+                    
+                    Properties.Settings.Default.ImagePath = Path.Combine(@"c:\", @"spk\");
 
                     Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
                     config.ConnectionStrings.ConnectionStrings["Model1"].ConnectionString =
                         $"SERVER=127.0.0.1; DATABASE={txtDbName.Text.Trim()}; USER ID={txtUsername.Text.Trim()}; PASSWORD={txtPassword.Text.Trim()};";
                     config.ConnectionStrings.ConnectionStrings["Model1"].ProviderName = "MySql.Data.MySqlClient";
                     config.Save(ConfigurationSaveMode.Modified);
+
                 }
 
+                Properties.Settings.Default.SetupDone = true;
                 Properties.Settings.Default.Save();
+
+                MessageBox.Show("Configuration was saved successfully.");
             }
             catch (Exception ex)
             {

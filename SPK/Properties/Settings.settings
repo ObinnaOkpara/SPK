@@ -31,5 +31,8 @@
     <Setting Name="DbName" Type="System.String" Scope="User">
       <Value Profile="(Default)">spkmodel</Value>
     </Setting>
+    <Setting Name="ImagePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

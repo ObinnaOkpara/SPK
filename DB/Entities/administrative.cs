@@ -29,29 +29,5 @@ namespace DB
 
         [Column(TypeName = "timestamp")]
         public DateTime? upload_time { get; set; }
-
-
-        [NotMapped]
-        public string LogoFullPath
-        {
-            get
-            {
-                if (string.IsNullOrEmpty(school_logo)) return null;
-
-                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures), @"spk\admin\", school_logo);
-            }
-        }
-
-        [NotMapped]
-        public string StampFullPath
-        {
-            get
-            {
-                if (string.IsNullOrEmpty(school_stamp)) return null;
-
-                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures), @"spk\admin\", school_stamp);
-            }
-        }
-
     }
 }

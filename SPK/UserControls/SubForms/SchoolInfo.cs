@@ -21,11 +21,7 @@ namespace SPK.UserControls.SubForms
         public SchoolInfo()
         {
             InitializeComponent();
-            if (Properties.Settings.Default.AppType == "server")
-            {
-                appPath = Path.Combine(@"c:\", @"spk\");
-            }
-            else { appPath = @"\\" + Path.Combine(Properties.Settings.Default.ServerName, @"spk\"); }
+            appPath = Properties.Settings.Default.ImagePath;
         }
 
         private void btnUploadLogo_Click(object sender, EventArgs e)

@@ -18,5 +18,6 @@ namespace SPK
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmSetup());
         }
+        
     }
 }
