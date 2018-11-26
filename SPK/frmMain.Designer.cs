@@ -35,6 +35,15 @@
             this.picClose = new System.Windows.Forms.PictureBox();
             this.picMinimise = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblUserType = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panContainer = new System.Windows.Forms.Panel();
+            this.MenuSchoolInfo = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.updateSchoolInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.currentTermAndSessionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewSessionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewAttendance1 = new SPK.UserControls.SubForms.ViewAttendance();
             this.buttonWithMenu11 = new SPK.UserControls.Buttons.ButtonWithMenu();
             this.buttonWithMenu10 = new SPK.UserControls.Buttons.ButtonWithMenu();
             this.buttonWithMenu9 = new SPK.UserControls.Buttons.ButtonWithMenu();
@@ -44,27 +53,19 @@
             this.buttonWithMenu5 = new SPK.UserControls.Buttons.ButtonWithMenu();
             this.buttonWithMenu4 = new SPK.UserControls.Buttons.ButtonWithMenu();
             this.buttonWithMenu3 = new SPK.UserControls.Buttons.ButtonWithMenu();
-            this.buttonWithMenu2 = new SPK.UserControls.Buttons.ButtonWithMenu();
+            this.btnStudents = new SPK.UserControls.Buttons.ButtonWithMenu();
             this.buttonWithoutMenu2 = new SPK.UserControls.Buttons.ButtonWithoutMenu();
-            this.buttonWithoutMenu1 = new SPK.UserControls.Buttons.ButtonWithoutMenu();
-            this.buttonWithMenu1 = new SPK.UserControls.Buttons.ButtonWithMenu();
-            this.lblUserType = new System.Windows.Forms.Label();
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.schoolProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveSchoolInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewSchoolInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panContainer = new System.Windows.Forms.Panel();
-            this.viewAttendance1 = new SPK.UserControls.SubForms.ViewAttendance();
+            this.btnDashboard = new SPK.UserControls.Buttons.ButtonWithoutMenu();
+            this.btnSchInfo = new SPK.UserControls.Buttons.ButtonWithMenu();
+            this.menuStudents = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimise)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             this.panContainer.SuspendLayout();
+            this.MenuSchoolInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -153,10 +154,10 @@
             this.panel3.Controls.Add(this.buttonWithMenu5);
             this.panel3.Controls.Add(this.buttonWithMenu4);
             this.panel3.Controls.Add(this.buttonWithMenu3);
-            this.panel3.Controls.Add(this.buttonWithMenu2);
+            this.panel3.Controls.Add(this.btnStudents);
             this.panel3.Controls.Add(this.buttonWithoutMenu2);
-            this.panel3.Controls.Add(this.buttonWithoutMenu1);
-            this.panel3.Controls.Add(this.buttonWithMenu1);
+            this.panel3.Controls.Add(this.btnDashboard);
+            this.panel3.Controls.Add(this.btnSchInfo);
             this.panel3.Controls.Add(this.lblUserType);
             this.panel3.Controls.Add(this.lblUsername);
             this.panel3.Controls.Add(this.pictureBox1);
@@ -166,6 +167,96 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(232, 590);
             this.panel3.TabIndex = 19;
+            // 
+            // lblUserType
+            // 
+            this.lblUserType.AutoSize = true;
+            this.lblUserType.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserType.Location = new System.Drawing.Point(53, 31);
+            this.lblUserType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUserType.Name = "lblUserType";
+            this.lblUserType.Size = new System.Drawing.Size(50, 19);
+            this.lblUserType.TabIndex = 9;
+            this.lblUserType.Text = "Admin";
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(52, 5);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(95, 24);
+            this.lblUsername.TabIndex = 8;
+            this.lblUsername.Text = "SPK Guest";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SPK.Properties.Resources.icons8_circled_user_female_skin_type_6_96;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 49);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panContainer
+            // 
+            this.panContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panContainer.Controls.Add(this.viewAttendance1);
+            this.panContainer.Location = new System.Drawing.Point(237, 53);
+            this.panContainer.Margin = new System.Windows.Forms.Padding(2);
+            this.panContainer.Name = "panContainer";
+            this.panContainer.Size = new System.Drawing.Size(800, 580);
+            this.panContainer.TabIndex = 20;
+            // 
+            // MenuSchoolInfo
+            // 
+            this.MenuSchoolInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
+            this.MenuSchoolInfo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.MenuSchoolInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateSchoolInfoToolStripMenuItem,
+            this.currentTermAndSessionToolStripMenuItem,
+            this.addNewSessionToolStripMenuItem});
+            this.MenuSchoolInfo.Name = "MenuSchoolInfo";
+            this.MenuSchoolInfo.ShowImageMargin = false;
+            this.MenuSchoolInfo.Size = new System.Drawing.Size(192, 70);
+            // 
+            // updateSchoolInfoToolStripMenuItem
+            // 
+            this.updateSchoolInfoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.updateSchoolInfoToolStripMenuItem.Name = "updateSchoolInfoToolStripMenuItem";
+            this.updateSchoolInfoToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.updateSchoolInfoToolStripMenuItem.Text = "Update School Info";
+            this.updateSchoolInfoToolStripMenuItem.Click += new System.EventHandler(this.updateSchoolInfoToolStripMenuItem_Click);
+            // 
+            // currentTermAndSessionToolStripMenuItem
+            // 
+            this.currentTermAndSessionToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.currentTermAndSessionToolStripMenuItem.Name = "currentTermAndSessionToolStripMenuItem";
+            this.currentTermAndSessionToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.currentTermAndSessionToolStripMenuItem.Text = "Current Term and Session";
+            this.currentTermAndSessionToolStripMenuItem.Click += new System.EventHandler(this.currentTermAndSessionToolStripMenuItem_Click);
+            // 
+            // addNewSessionToolStripMenuItem
+            // 
+            this.addNewSessionToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.addNewSessionToolStripMenuItem.Name = "addNewSessionToolStripMenuItem";
+            this.addNewSessionToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.addNewSessionToolStripMenuItem.Text = "Add New Session";
+            this.addNewSessionToolStripMenuItem.Click += new System.EventHandler(this.addNewSessionToolStripMenuItem_Click);
+            // 
+            // viewAttendance1
+            // 
+            this.viewAttendance1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.viewAttendance1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.viewAttendance1.Location = new System.Drawing.Point(0, 0);
+            this.viewAttendance1.Name = "viewAttendance1";
+            this.viewAttendance1.Size = new System.Drawing.Size(800, 580);
+            this.viewAttendance1.TabIndex = 0;
             // 
             // buttonWithMenu11
             // 
@@ -319,24 +410,23 @@
             this.buttonWithMenu3.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
             this.buttonWithMenu3.Size = new System.Drawing.Size(232, 41);
             this.buttonWithMenu3.TabIndex = 15;
-            this.buttonWithMenu3.ClickEvent += new System.EventHandler(this.buttonWithMenu3_Click);
             // 
-            // buttonWithMenu2
+            // btnStudents
             // 
-            this.buttonWithMenu2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnStudents.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonWithMenu2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.buttonWithMenu2.BtnText = "Student Management";
-            this.buttonWithMenu2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonWithMenu2.ForeColor = System.Drawing.Color.White;
-            this.buttonWithMenu2.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.buttonWithMenu2.Icon = global::SPK.Properties.Resources.icons8_laptop_64;
-            this.buttonWithMenu2.Location = new System.Drawing.Point(0, 178);
-            this.buttonWithMenu2.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonWithMenu2.Name = "buttonWithMenu2";
-            this.buttonWithMenu2.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu2.Size = new System.Drawing.Size(232, 41);
-            this.buttonWithMenu2.TabIndex = 14;
+            this.btnStudents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnStudents.BtnText = "Student Management";
+            this.btnStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStudents.ForeColor = System.Drawing.Color.White;
+            this.btnStudents.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnStudents.Icon = global::SPK.Properties.Resources.icons8_laptop_64;
+            this.btnStudents.Location = new System.Drawing.Point(0, 178);
+            this.btnStudents.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStudents.Name = "btnStudents";
+            this.btnStudents.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnStudents.Size = new System.Drawing.Size(232, 41);
+            this.btnStudents.TabIndex = 14;
             // 
             // buttonWithoutMenu2
             // 
@@ -355,121 +445,49 @@
             this.buttonWithoutMenu2.Size = new System.Drawing.Size(232, 41);
             this.buttonWithoutMenu2.TabIndex = 12;
             // 
-            // buttonWithoutMenu1
+            // btnDashboard
             // 
-            this.buttonWithoutMenu1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnDashboard.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonWithoutMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.buttonWithoutMenu1.BtnText = "Dashboard";
-            this.buttonWithoutMenu1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonWithoutMenu1.ForeColor = System.Drawing.Color.White;
-            this.buttonWithoutMenu1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.buttonWithoutMenu1.Icon = global::SPK.Properties.Resources.icons8_dashboard_64;
-            this.buttonWithoutMenu1.Location = new System.Drawing.Point(0, 56);
-            this.buttonWithoutMenu1.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonWithoutMenu1.Name = "buttonWithoutMenu1";
-            this.buttonWithoutMenu1.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithoutMenu1.Size = new System.Drawing.Size(232, 41);
-            this.buttonWithoutMenu1.TabIndex = 11;
+            this.btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnDashboard.BtnText = "Dashboard";
+            this.btnDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.ForeColor = System.Drawing.Color.White;
+            this.btnDashboard.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnDashboard.Icon = global::SPK.Properties.Resources.icons8_dashboard_64;
+            this.btnDashboard.Location = new System.Drawing.Point(0, 56);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnDashboard.Size = new System.Drawing.Size(232, 41);
+            this.btnDashboard.TabIndex = 11;
+            this.btnDashboard.ClickEvent += new System.EventHandler(this.btnDashboard_ClickEvent);
             // 
-            // buttonWithMenu1
+            // btnSchInfo
             // 
-            this.buttonWithMenu1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnSchInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonWithMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.buttonWithMenu1.BtnText = "School Information";
-            this.buttonWithMenu1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonWithMenu1.ForeColor = System.Drawing.Color.White;
-            this.buttonWithMenu1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.buttonWithMenu1.Icon = global::SPK.Properties.Resources.icons8_laptop_64;
-            this.buttonWithMenu1.Location = new System.Drawing.Point(0, 138);
-            this.buttonWithMenu1.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonWithMenu1.Name = "buttonWithMenu1";
-            this.buttonWithMenu1.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu1.Size = new System.Drawing.Size(232, 41);
-            this.buttonWithMenu1.TabIndex = 10;
+            this.btnSchInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnSchInfo.BtnText = "School Information";
+            this.btnSchInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSchInfo.ForeColor = System.Drawing.Color.White;
+            this.btnSchInfo.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnSchInfo.Icon = global::SPK.Properties.Resources.icons8_laptop_64;
+            this.btnSchInfo.Location = new System.Drawing.Point(0, 138);
+            this.btnSchInfo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSchInfo.Name = "btnSchInfo";
+            this.btnSchInfo.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnSchInfo.Size = new System.Drawing.Size(232, 41);
+            this.btnSchInfo.TabIndex = 10;
+            this.btnSchInfo.ClickEvent += new System.EventHandler(this.btnSchInfo_ClickEvent);
             // 
-            // lblUserType
+            // menuStudents
             // 
-            this.lblUserType.AutoSize = true;
-            this.lblUserType.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserType.Location = new System.Drawing.Point(53, 31);
-            this.lblUserType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblUserType.Name = "lblUserType";
-            this.lblUserType.Size = new System.Drawing.Size(50, 19);
-            this.lblUserType.TabIndex = 9;
-            this.lblUserType.Text = "Admin";
-            // 
-            // lblUsername
-            // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(52, 5);
-            this.lblUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(95, 24);
-            this.lblUsername.TabIndex = 8;
-            this.lblUsername.Text = "SPK Guest";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SPK.Properties.Resources.icons8_circled_user_female_skin_type_6_96;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 5);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 49);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.schoolProfileToolStripMenuItem,
-            this.saveSchoolInfoToolStripMenuItem,
-            this.viewSchoolInfoToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(163, 70);
-            // 
-            // schoolProfileToolStripMenuItem
-            // 
-            this.schoolProfileToolStripMenuItem.Name = "schoolProfileToolStripMenuItem";
-            this.schoolProfileToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.schoolProfileToolStripMenuItem.Text = "School Profile";
-            // 
-            // saveSchoolInfoToolStripMenuItem
-            // 
-            this.saveSchoolInfoToolStripMenuItem.Name = "saveSchoolInfoToolStripMenuItem";
-            this.saveSchoolInfoToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.saveSchoolInfoToolStripMenuItem.Text = "Save School Info";
-            // 
-            // viewSchoolInfoToolStripMenuItem
-            // 
-            this.viewSchoolInfoToolStripMenuItem.Name = "viewSchoolInfoToolStripMenuItem";
-            this.viewSchoolInfoToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.viewSchoolInfoToolStripMenuItem.Text = "View School info";
-            // 
-            // panContainer
-            // 
-            this.panContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panContainer.Controls.Add(this.viewAttendance1);
-            this.panContainer.Location = new System.Drawing.Point(237, 53);
-            this.panContainer.Margin = new System.Windows.Forms.Padding(2);
-            this.panContainer.Name = "panContainer";
-            this.panContainer.Size = new System.Drawing.Size(800, 580);
-            this.panContainer.TabIndex = 20;
-            // 
-            // viewAttendance1
-            // 
-            this.viewAttendance1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.viewAttendance1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.viewAttendance1.Location = new System.Drawing.Point(0, 0);
-            this.viewAttendance1.Name = "viewAttendance1";
-            this.viewAttendance1.Size = new System.Drawing.Size(800, 580);
-            this.viewAttendance1.TabIndex = 0;
+            this.menuStudents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
+            this.menuStudents.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.menuStudents.Name = "menuStudents";
+            this.menuStudents.ShowImageMargin = false;
+            this.menuStudents.Size = new System.Drawing.Size(156, 26);
             // 
             // frmMain
             // 
@@ -491,8 +509,8 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.panContainer.ResumeLayout(false);
+            this.MenuSchoolInfo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -508,14 +526,10 @@
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblUserType;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem schoolProfileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveSchoolInfoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewSchoolInfoToolStripMenuItem;
-        private UserControls.Buttons.ButtonWithMenu buttonWithMenu1;
-        private UserControls.Buttons.ButtonWithoutMenu buttonWithoutMenu1;
+        private UserControls.Buttons.ButtonWithMenu btnSchInfo;
+        private UserControls.Buttons.ButtonWithoutMenu btnDashboard;
         private UserControls.Buttons.ButtonWithoutMenu buttonWithoutMenu2;
-        private UserControls.Buttons.ButtonWithMenu buttonWithMenu2;
+        private UserControls.Buttons.ButtonWithMenu btnStudents;
         private UserControls.Buttons.ButtonWithMenu buttonWithMenu3;
         private UserControls.Buttons.ButtonWithMenu buttonWithMenu4;
         private UserControls.Buttons.ButtonWithMenu buttonWithMenu5;
@@ -527,6 +541,11 @@
         private UserControls.Buttons.ButtonWithMenu buttonWithMenu8;
         private System.Windows.Forms.Panel panContainer;
         private UserControls.SubForms.ViewAttendance viewAttendance1;
+        private System.Windows.Forms.ContextMenuStrip MenuSchoolInfo;
+        private System.Windows.Forms.ToolStripMenuItem updateSchoolInfoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem currentTermAndSessionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addNewSessionToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip menuStudents;
     }
 }
 

@@ -224,6 +224,12 @@
     <Compile Include="UserControls\SubForms\NewStudent.Designer.cs">
       <DependentUpon>NewStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\PromoteDemoteStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\PromoteDemoteStudent.Designer.cs">
+      <DependentUpon>PromoteDemoteStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\PublishUploadedResult.cs">
       <SubType>UserControl</SubType>
     </Compile>

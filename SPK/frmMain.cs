@@ -1,4 +1,5 @@
 ﻿using SPK.UserControls.Buttons;
+using SPK.UserControls.SubForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -66,11 +67,7 @@ namespace SPK
                 else if (Bottom.Contains(cursor)) message.Result = (IntPtr)HTBOTTOM;
             }
         }
-        private void btnAdminManager_Click(object sender, EventArgs e)
-        {
-
-            contextMenuStrip1.Show(Cursor.Position);
-        }
+        
 
         private void picMinimise_Click(object sender, EventArgs e)
         {
@@ -82,14 +79,34 @@ namespace SPK
             picMinimise.BackColor = Color.FromArgb(0, 125, 113);
         }
 
-        private void buttonWithMenu3_Click(object sender, EventArgs e)
+        private void btnSchInfo_ClickEvent(object sender, EventArgs e)
         {
-            MessageBox.Show("Testing");
+            MenuSchoolInfo.Show(Cursor.Position);
         }
 
         private void picMinimise_MouseLeave(object sender, EventArgs e)
         {
             picMinimise.BackColor = Color.FromArgb(0, 150, 136);
+        }
+
+        private void btnDashboard_ClickEvent(object sender, EventArgs e)
+        {
+            showUserControl(new Dashboard());
+        }
+
+        private void updateSchoolInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showUserControl(new SchoolInfo());
+        }
+
+        private void currentTermAndSessionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showUserControl(new CurrentTermNSession());
+        }
+
+        private void addNewSessionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showUserControl(new AddNewSession());
         }
 
         private void picClose_Click(object sender, EventArgs e)
@@ -127,5 +144,15 @@ namespace SPK
             }
         }
         
+        private void showUserControl (Control ctrl)
+        {
+            Cursor = Cursors.WaitCursor;
+
+            panContainer.Controls.Clear();
+            ctrl.Dock = DockStyle.Fill;
+            panContainer.Controls.Add(ctrl);
+
+            Cursor = Cursors.Arrow;
+        }
     }
 }
