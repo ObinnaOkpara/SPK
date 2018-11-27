@@ -38,7 +38,7 @@
             this.buttonWithMenu11 = new SPK.UserControls.Buttons.ButtonWithMenu();
             this.buttonWithMenu10 = new SPK.UserControls.Buttons.ButtonWithMenu();
             this.buttonWithMenu9 = new SPK.UserControls.Buttons.ButtonWithMenu();
-            this.btnFees = new SPK.UserControls.Buttons.ButtonWithMenu();
+            this.btnFees = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.btnResult = new SPK.UserControls.Buttons.ButtonWithMenu();
             this.btnSubject = new SPK.UserControls.Buttons.ButtonWithMenu();
             this.btnClass = new SPK.UserControls.Buttons.ButtonWithoutMenu();
@@ -266,6 +266,7 @@
             this.btnFees.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
             this.btnFees.Size = new System.Drawing.Size(232, 41);
             this.btnFees.TabIndex = 20;
+            this.btnFees.Load += new System.EventHandler(this.btnFees_Load);
             // 
             // btnResult
             // 
@@ -813,7 +814,7 @@
         private UserControls.Buttons.ButtonWithMenu buttonWithMenu11;
         private UserControls.Buttons.ButtonWithMenu buttonWithMenu10;
         private UserControls.Buttons.ButtonWithMenu buttonWithMenu9;
-        private UserControls.Buttons.ButtonWithMenu btnFees;
+        private UserControls.Buttons.ButtonWithoutMenu btnFees;
         private System.Windows.Forms.Panel panContainer;
         private UserControls.SubForms.ViewAttendance viewAttendance1;
         private System.Windows.Forms.ContextMenuStrip MenuSchoolInfo;

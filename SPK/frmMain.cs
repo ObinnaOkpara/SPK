@@ -239,6 +239,11 @@ namespace SPK
             showUserControl(new ViewPublishedResult());
         }
 
+        private void btnFees_Load(object sender, EventArgs e)
+        {
+            showUserControl(new AllocateFees());
+        }
+
         private void picClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
