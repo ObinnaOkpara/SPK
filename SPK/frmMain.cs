@@ -109,6 +109,46 @@ namespace SPK
             showUserControl(new AddNewSession());
         }
 
+        private void btnStudents_ClickEvent(object sender, EventArgs e)
+        {
+            menuStudents.Show(Cursor.Position);
+        }
+
+        private void registerNewStudentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showUserControl(new NewStudent());
+        }
+
+        private void promoteClassToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showUserControl(new PromoteClass());
+        }
+
+        private void demoteStudentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showUserControl(new PromoteDemoteStudent());
+        }
+
+        private void viewStudentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showUserControl(new ViewRegisteredStudent());
+        }
+
+        private void InputAttendancetoolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            showUserControl(new ClassAttendance());
+        }
+
+        private void btnAttendance_ClickEvent(object sender, EventArgs e)
+        {
+            menuAttendance.Show(Cursor.Position);
+        }
+
+        private void ViewAttendanceToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            showUserControl(new ViewAttendance());
+        }
+
         private void picClose_Click(object sender, EventArgs e)
         {
             Application.Exit();

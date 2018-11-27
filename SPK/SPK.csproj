@@ -290,6 +290,12 @@
     <Compile Include="UserControls\SubForms\TeachertoClass.Designer.cs">
       <DependentUpon>TeachertoClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\uploadBehaviouralAnalysis.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\uploadBehaviouralAnalysis.Designer.cs">
+      <DependentUpon>uploadBehaviouralAnalysis.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\ViewAdmins.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -431,6 +437,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\TeachertoClass.resx">
       <DependentUpon>TeachertoClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\uploadBehaviouralAnalysis.resx">
+      <DependentUpon>uploadBehaviouralAnalysis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\ViewAdmins.resx">
       <DependentUpon>ViewAdmins.cs</DependentUpon>
