@@ -35,15 +35,6 @@
             this.picClose = new System.Windows.Forms.PictureBox();
             this.picMinimise = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblUserType = new System.Windows.Forms.Label();
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panContainer = new System.Windows.Forms.Panel();
-            this.MenuSchoolInfo = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.updateSchoolInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.currentTermAndSessionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addNewSessionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewAttendance1 = new SPK.UserControls.SubForms.ViewAttendance();
             this.buttonWithMenu11 = new SPK.UserControls.Buttons.ButtonWithMenu();
             this.buttonWithMenu10 = new SPK.UserControls.Buttons.ButtonWithMenu();
             this.buttonWithMenu9 = new SPK.UserControls.Buttons.ButtonWithMenu();
@@ -57,6 +48,14 @@
             this.buttonWithoutMenu2 = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.btnDashboard = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.btnSchInfo = new SPK.UserControls.Buttons.ButtonWithMenu();
+            this.lblUserType = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panContainer = new System.Windows.Forms.Panel();
+            this.MenuSchoolInfo = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.updateSchoolInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.currentTermAndSessionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewSessionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStudents = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -64,7 +63,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picMinimise)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panContainer.SuspendLayout();
             this.MenuSchoolInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -167,96 +165,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(232, 590);
             this.panel3.TabIndex = 19;
-            // 
-            // lblUserType
-            // 
-            this.lblUserType.AutoSize = true;
-            this.lblUserType.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserType.Location = new System.Drawing.Point(53, 31);
-            this.lblUserType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblUserType.Name = "lblUserType";
-            this.lblUserType.Size = new System.Drawing.Size(50, 19);
-            this.lblUserType.TabIndex = 9;
-            this.lblUserType.Text = "Admin";
-            // 
-            // lblUsername
-            // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(52, 5);
-            this.lblUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(95, 24);
-            this.lblUsername.TabIndex = 8;
-            this.lblUsername.Text = "SPK Guest";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SPK.Properties.Resources.icons8_circled_user_female_skin_type_6_96;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 5);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 49);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panContainer
-            // 
-            this.panContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panContainer.Controls.Add(this.viewAttendance1);
-            this.panContainer.Location = new System.Drawing.Point(237, 53);
-            this.panContainer.Margin = new System.Windows.Forms.Padding(2);
-            this.panContainer.Name = "panContainer";
-            this.panContainer.Size = new System.Drawing.Size(800, 580);
-            this.panContainer.TabIndex = 20;
-            // 
-            // MenuSchoolInfo
-            // 
-            this.MenuSchoolInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
-            this.MenuSchoolInfo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.MenuSchoolInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.updateSchoolInfoToolStripMenuItem,
-            this.currentTermAndSessionToolStripMenuItem,
-            this.addNewSessionToolStripMenuItem});
-            this.MenuSchoolInfo.Name = "MenuSchoolInfo";
-            this.MenuSchoolInfo.ShowImageMargin = false;
-            this.MenuSchoolInfo.Size = new System.Drawing.Size(192, 70);
-            // 
-            // updateSchoolInfoToolStripMenuItem
-            // 
-            this.updateSchoolInfoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.updateSchoolInfoToolStripMenuItem.Name = "updateSchoolInfoToolStripMenuItem";
-            this.updateSchoolInfoToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.updateSchoolInfoToolStripMenuItem.Text = "Update School Info";
-            this.updateSchoolInfoToolStripMenuItem.Click += new System.EventHandler(this.updateSchoolInfoToolStripMenuItem_Click);
-            // 
-            // currentTermAndSessionToolStripMenuItem
-            // 
-            this.currentTermAndSessionToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.currentTermAndSessionToolStripMenuItem.Name = "currentTermAndSessionToolStripMenuItem";
-            this.currentTermAndSessionToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.currentTermAndSessionToolStripMenuItem.Text = "Current Term and Session";
-            this.currentTermAndSessionToolStripMenuItem.Click += new System.EventHandler(this.currentTermAndSessionToolStripMenuItem_Click);
-            // 
-            // addNewSessionToolStripMenuItem
-            // 
-            this.addNewSessionToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.addNewSessionToolStripMenuItem.Name = "addNewSessionToolStripMenuItem";
-            this.addNewSessionToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.addNewSessionToolStripMenuItem.Text = "Add New Session";
-            this.addNewSessionToolStripMenuItem.Click += new System.EventHandler(this.addNewSessionToolStripMenuItem_Click);
-            // 
-            // viewAttendance1
-            // 
-            this.viewAttendance1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.viewAttendance1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.viewAttendance1.Location = new System.Drawing.Point(0, 0);
-            this.viewAttendance1.Name = "viewAttendance1";
-            this.viewAttendance1.Size = new System.Drawing.Size(800, 580);
-            this.viewAttendance1.TabIndex = 0;
             // 
             // buttonWithMenu11
             // 
@@ -481,13 +389,93 @@
             this.btnSchInfo.TabIndex = 10;
             this.btnSchInfo.ClickEvent += new System.EventHandler(this.btnSchInfo_ClickEvent);
             // 
+            // lblUserType
+            // 
+            this.lblUserType.AutoSize = true;
+            this.lblUserType.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserType.Location = new System.Drawing.Point(53, 31);
+            this.lblUserType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUserType.Name = "lblUserType";
+            this.lblUserType.Size = new System.Drawing.Size(50, 19);
+            this.lblUserType.TabIndex = 9;
+            this.lblUserType.Text = "Admin";
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(52, 5);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(95, 24);
+            this.lblUsername.TabIndex = 8;
+            this.lblUsername.Text = "SPK Guest";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SPK.Properties.Resources.icons8_circled_user_female_skin_type_6_96;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 49);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panContainer
+            // 
+            this.panContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panContainer.Location = new System.Drawing.Point(237, 53);
+            this.panContainer.Margin = new System.Windows.Forms.Padding(2);
+            this.panContainer.Name = "panContainer";
+            this.panContainer.Size = new System.Drawing.Size(800, 580);
+            this.panContainer.TabIndex = 20;
+            // 
+            // MenuSchoolInfo
+            // 
+            this.MenuSchoolInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
+            this.MenuSchoolInfo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.MenuSchoolInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateSchoolInfoToolStripMenuItem,
+            this.currentTermAndSessionToolStripMenuItem,
+            this.addNewSessionToolStripMenuItem});
+            this.MenuSchoolInfo.Name = "MenuSchoolInfo";
+            this.MenuSchoolInfo.ShowImageMargin = false;
+            this.MenuSchoolInfo.Size = new System.Drawing.Size(192, 70);
+            // 
+            // updateSchoolInfoToolStripMenuItem
+            // 
+            this.updateSchoolInfoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.updateSchoolInfoToolStripMenuItem.Name = "updateSchoolInfoToolStripMenuItem";
+            this.updateSchoolInfoToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.updateSchoolInfoToolStripMenuItem.Text = "Update School Info";
+            this.updateSchoolInfoToolStripMenuItem.Click += new System.EventHandler(this.updateSchoolInfoToolStripMenuItem_Click);
+            // 
+            // currentTermAndSessionToolStripMenuItem
+            // 
+            this.currentTermAndSessionToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.currentTermAndSessionToolStripMenuItem.Name = "currentTermAndSessionToolStripMenuItem";
+            this.currentTermAndSessionToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.currentTermAndSessionToolStripMenuItem.Text = "Current Term and Session";
+            this.currentTermAndSessionToolStripMenuItem.Click += new System.EventHandler(this.currentTermAndSessionToolStripMenuItem_Click);
+            // 
+            // addNewSessionToolStripMenuItem
+            // 
+            this.addNewSessionToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.addNewSessionToolStripMenuItem.Name = "addNewSessionToolStripMenuItem";
+            this.addNewSessionToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.addNewSessionToolStripMenuItem.Text = "Add New Session";
+            this.addNewSessionToolStripMenuItem.Click += new System.EventHandler(this.addNewSessionToolStripMenuItem_Click);
+            // 
             // menuStudents
             // 
             this.menuStudents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
             this.menuStudents.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.menuStudents.Name = "menuStudents";
             this.menuStudents.ShowImageMargin = false;
-            this.menuStudents.Size = new System.Drawing.Size(156, 26);
+            this.menuStudents.Size = new System.Drawing.Size(36, 4);
             // 
             // frmMain
             // 
@@ -509,7 +497,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panContainer.ResumeLayout(false);
             this.MenuSchoolInfo.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -540,7 +527,6 @@
         private UserControls.Buttons.ButtonWithMenu buttonWithMenu9;
         private UserControls.Buttons.ButtonWithMenu buttonWithMenu8;
         private System.Windows.Forms.Panel panContainer;
-        private UserControls.SubForms.ViewAttendance viewAttendance1;
         private System.Windows.Forms.ContextMenuStrip MenuSchoolInfo;
         private System.Windows.Forms.ToolStripMenuItem updateSchoolInfoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem currentTermAndSessionToolStripMenuItem;
