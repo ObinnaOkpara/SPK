@@ -320,6 +320,12 @@
     <Compile Include="UserControls\SubForms\ViewAttendance.Designer.cs">
       <DependentUpon>ViewAttendance.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\ViewBehaviours.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ViewBehaviours.Designer.cs">
+      <DependentUpon>ViewBehaviours.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\ViewPublishedResult.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -452,6 +458,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\ViewAttendance.resx">
       <DependentUpon>ViewAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\ViewBehaviours.resx">
+      <DependentUpon>ViewBehaviours.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\ViewPublishedResult.resx">
       <DependentUpon>ViewPublishedResult.cs</DependentUpon>
