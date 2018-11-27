@@ -147,7 +147,7 @@ namespace SPK.UserControls.SubForms
                     {
                         term_code = 3;
                     }
-                    return session + term_code + school_name + last_id;
+                    return session + term_code + school_name + last_id.ToString("000");
                 }
                 return null;
 

@@ -40,8 +40,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txteditclas = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtFee = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.cBoxType = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cBoxClass = new System.Windows.Forms.ComboBox();
@@ -49,29 +47,31 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dGridStudents = new System.Windows.Forms.DataGridView();
-            this.feeallocationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnUpdate = new SPK.UserControls.Buttons.ButtonWithoutMenu();
+            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.allocateclassDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studenttypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.feeamountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateallocatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnUpdate = new SPK.UserControls.Buttons.ButtonWithoutMenu();
-            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
+            this.feeallocationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.picSchoolLogo = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtFee = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridStudents)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.feeallocationBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feeallocationBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -196,26 +196,6 @@
             this.label4.TabIndex = 86;
             this.label4.Text = "Class";
             // 
-            // txtFee
-            // 
-            this.txtFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.txtFee.Location = new System.Drawing.Point(423, 62);
-            this.txtFee.Name = "txtFee";
-            this.txtFee.Size = new System.Drawing.Size(191, 23);
-            this.txtFee.TabIndex = 89;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label6.Location = new System.Drawing.Point(421, 38);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 17);
-            this.label6.TabIndex = 86;
-            this.label6.Text = "Fee Allocation";
-            // 
             // cBoxType
             // 
             this.cBoxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -309,9 +289,25 @@
             this.dGridStudents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridStudents_CellClick);
             this.dGridStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridStudents_CellContentClick);
             // 
-            // feeallocationBindingSource
+            // id
             // 
-            this.feeallocationBindingSource.DataSource = typeof(DB.fee_allocation);
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // Delete
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
             // 
             // label3
             // 
@@ -356,17 +352,6 @@
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "FEES MANAGEMENT";
             // 
-            // picSchoolLogo
-            // 
-            this.picSchoolLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.picSchoolLogo.Image = global::SPK.Properties.Resources.icons8_money_64;
-            this.picSchoolLogo.Location = new System.Drawing.Point(29, 15);
-            this.picSchoolLogo.Name = "picSchoolLogo";
-            this.picSchoolLogo.Size = new System.Drawing.Size(40, 40);
-            this.picSchoolLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSchoolLogo.TabIndex = 0;
-            this.picSchoolLogo.TabStop = false;
-            // 
             // backgroundWorker1
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
@@ -375,54 +360,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // allocateclassDataGridViewTextBoxColumn
-            // 
-            this.allocateclassDataGridViewTextBoxColumn.DataPropertyName = "allocate_class";
-            this.allocateclassDataGridViewTextBoxColumn.HeaderText = "Class";
-            this.allocateclassDataGridViewTextBoxColumn.Name = "allocateclassDataGridViewTextBoxColumn";
-            this.allocateclassDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // studenttypeDataGridViewTextBoxColumn
-            // 
-            this.studenttypeDataGridViewTextBoxColumn.DataPropertyName = "student_type";
-            this.studenttypeDataGridViewTextBoxColumn.HeaderText = "Student Type";
-            this.studenttypeDataGridViewTextBoxColumn.Name = "studenttypeDataGridViewTextBoxColumn";
-            this.studenttypeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // feeamountDataGridViewTextBoxColumn
-            // 
-            this.feeamountDataGridViewTextBoxColumn.DataPropertyName = "fee_amount";
-            this.feeamountDataGridViewTextBoxColumn.HeaderText = "Amount(#)";
-            this.feeamountDataGridViewTextBoxColumn.Name = "feeamountDataGridViewTextBoxColumn";
-            this.feeamountDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateallocatedDataGridViewTextBoxColumn
-            // 
-            this.dateallocatedDataGridViewTextBoxColumn.DataPropertyName = "date_allocated";
-            this.dateallocatedDataGridViewTextBoxColumn.HeaderText = "Date Allocated";
-            this.dateallocatedDataGridViewTextBoxColumn.Name = "dateallocatedDataGridViewTextBoxColumn";
-            this.dateallocatedDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // Delete
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
             // 
             // btnUpdate
             // 
@@ -452,6 +389,69 @@
             this.btnSave.TabIndex = 90;
             this.btnSave.ClickEvent += new System.EventHandler(this.btnSave_ClickEvent);
             // 
+            // allocateclassDataGridViewTextBoxColumn
+            // 
+            this.allocateclassDataGridViewTextBoxColumn.DataPropertyName = "allocate_class";
+            this.allocateclassDataGridViewTextBoxColumn.HeaderText = "Class";
+            this.allocateclassDataGridViewTextBoxColumn.Name = "allocateclassDataGridViewTextBoxColumn";
+            this.allocateclassDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // studenttypeDataGridViewTextBoxColumn
+            // 
+            this.studenttypeDataGridViewTextBoxColumn.DataPropertyName = "student_type";
+            this.studenttypeDataGridViewTextBoxColumn.HeaderText = "Student Type";
+            this.studenttypeDataGridViewTextBoxColumn.Name = "studenttypeDataGridViewTextBoxColumn";
+            this.studenttypeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // feeamountDataGridViewTextBoxColumn
+            // 
+            this.feeamountDataGridViewTextBoxColumn.DataPropertyName = "fee_amount";
+            this.feeamountDataGridViewTextBoxColumn.HeaderText = "Amount(#)";
+            this.feeamountDataGridViewTextBoxColumn.Name = "feeamountDataGridViewTextBoxColumn";
+            this.feeamountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateallocatedDataGridViewTextBoxColumn
+            // 
+            this.dateallocatedDataGridViewTextBoxColumn.DataPropertyName = "date_allocated";
+            this.dateallocatedDataGridViewTextBoxColumn.HeaderText = "Date Allocated";
+            this.dateallocatedDataGridViewTextBoxColumn.Name = "dateallocatedDataGridViewTextBoxColumn";
+            this.dateallocatedDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // feeallocationBindingSource
+            // 
+            this.feeallocationBindingSource.DataSource = typeof(DB.fee_allocation);
+            // 
+            // picSchoolLogo
+            // 
+            this.picSchoolLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.picSchoolLogo.Image = global::SPK.Properties.Resources.icons8_money_64;
+            this.picSchoolLogo.Location = new System.Drawing.Point(29, 15);
+            this.picSchoolLogo.Name = "picSchoolLogo";
+            this.picSchoolLogo.Size = new System.Drawing.Size(40, 40);
+            this.picSchoolLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSchoolLogo.TabIndex = 0;
+            this.picSchoolLogo.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label6.Location = new System.Drawing.Point(421, 38);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(111, 17);
+            this.label6.TabIndex = 86;
+            this.label6.Text = "Fee Allocation";
+            // 
+            // txtFee
+            // 
+            this.txtFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.txtFee.Location = new System.Drawing.Point(423, 62);
+            this.txtFee.Name = "txtFee";
+            this.txtFee.Size = new System.Drawing.Size(191, 23);
+            this.txtFee.TabIndex = 89;
+            // 
             // AllocateFees
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -467,11 +467,11 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridStudents)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.feeallocationBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feeallocationBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -479,7 +479,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cBoxType;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cBoxClass;
@@ -492,7 +491,6 @@
         private System.Windows.Forms.Label lblSubTitle;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox picSchoolLogo;
-        private System.Windows.Forms.TextBox txtFee;
         private Buttons.ButtonWithoutMenu btnSave;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.BindingSource feeallocationBindingSource;
@@ -513,5 +511,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn feeamountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateallocatedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.TextBox txtFee;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -1,246 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
-  <DataSources>
-    <DataSource Name="DB">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>a4415fca-9539-4c32-9b71-3e0c27964be3</rd:DataSourceID>
-    </DataSource>
-  </DataSources>
-  <DataSets>
-    <DataSet Name="StudentDataset">
-      <Query>
-        <DataSourceName>DB</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="_class">
-          <DataField>_class</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="address">
-          <DataField>address</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="AttendanceDummy">
-          <DataField>AttendanceDummy</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="city">
-          <DataField>city</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="contact_phone">
-          <DataField>contact_phone</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="date_of_reg">
-          <DataField>date_of_reg</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="dob">
-          <DataField>dob</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="father_name">
-          <DataField>father_name</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="father_occupation">
-          <DataField>father_occupation</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="father_phone">
-          <DataField>father_phone</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="firstname">
-          <DataField>firstname</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Fullname">
-          <DataField>Fullname</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="gen_password">
-          <DataField>gen_password</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="gender">
-          <DataField>gender</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="health_conditions">
-          <DataField>health_conditions</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="id">
-          <DataField>id</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ImgFullPath">
-          <DataField>ImgFullPath</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="last_class_passed">
-          <DataField>last_class_passed</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="lastname">
-          <DataField>lastname</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="lga">
-          <DataField>lga</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="mob">
-          <DataField>mob</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="mother_name">
-          <DataField>mother_name</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="mother_occupation">
-          <DataField>mother_occupation</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="mother_phone">
-          <DataField>mother_phone</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="nationality">
-          <DataField>nationality</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="nearest_contact1">
-          <DataField>nearest_contact1</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="nearest_contact2">
-          <DataField>nearest_contact2</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="nearest_contact3">
-          <DataField>nearest_contact3</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="othername">
-          <DataField>othername</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="passport">
-          <DataField>passport</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="previous_school">
-          <DataField>previous_school</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="reg_number">
-          <DataField>reg_number</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="relationship">
-          <DataField>relationship</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="sponsor_address">
-          <DataField>sponsor_address</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="sponsor_name">
-          <DataField>sponsor_name</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="sponsor_occupation">
-          <DataField>sponsor_occupation</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="sponsor_phone">
-          <DataField>sponsor_phone</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="state">
-          <DataField>state</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="time_of_reg">
-          <DataField>time_of_reg</DataField>
-          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
-        </Field>
-        <Field Name="yob">
-          <DataField>yob</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>DB</rd:DataSetName>
-        <rd:TableName>student</rd:TableName>
-        <rd:ObjectDataSourceType>DB.student, DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="schoolDataset">
-      <Query>
-        <DataSourceName>DB</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="id">
-          <DataField>id</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="LogoFullPath">
-          <DataField>LogoFullPath</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="school_logo">
-          <DataField>school_logo</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="school_motto">
-          <DataField>school_motto</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="school_name">
-          <DataField>school_name</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="school_stamp">
-          <DataField>school_stamp</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="StampFullPath">
-          <DataField>StampFullPath</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="upload_date">
-          <DataField>upload_date</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="upload_time">
-          <DataField>upload_time</DataField>
-          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>DB</rd:DataSetName>
-        <rd:TableName>administrative</rd:TableName>
-        <rd:ObjectDataSourceType>DB.administrative, DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
-      </rd:DataSetInfo>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
         <ReportItems>
           <Image Name="Image1">
             <Source>External</Source>
-            <Value>=Parameters!studentImg.Value</Value>
+            <Value>=Parameters!Studentimg.Value</Value>
             <Sizing>FitProportional</Sizing>
             <Top>0.28in</Top>
             <Left>6.205in</Left>
@@ -254,7 +21,7 @@
           </Image>
           <Image Name="Image2">
             <Source>External</Source>
-            <Value>=Parameters!schoolLogo.Value</Value>
+            <Value>=Parameters!Schoollogo.Value</Value>
             <Sizing>FitProportional</Sizing>
             <Top>0.405in</Top>
             <Left>0.28917in</Left>
@@ -274,7 +41,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!school_name.Value, "schoolDataset")</Value>
+                    <Value>=Parameters!Schoolname.Value</Value>
                     <Style>
                       <FontSize>20pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -309,7 +76,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!school_motto.Value, "schoolDataset")</Value>
+                    <Value>=Parameters!Schoolmotto.Value</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -382,7 +149,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!lastname.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Surname.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -453,7 +220,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!dob.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Birthday.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -518,13 +285,13 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Student Phonne : </Value>
+                    <Value>Student Phone : </Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!contact_phone.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Studentphone.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -562,7 +329,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!firstname.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Firstname.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -600,7 +367,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!mob.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Birthmonth.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -638,7 +405,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!nearest_contact1.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Contact1.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -676,7 +443,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!othername.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Othername.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -714,7 +481,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!yob.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Birthyear.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -752,7 +519,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!nearest_contact2.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Contact2.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -790,7 +557,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!gender.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Sex.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -828,7 +595,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!nearest_contact3.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Contact3.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -866,7 +633,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!state.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!State.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -904,7 +671,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!health_conditions.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Healthconditions.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -936,13 +703,13 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Nationalty : </Value>
+                    <Value>Nationality : </Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!nationality.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Nationality.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -980,7 +747,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!address.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Address.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -1018,7 +785,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!father_name.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Fathername.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -1056,7 +823,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!father_phone.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Fatherphone.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -1094,7 +861,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!mother_name.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Mothername.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -1132,7 +899,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!mother_phone.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Motherphone.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -1164,13 +931,13 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Father Occupation :</Value>
+                    <Value>Father Occupation : </Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!father_occupation.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Fatheroccupation.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -1208,7 +975,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!mother_occupation.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Motheroccupation.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -1246,7 +1013,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!reg_number.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Regnumber.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -1284,7 +1051,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!sponsor_name.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Sponsorname.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -1322,7 +1089,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!date_of_reg.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Regdate.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -1360,7 +1127,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!gen_password.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Password.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -1398,7 +1165,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!sponsor_phone.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Sponsorphone.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -1436,7 +1203,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!_class.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Class.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -1474,7 +1241,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!relationship.Value, "StudentDataset")</Value>
+                    <Value>=Parameters!Sponsorrelation.Value</Value>
                     <Style>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -1651,7 +1418,11 @@ Phone: 2347036798652,   email: support@toxaswift.com</Value>
           </Textbox>
         </ReportItems>
         <Height>10.69in</Height>
-        <Style />
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
       </Body>
       <Width>7.87in</Width>
       <Page>
@@ -1666,12 +1437,192 @@ Phone: 2347036798652,   email: support@toxaswift.com</Value>
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="schoolLogo">
+    <ReportParameter Name="Schoollogo">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="studentImg">
+    <ReportParameter Name="Studentimg">
       <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Schoolname">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Schoolmotto">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Surname">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Firstname">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Othername">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Sex">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="State">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Nationality">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Fathername">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Mothername">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Birthday">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Birthmonth">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Birthyear">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Studentphone">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Contact1">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Contact2">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Contact3">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Healthconditions">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Address">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Fatherphone">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Motherphone">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Fatheroccupation">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Motheroccupation">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Regnumber">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Password">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Class">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Sponsorname">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Sponsorphone">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Sponsorrelation">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Regdate">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
@@ -1683,12 +1634,162 @@ Phone: 2347036798652,   email: support@toxaswift.com</Value>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>schoolLogo</ParameterName>
+          <ParameterName>Schoollogo</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>studentImg</ParameterName>
+          <ParameterName>Studentimg</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Schoolname</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Schoolmotto</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>Surname</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>Firstname</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>Othername</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>Sex</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>State</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>Nationality</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>Fathername</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>Mothername</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>3</RowIndex>
+          <ParameterName>Birthday</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>3</RowIndex>
+          <ParameterName>Birthmonth</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>3</RowIndex>
+          <ParameterName>Birthyear</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>3</RowIndex>
+          <ParameterName>Studentphone</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>4</RowIndex>
+          <ParameterName>Contact1</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>4</RowIndex>
+          <ParameterName>Contact2</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>4</RowIndex>
+          <ParameterName>Contact3</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>4</RowIndex>
+          <ParameterName>Healthconditions</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>5</RowIndex>
+          <ParameterName>Address</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>5</RowIndex>
+          <ParameterName>Fatherphone</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>5</RowIndex>
+          <ParameterName>Motherphone</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>5</RowIndex>
+          <ParameterName>Fatheroccupation</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>6</RowIndex>
+          <ParameterName>Motheroccupation</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>6</RowIndex>
+          <ParameterName>Regnumber</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>6</RowIndex>
+          <ParameterName>Password</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>6</RowIndex>
+          <ParameterName>Class</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>7</RowIndex>
+          <ParameterName>Sponsorname</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>7</RowIndex>
+          <ParameterName>Sponsorphone</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>7</RowIndex>
+          <ParameterName>Sponsorrelation</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>7</RowIndex>
+          <ParameterName>Regdate</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

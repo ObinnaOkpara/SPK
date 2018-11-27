@@ -227,6 +227,12 @@
     <Compile Include="UserControls\SubForms\NewStudent.Designer.cs">
       <DependentUpon>NewStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\PromoteDemoteStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\PromoteDemoteStudent.Designer.cs">
+      <DependentUpon>PromoteDemoteStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\PublishUploadedResult.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -404,6 +410,9 @@
     <EmbeddedResource Include="UserControls\SubForms\NewStudent.resx">
       <DependentUpon>NewStudent.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\PromoteDemoteStudent.resx">
+      <DependentUpon>PromoteDemoteStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\PublishUploadedResult.resx">
       <DependentUpon>PublishUploadedResult.cs</DependentUpon>
