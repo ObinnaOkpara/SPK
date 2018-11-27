@@ -149,6 +149,96 @@ namespace SPK
             showUserControl(new ViewAttendance());
         }
 
+        private void btnBehaviour_ClickEvent(object sender, EventArgs e)
+        {
+            menuBehaviour.Show(Cursor.Position);
+        }
+
+        private void SaveBehaviourToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            showUserControl(new uploadBehaviouralAnalysis());
+        }
+
+        private void ViewBehavioursToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            showUserControl(new ViewBehaviours());
+        }
+
+        private void btnClass_ClickEvent(object sender, EventArgs e)
+        {
+            showUserControl(new AddnViewClass());
+        }
+
+        private void AddSubjectClassToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            showUserControl(new AddSubject());
+        }
+
+        private void registerStudentSubjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showUserControl(new RegisterSubject());
+        }
+
+        private void ViewSubjectsToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            showUserControl(new ViewSubjects());
+        }
+
+        private void viewRegisteredSubjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showUserControl(new ViewRegisteredStudent());
+        }
+
+        private void specifyJuniorSubjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showUserControl(new SpecifyJssSubject());
+        }
+
+        private void specifySeniorSubjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showUserControl(new SpecifySssSubject());
+        }
+
+        private void specifyNumberOfSubjectsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showUserControl(new SpecifySubjectNumber());
+        }
+
+        private void btnSubject_ClickEvent(object sender, EventArgs e)
+        {
+            menuSubject.Show(Cursor.Position);
+        }
+
+        private void schoolResumptionAndClosingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showUserControl(new SaveSchoolStartnEndDate());
+        }
+        
+        private void btnResult_ClickEvent(object sender, EventArgs e)
+        {
+            menuResult.Show(Cursor.Position);
+        }
+
+        private void UploadResultDirectlyToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            showUserControl(new EnterStudentResult());
+        }
+
+        private void ViewUploadedResultToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            showUserControl(new ViewAllResult());
+        }
+
+        private void PublishResultToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            showUserControl(new PublishUploadedResult());
+        }
+
+        private void ViewPublishedResultToolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            showUserControl(new ViewPublishedResult());
+        }
+
         private void picClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
