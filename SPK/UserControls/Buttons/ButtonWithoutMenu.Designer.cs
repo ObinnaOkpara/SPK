@@ -37,6 +37,8 @@
             // 
             // imgLeft
             // 
+            this.imgLeft.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.imgLeft.Image = global::SPK.Properties.Resources.icons8_person_64;
             this.imgLeft.Location = new System.Drawing.Point(9, 3);
             this.imgLeft.Name = "imgLeft";

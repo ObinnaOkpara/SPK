@@ -128,6 +128,12 @@
     <Compile Include="frmSlipReport.Designer.cs">
       <DependentUpon>frmSlipReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTeacher.Designer.cs">
+      <DependentUpon>frmTeacher.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -360,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSlipReport.resx">
       <DependentUpon>frmSlipReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTeacher.resx">
+      <DependentUpon>frmTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -597,6 +606,7 @@
     <None Include="Resources\UserInfo.bmp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8-password-64.png" />
     <Content Include="small.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
