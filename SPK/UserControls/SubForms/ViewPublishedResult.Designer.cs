@@ -40,22 +40,24 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSearch = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.cBoxSession = new System.Windows.Forms.ComboBox();
+            this.sessionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.cBoxTerm = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cBoxClass = new System.Windows.Forms.ComboBox();
+            this.classBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.classBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.sessionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridStudents)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -178,6 +180,7 @@
             this.btnSearch.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
             this.btnSearch.Size = new System.Drawing.Size(154, 47);
             this.btnSearch.TabIndex = 88;
+            this.btnSearch.ClickEvent += new System.EventHandler(this.btnSearch_ClickEvent);
             // 
             // cBoxSession
             // 
@@ -190,6 +193,10 @@
             this.cBoxSession.Size = new System.Drawing.Size(180, 24);
             this.cBoxSession.TabIndex = 87;
             this.cBoxSession.ValueMember = "sessions";
+            // 
+            // sessionBindingSource
+            // 
+            this.sessionBindingSource.DataSource = typeof(DB.session);
             // 
             // label6
             // 
@@ -239,6 +246,10 @@
             this.cBoxClass.TabIndex = 83;
             this.cBoxClass.ValueMember = "classes";
             // 
+            // classBindingSource
+            // 
+            this.classBindingSource.DataSource = typeof(DB._class);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -261,18 +272,14 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "View Published Results";
             // 
-            // classBindingSource
-            // 
-            this.classBindingSource.DataSource = typeof(DB._class);
-            // 
             // backgroundWorker1
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
-            // sessionBindingSource
+            // errorProvider1
             // 
-            this.sessionBindingSource.DataSource = typeof(DB.session);
+            this.errorProvider1.ContainerControl = this;
             // 
             // ViewPublishedResult
             // 
@@ -291,8 +298,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -319,5 +327,6 @@
         private System.Windows.Forms.BindingSource classBindingSource;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.BindingSource sessionBindingSource;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

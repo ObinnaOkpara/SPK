@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DB;
+using SPK.Utilities;
 
 namespace SPK.UserControls.SubForms
 {
@@ -19,12 +20,19 @@ namespace SPK.UserControls.SubForms
         {
             InitializeComponent();
 
-            cBoxClass.Cursor = Cursors.WaitCursor;
-            cBoxSession.Cursor = Cursors.WaitCursor;
-            cBoxTerm.Cursor = Cursors.WaitCursor;
-            btnSearch.Cursor = Cursors.WaitCursor;
 
-            backgroundWorker1.RunWorkerAsync();
+            if (LicenseManager.UsageMode != LicenseUsageMode.Designtime)
+            {
+
+                cBoxClass.Cursor = Cursors.WaitCursor;
+                cBoxSession.Cursor = Cursors.WaitCursor;
+                cBoxTerm.Cursor = Cursors.WaitCursor;
+                btnSearch.Cursor = Cursors.WaitCursor;
+
+
+                backgroundWorker1.RunWorkerAsync();
+            }
+
 
         }
 
@@ -56,6 +64,18 @@ namespace SPK.UserControls.SubForms
             cBoxClass.Cursor = Cursors.Arrow;
             cBoxSession.Cursor = Cursors.Arrow;
             btnSearch.Cursor = Cursors.Arrow;
+        }
+
+        private void btnSearch_ClickEvent(object sender, EventArgs e)
+        {
+            if (ValidateFomControls.CheckComboBoxes(this,errorProvider1))
+            {
+                var _class = cBoxClass.Text;
+                var _session = cBoxSession.Text;
+                var _term = cBoxTerm.Text;
+
+
+            }
         }
     }
 }
