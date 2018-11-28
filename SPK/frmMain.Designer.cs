@@ -35,9 +35,9 @@
             this.picClose = new System.Windows.Forms.PictureBox();
             this.picMinimise = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.buttonWithMenu11 = new SPK.UserControls.Buttons.ButtonWithMenu();
-            this.buttonWithMenu10 = new SPK.UserControls.Buttons.ButtonWithMenu();
-            this.buttonWithMenu9 = new SPK.UserControls.Buttons.ButtonWithMenu();
+            this.btnTeachers = new SPK.UserControls.Buttons.ButtonWithMenu();
+            this.btnPrincipal = new SPK.UserControls.Buttons.ButtonWithMenu();
+            this.btnAdmin = new SPK.UserControls.Buttons.ButtonWithMenu();
             this.btnFees = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.btnResult = new SPK.UserControls.Buttons.ButtonWithMenu();
             this.btnSubject = new SPK.UserControls.Buttons.ButtonWithMenu();
@@ -84,6 +84,16 @@
             this.PublishResultToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.ViewPublishedResultToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.CheckResultToolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAdmin = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.AddAdminToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ViewAllAdminToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuPrincipal = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.AddPrincipalToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ViewPrincipalToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuTeacher = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.AddTeacherToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.TeachersandtheirClassesToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ViewTeachersToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
@@ -97,6 +107,9 @@
             this.menuBehaviour.SuspendLayout();
             this.menuSubject.SuspendLayout();
             this.menuResult.SuspendLayout();
+            this.menuAdmin.SuspendLayout();
+            this.menuPrincipal.SuspendLayout();
+            this.menuTeacher.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -176,9 +189,9 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel3.AutoScroll = true;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.panel3.Controls.Add(this.buttonWithMenu11);
-            this.panel3.Controls.Add(this.buttonWithMenu10);
-            this.panel3.Controls.Add(this.buttonWithMenu9);
+            this.panel3.Controls.Add(this.btnTeachers);
+            this.panel3.Controls.Add(this.btnPrincipal);
+            this.panel3.Controls.Add(this.btnAdmin);
             this.panel3.Controls.Add(this.btnFees);
             this.panel3.Controls.Add(this.btnResult);
             this.panel3.Controls.Add(this.btnSubject);
@@ -199,56 +212,59 @@
             this.panel3.Size = new System.Drawing.Size(232, 590);
             this.panel3.TabIndex = 19;
             // 
-            // buttonWithMenu11
+            // btnTeachers
             // 
-            this.buttonWithMenu11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnTeachers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonWithMenu11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.buttonWithMenu11.BtnText = "Teachers";
-            this.buttonWithMenu11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonWithMenu11.ForeColor = System.Drawing.Color.White;
-            this.buttonWithMenu11.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.buttonWithMenu11.Icon = global::SPK.Properties.Resources.icons8_person_64;
-            this.buttonWithMenu11.Location = new System.Drawing.Point(0, 544);
-            this.buttonWithMenu11.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonWithMenu11.Name = "buttonWithMenu11";
-            this.buttonWithMenu11.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu11.Size = new System.Drawing.Size(232, 41);
-            this.buttonWithMenu11.TabIndex = 23;
+            this.btnTeachers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnTeachers.BtnText = "Teachers";
+            this.btnTeachers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTeachers.ForeColor = System.Drawing.Color.White;
+            this.btnTeachers.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnTeachers.Icon = global::SPK.Properties.Resources.icons8_person_64;
+            this.btnTeachers.Location = new System.Drawing.Point(0, 544);
+            this.btnTeachers.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTeachers.Name = "btnTeachers";
+            this.btnTeachers.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnTeachers.Size = new System.Drawing.Size(232, 41);
+            this.btnTeachers.TabIndex = 23;
+            this.btnTeachers.ClickEvent += new System.EventHandler(this.btnTeachers_ClickEvent);
             // 
-            // buttonWithMenu10
+            // btnPrincipal
             // 
-            this.buttonWithMenu10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonWithMenu10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.buttonWithMenu10.BtnText = "Principal";
-            this.buttonWithMenu10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonWithMenu10.ForeColor = System.Drawing.Color.White;
-            this.buttonWithMenu10.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.buttonWithMenu10.Icon = global::SPK.Properties.Resources.icons8_person_64;
-            this.buttonWithMenu10.Location = new System.Drawing.Point(0, 503);
-            this.buttonWithMenu10.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonWithMenu10.Name = "buttonWithMenu10";
-            this.buttonWithMenu10.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu10.Size = new System.Drawing.Size(232, 41);
-            this.buttonWithMenu10.TabIndex = 22;
+            this.btnPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnPrincipal.BtnText = "Principal";
+            this.btnPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrincipal.ForeColor = System.Drawing.Color.White;
+            this.btnPrincipal.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnPrincipal.Icon = global::SPK.Properties.Resources.icons8_person_64;
+            this.btnPrincipal.Location = new System.Drawing.Point(0, 503);
+            this.btnPrincipal.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPrincipal.Name = "btnPrincipal";
+            this.btnPrincipal.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnPrincipal.Size = new System.Drawing.Size(232, 41);
+            this.btnPrincipal.TabIndex = 22;
+            this.btnPrincipal.ClickEvent += new System.EventHandler(this.btnPrincipal_ClickEvent);
             // 
-            // buttonWithMenu9
+            // btnAdmin
             // 
-            this.buttonWithMenu9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonWithMenu9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.buttonWithMenu9.BtnText = "Admin";
-            this.buttonWithMenu9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonWithMenu9.ForeColor = System.Drawing.Color.White;
-            this.buttonWithMenu9.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.buttonWithMenu9.Icon = global::SPK.Properties.Resources.icons8_person_64;
-            this.buttonWithMenu9.Location = new System.Drawing.Point(0, 463);
-            this.buttonWithMenu9.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonWithMenu9.Name = "buttonWithMenu9";
-            this.buttonWithMenu9.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithMenu9.Size = new System.Drawing.Size(232, 41);
-            this.buttonWithMenu9.TabIndex = 21;
+            this.btnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnAdmin.BtnText = "Admin";
+            this.btnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmin.ForeColor = System.Drawing.Color.White;
+            this.btnAdmin.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnAdmin.Icon = global::SPK.Properties.Resources.icons8_person_64;
+            this.btnAdmin.Location = new System.Drawing.Point(0, 463);
+            this.btnAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnAdmin.Size = new System.Drawing.Size(232, 41);
+            this.btnAdmin.TabIndex = 21;
+            this.btnAdmin.ClickEvent += new System.EventHandler(this.btnAdmin_ClickEvent);
             // 
             // btnFees
             // 
@@ -266,7 +282,7 @@
             this.btnFees.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
             this.btnFees.Size = new System.Drawing.Size(232, 41);
             this.btnFees.TabIndex = 20;
-            this.btnFees.Load += new System.EventHandler(this.btnFees_Load);
+            this.btnFees.ClickEvent += new System.EventHandler(this.btnFees_ClickEvent);
             // 
             // btnResult
             // 
@@ -487,6 +503,7 @@
             // 
             this.MenuSchoolInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
             this.MenuSchoolInfo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.MenuSchoolInfo.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.MenuSchoolInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.updateSchoolInfoToolStripMenuItem,
             this.currentTermAndSessionToolStripMenuItem,
@@ -532,6 +549,7 @@
             // 
             this.menuStudents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
             this.menuStudents.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.menuStudents.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStudents.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registerNewStudentToolStripMenuItem,
             this.promoteClassToolStripMenuItem,
@@ -577,6 +595,7 @@
             // 
             this.menuAttendance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
             this.menuAttendance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.menuAttendance.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuAttendance.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.InputAttendancetoolStripMenuItem1,
             this.ViewAttendanceToolStripMenuItem2});
@@ -604,6 +623,7 @@
             // 
             this.menuBehaviour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
             this.menuBehaviour.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.menuBehaviour.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuBehaviour.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SaveBehaviourToolStripMenuItem1,
             this.ViewBehavioursToolStripMenuItem2});
@@ -631,6 +651,7 @@
             // 
             this.menuSubject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
             this.menuSubject.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.menuSubject.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuSubject.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AddSubjectClassToolStripMenuItem1,
             this.ViewSubjectsToolStripMenuItem2,
@@ -703,6 +724,7 @@
             // 
             this.menuResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
             this.menuResult.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.menuResult.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuResult.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.UploadResultDirectlyToolStripMenuItem1,
             this.UploadResultwithExcelToolStripMenuItem2,
@@ -760,6 +782,99 @@
             this.CheckResultToolStripMenuItem6.Size = new System.Drawing.Size(186, 22);
             this.CheckResultToolStripMenuItem6.Text = "Check Result";
             // 
+            // menuAdmin
+            // 
+            this.menuAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
+            this.menuAdmin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.menuAdmin.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AddAdminToolStripMenuItem1,
+            this.ViewAllAdminToolStripMenuItem2});
+            this.menuAdmin.Name = "menuStudents";
+            this.menuAdmin.ShowImageMargin = false;
+            this.menuAdmin.Size = new System.Drawing.Size(134, 48);
+            // 
+            // AddAdminToolStripMenuItem1
+            // 
+            this.AddAdminToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
+            this.AddAdminToolStripMenuItem1.Name = "AddAdminToolStripMenuItem1";
+            this.AddAdminToolStripMenuItem1.Size = new System.Drawing.Size(133, 22);
+            this.AddAdminToolStripMenuItem1.Text = "Add Admin";
+            this.AddAdminToolStripMenuItem1.Click += new System.EventHandler(this.AddAdminToolStripMenuItem1_Click);
+            // 
+            // ViewAllAdminToolStripMenuItem2
+            // 
+            this.ViewAllAdminToolStripMenuItem2.ForeColor = System.Drawing.Color.White;
+            this.ViewAllAdminToolStripMenuItem2.Name = "ViewAllAdminToolStripMenuItem2";
+            this.ViewAllAdminToolStripMenuItem2.Size = new System.Drawing.Size(133, 22);
+            this.ViewAllAdminToolStripMenuItem2.Text = "View All Admin";
+            this.ViewAllAdminToolStripMenuItem2.Click += new System.EventHandler(this.ViewAllAdminToolStripMenuItem2_Click);
+            // 
+            // menuPrincipal
+            // 
+            this.menuPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
+            this.menuPrincipal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.menuPrincipal.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AddPrincipalToolStripMenuItem1,
+            this.ViewPrincipalToolStripMenuItem2});
+            this.menuPrincipal.Name = "menuStudents";
+            this.menuPrincipal.ShowImageMargin = false;
+            this.menuPrincipal.Size = new System.Drawing.Size(128, 48);
+            // 
+            // AddPrincipalToolStripMenuItem1
+            // 
+            this.AddPrincipalToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
+            this.AddPrincipalToolStripMenuItem1.Name = "AddPrincipalToolStripMenuItem1";
+            this.AddPrincipalToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
+            this.AddPrincipalToolStripMenuItem1.Text = "Add Principal";
+            this.AddPrincipalToolStripMenuItem1.Click += new System.EventHandler(this.AddPrincipalToolStripMenuItem1_Click);
+            // 
+            // ViewPrincipalToolStripMenuItem2
+            // 
+            this.ViewPrincipalToolStripMenuItem2.ForeColor = System.Drawing.Color.White;
+            this.ViewPrincipalToolStripMenuItem2.Name = "ViewPrincipalToolStripMenuItem2";
+            this.ViewPrincipalToolStripMenuItem2.Size = new System.Drawing.Size(127, 22);
+            this.ViewPrincipalToolStripMenuItem2.Text = "View Principal";
+            this.ViewPrincipalToolStripMenuItem2.Click += new System.EventHandler(this.ViewPrincipalToolStripMenuItem2_Click);
+            // 
+            // menuTeacher
+            // 
+            this.menuTeacher.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
+            this.menuTeacher.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.menuTeacher.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuTeacher.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AddTeacherToolStripMenuItem1,
+            this.TeachersandtheirClassesToolStripMenuItem2,
+            this.ViewTeachersToolStripMenuItem3});
+            this.menuTeacher.Name = "menuStudents";
+            this.menuTeacher.ShowImageMargin = false;
+            this.menuTeacher.Size = new System.Drawing.Size(193, 92);
+            // 
+            // AddTeacherToolStripMenuItem1
+            // 
+            this.AddTeacherToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
+            this.AddTeacherToolStripMenuItem1.Name = "AddTeacherToolStripMenuItem1";
+            this.AddTeacherToolStripMenuItem1.Size = new System.Drawing.Size(192, 22);
+            this.AddTeacherToolStripMenuItem1.Text = "Add Teacher";
+            this.AddTeacherToolStripMenuItem1.Click += new System.EventHandler(this.AddTeacherToolStripMenuItem1_Click);
+            // 
+            // TeachersandtheirClassesToolStripMenuItem2
+            // 
+            this.TeachersandtheirClassesToolStripMenuItem2.ForeColor = System.Drawing.Color.White;
+            this.TeachersandtheirClassesToolStripMenuItem2.Name = "TeachersandtheirClassesToolStripMenuItem2";
+            this.TeachersandtheirClassesToolStripMenuItem2.Size = new System.Drawing.Size(192, 22);
+            this.TeachersandtheirClassesToolStripMenuItem2.Text = "Teachers and their Classes";
+            this.TeachersandtheirClassesToolStripMenuItem2.Click += new System.EventHandler(this.TeachersandtheirClassesToolStripMenuItem2_Click);
+            // 
+            // ViewTeachersToolStripMenuItem3
+            // 
+            this.ViewTeachersToolStripMenuItem3.ForeColor = System.Drawing.Color.White;
+            this.ViewTeachersToolStripMenuItem3.Name = "ViewTeachersToolStripMenuItem3";
+            this.ViewTeachersToolStripMenuItem3.Size = new System.Drawing.Size(192, 22);
+            this.ViewTeachersToolStripMenuItem3.Text = "View Teachers";
+            this.ViewTeachersToolStripMenuItem3.Click += new System.EventHandler(this.ViewTeachersToolStripMenuItem3_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -787,6 +902,9 @@
             this.menuBehaviour.ResumeLayout(false);
             this.menuSubject.ResumeLayout(false);
             this.menuResult.ResumeLayout(false);
+            this.menuAdmin.ResumeLayout(false);
+            this.menuPrincipal.ResumeLayout(false);
+            this.menuTeacher.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -811,9 +929,9 @@
         private UserControls.Buttons.ButtonWithoutMenu btnClass;
         private UserControls.Buttons.ButtonWithMenu btnResult;
         private UserControls.Buttons.ButtonWithMenu btnSubject;
-        private UserControls.Buttons.ButtonWithMenu buttonWithMenu11;
-        private UserControls.Buttons.ButtonWithMenu buttonWithMenu10;
-        private UserControls.Buttons.ButtonWithMenu buttonWithMenu9;
+        private UserControls.Buttons.ButtonWithMenu btnTeachers;
+        private UserControls.Buttons.ButtonWithMenu btnPrincipal;
+        private UserControls.Buttons.ButtonWithMenu btnAdmin;
         private UserControls.Buttons.ButtonWithoutMenu btnFees;
         private System.Windows.Forms.Panel panContainer;
         private UserControls.SubForms.ViewAttendance viewAttendance1;
@@ -848,6 +966,16 @@
         private System.Windows.Forms.ToolStripMenuItem PublishResultToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem ViewPublishedResultToolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem CheckResultToolStripMenuItem6;
+        private System.Windows.Forms.ContextMenuStrip menuAdmin;
+        private System.Windows.Forms.ToolStripMenuItem AddAdminToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ViewAllAdminToolStripMenuItem2;
+        private System.Windows.Forms.ContextMenuStrip menuPrincipal;
+        private System.Windows.Forms.ToolStripMenuItem AddPrincipalToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ViewPrincipalToolStripMenuItem2;
+        private System.Windows.Forms.ContextMenuStrip menuTeacher;
+        private System.Windows.Forms.ToolStripMenuItem AddTeacherToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem TeachersandtheirClassesToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem ViewTeachersToolStripMenuItem3;
     }
 }
 
