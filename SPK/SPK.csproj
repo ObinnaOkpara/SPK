@@ -224,6 +224,12 @@
     <Compile Include="UserControls\SubForms\NewStudent.Designer.cs">
       <DependentUpon>NewStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\PasswordReset.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\PasswordReset.Designer.cs">
+      <DependentUpon>PasswordReset.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\PromoteClass.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -410,6 +416,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\NewStudent.resx">
       <DependentUpon>NewStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\PasswordReset.resx">
+      <DependentUpon>PasswordReset.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\PromoteClass.resx">
       <DependentUpon>PromoteClass.cs</DependentUpon>
