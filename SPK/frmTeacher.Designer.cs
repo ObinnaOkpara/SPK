@@ -37,20 +37,12 @@
             this.SaveBehaviourToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ViewBehavioursToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSubject = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.AddSubjectClassToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ViewSubjectsToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.registerStudentSubjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewRegisteredSubjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.specifyJuniorSubjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.specifySeniorSubjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.specifyNumberOfSubjectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuResult = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.UploadResultDirectlyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.UploadResultwithExcelToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.ViewUploadedResultToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.PublishResultToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ViewPublishedResultToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
-            this.CheckResultToolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAdmin = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.AddAdminToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ViewAllAdminToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,7 +66,7 @@
             this.btnSubject = new SPK.UserControls.Buttons.ButtonWithMenu();
             this.btnBehaviour = new SPK.UserControls.Buttons.ButtonWithMenu();
             this.btnAttendance = new SPK.UserControls.Buttons.ButtonWithMenu();
-            this.btnStudents = new SPK.UserControls.Buttons.ButtonWithMenu();
+            this.btnStudents = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.buttonWithoutMenu2 = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.btnDashboard = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.lblUserType = new System.Windows.Forms.Label();
@@ -88,6 +80,8 @@
             this.schoolResumptionAndClosingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStudents = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.registerNewStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportBehaviourAsExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uploadExcelFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAttendance.SuspendLayout();
             this.menuBehaviour.SuspendLayout();
             this.menuSubject.SuspendLayout();
@@ -130,6 +124,7 @@
             this.InputAttendancetoolStripMenuItem1.Name = "InputAttendancetoolStripMenuItem1";
             this.InputAttendancetoolStripMenuItem1.Size = new System.Drawing.Size(147, 22);
             this.InputAttendancetoolStripMenuItem1.Text = "Input Attendance";
+            this.InputAttendancetoolStripMenuItem1.Click += new System.EventHandler(this.InputAttendancetoolStripMenuItem1_Click);
             // 
             // ViewAttendanceToolStripMenuItem2
             // 
@@ -137,6 +132,7 @@
             this.ViewAttendanceToolStripMenuItem2.Name = "ViewAttendanceToolStripMenuItem2";
             this.ViewAttendanceToolStripMenuItem2.Size = new System.Drawing.Size(147, 22);
             this.ViewAttendanceToolStripMenuItem2.Text = "View Attendance";
+            this.ViewAttendanceToolStripMenuItem2.Click += new System.EventHandler(this.ViewAttendanceToolStripMenuItem2_Click);
             // 
             // menuBehaviour
             // 
@@ -145,24 +141,28 @@
             this.menuBehaviour.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuBehaviour.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SaveBehaviourToolStripMenuItem1,
+            this.exportBehaviourAsExcelToolStripMenuItem,
+            this.uploadExcelFileToolStripMenuItem,
             this.ViewBehavioursToolStripMenuItem2});
             this.menuBehaviour.Name = "menuStudents";
             this.menuBehaviour.ShowImageMargin = false;
-            this.menuBehaviour.Size = new System.Drawing.Size(143, 48);
+            this.menuBehaviour.Size = new System.Drawing.Size(193, 92);
             // 
             // SaveBehaviourToolStripMenuItem1
             // 
             this.SaveBehaviourToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.SaveBehaviourToolStripMenuItem1.Name = "SaveBehaviourToolStripMenuItem1";
-            this.SaveBehaviourToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
+            this.SaveBehaviourToolStripMenuItem1.Size = new System.Drawing.Size(192, 22);
             this.SaveBehaviourToolStripMenuItem1.Text = "Save Behaviour";
+            this.SaveBehaviourToolStripMenuItem1.Click += new System.EventHandler(this.SaveBehaviourToolStripMenuItem1_Click);
             // 
             // ViewBehavioursToolStripMenuItem2
             // 
             this.ViewBehavioursToolStripMenuItem2.ForeColor = System.Drawing.Color.White;
             this.ViewBehavioursToolStripMenuItem2.Name = "ViewBehavioursToolStripMenuItem2";
-            this.ViewBehavioursToolStripMenuItem2.Size = new System.Drawing.Size(142, 22);
+            this.ViewBehavioursToolStripMenuItem2.Size = new System.Drawing.Size(192, 22);
             this.ViewBehavioursToolStripMenuItem2.Text = "View Behaviours";
+            this.ViewBehavioursToolStripMenuItem2.Click += new System.EventHandler(this.ViewBehavioursToolStripMenuItem2_Click);
             // 
             // menuSubject
             // 
@@ -170,65 +170,27 @@
             this.menuSubject.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.menuSubject.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuSubject.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AddSubjectClassToolStripMenuItem1,
-            this.ViewSubjectsToolStripMenuItem2,
             this.registerStudentSubjectToolStripMenuItem,
-            this.viewRegisteredSubjectToolStripMenuItem,
-            this.specifyJuniorSubjectToolStripMenuItem,
-            this.specifySeniorSubjectToolStripMenuItem,
-            this.specifyNumberOfSubjectsToolStripMenuItem});
+            this.viewRegisteredSubjectToolStripMenuItem});
             this.menuSubject.Name = "menuStudents";
             this.menuSubject.ShowImageMargin = false;
-            this.menuSubject.Size = new System.Drawing.Size(205, 158);
-            // 
-            // AddSubjectClassToolStripMenuItem1
-            // 
-            this.AddSubjectClassToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
-            this.AddSubjectClassToolStripMenuItem1.Name = "AddSubjectClassToolStripMenuItem1";
-            this.AddSubjectClassToolStripMenuItem1.Size = new System.Drawing.Size(204, 22);
-            this.AddSubjectClassToolStripMenuItem1.Text = "Add Subject";
-            // 
-            // ViewSubjectsToolStripMenuItem2
-            // 
-            this.ViewSubjectsToolStripMenuItem2.ForeColor = System.Drawing.Color.White;
-            this.ViewSubjectsToolStripMenuItem2.Name = "ViewSubjectsToolStripMenuItem2";
-            this.ViewSubjectsToolStripMenuItem2.Size = new System.Drawing.Size(204, 22);
-            this.ViewSubjectsToolStripMenuItem2.Text = "View Subjects";
+            this.menuSubject.Size = new System.Drawing.Size(190, 48);
             // 
             // registerStudentSubjectToolStripMenuItem
             // 
             this.registerStudentSubjectToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.registerStudentSubjectToolStripMenuItem.Name = "registerStudentSubjectToolStripMenuItem";
-            this.registerStudentSubjectToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.registerStudentSubjectToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.registerStudentSubjectToolStripMenuItem.Text = "Register Student Subject";
+            this.registerStudentSubjectToolStripMenuItem.Click += new System.EventHandler(this.registerStudentSubjectToolStripMenuItem_Click);
             // 
             // viewRegisteredSubjectToolStripMenuItem
             // 
             this.viewRegisteredSubjectToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.viewRegisteredSubjectToolStripMenuItem.Name = "viewRegisteredSubjectToolStripMenuItem";
-            this.viewRegisteredSubjectToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.viewRegisteredSubjectToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.viewRegisteredSubjectToolStripMenuItem.Text = "View Registered Subject";
-            // 
-            // specifyJuniorSubjectToolStripMenuItem
-            // 
-            this.specifyJuniorSubjectToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.specifyJuniorSubjectToolStripMenuItem.Name = "specifyJuniorSubjectToolStripMenuItem";
-            this.specifyJuniorSubjectToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.specifyJuniorSubjectToolStripMenuItem.Text = "Specify Junior Subject";
-            // 
-            // specifySeniorSubjectToolStripMenuItem
-            // 
-            this.specifySeniorSubjectToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.specifySeniorSubjectToolStripMenuItem.Name = "specifySeniorSubjectToolStripMenuItem";
-            this.specifySeniorSubjectToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.specifySeniorSubjectToolStripMenuItem.Text = "Specify Senior Subject";
-            // 
-            // specifyNumberOfSubjectsToolStripMenuItem
-            // 
-            this.specifyNumberOfSubjectsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.specifyNumberOfSubjectsToolStripMenuItem.Name = "specifyNumberOfSubjectsToolStripMenuItem";
-            this.specifyNumberOfSubjectsToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.specifyNumberOfSubjectsToolStripMenuItem.Text = "Specify Number of Subjects";
+            this.viewRegisteredSubjectToolStripMenuItem.Click += new System.EventHandler(this.viewRegisteredSubjectToolStripMenuItem_Click);
             // 
             // menuResult
             // 
@@ -238,13 +200,10 @@
             this.menuResult.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.UploadResultDirectlyToolStripMenuItem1,
             this.UploadResultwithExcelToolStripMenuItem2,
-            this.ViewUploadedResultToolStripMenuItem3,
-            this.PublishResultToolStripMenuItem4,
-            this.ViewPublishedResultToolStripMenuItem5,
-            this.CheckResultToolStripMenuItem6});
+            this.ViewUploadedResultToolStripMenuItem3});
             this.menuResult.Name = "menuStudents";
             this.menuResult.ShowImageMargin = false;
-            this.menuResult.Size = new System.Drawing.Size(187, 136);
+            this.menuResult.Size = new System.Drawing.Size(187, 92);
             // 
             // UploadResultDirectlyToolStripMenuItem1
             // 
@@ -266,27 +225,6 @@
             this.ViewUploadedResultToolStripMenuItem3.Name = "ViewUploadedResultToolStripMenuItem3";
             this.ViewUploadedResultToolStripMenuItem3.Size = new System.Drawing.Size(186, 22);
             this.ViewUploadedResultToolStripMenuItem3.Text = "View Uploaded Result";
-            // 
-            // PublishResultToolStripMenuItem4
-            // 
-            this.PublishResultToolStripMenuItem4.ForeColor = System.Drawing.Color.White;
-            this.PublishResultToolStripMenuItem4.Name = "PublishResultToolStripMenuItem4";
-            this.PublishResultToolStripMenuItem4.Size = new System.Drawing.Size(186, 22);
-            this.PublishResultToolStripMenuItem4.Text = "Publish Result";
-            // 
-            // ViewPublishedResultToolStripMenuItem5
-            // 
-            this.ViewPublishedResultToolStripMenuItem5.ForeColor = System.Drawing.Color.White;
-            this.ViewPublishedResultToolStripMenuItem5.Name = "ViewPublishedResultToolStripMenuItem5";
-            this.ViewPublishedResultToolStripMenuItem5.Size = new System.Drawing.Size(186, 22);
-            this.ViewPublishedResultToolStripMenuItem5.Text = "View Published Result";
-            // 
-            // CheckResultToolStripMenuItem6
-            // 
-            this.CheckResultToolStripMenuItem6.ForeColor = System.Drawing.Color.White;
-            this.CheckResultToolStripMenuItem6.Name = "CheckResultToolStripMenuItem6";
-            this.CheckResultToolStripMenuItem6.Size = new System.Drawing.Size(186, 22);
-            this.CheckResultToolStripMenuItem6.Text = "Check Result";
             // 
             // menuAdmin
             // 
@@ -534,6 +472,7 @@
             this.btnSubject.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
             this.btnSubject.Size = new System.Drawing.Size(230, 41);
             this.btnSubject.TabIndex = 18;
+            this.btnSubject.ClickEvent += new System.EventHandler(this.btnSubject_ClickEvent);
             // 
             // btnBehaviour
             // 
@@ -551,6 +490,7 @@
             this.btnBehaviour.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
             this.btnBehaviour.Size = new System.Drawing.Size(230, 41);
             this.btnBehaviour.TabIndex = 16;
+            this.btnBehaviour.ClickEvent += new System.EventHandler(this.btnBehaviour_ClickEvent);
             // 
             // btnAttendance
             // 
@@ -562,12 +502,13 @@
             this.btnAttendance.ForeColor = System.Drawing.Color.White;
             this.btnAttendance.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
             this.btnAttendance.Icon = global::SPK.Properties.Resources.icons8_todo_list_64;
-            this.btnAttendance.Location = new System.Drawing.Point(0, 221);
+            this.btnAttendance.Location = new System.Drawing.Point(0, 176);
             this.btnAttendance.Margin = new System.Windows.Forms.Padding(2);
             this.btnAttendance.Name = "btnAttendance";
             this.btnAttendance.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
             this.btnAttendance.Size = new System.Drawing.Size(230, 41);
             this.btnAttendance.TabIndex = 15;
+            this.btnAttendance.ClickEvent += new System.EventHandler(this.btnAttendance_ClickEvent);
             // 
             // btnStudents
             // 
@@ -579,7 +520,7 @@
             this.btnStudents.ForeColor = System.Drawing.Color.White;
             this.btnStudents.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
             this.btnStudents.Icon = global::SPK.Properties.Resources.icons8_laptop_64;
-            this.btnStudents.Location = new System.Drawing.Point(0, 176);
+            this.btnStudents.Location = new System.Drawing.Point(0, 221);
             this.btnStudents.Margin = new System.Windows.Forms.Padding(2);
             this.btnStudents.Name = "btnStudents";
             this.btnStudents.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
@@ -728,6 +669,20 @@
             this.registerNewStudentToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.registerNewStudentToolStripMenuItem.Text = "Register New Student";
             // 
+            // exportBehaviourAsExcelToolStripMenuItem
+            // 
+            this.exportBehaviourAsExcelToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.exportBehaviourAsExcelToolStripMenuItem.Name = "exportBehaviourAsExcelToolStripMenuItem";
+            this.exportBehaviourAsExcelToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.exportBehaviourAsExcelToolStripMenuItem.Text = "Export Behaviour as Excel";
+            // 
+            // uploadExcelFileToolStripMenuItem
+            // 
+            this.uploadExcelFileToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.uploadExcelFileToolStripMenuItem.Name = "uploadExcelFileToolStripMenuItem";
+            this.uploadExcelFileToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.uploadExcelFileToolStripMenuItem.Text = "Upload Excel File";
+            // 
             // frmTeacher
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -771,20 +726,12 @@
         private System.Windows.Forms.ToolStripMenuItem SaveBehaviourToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ViewBehavioursToolStripMenuItem2;
         private System.Windows.Forms.ContextMenuStrip menuSubject;
-        private System.Windows.Forms.ToolStripMenuItem AddSubjectClassToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem ViewSubjectsToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem registerStudentSubjectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewRegisteredSubjectToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem specifyJuniorSubjectToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem specifySeniorSubjectToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem specifyNumberOfSubjectsToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip menuResult;
         private System.Windows.Forms.ToolStripMenuItem UploadResultDirectlyToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem UploadResultwithExcelToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem ViewUploadedResultToolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem PublishResultToolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem ViewPublishedResultToolStripMenuItem5;
-        private System.Windows.Forms.ToolStripMenuItem CheckResultToolStripMenuItem6;
         private System.Windows.Forms.ContextMenuStrip menuAdmin;
         private System.Windows.Forms.ToolStripMenuItem AddAdminToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ViewAllAdminToolStripMenuItem2;
@@ -821,6 +768,8 @@
         private System.Windows.Forms.ToolStripMenuItem schoolResumptionAndClosingToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip menuStudents;
         private System.Windows.Forms.ToolStripMenuItem registerNewStudentToolStripMenuItem;
-        private UserControls.Buttons.ButtonWithMenu btnStudents;
+        private UserControls.Buttons.ButtonWithoutMenu btnStudents;
+        private System.Windows.Forms.ToolStripMenuItem exportBehaviourAsExcelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem uploadExcelFileToolStripMenuItem;
     }
 }

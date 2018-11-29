@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SPK.UserControls.SubForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -88,8 +89,52 @@ namespace SPK
         }
         private void btnDashboard_ClickEvent(object sender, EventArgs e)
         {
-
+            showUserControl(new TeacherDash());
         }
-        
+
+        private void InputAttendancetoolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            showUserControl(new ClassAttendance());
+        }
+
+        private void btnAttendance_ClickEvent(object sender, EventArgs e)
+        {
+            menuAttendance.Show(Cursor.Position);
+        }
+
+        private void ViewAttendanceToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            showUserControl(new ViewAttendance());
+        }
+
+        private void SaveBehaviourToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            showUserControl(new uploadBehaviouralAnalysis());
+        }
+
+        private void ViewBehavioursToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            showUserControl(new ViewBehaviours());
+        }
+
+        private void btnBehaviour_ClickEvent(object sender, EventArgs e)
+        {
+            menuBehaviour.Show(Cursor.Position);
+        }
+
+        private void registerStudentSubjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showUserControl(new RegisterSubject());
+        }
+
+        private void viewRegisteredSubjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showUserControl(new ViewRegisteredStudent());
+        }
+
+        private void btnSubject_ClickEvent(object sender, EventArgs e)
+        {
+            menuSubject.Show(Cursor.Position);
+        }
     }
 }

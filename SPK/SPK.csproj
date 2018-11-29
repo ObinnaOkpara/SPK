@@ -290,6 +290,12 @@
     <Compile Include="UserControls\SubForms\SpecifySubjectNumber.Designer.cs">
       <DependentUpon>SpecifySubjectNumber.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\TeacherDash.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\TeacherDash.Designer.cs">
+      <DependentUpon>TeacherDash.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\TeacherEmploymentStatus.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -455,6 +461,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\SpecifySubjectNumber.resx">
       <DependentUpon>SpecifySubjectNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\TeacherDash.resx">
+      <DependentUpon>TeacherDash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\TeacherEmploymentStatus.resx">
       <DependentUpon>TeacherEmploymentStatus.cs</DependentUpon>
