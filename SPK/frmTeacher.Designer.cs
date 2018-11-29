@@ -66,9 +66,20 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.picClose = new System.Windows.Forms.PictureBox();
+            this.picMinimise = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonWithoutMenu1 = new SPK.UserControls.Buttons.ButtonWithoutMenu();
+            this.btnResult = new SPK.UserControls.Buttons.ButtonWithMenu();
+            this.btnSubject = new SPK.UserControls.Buttons.ButtonWithMenu();
+            this.btnBehaviour = new SPK.UserControls.Buttons.ButtonWithMenu();
+            this.btnAttendance = new SPK.UserControls.Buttons.ButtonWithMenu();
+            this.btnStudents = new SPK.UserControls.Buttons.ButtonWithMenu();
+            this.buttonWithoutMenu2 = new SPK.UserControls.Buttons.ButtonWithoutMenu();
+            this.btnDashboard = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.lblUserType = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panContainer = new System.Windows.Forms.Panel();
             this.MenuSchoolInfo = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.updateSchoolInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,17 +88,6 @@
             this.schoolResumptionAndClosingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStudents = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.registerNewStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.picClose = new System.Windows.Forms.PictureBox();
-            this.picMinimise = new System.Windows.Forms.PictureBox();
-            this.buttonWithoutMenu1 = new SPK.UserControls.Buttons.ButtonWithoutMenu();
-            this.btnResult = new SPK.UserControls.Buttons.ButtonWithMenu();
-            this.btnSubject = new SPK.UserControls.Buttons.ButtonWithMenu();
-            this.btnBehaviour = new SPK.UserControls.Buttons.ButtonWithMenu();
-            this.btnAttendance = new SPK.UserControls.Buttons.ButtonWithMenu();
-            this.buttonWithoutMenu2 = new SPK.UserControls.Buttons.ButtonWithoutMenu();
-            this.btnDashboard = new SPK.UserControls.Buttons.ButtonWithoutMenu();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnStudents = new SPK.UserControls.Buttons.ButtonWithMenu();
             this.menuAttendance.SuspendLayout();
             this.menuBehaviour.SuspendLayout();
             this.menuSubject.SuspendLayout();
@@ -97,12 +97,12 @@
             this.menuTeacher.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.MenuSchoolInfo.SuspendLayout();
-            this.menuStudents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimise)).BeginInit();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.MenuSchoolInfo.SuspendLayout();
+            this.menuStudents.SuspendLayout();
             this.SuspendLayout();
             // 
             // demoteStudentToolStripMenuItem
@@ -401,6 +401,9 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1035, 47);
             this.panel1.TabIndex = 21;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
             // panel2
             // 
@@ -423,6 +426,38 @@
             this.label1.Size = new System.Drawing.Size(173, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "School Portal Kit";
+            // 
+            // picClose
+            // 
+            this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picClose.BackColor = System.Drawing.Color.Red;
+            this.picClose.Image = global::SPK.Properties.Resources.close;
+            this.picClose.Location = new System.Drawing.Point(1002, 10);
+            this.picClose.Margin = new System.Windows.Forms.Padding(2);
+            this.picClose.Name = "picClose";
+            this.picClose.Size = new System.Drawing.Size(22, 24);
+            this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picClose.TabIndex = 2;
+            this.picClose.TabStop = false;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click);
+            this.picClose.MouseLeave += new System.EventHandler(this.picClose_MouseLeave);
+            this.picClose.MouseHover += new System.EventHandler(this.picClose_MouseHover);
+            // 
+            // picMinimise
+            // 
+            this.picMinimise.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picMinimise.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.picMinimise.Image = global::SPK.Properties.Resources.minimise;
+            this.picMinimise.Location = new System.Drawing.Point(975, 9);
+            this.picMinimise.Margin = new System.Windows.Forms.Padding(2);
+            this.picMinimise.Name = "picMinimise";
+            this.picMinimise.Size = new System.Drawing.Size(22, 24);
+            this.picMinimise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMinimise.TabIndex = 5;
+            this.picMinimise.TabStop = false;
+            this.picMinimise.Click += new System.EventHandler(this.picMinimise_Click);
+            this.picMinimise.MouseLeave += new System.EventHandler(this.picMinimise_MouseLeave);
+            this.picMinimise.MouseHover += new System.EventHandler(this.picMinimise_MouseHover);
             // 
             // panel3
             // 
@@ -449,6 +484,143 @@
             this.panel3.TabIndex = 22;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
+            // buttonWithoutMenu1
+            // 
+            this.buttonWithoutMenu1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonWithoutMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.buttonWithoutMenu1.BtnText = "Password Reset";
+            this.buttonWithoutMenu1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonWithoutMenu1.ForeColor = System.Drawing.Color.White;
+            this.buttonWithoutMenu1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.buttonWithoutMenu1.Icon = global::SPK.Properties.Resources.icons8_password_64;
+            this.buttonWithoutMenu1.Location = new System.Drawing.Point(0, 401);
+            this.buttonWithoutMenu1.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonWithoutMenu1.Name = "buttonWithoutMenu1";
+            this.buttonWithoutMenu1.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.buttonWithoutMenu1.Size = new System.Drawing.Size(230, 41);
+            this.buttonWithoutMenu1.TabIndex = 24;
+            // 
+            // btnResult
+            // 
+            this.btnResult.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnResult.BtnText = "Result Management";
+            this.btnResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResult.ForeColor = System.Drawing.Color.White;
+            this.btnResult.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnResult.Icon = global::SPK.Properties.Resources.icons8_book_52;
+            this.btnResult.Location = new System.Drawing.Point(0, 356);
+            this.btnResult.Margin = new System.Windows.Forms.Padding(2);
+            this.btnResult.Name = "btnResult";
+            this.btnResult.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnResult.Size = new System.Drawing.Size(230, 41);
+            this.btnResult.TabIndex = 19;
+            // 
+            // btnSubject
+            // 
+            this.btnSubject.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSubject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnSubject.BtnText = "Subject Management";
+            this.btnSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubject.ForeColor = System.Drawing.Color.White;
+            this.btnSubject.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnSubject.Icon = global::SPK.Properties.Resources.icons8_file_64;
+            this.btnSubject.Location = new System.Drawing.Point(0, 311);
+            this.btnSubject.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSubject.Name = "btnSubject";
+            this.btnSubject.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnSubject.Size = new System.Drawing.Size(230, 41);
+            this.btnSubject.TabIndex = 18;
+            // 
+            // btnBehaviour
+            // 
+            this.btnBehaviour.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBehaviour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnBehaviour.BtnText = "Behavioural Analysis";
+            this.btnBehaviour.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBehaviour.ForeColor = System.Drawing.Color.White;
+            this.btnBehaviour.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnBehaviour.Icon = global::SPK.Properties.Resources.icons8_edit_64;
+            this.btnBehaviour.Location = new System.Drawing.Point(0, 266);
+            this.btnBehaviour.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBehaviour.Name = "btnBehaviour";
+            this.btnBehaviour.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnBehaviour.Size = new System.Drawing.Size(230, 41);
+            this.btnBehaviour.TabIndex = 16;
+            // 
+            // btnAttendance
+            // 
+            this.btnAttendance.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAttendance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnAttendance.BtnText = "Attendance Manager";
+            this.btnAttendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttendance.ForeColor = System.Drawing.Color.White;
+            this.btnAttendance.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnAttendance.Icon = global::SPK.Properties.Resources.icons8_todo_list_64;
+            this.btnAttendance.Location = new System.Drawing.Point(0, 221);
+            this.btnAttendance.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAttendance.Name = "btnAttendance";
+            this.btnAttendance.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnAttendance.Size = new System.Drawing.Size(230, 41);
+            this.btnAttendance.TabIndex = 15;
+            // 
+            // btnStudents
+            // 
+            this.btnStudents.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStudents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnStudents.BtnText = "Student Management";
+            this.btnStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStudents.ForeColor = System.Drawing.Color.White;
+            this.btnStudents.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnStudents.Icon = global::SPK.Properties.Resources.icons8_laptop_64;
+            this.btnStudents.Location = new System.Drawing.Point(0, 176);
+            this.btnStudents.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStudents.Name = "btnStudents";
+            this.btnStudents.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnStudents.Size = new System.Drawing.Size(230, 41);
+            this.btnStudents.TabIndex = 14;
+            // 
+            // buttonWithoutMenu2
+            // 
+            this.buttonWithoutMenu2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonWithoutMenu2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.buttonWithoutMenu2.BtnText = "Profile";
+            this.buttonWithoutMenu2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonWithoutMenu2.ForeColor = System.Drawing.Color.White;
+            this.buttonWithoutMenu2.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.buttonWithoutMenu2.Icon = global::SPK.Properties.Resources.icons8_person_64;
+            this.buttonWithoutMenu2.Location = new System.Drawing.Point(0, 131);
+            this.buttonWithoutMenu2.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonWithoutMenu2.Name = "buttonWithoutMenu2";
+            this.buttonWithoutMenu2.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.buttonWithoutMenu2.Size = new System.Drawing.Size(230, 41);
+            this.buttonWithoutMenu2.TabIndex = 12;
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnDashboard.BtnText = "Dashboard";
+            this.btnDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.ForeColor = System.Drawing.Color.White;
+            this.btnDashboard.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnDashboard.Icon = global::SPK.Properties.Resources.icons8_dashboard_64;
+            this.btnDashboard.Location = new System.Drawing.Point(0, 90);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnDashboard.Size = new System.Drawing.Size(230, 41);
+            this.btnDashboard.TabIndex = 11;
+            this.btnDashboard.ClickEvent += new System.EventHandler(this.btnDashboard_ClickEvent);
+            // 
             // lblUserType
             // 
             this.lblUserType.AutoSize = true;
@@ -470,6 +642,17 @@
             this.lblUsername.Size = new System.Drawing.Size(110, 24);
             this.lblUsername.TabIndex = 8;
             this.lblUsername.Text = "SPK Teacher";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SPK.Properties.Resources.Icons8_flat_businessman_svg;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 49);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // panContainer
             // 
@@ -545,179 +728,6 @@
             this.registerNewStudentToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.registerNewStudentToolStripMenuItem.Text = "Register New Student";
             // 
-            // picClose
-            // 
-            this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picClose.BackColor = System.Drawing.Color.Red;
-            this.picClose.Image = global::SPK.Properties.Resources.close;
-            this.picClose.Location = new System.Drawing.Point(1002, 10);
-            this.picClose.Margin = new System.Windows.Forms.Padding(2);
-            this.picClose.Name = "picClose";
-            this.picClose.Size = new System.Drawing.Size(22, 24);
-            this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picClose.TabIndex = 2;
-            this.picClose.TabStop = false;
-            // 
-            // picMinimise
-            // 
-            this.picMinimise.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picMinimise.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.picMinimise.Image = global::SPK.Properties.Resources.minimise;
-            this.picMinimise.Location = new System.Drawing.Point(975, 9);
-            this.picMinimise.Margin = new System.Windows.Forms.Padding(2);
-            this.picMinimise.Name = "picMinimise";
-            this.picMinimise.Size = new System.Drawing.Size(22, 24);
-            this.picMinimise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picMinimise.TabIndex = 5;
-            this.picMinimise.TabStop = false;
-            // 
-            // buttonWithoutMenu1
-            // 
-            this.buttonWithoutMenu1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonWithoutMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.buttonWithoutMenu1.BtnText = "Password Reset";
-            this.buttonWithoutMenu1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonWithoutMenu1.ForeColor = System.Drawing.Color.White;
-            this.buttonWithoutMenu1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.buttonWithoutMenu1.Icon = global::SPK.Properties.Resources.icons8_password_64;
-            this.buttonWithoutMenu1.Location = new System.Drawing.Point(0, 367);
-            this.buttonWithoutMenu1.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonWithoutMenu1.Name = "buttonWithoutMenu1";
-            this.buttonWithoutMenu1.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithoutMenu1.Size = new System.Drawing.Size(213, 41);
-            this.buttonWithoutMenu1.TabIndex = 24;
-            // 
-            // btnResult
-            // 
-            this.btnResult.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnResult.BtnText = "Result Management";
-            this.btnResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResult.ForeColor = System.Drawing.Color.White;
-            this.btnResult.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnResult.Icon = global::SPK.Properties.Resources.icons8_book_52;
-            this.btnResult.Location = new System.Drawing.Point(0, 322);
-            this.btnResult.Margin = new System.Windows.Forms.Padding(2);
-            this.btnResult.Name = "btnResult";
-            this.btnResult.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnResult.Size = new System.Drawing.Size(213, 41);
-            this.btnResult.TabIndex = 19;
-            // 
-            // btnSubject
-            // 
-            this.btnSubject.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSubject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnSubject.BtnText = "Subject Management";
-            this.btnSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubject.ForeColor = System.Drawing.Color.White;
-            this.btnSubject.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnSubject.Icon = global::SPK.Properties.Resources.icons8_file_64;
-            this.btnSubject.Location = new System.Drawing.Point(0, 277);
-            this.btnSubject.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSubject.Name = "btnSubject";
-            this.btnSubject.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnSubject.Size = new System.Drawing.Size(213, 41);
-            this.btnSubject.TabIndex = 18;
-            // 
-            // btnBehaviour
-            // 
-            this.btnBehaviour.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBehaviour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnBehaviour.BtnText = "Behavioural Analysis";
-            this.btnBehaviour.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBehaviour.ForeColor = System.Drawing.Color.White;
-            this.btnBehaviour.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnBehaviour.Icon = global::SPK.Properties.Resources.icons8_edit_64;
-            this.btnBehaviour.Location = new System.Drawing.Point(0, 232);
-            this.btnBehaviour.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBehaviour.Name = "btnBehaviour";
-            this.btnBehaviour.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnBehaviour.Size = new System.Drawing.Size(213, 41);
-            this.btnBehaviour.TabIndex = 16;
-            // 
-            // btnAttendance
-            // 
-            this.btnAttendance.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAttendance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnAttendance.BtnText = "Attendance Manager";
-            this.btnAttendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAttendance.ForeColor = System.Drawing.Color.White;
-            this.btnAttendance.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnAttendance.Icon = global::SPK.Properties.Resources.icons8_todo_list_64;
-            this.btnAttendance.Location = new System.Drawing.Point(0, 187);
-            this.btnAttendance.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAttendance.Name = "btnAttendance";
-            this.btnAttendance.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnAttendance.Size = new System.Drawing.Size(213, 41);
-            this.btnAttendance.TabIndex = 15;
-            // 
-            // buttonWithoutMenu2
-            // 
-            this.buttonWithoutMenu2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonWithoutMenu2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.buttonWithoutMenu2.BtnText = "Profile";
-            this.buttonWithoutMenu2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonWithoutMenu2.ForeColor = System.Drawing.Color.White;
-            this.buttonWithoutMenu2.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.buttonWithoutMenu2.Icon = global::SPK.Properties.Resources.icons8_person_64;
-            this.buttonWithoutMenu2.Location = new System.Drawing.Point(0, 97);
-            this.buttonWithoutMenu2.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonWithoutMenu2.Name = "buttonWithoutMenu2";
-            this.buttonWithoutMenu2.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithoutMenu2.Size = new System.Drawing.Size(213, 41);
-            this.buttonWithoutMenu2.TabIndex = 12;
-            // 
-            // btnDashboard
-            // 
-            this.btnDashboard.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnDashboard.BtnText = "Dashboard";
-            this.btnDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashboard.ForeColor = System.Drawing.Color.White;
-            this.btnDashboard.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnDashboard.Icon = global::SPK.Properties.Resources.icons8_dashboard_64;
-            this.btnDashboard.Location = new System.Drawing.Point(0, 56);
-            this.btnDashboard.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnDashboard.Size = new System.Drawing.Size(213, 41);
-            this.btnDashboard.TabIndex = 11;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SPK.Properties.Resources.Icons8_flat_businessman_svg;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 5);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 49);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnStudents
-            // 
-            this.btnStudents.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStudents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnStudents.BtnText = "Student Management";
-            this.btnStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStudents.ForeColor = System.Drawing.Color.White;
-            this.btnStudents.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnStudents.Icon = global::SPK.Properties.Resources.icons8_laptop_64;
-            this.btnStudents.Location = new System.Drawing.Point(0, 142);
-            this.btnStudents.Margin = new System.Windows.Forms.Padding(2);
-            this.btnStudents.Name = "btnStudents";
-            this.btnStudents.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnStudents.Size = new System.Drawing.Size(213, 41);
-            this.btnStudents.TabIndex = 14;
-            // 
             // frmTeacher
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -740,13 +750,13 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.MenuSchoolInfo.ResumeLayout(false);
-            this.menuStudents.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimise)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.MenuSchoolInfo.ResumeLayout(false);
+            this.menuStudents.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

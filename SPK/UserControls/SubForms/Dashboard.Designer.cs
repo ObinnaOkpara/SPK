@@ -34,29 +34,35 @@
             this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panPasswordCover = new SPK.UserControls.Panels.ExtendedPanel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.panStaffCover = new SPK.UserControls.Panels.ExtendedPanel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.panFeesCover = new SPK.UserControls.Panels.ExtendedPanel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.panResultCover = new SPK.UserControls.Panels.ExtendedPanel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.PanSubjectCover = new SPK.UserControls.Panels.ExtendedPanel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panClassCover = new SPK.UserControls.Panels.ExtendedPanel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.extendedPanel2 = new SPK.UserControls.Panels.ExtendedPanel();
+            this.panStudentCover = new SPK.UserControls.Panels.ExtendedPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.extendedPanel1 = new SPK.UserControls.Panels.ExtendedPanel();
+            this.panProfileCover = new SPK.UserControls.Panels.ExtendedPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -135,7 +141,7 @@
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(1, 116);
+            this.panel2.Location = new System.Drawing.Point(1, 142);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(797, 367);
             this.panel2.TabIndex = 1;
@@ -144,6 +150,7 @@
             // 
             this.panel7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.Controls.Add(this.panPasswordCover);
             this.panel7.Controls.Add(this.pictureBox5);
             this.panel7.Controls.Add(this.label5);
             this.panel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
@@ -151,6 +158,16 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(150, 130);
             this.panel7.TabIndex = 7;
+            // 
+            // panPasswordCover
+            // 
+            this.panPasswordCover.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panPasswordCover.Location = new System.Drawing.Point(0, 0);
+            this.panPasswordCover.Name = "panPasswordCover";
+            this.panPasswordCover.Size = new System.Drawing.Size(150, 130);
+            this.panPasswordCover.TabIndex = 8;
+            this.panPasswordCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
+            this.panPasswordCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
             // 
             // pictureBox5
             // 
@@ -176,6 +193,7 @@
             // 
             this.panel8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel8.BackColor = System.Drawing.Color.White;
+            this.panel8.Controls.Add(this.panStaffCover);
             this.panel8.Controls.Add(this.pictureBox6);
             this.panel8.Controls.Add(this.label6);
             this.panel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
@@ -183,6 +201,16 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(150, 130);
             this.panel8.TabIndex = 6;
+            // 
+            // panStaffCover
+            // 
+            this.panStaffCover.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panStaffCover.Location = new System.Drawing.Point(0, 0);
+            this.panStaffCover.Name = "panStaffCover";
+            this.panStaffCover.Size = new System.Drawing.Size(150, 130);
+            this.panStaffCover.TabIndex = 8;
+            this.panStaffCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
+            this.panStaffCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
             // 
             // pictureBox6
             // 
@@ -208,6 +236,7 @@
             // 
             this.panel9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel9.BackColor = System.Drawing.Color.White;
+            this.panel9.Controls.Add(this.panFeesCover);
             this.panel9.Controls.Add(this.pictureBox7);
             this.panel9.Controls.Add(this.label7);
             this.panel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
@@ -215,6 +244,16 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(150, 130);
             this.panel9.TabIndex = 5;
+            // 
+            // panFeesCover
+            // 
+            this.panFeesCover.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panFeesCover.Location = new System.Drawing.Point(0, 0);
+            this.panFeesCover.Name = "panFeesCover";
+            this.panFeesCover.Size = new System.Drawing.Size(150, 130);
+            this.panFeesCover.TabIndex = 8;
+            this.panFeesCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
+            this.panFeesCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
             // 
             // pictureBox7
             // 
@@ -240,6 +279,7 @@
             // 
             this.panel10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel10.BackColor = System.Drawing.Color.White;
+            this.panel10.Controls.Add(this.panResultCover);
             this.panel10.Controls.Add(this.pictureBox8);
             this.panel10.Controls.Add(this.label8);
             this.panel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
@@ -247,6 +287,16 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(150, 130);
             this.panel10.TabIndex = 4;
+            // 
+            // panResultCover
+            // 
+            this.panResultCover.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panResultCover.Location = new System.Drawing.Point(0, 0);
+            this.panResultCover.Name = "panResultCover";
+            this.panResultCover.Size = new System.Drawing.Size(150, 130);
+            this.panResultCover.TabIndex = 8;
+            this.panResultCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
+            this.panResultCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
             // 
             // pictureBox8
             // 
@@ -272,6 +322,7 @@
             // 
             this.panel6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.Controls.Add(this.PanSubjectCover);
             this.panel6.Controls.Add(this.pictureBox4);
             this.panel6.Controls.Add(this.label4);
             this.panel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
@@ -279,6 +330,16 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(150, 130);
             this.panel6.TabIndex = 3;
+            // 
+            // PanSubjectCover
+            // 
+            this.PanSubjectCover.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanSubjectCover.Location = new System.Drawing.Point(0, 0);
+            this.PanSubjectCover.Name = "PanSubjectCover";
+            this.PanSubjectCover.Size = new System.Drawing.Size(150, 130);
+            this.PanSubjectCover.TabIndex = 8;
+            this.PanSubjectCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
+            this.PanSubjectCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
             // 
             // pictureBox4
             // 
@@ -304,6 +365,7 @@
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.panClassCover);
             this.panel5.Controls.Add(this.pictureBox3);
             this.panel5.Controls.Add(this.label3);
             this.panel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
@@ -311,6 +373,16 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(150, 130);
             this.panel5.TabIndex = 2;
+            // 
+            // panClassCover
+            // 
+            this.panClassCover.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panClassCover.Location = new System.Drawing.Point(0, 0);
+            this.panClassCover.Name = "panClassCover";
+            this.panClassCover.Size = new System.Drawing.Size(150, 130);
+            this.panClassCover.TabIndex = 8;
+            this.panClassCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
+            this.panClassCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
             // 
             // pictureBox3
             // 
@@ -336,7 +408,7 @@
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.extendedPanel2);
+            this.panel4.Controls.Add(this.panStudentCover);
             this.panel4.Controls.Add(this.pictureBox2);
             this.panel4.Controls.Add(this.label2);
             this.panel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
@@ -345,12 +417,15 @@
             this.panel4.Size = new System.Drawing.Size(150, 130);
             this.panel4.TabIndex = 1;
             // 
-            // extendedPanel2
+            // panStudentCover
             // 
-            this.extendedPanel2.Location = new System.Drawing.Point(0, 1);
-            this.extendedPanel2.Name = "extendedPanel2";
-            this.extendedPanel2.Size = new System.Drawing.Size(150, 130);
-            this.extendedPanel2.TabIndex = 7;
+            this.panStudentCover.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panStudentCover.Location = new System.Drawing.Point(0, 0);
+            this.panStudentCover.Name = "panStudentCover";
+            this.panStudentCover.Size = new System.Drawing.Size(150, 130);
+            this.panStudentCover.TabIndex = 7;
+            this.panStudentCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
+            this.panStudentCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
             // 
             // pictureBox2
             // 
@@ -376,7 +451,7 @@
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.extendedPanel1);
+            this.panel3.Controls.Add(this.panProfileCover);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.label1);
             this.panel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
@@ -385,12 +460,15 @@
             this.panel3.Size = new System.Drawing.Size(150, 130);
             this.panel3.TabIndex = 0;
             // 
-            // extendedPanel1
+            // panProfileCover
             // 
-            this.extendedPanel1.Location = new System.Drawing.Point(0, 1);
-            this.extendedPanel1.Name = "extendedPanel1";
-            this.extendedPanel1.Size = new System.Drawing.Size(150, 130);
-            this.extendedPanel1.TabIndex = 6;
+            this.panProfileCover.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panProfileCover.Location = new System.Drawing.Point(0, 0);
+            this.panProfileCover.Name = "panProfileCover";
+            this.panProfileCover.Size = new System.Drawing.Size(150, 130);
+            this.panProfileCover.TabIndex = 6;
+            this.panProfileCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
+            this.panProfileCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
             // 
             // pictureBox1
             // 
@@ -473,9 +551,15 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private Panels.ExtendedPanel extendedPanel2;
+        private Panels.ExtendedPanel panStudentCover;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private Panels.ExtendedPanel extendedPanel1;
+        private Panels.ExtendedPanel panProfileCover;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Panels.ExtendedPanel panPasswordCover;
+        private Panels.ExtendedPanel panStaffCover;
+        private Panels.ExtendedPanel panFeesCover;
+        private Panels.ExtendedPanel panResultCover;
+        private Panels.ExtendedPanel PanSubjectCover;
+        private Panels.ExtendedPanel panClassCover;
     }
 }
