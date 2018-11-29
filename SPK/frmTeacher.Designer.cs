@@ -36,23 +36,10 @@
             this.menuBehaviour = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SaveBehaviourToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ViewBehavioursToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuSubject = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.registerStudentSubjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewRegisteredSubjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuResult = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.UploadResultDirectlyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.UploadResultwithExcelToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.ViewUploadedResultToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuAdmin = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.AddAdminToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ViewAllAdminToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuPrincipal = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.AddPrincipalToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ViewPrincipalToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuTeacher = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.AddTeacherToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.TeachersandtheirClassesToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ViewTeachersToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.viewStudentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.promoteClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -73,29 +60,19 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panContainer = new System.Windows.Forms.Panel();
-            this.MenuSchoolInfo = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.updateSchoolInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.currentTermAndSessionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addNewSessionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.schoolResumptionAndClosingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStudents = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.registerNewStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportBehaviourAsExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uploadExcelFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAttendance.SuspendLayout();
             this.menuBehaviour.SuspendLayout();
-            this.menuSubject.SuspendLayout();
             this.menuResult.SuspendLayout();
-            this.menuAdmin.SuspendLayout();
-            this.menuPrincipal.SuspendLayout();
-            this.menuTeacher.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimise)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.MenuSchoolInfo.SuspendLayout();
             this.menuStudents.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -164,34 +141,6 @@
             this.ViewBehavioursToolStripMenuItem2.Text = "View Behaviours";
             this.ViewBehavioursToolStripMenuItem2.Click += new System.EventHandler(this.ViewBehavioursToolStripMenuItem2_Click);
             // 
-            // menuSubject
-            // 
-            this.menuSubject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
-            this.menuSubject.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.menuSubject.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuSubject.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registerStudentSubjectToolStripMenuItem,
-            this.viewRegisteredSubjectToolStripMenuItem});
-            this.menuSubject.Name = "menuStudents";
-            this.menuSubject.ShowImageMargin = false;
-            this.menuSubject.Size = new System.Drawing.Size(190, 48);
-            // 
-            // registerStudentSubjectToolStripMenuItem
-            // 
-            this.registerStudentSubjectToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.registerStudentSubjectToolStripMenuItem.Name = "registerStudentSubjectToolStripMenuItem";
-            this.registerStudentSubjectToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.registerStudentSubjectToolStripMenuItem.Text = "Register Student Subject";
-            this.registerStudentSubjectToolStripMenuItem.Click += new System.EventHandler(this.registerStudentSubjectToolStripMenuItem_Click);
-            // 
-            // viewRegisteredSubjectToolStripMenuItem
-            // 
-            this.viewRegisteredSubjectToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.viewRegisteredSubjectToolStripMenuItem.Name = "viewRegisteredSubjectToolStripMenuItem";
-            this.viewRegisteredSubjectToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.viewRegisteredSubjectToolStripMenuItem.Text = "View Registered Subject";
-            this.viewRegisteredSubjectToolStripMenuItem.Click += new System.EventHandler(this.viewRegisteredSubjectToolStripMenuItem_Click);
-            // 
             // menuResult
             // 
             this.menuResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
@@ -203,7 +152,7 @@
             this.ViewUploadedResultToolStripMenuItem3});
             this.menuResult.Name = "menuStudents";
             this.menuResult.ShowImageMargin = false;
-            this.menuResult.Size = new System.Drawing.Size(187, 92);
+            this.menuResult.Size = new System.Drawing.Size(187, 70);
             // 
             // UploadResultDirectlyToolStripMenuItem1
             // 
@@ -225,92 +174,6 @@
             this.ViewUploadedResultToolStripMenuItem3.Name = "ViewUploadedResultToolStripMenuItem3";
             this.ViewUploadedResultToolStripMenuItem3.Size = new System.Drawing.Size(186, 22);
             this.ViewUploadedResultToolStripMenuItem3.Text = "View Uploaded Result";
-            // 
-            // menuAdmin
-            // 
-            this.menuAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
-            this.menuAdmin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.menuAdmin.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AddAdminToolStripMenuItem1,
-            this.ViewAllAdminToolStripMenuItem2});
-            this.menuAdmin.Name = "menuStudents";
-            this.menuAdmin.ShowImageMargin = false;
-            this.menuAdmin.Size = new System.Drawing.Size(134, 48);
-            // 
-            // AddAdminToolStripMenuItem1
-            // 
-            this.AddAdminToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
-            this.AddAdminToolStripMenuItem1.Name = "AddAdminToolStripMenuItem1";
-            this.AddAdminToolStripMenuItem1.Size = new System.Drawing.Size(133, 22);
-            this.AddAdminToolStripMenuItem1.Text = "Add Admin";
-            // 
-            // ViewAllAdminToolStripMenuItem2
-            // 
-            this.ViewAllAdminToolStripMenuItem2.ForeColor = System.Drawing.Color.White;
-            this.ViewAllAdminToolStripMenuItem2.Name = "ViewAllAdminToolStripMenuItem2";
-            this.ViewAllAdminToolStripMenuItem2.Size = new System.Drawing.Size(133, 22);
-            this.ViewAllAdminToolStripMenuItem2.Text = "View All Admin";
-            // 
-            // menuPrincipal
-            // 
-            this.menuPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
-            this.menuPrincipal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.menuPrincipal.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AddPrincipalToolStripMenuItem1,
-            this.ViewPrincipalToolStripMenuItem2});
-            this.menuPrincipal.Name = "menuStudents";
-            this.menuPrincipal.ShowImageMargin = false;
-            this.menuPrincipal.Size = new System.Drawing.Size(128, 48);
-            // 
-            // AddPrincipalToolStripMenuItem1
-            // 
-            this.AddPrincipalToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
-            this.AddPrincipalToolStripMenuItem1.Name = "AddPrincipalToolStripMenuItem1";
-            this.AddPrincipalToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
-            this.AddPrincipalToolStripMenuItem1.Text = "Add Principal";
-            // 
-            // ViewPrincipalToolStripMenuItem2
-            // 
-            this.ViewPrincipalToolStripMenuItem2.ForeColor = System.Drawing.Color.White;
-            this.ViewPrincipalToolStripMenuItem2.Name = "ViewPrincipalToolStripMenuItem2";
-            this.ViewPrincipalToolStripMenuItem2.Size = new System.Drawing.Size(127, 22);
-            this.ViewPrincipalToolStripMenuItem2.Text = "View Principal";
-            // 
-            // menuTeacher
-            // 
-            this.menuTeacher.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
-            this.menuTeacher.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.menuTeacher.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuTeacher.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AddTeacherToolStripMenuItem1,
-            this.TeachersandtheirClassesToolStripMenuItem2,
-            this.ViewTeachersToolStripMenuItem3});
-            this.menuTeacher.Name = "menuStudents";
-            this.menuTeacher.ShowImageMargin = false;
-            this.menuTeacher.Size = new System.Drawing.Size(193, 70);
-            // 
-            // AddTeacherToolStripMenuItem1
-            // 
-            this.AddTeacherToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
-            this.AddTeacherToolStripMenuItem1.Name = "AddTeacherToolStripMenuItem1";
-            this.AddTeacherToolStripMenuItem1.Size = new System.Drawing.Size(192, 22);
-            this.AddTeacherToolStripMenuItem1.Text = "Add Teacher";
-            // 
-            // TeachersandtheirClassesToolStripMenuItem2
-            // 
-            this.TeachersandtheirClassesToolStripMenuItem2.ForeColor = System.Drawing.Color.White;
-            this.TeachersandtheirClassesToolStripMenuItem2.Name = "TeachersandtheirClassesToolStripMenuItem2";
-            this.TeachersandtheirClassesToolStripMenuItem2.Size = new System.Drawing.Size(192, 22);
-            this.TeachersandtheirClassesToolStripMenuItem2.Text = "Teachers and their Classes";
-            // 
-            // ViewTeachersToolStripMenuItem3
-            // 
-            this.ViewTeachersToolStripMenuItem3.ForeColor = System.Drawing.Color.White;
-            this.ViewTeachersToolStripMenuItem3.Name = "ViewTeachersToolStripMenuItem3";
-            this.ViewTeachersToolStripMenuItem3.Size = new System.Drawing.Size(192, 22);
-            this.ViewTeachersToolStripMenuItem3.Text = "View Teachers";
             // 
             // viewStudentsToolStripMenuItem
             // 
@@ -606,48 +469,6 @@
             this.panContainer.Size = new System.Drawing.Size(800, 580);
             this.panContainer.TabIndex = 23;
             // 
-            // MenuSchoolInfo
-            // 
-            this.MenuSchoolInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
-            this.MenuSchoolInfo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.MenuSchoolInfo.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.MenuSchoolInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.updateSchoolInfoToolStripMenuItem,
-            this.currentTermAndSessionToolStripMenuItem,
-            this.addNewSessionToolStripMenuItem,
-            this.schoolResumptionAndClosingToolStripMenuItem});
-            this.MenuSchoolInfo.Name = "MenuSchoolInfo";
-            this.MenuSchoolInfo.ShowImageMargin = false;
-            this.MenuSchoolInfo.Size = new System.Drawing.Size(222, 92);
-            // 
-            // updateSchoolInfoToolStripMenuItem
-            // 
-            this.updateSchoolInfoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.updateSchoolInfoToolStripMenuItem.Name = "updateSchoolInfoToolStripMenuItem";
-            this.updateSchoolInfoToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.updateSchoolInfoToolStripMenuItem.Text = "Update School Info";
-            // 
-            // currentTermAndSessionToolStripMenuItem
-            // 
-            this.currentTermAndSessionToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.currentTermAndSessionToolStripMenuItem.Name = "currentTermAndSessionToolStripMenuItem";
-            this.currentTermAndSessionToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.currentTermAndSessionToolStripMenuItem.Text = "Current Term and Session";
-            // 
-            // addNewSessionToolStripMenuItem
-            // 
-            this.addNewSessionToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.addNewSessionToolStripMenuItem.Name = "addNewSessionToolStripMenuItem";
-            this.addNewSessionToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.addNewSessionToolStripMenuItem.Text = "Add New Session";
-            // 
-            // schoolResumptionAndClosingToolStripMenuItem
-            // 
-            this.schoolResumptionAndClosingToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.schoolResumptionAndClosingToolStripMenuItem.Name = "schoolResumptionAndClosingToolStripMenuItem";
-            this.schoolResumptionAndClosingToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.schoolResumptionAndClosingToolStripMenuItem.Text = "School Resumption and Closing";
-            // 
             // menuStudents
             // 
             this.menuStudents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
@@ -697,11 +518,7 @@
             this.Text = "frmTeacher";
             this.menuAttendance.ResumeLayout(false);
             this.menuBehaviour.ResumeLayout(false);
-            this.menuSubject.ResumeLayout(false);
             this.menuResult.ResumeLayout(false);
-            this.menuAdmin.ResumeLayout(false);
-            this.menuPrincipal.ResumeLayout(false);
-            this.menuTeacher.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -710,7 +527,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.MenuSchoolInfo.ResumeLayout(false);
             this.menuStudents.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -725,23 +541,10 @@
         private System.Windows.Forms.ContextMenuStrip menuBehaviour;
         private System.Windows.Forms.ToolStripMenuItem SaveBehaviourToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ViewBehavioursToolStripMenuItem2;
-        private System.Windows.Forms.ContextMenuStrip menuSubject;
-        private System.Windows.Forms.ToolStripMenuItem registerStudentSubjectToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewRegisteredSubjectToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip menuResult;
         private System.Windows.Forms.ToolStripMenuItem UploadResultDirectlyToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem UploadResultwithExcelToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem ViewUploadedResultToolStripMenuItem3;
-        private System.Windows.Forms.ContextMenuStrip menuAdmin;
-        private System.Windows.Forms.ToolStripMenuItem AddAdminToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem ViewAllAdminToolStripMenuItem2;
-        private System.Windows.Forms.ContextMenuStrip menuPrincipal;
-        private System.Windows.Forms.ToolStripMenuItem AddPrincipalToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem ViewPrincipalToolStripMenuItem2;
-        private System.Windows.Forms.ContextMenuStrip menuTeacher;
-        private System.Windows.Forms.ToolStripMenuItem AddTeacherToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem TeachersandtheirClassesToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem ViewTeachersToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem viewStudentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem promoteClassToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
@@ -761,11 +564,6 @@
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panContainer;
-        private System.Windows.Forms.ContextMenuStrip MenuSchoolInfo;
-        private System.Windows.Forms.ToolStripMenuItem updateSchoolInfoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem currentTermAndSessionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addNewSessionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem schoolResumptionAndClosingToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip menuStudents;
         private System.Windows.Forms.ToolStripMenuItem registerNewStudentToolStripMenuItem;
         private UserControls.Buttons.ButtonWithoutMenu btnStudents;
