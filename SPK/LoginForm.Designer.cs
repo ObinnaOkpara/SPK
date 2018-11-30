@@ -112,6 +112,9 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(598, 42);
             this.panel2.TabIndex = 19;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
             // 
             // panel3
             // 
@@ -147,6 +150,9 @@
             this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picClose.TabIndex = 2;
             this.picClose.TabStop = false;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click);
+            this.picClose.MouseLeave += new System.EventHandler(this.picClose_MouseLeave);
+            this.picClose.MouseHover += new System.EventHandler(this.picClose_MouseHover);
             // 
             // picMinimise
             // 
@@ -160,6 +166,9 @@
             this.picMinimise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picMinimise.TabIndex = 5;
             this.picMinimise.TabStop = false;
+            this.picMinimise.Click += new System.EventHandler(this.picMinimise_Click);
+            this.picMinimise.MouseLeave += new System.EventHandler(this.picMinimise_MouseLeave);
+            this.picMinimise.MouseHover += new System.EventHandler(this.picMinimise_MouseHover);
             // 
             // panel4
             // 

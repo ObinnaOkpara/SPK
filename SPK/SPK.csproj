@@ -224,6 +224,12 @@
     <Compile Include="UserControls\SubForms\AddnViewClass.Designer.cs">
       <DependentUpon>AddnViewClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\ExportImportBehaviourExcel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ExportImportBehaviourExcel.Designer.cs">
+      <DependentUpon>ExportImportBehaviourExcel.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\NewStudent.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -429,6 +435,9 @@
     <EmbeddedResource Include="UserControls\SubForms\AddnViewClass.resx">
       <DependentUpon>AddnViewClass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\ExportImportBehaviourExcel.resx">
+      <DependentUpon>ExportImportBehaviourExcel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\NewStudent.resx">
       <DependentUpon>NewStudent.cs</DependentUpon>
     </EmbeddedResource>
@@ -617,6 +626,8 @@
   <ItemGroup>
     <None Include="Resources\icons8-password-64.png" />
     <None Include="Resources\icons8-enter-64.png" />
+    <None Include="Resources\icons8-export-64.png" />
+    <None Include="Resources\icons8-import-64.png" />
     <Content Include="small.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

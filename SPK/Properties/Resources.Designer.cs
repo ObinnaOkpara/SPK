@@ -193,6 +193,16 @@ namespace SPK.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_export_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-export-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_file_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-file-64", resourceCulture);
@@ -206,6 +216,16 @@ namespace SPK.Properties {
         internal static System.Drawing.Bitmap Icons8_flat_businessman_svg {
             get {
                 object obj = ResourceManager.GetObject("Icons8_flat_businessman.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_import_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-import-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -136,5 +136,10 @@ namespace SPK
         {
             showUserControl(new ViewRegisteredStudent());
         }
+
+        private void exportOrImportBehaviourInExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showUserControl(new ExportImportBehaviourExcel());
+        }
     }
 }
