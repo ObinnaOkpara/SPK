@@ -121,8 +121,13 @@ namespace SPK
         {
             menuBehaviour.Show(Cursor.Position);
         }
+        
+        private void btnSubject_ClickEvent(object sender, EventArgs e)
+        {
+            menuSubject.Show(Cursor.Position);
+        }
 
-        private void registerStudentSubjectToolStripMenuItem_Click(object sender, EventArgs e)
+        private void registerStudentSubjectToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             showUserControl(new RegisterSubject());
         }
@@ -130,11 +135,6 @@ namespace SPK
         private void viewRegisteredSubjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showUserControl(new ViewRegisteredStudent());
-        }
-
-        private void btnSubject_ClickEvent(object sender, EventArgs e)
-        {
-            menuSubject.Show(Cursor.Position);
         }
     }
 }

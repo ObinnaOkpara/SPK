@@ -35,6 +35,8 @@
             this.ViewAttendanceToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBehaviour = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SaveBehaviourToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportBehaviourAsExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uploadExcelFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ViewBehavioursToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuResult = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.UploadResultDirectlyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,8 +64,9 @@
             this.panContainer = new System.Windows.Forms.Panel();
             this.menuStudents = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.registerNewStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportBehaviourAsExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uploadExcelFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSubject = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.registerStudentSubjectToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewRegisteredSubjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAttendance.SuspendLayout();
             this.menuBehaviour.SuspendLayout();
             this.menuResult.SuspendLayout();
@@ -74,6 +77,7 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStudents.SuspendLayout();
+            this.menuSubject.SuspendLayout();
             this.SuspendLayout();
             // 
             // demoteStudentToolStripMenuItem
@@ -132,6 +136,20 @@
             this.SaveBehaviourToolStripMenuItem1.Size = new System.Drawing.Size(192, 22);
             this.SaveBehaviourToolStripMenuItem1.Text = "Save Behaviour";
             this.SaveBehaviourToolStripMenuItem1.Click += new System.EventHandler(this.SaveBehaviourToolStripMenuItem1_Click);
+            // 
+            // exportBehaviourAsExcelToolStripMenuItem
+            // 
+            this.exportBehaviourAsExcelToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.exportBehaviourAsExcelToolStripMenuItem.Name = "exportBehaviourAsExcelToolStripMenuItem";
+            this.exportBehaviourAsExcelToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.exportBehaviourAsExcelToolStripMenuItem.Text = "Export Behaviour as Excel";
+            // 
+            // uploadExcelFileToolStripMenuItem
+            // 
+            this.uploadExcelFileToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.uploadExcelFileToolStripMenuItem.Name = "uploadExcelFileToolStripMenuItem";
+            this.uploadExcelFileToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.uploadExcelFileToolStripMenuItem.Text = "Upload Excel File";
             // 
             // ViewBehavioursToolStripMenuItem2
             // 
@@ -490,19 +508,33 @@
             this.registerNewStudentToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.registerNewStudentToolStripMenuItem.Text = "Register New Student";
             // 
-            // exportBehaviourAsExcelToolStripMenuItem
+            // menuSubject
             // 
-            this.exportBehaviourAsExcelToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.exportBehaviourAsExcelToolStripMenuItem.Name = "exportBehaviourAsExcelToolStripMenuItem";
-            this.exportBehaviourAsExcelToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.exportBehaviourAsExcelToolStripMenuItem.Text = "Export Behaviour as Excel";
+            this.menuSubject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
+            this.menuSubject.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.menuSubject.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuSubject.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registerStudentSubjectToolStripMenuItem1,
+            this.viewRegisteredSubjectToolStripMenuItem});
+            this.menuSubject.Name = "menuStudents";
+            this.menuSubject.ShowImageMargin = false;
+            this.menuSubject.Size = new System.Drawing.Size(190, 70);
             // 
-            // uploadExcelFileToolStripMenuItem
+            // registerStudentSubjectToolStripMenuItem1
             // 
-            this.uploadExcelFileToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.uploadExcelFileToolStripMenuItem.Name = "uploadExcelFileToolStripMenuItem";
-            this.uploadExcelFileToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.uploadExcelFileToolStripMenuItem.Text = "Upload Excel File";
+            this.registerStudentSubjectToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
+            this.registerStudentSubjectToolStripMenuItem1.Name = "registerStudentSubjectToolStripMenuItem1";
+            this.registerStudentSubjectToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
+            this.registerStudentSubjectToolStripMenuItem1.Text = "Register Student Subject";
+            this.registerStudentSubjectToolStripMenuItem1.Click += new System.EventHandler(this.registerStudentSubjectToolStripMenuItem1_Click);
+            // 
+            // viewRegisteredSubjectToolStripMenuItem
+            // 
+            this.viewRegisteredSubjectToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.viewRegisteredSubjectToolStripMenuItem.Name = "viewRegisteredSubjectToolStripMenuItem";
+            this.viewRegisteredSubjectToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.viewRegisteredSubjectToolStripMenuItem.Text = "View Registered Subject";
+            this.viewRegisteredSubjectToolStripMenuItem.Click += new System.EventHandler(this.viewRegisteredSubjectToolStripMenuItem_Click);
             // 
             // frmTeacher
             // 
@@ -528,6 +560,7 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStudents.ResumeLayout(false);
+            this.menuSubject.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -569,5 +602,8 @@
         private UserControls.Buttons.ButtonWithoutMenu btnStudents;
         private System.Windows.Forms.ToolStripMenuItem exportBehaviourAsExcelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uploadExcelFileToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip menuSubject;
+        private System.Windows.Forms.ToolStripMenuItem registerStudentSubjectToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem viewRegisteredSubjectToolStripMenuItem;
     }
 }
