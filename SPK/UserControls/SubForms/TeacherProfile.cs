@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace SPK.UserControls.SubForms
 {
-    public partial class ExportImportBehaviourExcel : UserControl
+    public partial class TeacherProfile : UserControl
     {
-        public ExportImportBehaviourExcel()
+        public TeacherProfile()
         {
             InitializeComponent();
-        }
-
-        private void btnExport_ClickEvent(object sender, EventArgs e)
-        {
-
         }
     }
 }

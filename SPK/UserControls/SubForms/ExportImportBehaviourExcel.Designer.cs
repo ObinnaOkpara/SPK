@@ -242,6 +242,7 @@
             this.btnExport.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
             this.btnExport.Size = new System.Drawing.Size(144, 47);
             this.btnExport.TabIndex = 91;
+            this.btnExport.ClickEvent += new System.EventHandler(this.btnExport_ClickEvent);
             // 
             // picSchoolLogo
             // 

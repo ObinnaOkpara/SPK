@@ -188,6 +188,12 @@
     <Compile Include="UserControls\SubForms\AddTeacher.Designer.cs">
       <DependentUpon>AddTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\AdminProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\AdminProfile.Designer.cs">
+      <DependentUpon>AdminProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\AllocateFees.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -241,6 +247,12 @@
     </Compile>
     <Compile Include="UserControls\SubForms\PasswordReset.Designer.cs">
       <DependentUpon>PasswordReset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubForms\PrincipalProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\PrincipalProfile.Designer.cs">
+      <DependentUpon>PrincipalProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SubForms\PromoteClass.cs">
       <SubType>UserControl</SubType>
@@ -307,6 +319,12 @@
     </Compile>
     <Compile Include="UserControls\SubForms\TeacherEmploymentStatus.Designer.cs">
       <DependentUpon>TeacherEmploymentStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubForms\TeacherProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\TeacherProfile.Designer.cs">
+      <DependentUpon>TeacherProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SubForms\TeachertoClass.cs">
       <SubType>UserControl</SubType>
@@ -417,6 +435,9 @@
     <EmbeddedResource Include="UserControls\SubForms\AddTeacher.resx">
       <DependentUpon>AddTeacher.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\AdminProfile.resx">
+      <DependentUpon>AdminProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\AllocateFees.resx">
       <DependentUpon>AllocateFees.cs</DependentUpon>
     </EmbeddedResource>
@@ -443,6 +464,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\PasswordReset.resx">
       <DependentUpon>PasswordReset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\PrincipalProfile.resx">
+      <DependentUpon>PrincipalProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\PromoteClass.resx">
       <DependentUpon>PromoteClass.cs</DependentUpon>
@@ -476,6 +500,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\TeacherEmploymentStatus.resx">
       <DependentUpon>TeacherEmploymentStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\TeacherProfile.resx">
+      <DependentUpon>TeacherProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\TeachertoClass.resx">
       <DependentUpon>TeachertoClass.cs</DependentUpon>
