@@ -81,9 +81,10 @@ namespace SPK
 
             }
         }
-        private void button1_Click(object sender, EventArgs e)
+        
+        private void btnSignIn_ClickEvent(object sender, EventArgs e)
         {
-            if (rdbAdmin.Checked)
+            if (cBoxType.Text == "Admin")
             {
                 var task = Login<user>();
 
@@ -92,7 +93,7 @@ namespace SPK
                 var loginResult = task.Result;
                 if (loginResult)
                 {
-                    MessageBox.Show("admin logged in");
+                    MessageBox.Show("Login Successful");
                 }
                 else
                 {
@@ -100,7 +101,7 @@ namespace SPK
                     return;
                 }
             }
-            else if (rdbPrincipal.Checked)
+            else if (cBoxType.Text == "Principal")
             {
                 var task = Login<principal>();
 
@@ -109,7 +110,7 @@ namespace SPK
                 var loginResult = task.Result;
                 if (loginResult)
                 {
-                    MessageBox.Show("principal logged in");
+                    MessageBox.Show("Login Successful");
                 }
                 else
                 {
@@ -117,7 +118,7 @@ namespace SPK
                     return;
                 }
             }
-            else if (rdbTeacher.Checked)
+            else if (cBoxType.Text == "Teacher")
             {
                 var task = Login<teacher>();
 
@@ -126,7 +127,7 @@ namespace SPK
                 var loginResult = task.Result;
                 if (loginResult)
                 {
-                    MessageBox.Show("teacher logged in");
+                    MessageBox.Show("Login Successful");
                 }
                 else
                 {
@@ -140,7 +141,7 @@ namespace SPK
                 return;
             }
 
-           // _unitOfWork.Dispose();
+            // _unitOfWork.Dispose();
         }
     }
 }

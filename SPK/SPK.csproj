@@ -616,6 +616,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-password-64.png" />
+    <None Include="Resources\icons8-enter-64.png" />
     <Content Include="small.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
