@@ -28,28 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblSubTitle = new System.Windows.Forms.Label();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.cBoxSession = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cBoxTerm = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cBoxClass = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSearch = new SPK.UserControls.Buttons.ButtonWithoutMenu();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblSubTitle = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.dGridStudentsBehaviour = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnSearch = new SPK.UserControls.Buttons.ButtonWithoutMenu();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.behavioralBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.regnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.termDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sessionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.handwrittingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.musicalskillsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.sportsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.attentivenessDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.attitudetoworkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.healthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.politenessDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridStudentsBehaviour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behavioralBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -69,6 +87,75 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(791, 92);
             this.panel3.TabIndex = 28;
+            // 
+            // cBoxSession
+            // 
+            this.cBoxSession.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBoxSession.FormattingEnabled = true;
+            this.cBoxSession.Items.AddRange(new object[] {
+            "--Select--"});
+            this.cBoxSession.Location = new System.Drawing.Point(412, 59);
+            this.cBoxSession.Name = "cBoxSession";
+            this.cBoxSession.Size = new System.Drawing.Size(193, 24);
+            this.cBoxSession.TabIndex = 89;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label6.Location = new System.Drawing.Point(408, 36);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 16);
+            this.label6.TabIndex = 88;
+            this.label6.Text = "Session";
+            // 
+            // cBoxTerm
+            // 
+            this.cBoxTerm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBoxTerm.FormattingEnabled = true;
+            this.cBoxTerm.Items.AddRange(new object[] {
+            "--Select--",
+            "First Term",
+            "Second Term",
+            "Third Term"});
+            this.cBoxTerm.Location = new System.Drawing.Point(204, 59);
+            this.cBoxTerm.Name = "cBoxTerm";
+            this.cBoxTerm.Size = new System.Drawing.Size(191, 24);
+            this.cBoxTerm.TabIndex = 87;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label5.Location = new System.Drawing.Point(200, 36);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 16);
+            this.label5.TabIndex = 86;
+            this.label5.Text = "Term";
+            // 
+            // cBoxClass
+            // 
+            this.cBoxClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBoxClass.FormattingEnabled = true;
+            this.cBoxClass.Items.AddRange(new object[] {
+            "--Select--"});
+            this.cBoxClass.Location = new System.Drawing.Point(15, 59);
+            this.cBoxClass.Name = "cBoxClass";
+            this.cBoxClass.Size = new System.Drawing.Size(174, 24);
+            this.cBoxClass.TabIndex = 83;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label1.Location = new System.Drawing.Point(11, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 16);
+            this.label1.TabIndex = 81;
+            this.label1.Text = "Class";
             // 
             // label2
             // 
@@ -124,88 +211,6 @@
             this.picSchoolLogo.TabIndex = 0;
             this.picSchoolLogo.TabStop = false;
             // 
-            // cBoxSession
-            // 
-            this.cBoxSession.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cBoxSession.FormattingEnabled = true;
-            this.cBoxSession.Items.AddRange(new object[] {
-            "--Select--"});
-            this.cBoxSession.Location = new System.Drawing.Point(582, 59);
-            this.cBoxSession.Name = "cBoxSession";
-            this.cBoxSession.Size = new System.Drawing.Size(193, 24);
-            this.cBoxSession.TabIndex = 89;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label6.Location = new System.Drawing.Point(578, 36);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 16);
-            this.label6.TabIndex = 88;
-            this.label6.Text = "Session";
-            // 
-            // cBoxTerm
-            // 
-            this.cBoxTerm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cBoxTerm.FormattingEnabled = true;
-            this.cBoxTerm.Items.AddRange(new object[] {
-            "--Select--",
-            "First Term",
-            "Second Term",
-            "Third Term"});
-            this.cBoxTerm.Location = new System.Drawing.Point(374, 59);
-            this.cBoxTerm.Name = "cBoxTerm";
-            this.cBoxTerm.Size = new System.Drawing.Size(191, 24);
-            this.cBoxTerm.TabIndex = 87;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label5.Location = new System.Drawing.Point(370, 36);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 16);
-            this.label5.TabIndex = 86;
-            this.label5.Text = "Term";
-            // 
-            // cBoxClass
-            // 
-            this.cBoxClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cBoxClass.FormattingEnabled = true;
-            this.cBoxClass.Items.AddRange(new object[] {
-            "--Select--"});
-            this.cBoxClass.Location = new System.Drawing.Point(15, 59);
-            this.cBoxClass.Name = "cBoxClass";
-            this.cBoxClass.Size = new System.Drawing.Size(174, 24);
-            this.cBoxClass.TabIndex = 83;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label1.Location = new System.Drawing.Point(11, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 16);
-            this.label1.TabIndex = 81;
-            this.label1.Text = "Class";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnSearch.BtnText = "Load Students";
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnSearch.Icon = global::SPK.Properties.Resources.search_3;
-            this.btnSearch.Location = new System.Drawing.Point(195, 36);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnSearch.Size = new System.Drawing.Size(144, 47);
-            this.btnSearch.TabIndex = 90;
-            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -231,10 +236,28 @@
             this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
             this.btnSave.Size = new System.Drawing.Size(158, 43);
             this.btnSave.TabIndex = 81;
+            this.btnSave.ClickEvent += new System.EventHandler(this.btnSave_ClickEvent);
             // 
             // dGridStudentsBehaviour
             // 
+            this.dGridStudentsBehaviour.AllowUserToAddRows = false;
+            this.dGridStudentsBehaviour.AllowUserToDeleteRows = false;
+            this.dGridStudentsBehaviour.AutoGenerateColumns = false;
             this.dGridStudentsBehaviour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGridStudentsBehaviour.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.regnumberDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.classDataGridViewTextBoxColumn,
+            this.termDataGridViewTextBoxColumn,
+            this.sessionDataGridViewTextBoxColumn,
+            this.handwrittingDataGridViewTextBoxColumn,
+            this.musicalskillsDataGridViewTextBoxColumn,
+            this.sportsDataGridViewTextBoxColumn,
+            this.attentivenessDataGridViewTextBoxColumn,
+            this.attitudetoworkDataGridViewTextBoxColumn,
+            this.healthDataGridViewTextBoxColumn,
+            this.politenessDataGridViewTextBoxColumn});
+            this.dGridStudentsBehaviour.DataSource = this.behavioralBindingSource;
             this.dGridStudentsBehaviour.Location = new System.Drawing.Point(5, 28);
             this.dGridStudentsBehaviour.Name = "dGridStudentsBehaviour";
             this.dGridStudentsBehaviour.RowTemplate.Height = 24;
@@ -251,6 +274,164 @@
             this.label3.Size = new System.Drawing.Size(227, 18);
             this.label3.TabIndex = 14;
             this.label3.Text = "Fill Behaviours and Save";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnSearch.BtnText = "Load";
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnSearch.Icon = global::SPK.Properties.Resources.search_3;
+            this.btnSearch.Location = new System.Drawing.Point(624, 36);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnSearch.Size = new System.Drawing.Size(141, 47);
+            this.btnSearch.TabIndex = 91;
+            this.btnSearch.ClickEvent += new System.EventHandler(this.btnSearch_ClickEvent);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // behavioralBindingSource
+            // 
+            this.behavioralBindingSource.DataSource = typeof(DB.behavioral);
+            // 
+            // regnumberDataGridViewTextBoxColumn
+            // 
+            this.regnumberDataGridViewTextBoxColumn.DataPropertyName = "reg_number";
+            this.regnumberDataGridViewTextBoxColumn.HeaderText = "Reg Number";
+            this.regnumberDataGridViewTextBoxColumn.Name = "regnumberDataGridViewTextBoxColumn";
+            this.regnumberDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // classDataGridViewTextBoxColumn
+            // 
+            this.classDataGridViewTextBoxColumn.DataPropertyName = "_class";
+            this.classDataGridViewTextBoxColumn.HeaderText = "Class";
+            this.classDataGridViewTextBoxColumn.Name = "classDataGridViewTextBoxColumn";
+            // 
+            // termDataGridViewTextBoxColumn
+            // 
+            this.termDataGridViewTextBoxColumn.DataPropertyName = "term";
+            this.termDataGridViewTextBoxColumn.HeaderText = "Term";
+            this.termDataGridViewTextBoxColumn.Name = "termDataGridViewTextBoxColumn";
+            this.termDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // sessionDataGridViewTextBoxColumn
+            // 
+            this.sessionDataGridViewTextBoxColumn.DataPropertyName = "session";
+            this.sessionDataGridViewTextBoxColumn.HeaderText = "Session";
+            this.sessionDataGridViewTextBoxColumn.Name = "sessionDataGridViewTextBoxColumn";
+            // 
+            // handwrittingDataGridViewTextBoxColumn
+            // 
+            this.handwrittingDataGridViewTextBoxColumn.DataPropertyName = "hand_writting";
+            this.handwrittingDataGridViewTextBoxColumn.HeaderText = "Hand Writting";
+            this.handwrittingDataGridViewTextBoxColumn.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.handwrittingDataGridViewTextBoxColumn.Name = "handwrittingDataGridViewTextBoxColumn";
+            this.handwrittingDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.handwrittingDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // musicalskillsDataGridViewTextBoxColumn
+            // 
+            this.musicalskillsDataGridViewTextBoxColumn.DataPropertyName = "musical_skills";
+            this.musicalskillsDataGridViewTextBoxColumn.HeaderText = "Musical Skills";
+            this.musicalskillsDataGridViewTextBoxColumn.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.musicalskillsDataGridViewTextBoxColumn.Name = "musicalskillsDataGridViewTextBoxColumn";
+            this.musicalskillsDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.musicalskillsDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // sportsDataGridViewTextBoxColumn
+            // 
+            this.sportsDataGridViewTextBoxColumn.DataPropertyName = "sports";
+            this.sportsDataGridViewTextBoxColumn.HeaderText = "Sports";
+            this.sportsDataGridViewTextBoxColumn.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.sportsDataGridViewTextBoxColumn.Name = "sportsDataGridViewTextBoxColumn";
+            this.sportsDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.sportsDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // attentivenessDataGridViewTextBoxColumn
+            // 
+            this.attentivenessDataGridViewTextBoxColumn.DataPropertyName = "attentiveness";
+            this.attentivenessDataGridViewTextBoxColumn.HeaderText = "Attentiveness";
+            this.attentivenessDataGridViewTextBoxColumn.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.attentivenessDataGridViewTextBoxColumn.Name = "attentivenessDataGridViewTextBoxColumn";
+            this.attentivenessDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.attentivenessDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // attitudetoworkDataGridViewTextBoxColumn
+            // 
+            this.attitudetoworkDataGridViewTextBoxColumn.DataPropertyName = "attitude_to_work";
+            this.attitudetoworkDataGridViewTextBoxColumn.HeaderText = "Attitude to Work";
+            this.attitudetoworkDataGridViewTextBoxColumn.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.attitudetoworkDataGridViewTextBoxColumn.Name = "attitudetoworkDataGridViewTextBoxColumn";
+            this.attitudetoworkDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.attitudetoworkDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // healthDataGridViewTextBoxColumn
+            // 
+            this.healthDataGridViewTextBoxColumn.DataPropertyName = "health";
+            this.healthDataGridViewTextBoxColumn.HeaderText = "Health";
+            this.healthDataGridViewTextBoxColumn.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.healthDataGridViewTextBoxColumn.Name = "healthDataGridViewTextBoxColumn";
+            this.healthDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.healthDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // politenessDataGridViewTextBoxColumn
+            // 
+            this.politenessDataGridViewTextBoxColumn.DataPropertyName = "politeness";
+            this.politenessDataGridViewTextBoxColumn.HeaderText = "Politeness";
+            this.politenessDataGridViewTextBoxColumn.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.politenessDataGridViewTextBoxColumn.Name = "politenessDataGridViewTextBoxColumn";
+            this.politenessDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.politenessDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // uploadBehaviouralAnalysis
             // 
@@ -269,6 +450,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridStudentsBehaviour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behavioralBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -281,7 +464,6 @@
         private System.Windows.Forms.Label lblSubTitle;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox picSchoolLogo;
-        private Buttons.ButtonWithoutMenu btnSearch;
         private System.Windows.Forms.ComboBox cBoxSession;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cBoxTerm;
@@ -292,5 +474,21 @@
         private Buttons.ButtonWithoutMenu btnSave;
         private System.Windows.Forms.DataGridView dGridStudentsBehaviour;
         private System.Windows.Forms.Label label3;
+        private Buttons.ButtonWithoutMenu btnSearch;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn regnumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn classDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn termDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sessionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn handwrittingDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn musicalskillsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn sportsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn attentivenessDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn attitudetoworkDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn healthDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn politenessDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource behavioralBindingSource;
     }
 }

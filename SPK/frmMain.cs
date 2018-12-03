@@ -244,6 +244,61 @@ namespace SPK
             showUserControl(new AllocateFees());
         }
 
+        private void btnAdmin_ClickEvent(object sender, EventArgs e)
+        {
+            menuAdmin.Show(Cursor.Position);
+        }
+
+        private void AddAdminToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            showUserControl(new AddAdmin());
+        }
+
+        private void ViewAllAdminToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            showUserControl(new ViewAdmins());
+        }
+        
+        private void AddPrincipalToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            showUserControl(new AddPrincipal());
+        }
+
+        private void ViewPrincipalToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            showUserControl(new ViewAllPrincipal());
+        }
+
+        private void btnPrincipal_ClickEvent(object sender, EventArgs e)
+        {
+            menuPrincipal.Show(Cursor.Position);
+        }
+
+        private void btnTeachers_ClickEvent(object sender, EventArgs e)
+        {
+            menuTeacher.Show(Cursor.Position);
+        }
+
+        private void AddTeacherToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            showUserControl(new AddTeacher());
+        }
+
+        private void TeachersandtheirClassesToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            showUserControl(new TeachertoClass());
+        }
+
+        private void ViewTeachersToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            showUserControl(new TeacherEmploymentStatus());
+        }
+
+        private void exportOrImportBehaviourInExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showUserControl(new ExportImportBehaviourExcel());
+        }
+
         private void picClose_Click(object sender, EventArgs e)
         {
             Application.Exit();

@@ -74,19 +74,21 @@ namespace SPK.UserControls.SubForms
                     break;
             }
         }
-
-        private void extendedPanel2_MouseHover(object sender, EventArgs e)
+        
+        private void panProfileCover_MouseHover(object sender, EventArgs e)
         {
             var pan = (ExtendedPanel)sender;
             var ctrl = pan.Parent;
             ctrl.ForeColor = Color.FromArgb(0, 125, 113);
         }
 
-        private void extendedPanel2_MouseLeave(object sender, EventArgs e)
+        private void panProfileCover_MouseLeave(object sender, EventArgs e)
         {
             var pan = (ExtendedPanel)sender;
             var ctrl = pan.Parent;
             ctrl.ForeColor = Color.FromArgb(0, 150, 136);
+
+
         }
     }
 }
