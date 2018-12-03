@@ -185,19 +185,19 @@ namespace SPK
         {
             picMinimise.BackColor = Color.FromArgb(0, 150, 136);
         }
-
-        private void panel1_MouseUp(object sender, MouseEventArgs e)
-        {
-            _mousedown = false;
-        }
-
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
         {
             _mousedown = true;
             startpt = e.Location;
         }
 
-        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        private void panel2_MouseUp(object sender, MouseEventArgs e)
+        {
+            _mousedown = false;
+        }
+
+        private void panel2_MouseMove(object sender, MouseEventArgs e)
         {
             if (_mousedown)
             {
@@ -205,6 +205,5 @@ namespace SPK
                 Location = new Point(curpos.X - startpt.X, curpos.Y - startpt.Y);
             }
         }
-
     }
 }
