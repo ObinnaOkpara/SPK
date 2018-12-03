@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnExport = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.cBoxSession = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cBoxTerm = new System.Windows.Forms.ComboBox();
@@ -39,17 +41,20 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtFilename = new System.Windows.Forms.TextBox();
             this.btnImport = new SPK.UserControls.Buttons.ButtonWithoutMenu();
-            this.btnExport = new SPK.UserControls.Buttons.ButtonWithoutMenu();
-            this.picSchoolLogo = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btnBrowse = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -69,6 +74,20 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(791, 92);
             this.panel3.TabIndex = 30;
+            // 
+            // btnExport
+            // 
+            this.btnExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnExport.BtnText = "Export";
+            this.btnExport.ForeColor = System.Drawing.Color.White;
+            this.btnExport.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnExport.Icon = global::SPK.Properties.Resources.icons8_export_64;
+            this.btnExport.Location = new System.Drawing.Point(631, 36);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnExport.Size = new System.Drawing.Size(144, 47);
+            this.btnExport.TabIndex = 91;
+            this.btnExport.ClickEvent += new System.EventHandler(this.btnExport_ClickEvent);
             // 
             // cBoxSession
             // 
@@ -182,10 +201,22 @@
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "BEHAVIOURAL ANALYSIS";
             // 
+            // picSchoolLogo
+            // 
+            this.picSchoolLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.picSchoolLogo.Image = global::SPK.Properties.Resources.icons8_money_64;
+            this.picSchoolLogo.Location = new System.Drawing.Point(29, 15);
+            this.picSchoolLogo.Name = "picSchoolLogo";
+            this.picSchoolLogo.Size = new System.Drawing.Size(40, 40);
+            this.picSchoolLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSchoolLogo.TabIndex = 0;
+            this.picSchoolLogo.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.btnBrowse);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.txtFilename);
             this.panel2.Controls.Add(this.btnImport);
@@ -196,22 +227,22 @@
             this.panel2.Size = new System.Drawing.Size(791, 92);
             this.panel2.TabIndex = 31;
             // 
-            // label8
+            // label3
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.label8.Location = new System.Drawing.Point(325, 6);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(136, 20);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Import CSV File";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.label3.Location = new System.Drawing.Point(76, 36);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(374, 17);
+            this.label3.TabIndex = 93;
+            this.label3.Text = "Remember to  save the excel file as CSV before importing.";
             // 
             // txtFilename
             // 
             this.txtFilename.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFilename.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.txtFilename.Location = new System.Drawing.Point(275, 56);
+            this.txtFilename.Location = new System.Drawing.Point(79, 56);
             this.txtFilename.Name = "txtFilename";
             this.txtFilename.ReadOnly = true;
             this.txtFilename.Size = new System.Drawing.Size(364, 23);
@@ -224,47 +255,46 @@
             this.btnImport.ForeColor = System.Drawing.Color.White;
             this.btnImport.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
             this.btnImport.Icon = global::SPK.Properties.Resources.icons8_import_64;
-            this.btnImport.Location = new System.Drawing.Point(122, 36);
+            this.btnImport.Location = new System.Drawing.Point(646, 36);
             this.btnImport.Name = "btnImport";
             this.btnImport.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
             this.btnImport.Size = new System.Drawing.Size(144, 43);
             this.btnImport.TabIndex = 91;
             // 
-            // btnExport
+            // label8
             // 
-            this.btnExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnExport.BtnText = "Export";
-            this.btnExport.ForeColor = System.Drawing.Color.White;
-            this.btnExport.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnExport.Icon = global::SPK.Properties.Resources.icons8_export_64;
-            this.btnExport.Location = new System.Drawing.Point(631, 36);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnExport.Size = new System.Drawing.Size(144, 47);
-            this.btnExport.TabIndex = 91;
-            this.btnExport.ClickEvent += new System.EventHandler(this.btnExport_ClickEvent);
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.label8.Location = new System.Drawing.Point(325, 6);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(136, 20);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Import CSV File";
             // 
-            // picSchoolLogo
+            // errorProvider1
             // 
-            this.picSchoolLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.picSchoolLogo.Image = global::SPK.Properties.Resources.icons8_money_64;
-            this.picSchoolLogo.Location = new System.Drawing.Point(29, 15);
-            this.picSchoolLogo.Name = "picSchoolLogo";
-            this.picSchoolLogo.Size = new System.Drawing.Size(40, 40);
-            this.picSchoolLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSchoolLogo.TabIndex = 0;
-            this.picSchoolLogo.TabStop = false;
+            this.errorProvider1.ContainerControl = this;
             // 
-            // label3
+            // backgroundWorker1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.label3.Location = new System.Drawing.Point(272, 36);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(374, 17);
-            this.label3.TabIndex = 93;
-            this.label3.Text = "Remember to  save the excel file as CSV before importing.";
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnBrowse.BackColor = System.Drawing.Color.White;
+            this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnBrowse.Location = new System.Drawing.Point(449, 38);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(102, 41);
+            this.btnBrowse.TabIndex = 94;
+            this.btnBrowse.Text = "Browse...";
+            this.btnBrowse.UseVisualStyleBackColor = false;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // ExportImportBehaviourExcel
             // 
@@ -279,9 +309,10 @@
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -306,5 +337,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtFilename;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button btnBrowse;
     }
 }
