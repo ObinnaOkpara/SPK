@@ -62,6 +62,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="EPPlus, Version=4.5.2.1, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.2.1\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -80,12 +83,14 @@
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MySql.Data, Version=6.10.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.6.10.8\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data.Entity.EF6, Version=6.10.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.Entity.6.10.8\lib\net452\MySql.Data.Entity.EF6.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -127,6 +132,12 @@
     </Compile>
     <Compile Include="frmSlipReport.Designer.cs">
       <DependentUpon>frmSlipReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTeacher.Designer.cs">
+      <DependentUpon>frmTeacher.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -185,6 +196,12 @@
     <Compile Include="UserControls\SubForms\AddTeacher.Designer.cs">
       <DependentUpon>AddTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\AdminProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\AdminProfile.Designer.cs">
+      <DependentUpon>AdminProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\AllocateFees.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -221,11 +238,35 @@
     <Compile Include="UserControls\SubForms\AddnViewClass.Designer.cs">
       <DependentUpon>AddnViewClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\ExportImportBehaviourExcel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ExportImportBehaviourExcel.Designer.cs">
+      <DependentUpon>ExportImportBehaviourExcel.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\NewStudent.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\SubForms\NewStudent.Designer.cs">
       <DependentUpon>NewStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubForms\PasswordReset.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\PasswordReset.Designer.cs">
+      <DependentUpon>PasswordReset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubForms\PrincipalProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\PrincipalProfile.Designer.cs">
+      <DependentUpon>PrincipalProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubForms\PromoteClass.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\PromoteClass.Designer.cs">
+      <DependentUpon>PromoteClass.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SubForms\PromoteDemoteStudent.cs">
       <SubType>UserControl</SubType>
@@ -275,17 +316,35 @@
     <Compile Include="UserControls\SubForms\SpecifySubjectNumber.Designer.cs">
       <DependentUpon>SpecifySubjectNumber.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\TeacherDash.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\TeacherDash.Designer.cs">
+      <DependentUpon>TeacherDash.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\TeacherEmploymentStatus.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\SubForms\TeacherEmploymentStatus.Designer.cs">
       <DependentUpon>TeacherEmploymentStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\TeacherProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\TeacherProfile.Designer.cs">
+      <DependentUpon>TeacherProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\TeachertoClass.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\SubForms\TeachertoClass.Designer.cs">
       <DependentUpon>TeachertoClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubForms\uploadBehaviouralAnalysis.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\uploadBehaviouralAnalysis.Designer.cs">
+      <DependentUpon>uploadBehaviouralAnalysis.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SubForms\ViewAdmins.cs">
       <SubType>UserControl</SubType>
@@ -310,6 +369,12 @@
     </Compile>
     <Compile Include="UserControls\SubForms\ViewAttendance.Designer.cs">
       <DependentUpon>ViewAttendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ViewBehaviours.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ViewBehaviours.Designer.cs">
+      <DependentUpon>ViewBehaviours.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SubForms\ViewPublishedResult.cs">
       <SubType>UserControl</SubType>
@@ -340,6 +405,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSlipReport.resx">
       <DependentUpon>frmSlipReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTeacher.resx">
+      <DependentUpon>frmTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -384,6 +452,9 @@
       <DependentUpon>AddTeacher.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\AdminProfile.resx">
+      <DependentUpon>AdminProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\AllocateFees.resx">
       <DependentUpon>AllocateFees.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -407,9 +478,21 @@
       <DependentUpon>AddnViewClass.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\ExportImportBehaviourExcel.resx">
+      <DependentUpon>ExportImportBehaviourExcel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\NewStudent.resx">
       <DependentUpon>NewStudent.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\PasswordReset.resx">
+      <DependentUpon>PasswordReset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\PrincipalProfile.resx">
+      <DependentUpon>PrincipalProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\PromoteClass.resx">
+      <DependentUpon>PromoteClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\PromoteDemoteStudent.resx">
       <DependentUpon>PromoteDemoteStudent.cs</DependentUpon>
@@ -442,13 +525,22 @@
       <DependentUpon>SpecifySubjectNumber.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\TeacherDash.resx">
+      <DependentUpon>TeacherDash.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\TeacherEmploymentStatus.resx">
       <DependentUpon>TeacherEmploymentStatus.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\TeacherProfile.resx">
+      <DependentUpon>TeacherProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\TeachertoClass.resx">
       <DependentUpon>TeachertoClass.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\uploadBehaviouralAnalysis.resx">
+      <DependentUpon>uploadBehaviouralAnalysis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\ViewAdmins.resx">
       <DependentUpon>ViewAdmins.cs</DependentUpon>
@@ -466,6 +558,9 @@
       <DependentUpon>ViewAttendance.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\ViewBehaviours.resx">
+      <DependentUpon>ViewBehaviours.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\ViewPublishedResult.resx">
       <DependentUpon>ViewPublishedResult.cs</DependentUpon>
     </EmbeddedResource>
@@ -477,6 +572,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DB.administrative.datasource" />
+    <None Include="Properties\DataSources\DB.behavioral.datasource" />
     <None Include="Properties\DataSources\DB.fee_allocation.datasource" />
     <None Include="Properties\DataSources\DB.jss.datasource" />
     <None Include="Properties\DataSources\DB.principal.datasource" />
@@ -599,6 +695,10 @@
     <None Include="Resources\UserInfo.bmp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8-password-64.png" />
+    <None Include="Resources\icons8-enter-64.png" />
+    <None Include="Resources\icons8-export-64.png" />
+    <None Include="Resources\icons8-import-64.png" />
     <Content Include="small.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
