@@ -11,6 +11,7 @@ using DB;
 using SPK.Utilities;
 using OfficeOpenXml;
 using System.IO;
+using Microsoft.VisualBasic.FileIO;
 
 namespace SPK.UserControls.SubForms
 {
@@ -18,7 +19,7 @@ namespace SPK.UserControls.SubForms
     {
         List<_class> Classes = new List<_class>();
         List<session> Sessions = new List<session>();
-        List<behavioral> behaviorals = new List<behavioral>();
+        string fullFileName = "";
 
         public ExportImportBehaviourExcel()
         {
@@ -129,13 +130,112 @@ namespace SPK.UserControls.SubForms
 
         private void btnBrowse_Click(object sender, EventArgs e)
         {
-            var opFile = new OpenFileDialog();
-            opFile.Title = "Select CSV File";
-            opFile.Filter = "Data files (*.csv)|*.csv|All files (*.*)|*.*";
-
-            if (opFile.ShowDialog() == DialogResult.OK)
+            Cursor = Cursors.WaitCursor;
+            try
             {
+                var opFile = new OpenFileDialog();
+                opFile.Title = "Select CSV File";
+                opFile.Filter = "Data files (*.csv)|*.csv";
+
+                if (opFile.ShowDialog() == DialogResult.OK)
+                {
+                    fullFileName = opFile.FileName;
+                    txtFilename.Text = opFile.SafeFileName;
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured. \n" + ex.Message);
+            }
+            Cursor = Cursors.Arrow;
+        }
+
+        private void btnImport_ClickEvent(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtFilename.Text))
+                {
+                    MessageBox.Show("Click 'Browse' to select file first.");
+                    Cursor = Cursors.Arrow;
+                    return;
+                }
+
+                if (fullFileName.EndsWith(".csv"))
+                {
+                    List<behavioral> behaviorals = new List<behavioral>();
+                    using (TextFieldParser csvParser = new TextFieldParser(fullFileName))
+                    {
+                        var text = File.ReadAllText(fullFileName);
+
+                        if (text.Contains(';') && !text.Contains(',')) csvParser.SetDelimiters(new string[] { ";" });
+                        else csvParser.SetDelimiters(new string[] { "," });
+
+                        csvParser.CommentTokens = new string[] { "#" };
+                        csvParser.HasFieldsEnclosedInQuotes = true;
+
+                        // Skip the row with the column names
+                        string[] fields = csvParser.ReadFields();
+
+                        if (fields.Length != 13)
+                        {
+                            MessageBox.Show("Invalid Format. Check the file and try again.");
+                            Cursor = Cursors.Arrow;
+                            return;
+                        }
+
+                        if (fields[12] != "Politeness")
+                        {
+                            MessageBox.Show("Invalid Format. Check the file and try again.");
+                            Cursor = Cursors.Arrow;
+                            return;
+                        }
+
+                        while (!csvParser.EndOfData)
+                        {
+                            // Read current line fields, pointer moves to the next line.
+                            fields = csvParser.ReadFields();
+
+                            if (fields.Any(x => string.IsNullOrWhiteSpace(x)))
+                            {
+                                MessageBox.Show("Some fields are not filled. Fill them and try again.");
+                                Cursor = Cursors.Arrow;
+                                return;
+                            }
+
+                            behaviorals.Add(new behavioral()
+                            {
+                                date = DateTime.Now.Date.ToString("d"),
+                                name = fields[2],
+                                reg_number = fields[1],
+                                term = fields[4],
+                                session = fields[5],
+                                _class = fields[3],
+                                attentiveness = fields[9],
+                                attitude_to_work = fields[10],
+                                hand_writting = fields[6],
+                                health = fields[11],
+                                musical_skills = fields[7],
+                                politeness = fields[12],
+                                sports = fields[8],
+                            });
+                        }
+                        using (var db = new Model1())
+                        {
+                            db.behaviorals.AddRange(behaviorals);
+                            db.SaveChanges();
+                            MessageBox.Show("Behaviours Saved Successfully.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured. \n" + ex.Message);
+            }
+
+            Cursor = Cursors.Arrow;
         }
     }
 }

@@ -232,7 +232,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.label3.Location = new System.Drawing.Point(76, 36);
+            this.label3.Location = new System.Drawing.Point(120, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(374, 17);
             this.label3.TabIndex = 93;
@@ -242,7 +242,7 @@
             // 
             this.txtFilename.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFilename.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.txtFilename.Location = new System.Drawing.Point(79, 56);
+            this.txtFilename.Location = new System.Drawing.Point(123, 56);
             this.txtFilename.Name = "txtFilename";
             this.txtFilename.ReadOnly = true;
             this.txtFilename.Size = new System.Drawing.Size(364, 23);
@@ -255,11 +255,12 @@
             this.btnImport.ForeColor = System.Drawing.Color.White;
             this.btnImport.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
             this.btnImport.Icon = global::SPK.Properties.Resources.icons8_import_64;
-            this.btnImport.Location = new System.Drawing.Point(646, 36);
+            this.btnImport.Location = new System.Drawing.Point(630, 36);
             this.btnImport.Name = "btnImport";
             this.btnImport.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
             this.btnImport.Size = new System.Drawing.Size(144, 43);
             this.btnImport.TabIndex = 91;
+            this.btnImport.ClickEvent += new System.EventHandler(this.btnImport_ClickEvent);
             // 
             // label8
             // 
@@ -288,7 +289,7 @@
             this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBrowse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.btnBrowse.Location = new System.Drawing.Point(449, 38);
+            this.btnBrowse.Location = new System.Drawing.Point(493, 38);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(102, 41);
             this.btnBrowse.TabIndex = 94;
