@@ -34,15 +34,15 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.dgridAdmin = new SPK.UserControls.GridviewSerial.GridViewSerial();
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fullnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Action = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label3 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
@@ -108,17 +108,6 @@
             this.panel2.Size = new System.Drawing.Size(747, 458);
             this.panel2.TabIndex = 26;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.label3.Location = new System.Drawing.Point(284, 7);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(139, 20);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Admin Accounts";
-            // 
             // dgridAdmin
             // 
             this.dgridAdmin.AutoGenerateColumns = false;
@@ -136,10 +125,7 @@
             this.dgridAdmin.Name = "dgridAdmin";
             this.dgridAdmin.Size = new System.Drawing.Size(741, 425);
             this.dgridAdmin.TabIndex = 15;
-            // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataSource = typeof(DB.user);
+            this.dgridAdmin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgridAdmin_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -180,6 +166,21 @@
             this.Action.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Action.Text = "Delete";
             this.Action.UseColumnTextForButtonValue = true;
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(DB.user);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.label3.Location = new System.Drawing.Point(284, 7);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(139, 20);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Admin Accounts";
             // 
             // backgroundWorker1
             // 

@@ -196,7 +196,7 @@
             // 
             // Delete
             // 
-            this.Delete.HeaderText = "Action";
+            this.Delete.HeaderText = "Delete";
             this.Delete.Name = "Delete";
             this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;

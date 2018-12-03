@@ -52,7 +52,6 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panContainer = new System.Windows.Forms.Panel();
-            this.viewAttendance1 = new SPK.UserControls.SubForms.ViewAttendance();
             this.MenuSchoolInfo = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.updateSchoolInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.currentTermAndSessionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,6 +83,7 @@
             this.PublishResultToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.ViewPublishedResultToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.CheckResultToolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewAllPrincipal1 = new SPK.UserControls.SubForms.ViewAllPrincipal();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
@@ -266,7 +266,7 @@
             this.btnFees.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
             this.btnFees.Size = new System.Drawing.Size(232, 41);
             this.btnFees.TabIndex = 20;
-            this.btnFees.Load += new System.EventHandler(this.btnFees_Load);
+            this.btnFees.ClickEvent += new System.EventHandler(this.btnFees_ClickEvent);
             // 
             // btnResult
             // 
@@ -467,21 +467,12 @@
             this.panContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panContainer.Controls.Add(this.viewAttendance1);
+            this.panContainer.Controls.Add(this.viewAllPrincipal1);
             this.panContainer.Location = new System.Drawing.Point(237, 53);
             this.panContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panContainer.Name = "panContainer";
             this.panContainer.Size = new System.Drawing.Size(800, 580);
             this.panContainer.TabIndex = 20;
-            // 
-            // viewAttendance1
-            // 
-            this.viewAttendance1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.viewAttendance1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.viewAttendance1.Location = new System.Drawing.Point(0, 0);
-            this.viewAttendance1.Name = "viewAttendance1";
-            this.viewAttendance1.Size = new System.Drawing.Size(800, 580);
-            this.viewAttendance1.TabIndex = 0;
             // 
             // MenuSchoolInfo
             // 
@@ -760,6 +751,15 @@
             this.CheckResultToolStripMenuItem6.Size = new System.Drawing.Size(186, 22);
             this.CheckResultToolStripMenuItem6.Text = "Check Result";
             // 
+            // viewAllPrincipal1
+            // 
+            this.viewAllPrincipal1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.viewAllPrincipal1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.viewAllPrincipal1.Location = new System.Drawing.Point(0, 0);
+            this.viewAllPrincipal1.Name = "viewAllPrincipal1";
+            this.viewAllPrincipal1.Size = new System.Drawing.Size(800, 580);
+            this.viewAllPrincipal1.TabIndex = 0;
+            // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -816,7 +816,6 @@
         private UserControls.Buttons.ButtonWithMenu buttonWithMenu9;
         private UserControls.Buttons.ButtonWithoutMenu btnFees;
         private System.Windows.Forms.Panel panContainer;
-        private UserControls.SubForms.ViewAttendance viewAttendance1;
         private System.Windows.Forms.ContextMenuStrip MenuSchoolInfo;
         private System.Windows.Forms.ToolStripMenuItem updateSchoolInfoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem currentTermAndSessionToolStripMenuItem;
@@ -848,6 +847,7 @@
         private System.Windows.Forms.ToolStripMenuItem PublishResultToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem ViewPublishedResultToolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem CheckResultToolStripMenuItem6;
+        private UserControls.SubForms.ViewAllPrincipal viewAllPrincipal1;
     }
 }
 

@@ -239,7 +239,7 @@ namespace SPK
             showUserControl(new ViewPublishedResult());
         }
 
-        private void btnFees_Load(object sender, EventArgs e)
+        private void btnFees_ClickEvent(object sender, EventArgs e)
         {
             showUserControl(new AllocateFees());
         }
