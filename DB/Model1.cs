@@ -4,12 +4,21 @@ namespace DB
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+    using System.Configuration;
 
     public partial class Model1 : DbContext
     {
         public Model1()
             : base("name=Model1")
         {
+        }
+
+        public void AdjustConConString(string newConString)
+        {
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            config.ConnectionStrings.ConnectionStrings["Model1"].ConnectionString = newConString;
+            config.ConnectionStrings.ConnectionStrings["Model1"].ProviderName = "MySql.Data.MySqlClient";
+            config.Save(ConfigurationSaveMode.Modified);
         }
 
         public virtual DbSet<access> accesses { get; set; }
