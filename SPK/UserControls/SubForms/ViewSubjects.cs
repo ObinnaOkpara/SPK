@@ -105,16 +105,22 @@ namespace SPK.UserControls.SubForms
                 }
                 else if (btn.Text == "Delete")
                 {
-                    _unitOfWork = new UnitOfWork(new Model1());
-                    var _id = (int)senderGrid.CurrentRow.Cells["id"].Value;
-                    var ss = _unitOfWork.School_SubjectsRepository.FindById(_id).Result;
-                    _unitOfWork.School_SubjectsRepository.Remove(ss);
 
-                    _unitOfWork.Save();
+                    var result = MessageBox.Show("Do you want to delete ", "Confirmation", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        _unitOfWork = new UnitOfWork(new Model1());
+                        var _id = (int)senderGrid.CurrentRow.Cells["id"].Value;
+                        var ss = _unitOfWork.School_SubjectsRepository.FindById(_id).Result;
+                        _unitOfWork.School_SubjectsRepository.Remove(ss);
 
-                    MessageBox.Show("Deleted");
-                    dGridAllClass.DataSource = _unitOfWork.School_SubjectsRepository.FindAll().ToList();
-                    LoadSerial();
+                        _unitOfWork.Save();
+
+                        MessageBox.Show("Deleted");
+                        dGridAllClass.DataSource = _unitOfWork.School_SubjectsRepository.FindAll().ToList();
+                        LoadSerial();
+                    }
+                    
 
                 }
             }

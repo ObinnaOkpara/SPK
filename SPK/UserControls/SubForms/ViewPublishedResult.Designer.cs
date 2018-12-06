@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnDeleteAll = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.dGridStudents = new System.Windows.Forms.DataGridView();
@@ -39,17 +40,24 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSearch = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.cBoxSession = new System.Windows.Forms.ComboBox();
+            this.sessionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.cBoxTerm = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cBoxClass = new System.Windows.Forms.ComboBox();
+            this.classBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridStudents)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -82,20 +90,20 @@
             // 
             this.dGridStudents.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dGridStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGridStudents.Location = new System.Drawing.Point(3, 28);
+            this.dGridStudents.Location = new System.Drawing.Point(3, 30);
             this.dGridStudents.Name = "dGridStudents";
             this.dGridStudents.RowTemplate.Height = 24;
-            this.dGridStudents.Size = new System.Drawing.Size(785, 347);
+            this.dGridStudents.Size = new System.Drawing.Size(785, 345);
             this.dGridStudents.TabIndex = 15;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.label3.Location = new System.Drawing.Point(307, 7);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(137, 18);
+            this.label3.Size = new System.Drawing.Size(135, 20);
             this.label3.TabIndex = 14;
             this.label3.Text = "SCORE SHEET";
             // 
@@ -114,20 +122,20 @@
             // lblSubTitle
             // 
             this.lblSubTitle.AutoSize = true;
-            this.lblSubTitle.Font = new System.Drawing.Font("Lucida Sans", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubTitle.Location = new System.Drawing.Point(31, 57);
             this.lblSubTitle.Name = "lblSubTitle";
-            this.lblSubTitle.Size = new System.Drawing.Size(167, 16);
+            this.lblSubTitle.Size = new System.Drawing.Size(168, 17);
             this.lblSubTitle.TabIndex = 2;
             this.lblSubTitle.Text = "View Published Result";
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Lucida Sans", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(73, 20);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(269, 25);
+            this.lblTitle.Size = new System.Drawing.Size(278, 26);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "RESULT MANAGEMENT";
             // 
@@ -172,26 +180,32 @@
             this.btnSearch.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
             this.btnSearch.Size = new System.Drawing.Size(154, 47);
             this.btnSearch.TabIndex = 88;
+            this.btnSearch.ClickEvent += new System.EventHandler(this.btnSearch_ClickEvent);
             // 
             // cBoxSession
             // 
+            this.cBoxSession.DataSource = this.sessionBindingSource;
+            this.cBoxSession.DisplayMember = "sessions";
             this.cBoxSession.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxSession.FormattingEnabled = true;
-            this.cBoxSession.Items.AddRange(new object[] {
-            "--Select--"});
             this.cBoxSession.Location = new System.Drawing.Point(423, 51);
             this.cBoxSession.Name = "cBoxSession";
             this.cBoxSession.Size = new System.Drawing.Size(180, 24);
             this.cBoxSession.TabIndex = 87;
+            this.cBoxSession.ValueMember = "sessions";
+            // 
+            // sessionBindingSource
+            // 
+            this.sessionBindingSource.DataSource = typeof(DB.session);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.label6.Location = new System.Drawing.Point(419, 28);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 16);
+            this.label6.Size = new System.Drawing.Size(65, 17);
             this.label6.TabIndex = 86;
             this.label6.Text = "Session";
             // 
@@ -212,46 +226,60 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.label5.Location = new System.Drawing.Point(217, 28);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 16);
+            this.label5.Size = new System.Drawing.Size(45, 17);
             this.label5.TabIndex = 84;
             this.label5.Text = "Term";
             // 
             // cBoxClass
             // 
+            this.cBoxClass.DataSource = this.classBindingSource;
+            this.cBoxClass.DisplayMember = "classes";
             this.cBoxClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxClass.FormattingEnabled = true;
-            this.cBoxClass.Items.AddRange(new object[] {
-            "--Select--"});
             this.cBoxClass.Location = new System.Drawing.Point(16, 51);
             this.cBoxClass.Name = "cBoxClass";
             this.cBoxClass.Size = new System.Drawing.Size(185, 24);
             this.cBoxClass.TabIndex = 83;
+            this.cBoxClass.ValueMember = "classes";
+            // 
+            // classBindingSource
+            // 
+            this.classBindingSource.DataSource = typeof(DB._class);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.label1.Location = new System.Drawing.Point(12, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 16);
+            this.label1.Size = new System.Drawing.Size(47, 17);
             this.label1.TabIndex = 81;
             this.label1.Text = "Class";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.label2.Location = new System.Drawing.Point(286, 4);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(214, 18);
+            this.label2.Size = new System.Drawing.Size(196, 20);
             this.label2.TabIndex = 14;
             this.label2.Text = "View Published Results";
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // ViewPublishedResult
             // 
@@ -270,6 +298,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -293,5 +324,9 @@
         private System.Windows.Forms.Label label2;
         private Buttons.ButtonWithoutMenu btnSearch;
         private Buttons.ButtonWithoutMenu btnDeleteAll;
+        private System.Windows.Forms.BindingSource classBindingSource;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.BindingSource sessionBindingSource;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

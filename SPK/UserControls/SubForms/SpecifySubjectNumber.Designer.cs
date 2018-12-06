@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblSSSnum = new System.Windows.Forms.Label();
             this.lblJSSNum = new System.Windows.Forms.Label();
@@ -40,9 +41,12 @@
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.picSchoolLogo = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -96,6 +100,7 @@
             this.btnSaveSss.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
             this.btnSaveSss.Size = new System.Drawing.Size(221, 47);
             this.btnSaveSss.TabIndex = 88;
+            this.btnSaveSss.ClickEvent += new System.EventHandler(this.btnSaveSss_ClickEvent);
             // 
             // btnSaveJss
             // 
@@ -109,6 +114,7 @@
             this.btnSaveJss.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
             this.btnSaveJss.Size = new System.Drawing.Size(221, 50);
             this.btnSaveJss.TabIndex = 87;
+            this.btnSaveJss.ClickEvent += new System.EventHandler(this.btnSaveJss_ClickEvent);
             // 
             // cBoxNum
             // 
@@ -154,22 +160,22 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.label4.Location = new System.Drawing.Point(33, 80);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(160, 16);
+            this.label4.Size = new System.Drawing.Size(150, 17);
             this.label4.TabIndex = 85;
             this.label4.Text = "Number of Subjects";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.label2.Location = new System.Drawing.Point(169, 8);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(281, 18);
+            this.label2.Size = new System.Drawing.Size(272, 20);
             this.label2.TabIndex = 14;
             this.label2.Text = "SELECT NUMBER OF SUBJECT";
             // 
@@ -188,20 +194,20 @@
             // lblSubTitle
             // 
             this.lblSubTitle.AutoSize = true;
-            this.lblSubTitle.Font = new System.Drawing.Font("Lucida Sans", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubTitle.Location = new System.Drawing.Point(23, 62);
             this.lblSubTitle.Name = "lblSubTitle";
-            this.lblSubTitle.Size = new System.Drawing.Size(376, 16);
+            this.lblSubTitle.Size = new System.Drawing.Size(370, 17);
             this.lblSubTitle.TabIndex = 2;
             this.lblSubTitle.Text = "Specify the number of subject offered by students";
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Lucida Sans", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(65, 25);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(280, 25);
+            this.lblTitle.Size = new System.Drawing.Size(293, 26);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "SUBJECT MANAGEMENT";
             // 
@@ -216,6 +222,15 @@
             this.picSchoolLogo.TabIndex = 0;
             this.picSchoolLogo.TabStop = false;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
             // SpecifySubjectNumber
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -229,6 +244,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -247,5 +263,7 @@
         private Buttons.ButtonWithoutMenu btnSaveJss;
         private System.Windows.Forms.ComboBox cBoxNum;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
