@@ -123,7 +123,7 @@
             this.panel3.Location = new System.Drawing.Point(1, 1);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(232, 46);
+            this.panel3.Size = new System.Drawing.Size(232, 39);
             this.panel3.TabIndex = 6;
             // 
             // label3
