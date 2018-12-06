@@ -166,6 +166,9 @@
     <Compile Include="UserControls\Buttons\ButtonWithoutMenu.Designer.cs">
       <DependentUpon>ButtonWithoutMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\GridviewSerial\GridViewSerial.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UserControls\Panels\ExtendedPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -401,6 +404,7 @@
     <Compile Include="Utilities\ValidateFomControls.cs" />
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSetup.resx">
       <DependentUpon>frmSetup.cs</DependentUpon>
@@ -416,6 +420,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -430,51 +435,64 @@
     <EmbeddedResource Include="Reports\studentSlip.rdlc" />
     <EmbeddedResource Include="UserControls\Buttons\ButtonWithMenu.resx">
       <DependentUpon>ButtonWithMenu.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Buttons\ButtonWithoutMenu.resx">
       <DependentUpon>ButtonWithoutMenu.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\AddAdmin.resx">
       <DependentUpon>AddAdmin.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\AddNewSession.resx">
       <DependentUpon>AddNewSession.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\AddPrincipal.resx">
       <DependentUpon>AddPrincipal.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\AddSubject.resx">
       <DependentUpon>AddSubject.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\AddTeacher.resx">
       <DependentUpon>AddTeacher.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\AdminProfile.resx">
       <DependentUpon>AdminProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\AllocateFees.resx">
       <DependentUpon>AllocateFees.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\ClassAttendance.resx">
       <DependentUpon>ClassAttendance.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\CurrentTermNSession.resx">
       <DependentUpon>CurrentTermNSession.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\EnterStudentResult.resx">
       <DependentUpon>EnterStudentResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\AddnViewClass.resx">
       <DependentUpon>AddnViewClass.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\ExportImportBehaviourExcel.resx">
       <DependentUpon>ExportImportBehaviourExcel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\NewStudent.resx">
       <DependentUpon>NewStudent.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\PasswordReset.resx">
       <DependentUpon>PasswordReset.cs</DependentUpon>
@@ -490,51 +508,64 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\PublishUploadedResult.resx">
       <DependentUpon>PublishUploadedResult.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\SchoolInfo.resx">
       <DependentUpon>SchoolInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\RegisterSubject.resx">
       <DependentUpon>RegisterSubject.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\SaveSchoolStartnEndDate.resx">
       <DependentUpon>SaveSchoolStartnEndDate.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\SpecifyJssSubject.resx">
       <DependentUpon>SpecifyJssSubject.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\SpecifySssSubject.resx">
       <DependentUpon>SpecifySssSubject.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\SpecifySubjectNumber.resx">
       <DependentUpon>SpecifySubjectNumber.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\TeacherDash.resx">
       <DependentUpon>TeacherDash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\TeacherEmploymentStatus.resx">
       <DependentUpon>TeacherEmploymentStatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\TeacherProfile.resx">
       <DependentUpon>TeacherProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\TeachertoClass.resx">
       <DependentUpon>TeachertoClass.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\uploadBehaviouralAnalysis.resx">
       <DependentUpon>uploadBehaviouralAnalysis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\ViewAdmins.resx">
       <DependentUpon>ViewAdmins.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\ViewAllPrincipal.resx">
       <DependentUpon>ViewAllPrincipal.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\ViewAllResult.resx">
       <DependentUpon>ViewAllResult.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\ViewAttendance.resx">
       <DependentUpon>ViewAttendance.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\ViewBehaviours.resx">
       <DependentUpon>ViewBehaviours.cs</DependentUpon>
@@ -552,10 +583,17 @@
     <None Include="Properties\DataSources\DB.administrative.datasource" />
     <None Include="Properties\DataSources\DB.behavioral.datasource" />
     <None Include="Properties\DataSources\DB.fee_allocation.datasource" />
+    <None Include="Properties\DataSources\DB.jss.datasource" />
+    <None Include="Properties\DataSources\DB.principal.datasource" />
+    <None Include="Properties\DataSources\DB.results1.datasource" />
+    <None Include="Properties\DataSources\DB.school_subjects1.datasource" />
+    <None Include="Properties\DataSources\DB.session.datasource" />
+    <None Include="Properties\DataSources\DB.sss.datasource" />
     <None Include="Properties\DataSources\DB.student.datasource" />
-    <None Include="Properties\DataSources\DB.student_attendance.datasource" />
+    <None Include="Properties\DataSources\DB.subject.datasource" />
     <None Include="Properties\DataSources\DB.teacher.datasource" />
     <None Include="Properties\DataSources\DB.teachers_classes.datasource" />
+    <None Include="Properties\DataSources\DB.user.datasource" />
     <None Include="Properties\DataSources\DB._class.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

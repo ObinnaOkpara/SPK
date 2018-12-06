@@ -1,4 +1,4 @@
-﻿namespace SPK
+namespace SPK
 {
     partial class frmMain
     {
