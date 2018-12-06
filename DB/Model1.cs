@@ -13,12 +13,18 @@ namespace DB
         {
         }
 
-        public void AdjustConConString(string newConString)
+        public void AdjustConfigConString(string newConString)
         {
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             config.ConnectionStrings.ConnectionStrings["Model1"].ConnectionString = newConString;
             config.ConnectionStrings.ConnectionStrings["Model1"].ProviderName = "MySql.Data.MySqlClient";
             config.Save(ConfigurationSaveMode.Modified);
+        }
+
+        public string GetConfigConString()
+        {
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            return config.ConnectionStrings.ConnectionStrings["Model1"].ConnectionString;
         }
 
         public virtual DbSet<access> accesses { get; set; }

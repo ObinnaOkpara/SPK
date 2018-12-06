@@ -134,7 +134,7 @@ namespace SPK
 
                     var constring = $"SERVER={txtIP.Text.Trim()}; DATABASE={txtDbName.Text.Trim()}; USER ID={txtUsername.Text.Trim()}; PASSWORD={txtPassword.Text.Trim()};";
                     var db = new Model1();
-                    db.AdjustConConString(constring);
+                    db.AdjustConfigConString(constring);
                     db.Dispose();
                 }
                 else
@@ -159,9 +159,9 @@ namespace SPK
                     
                     Properties.Settings.Default.ImagePath = @"c:/spk/";
                     
-                    var constring = $"SERVER=127.0.0.1; DATABASE={txtDbName.Text.Trim()}; USER ID={txtUsername.Text.Trim()}; PASSWORD={txtPassword.Text.Trim()};";
+                    var constring = $"SERVER=Localhost; DATABASE={txtDbName.Text.Trim()}; USER ID={txtUsername.Text.Trim()}; PASSWORD={txtPassword.Text.Trim()};";
                     var db = new Model1();
-                    db.AdjustConConString(constring);
+                    db.AdjustConfigConString(constring);
                     db.Dispose();
                 }
 

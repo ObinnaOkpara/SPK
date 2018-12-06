@@ -1,10 +1,12 @@
 ﻿using DB;
 using DB.Services.DataRepository;
 using DB.Services.Interfaces;
+using MySql.Data.MySqlClient;
 using SPK.AuthorizedUser;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.Entity;
 using System.Drawing;
@@ -42,17 +44,26 @@ namespace SPK
 
             this.WindowState = FormWindowState.Minimized;
 
+            _unitOfWork = new UnitOfWork(new Model1());
+            
+            var conString = new Model1().GetConfigConString();
+
+            var conn = new MySqlConnection(conString);
+
             try
             {
-                _unitOfWork = new UnitOfWork(new Model1());
+                conn.Open();
             }
-            catch (Exception)
+            catch
             {
                 frmSetup frm = new frmSetup();
                 frm.Show();
-                //this.Hide();
             }
-
+            finally
+            {
+                conn.Dispose();
+            }
+            
             if (timeDone)
             {
                 thread.Abort();
