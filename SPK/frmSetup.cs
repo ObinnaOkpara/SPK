@@ -12,6 +12,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DB;
 using MySql.Data.MySqlClient;
 
 namespace SPK
@@ -77,72 +78,7 @@ namespace SPK
                 txtIP.Text = Properties.Settings.Default.ServerIP;
             }
         }
-
-        private static void QshareFolder(string FolderPath, string ShareName, string Description)
-        {
-            try
-            {
-                // Create a ManagementClass object
-
-                ManagementClass managementClass = new ManagementClass("Win32_Share");
-
-                // Create ManagementBaseObjects for in and out parameters
-
-                ManagementBaseObject inParams = managementClass.GetMethodParameters("Create");
-
-                ManagementBaseObject outParams;
-
-                // Set the input parameters
-
-                inParams["Description"] = Description;
-
-                inParams["Name"] = ShareName;
-
-                inParams["Path"] = FolderPath;
-
-                inParams["Type"] = 0x0; // Disk Drive
-
-                //Another Type:
-
-                // DISK_DRIVE = 0x0
-
-                // PRINT_QUEUE = 0x1
-
-                // DEVICE = 0x2
-
-                // IPC = 0x3
-
-                // DISK_DRIVE_ADMIN = 0x80000000
-
-                // PRINT_QUEUE_ADMIN = 0x80000001
-
-                // DEVICE_ADMIN = 0x80000002
-
-                // IPC_ADMIN = 0x8000003
-
-                //inParams["MaximumAllowed"] = int maxConnectionsNum;
-
-                // Invoke the method on the ManagementClass object
-
-                outParams = managementClass.InvokeMethod("Create", inParams, null);
-
-                // Check to see if the method invocation was successful
-
-                if ((uint)(outParams.Properties["ReturnValue"].Value) != 0)
-
-                {
-
-                    throw new Exception("Unable to share directory.");
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "error!");
-            }
-        }
-
+        
         private void btnTest_Click(object sender, EventArgs e)
         {
             var server = txtIP.Text.Trim();
@@ -196,15 +132,24 @@ namespace SPK
 
                     Properties.Settings.Default.ImagePath = @"\\" + Path.Combine(Properties.Settings.Default.ServerName, @"spk\");
 
-                    Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                    config.ConnectionStrings.ConnectionStrings["Model1"].ConnectionString = 
-                        $"SERVER={txtIP.Text.Trim()}; DATABASE={txtDbName.Text.Trim()}; USER ID={txtUsername.Text.Trim()}; PASSWORD={txtPassword.Text.Trim()};";
-                    config.ConnectionStrings.ConnectionStrings["Model1"].ProviderName = "MySql.Data.MySqlClient";
-                    config.Save(ConfigurationSaveMode.Modified);
-
+                    var constring = $"SERVER={txtIP.Text.Trim()}; DATABASE={txtDbName.Text.Trim()}; USER ID={txtUsername.Text.Trim()}; PASSWORD={txtPassword.Text.Trim()};";
+                    var db = new Model1();
+                    db.AdjustConConString(constring);
+                    db.Dispose();
                 }
                 else
                 {
+                    if (!Directory.Exists(@"c:/spk"))
+                    {
+                        MessageBox.Show("Please Create the shared spk folder.");
+                        return;
+                    }
+                    if (!Directory.Exists(@"c:/spk/admin") || !Directory.Exists(@"c:/spk/image"))
+                    {
+                        MessageBox.Show("Please Create the sub folders in the spk folder.");
+                        return;
+                    }
+
                     Properties.Settings.Default.DbName = txtDbName.Text;
                     Properties.Settings.Default.DbUsername = txtUsername.Text;
                     Properties.Settings.Default.DbPassword = txtPassword.Text;
@@ -212,18 +157,12 @@ namespace SPK
                     Properties.Settings.Default.ServerName = txtServerName.Text;
                     Properties.Settings.Default.AppType = "server";
                     
-                    QshareFolder(@"c:\spk", "spk", "School Portal Images");
-                    Directory.CreateDirectory(@"c:\spk\admin");
-                    Directory.CreateDirectory(@"c:\spk\image");
+                    Properties.Settings.Default.ImagePath = @"c:/spk/";
                     
-                    Properties.Settings.Default.ImagePath = Path.Combine(@"c:\", @"spk\");
-
-                    Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                    config.ConnectionStrings.ConnectionStrings["Model1"].ConnectionString =
-                        $"SERVER=127.0.0.1; DATABASE={txtDbName.Text.Trim()}; USER ID={txtUsername.Text.Trim()}; PASSWORD={txtPassword.Text.Trim()};";
-                    config.ConnectionStrings.ConnectionStrings["Model1"].ProviderName = "MySql.Data.MySqlClient";
-                    config.Save(ConfigurationSaveMode.Modified);
-
+                    var constring = $"SERVER=127.0.0.1; DATABASE={txtDbName.Text.Trim()}; USER ID={txtUsername.Text.Trim()}; PASSWORD={txtPassword.Text.Trim()};";
+                    var db = new Model1();
+                    db.AdjustConConString(constring);
+                    db.Dispose();
                 }
 
                 Properties.Settings.Default.SetupDone = true;

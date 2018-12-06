@@ -10,6 +10,7 @@ using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,12 +20,66 @@ namespace SPK
     {
         bool _mousedown;
         Point startpt;
+        Thread thread;
+
+        bool timeDone = false;
+        bool loadDone = false;
+
+        System.Windows.Forms.Timer tim;
 
         private readonly IUnitOfWork _unitOfWork;
         public LoginForm()
         {
+            thread = new Thread(new ThreadStart(Splash));
+            thread.Start();
+
+            tim = new System.Windows.Forms.Timer();
+            tim.Interval = 5000;
+            tim.Tick += Tim_Tick;
+            tim.Start();
+
             InitializeComponent();
-            _unitOfWork = new UnitOfWork(new Model1());
+
+            this.WindowState = FormWindowState.Minimized;
+
+            try
+            {
+                _unitOfWork = new UnitOfWork(new Model1());
+            }
+            catch (Exception)
+            {
+                frmSetup frm = new frmSetup();
+                frm.Show();
+                //this.Hide();
+            }
+
+            if (timeDone)
+            {
+                thread.Abort();
+                this.WindowState = FormWindowState.Normal;
+            }
+            loadDone = true;
+        }
+
+        private void Tim_Tick(object sender, EventArgs e)
+        {
+            if (loadDone)
+            {
+                thread.Abort();
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                timeDone = true;
+            }
+            tim.Stop();
+        }
+
+        private void Splash()
+        {
+            var frm = new frmSplash();
+            
+            Application.Run(frm);
         }
 
         private async Task<bool> Login<TEntity>() where TEntity : class
