@@ -30,8 +30,8 @@
         {
             this.panel3 = new System.Windows.Forms.Panel();
             this.panClient = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnTest = new System.Windows.Forms.Button();
-            this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIP = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.txtServerName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.panClient.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -81,9 +81,9 @@
             // 
             // panClient
             // 
+            this.panClient.Controls.Add(this.txtName);
             this.panClient.Controls.Add(this.button1);
             this.panClient.Controls.Add(this.btnTest);
-            this.panClient.Controls.Add(this.txtName);
             this.panClient.Controls.Add(this.label1);
             this.panClient.Controls.Add(this.txtIP);
             this.panClient.Controls.Add(this.label3);
@@ -92,6 +92,21 @@
             this.panClient.Size = new System.Drawing.Size(563, 126);
             this.panClient.TabIndex = 10;
             this.panClient.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.button1.Location = new System.Drawing.Point(256, 83);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(181, 27);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Test Server Name";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnTest
             // 
@@ -107,15 +122,6 @@
             this.btnTest.Text = "Test IP";
             this.btnTest.UseVisualStyleBackColor = false;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
-            // 
-            // txtName
-            // 
-            this.txtName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.txtName.Location = new System.Drawing.Point(256, 17);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(304, 23);
-            this.txtName.TabIndex = 1;
             // 
             // label1
             // 
@@ -321,20 +327,14 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "SERVER IP ADDRESS :";
             // 
-            // button1
+            // txtName
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.button1.Location = new System.Drawing.Point(256, 83);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(181, 27);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Test Server Name";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.txtName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.txtName.Location = new System.Drawing.Point(256, 14);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(304, 23);
+            this.txtName.TabIndex = 19;
             // 
             // frmSetup
             // 
@@ -364,7 +364,6 @@
         private System.Windows.Forms.TextBox txtIP;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radClient;
@@ -383,5 +382,6 @@
         private System.Windows.Forms.TextBox txtDbName;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtName;
     }
 }

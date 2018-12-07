@@ -16,6 +16,8 @@ namespace SPK.UserControls.SubForms
         private Image _ProfilePic { get; set;  } //= Properties.Resources.command;
         private string _School { get; set; } = "SCHOOL NAME";
         private string _Session { get; set; } = "Third Term - 2017/2018 Session";
+        string _userType = "";
+
 
         public Image ProfilePic
         {
@@ -48,9 +50,10 @@ namespace SPK.UserControls.SubForms
         }
 
 
-        public Dashboard()
+        public Dashboard(string userType)
         {
             InitializeComponent();
+            _userType = userType;
         }
 
 
@@ -87,8 +90,59 @@ namespace SPK.UserControls.SubForms
             var pan = (ExtendedPanel)sender;
             var ctrl = pan.Parent;
             ctrl.ForeColor = Color.FromArgb(0, 150, 136);
+        }
 
+        private void panProfileCover_Click(object sender, EventArgs e)
+        {
+            if (_userType == "principal")
+            {
+                showUserControl(new PrincipalProfile());
+            }
+            else
+            {
+                showUserControl(new AdminProfile());
+            }
+        }
 
+        private void showUserControl(Control ctrl)
+        {
+            Parent.Controls.Add(ctrl);
+            Dispose();
+        }
+
+        private void panStudentCover_Click(object sender, EventArgs e)
+        {
+            showUserControl(new ViewRegisteredStudent());
+        }
+
+        private void panClassCover_Click(object sender, EventArgs e)
+        {
+            showUserControl(new AddnViewClass());
+        }
+
+        private void PanSubjectCover_Click(object sender, EventArgs e)
+        {
+            showUserControl(new ViewSubjects());
+        }
+
+        private void panResultCover_Click(object sender, EventArgs e)
+        {
+            showUserControl(new ViewAllResult());
+        }
+
+        private void panFeesCover_Click(object sender, EventArgs e)
+        {
+            showUserControl(new AllocateFees());
+        }
+
+        private void panStaffCover_Click(object sender, EventArgs e)
+        {
+            showUserControl(new TeacherEmploymentStatus());
+        }
+
+        private void panPasswordCover_Click(object sender, EventArgs e)
+        {
+            showUserControl(new PasswordReset());
         }
     }
 }

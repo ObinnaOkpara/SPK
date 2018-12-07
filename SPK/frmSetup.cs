@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
+using System.DirectoryServices;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace SPK
         {
             InitializeComponent();
         }
-
+        
         private void frmSetup_Load(object sender, EventArgs e)
         {
             if (Properties.Settings.Default.AppType == "client")
@@ -37,6 +38,8 @@ namespace SPK
             txtDbName.Text = Properties.Settings.Default.DbName;
             txtUsername.Text = Properties.Settings.Default.DbUsername;
             txtPassword.Text = Properties.Settings.Default.DbPassword;
+
+            txtName.Text = Properties.Settings.Default.DbName;
         }
 
         private void radServer_CheckedChanged(object sender, EventArgs e)
@@ -89,6 +92,8 @@ namespace SPK
             var conString = $"SERVER={server}; DATABASE={db}; USER ID={uid}; PASSWORD={pass};";
             var conn = new MySqlConnection(conString);
 
+            Cursor = Cursors.WaitCursor;
+
             try
             {
                 conn.Open();
@@ -113,6 +118,7 @@ namespace SPK
             finally
             {
                 conn.Dispose();
+                Cursor = Cursors.WaitCursor;
             }
 
         }
@@ -183,7 +189,7 @@ namespace SPK
             try
             {
                 var appPath = @"\\" + Path.Combine(txtName.Text, @"spk");
-                File.Copy(Path.Combine(Environment.CurrentDirectory, "small.png"), Path.Combine(appPath, "small.png"));
+                File.Copy(Path.Combine(Environment.CurrentDirectory, "small.png"), Path.Combine(appPath, "small.png"), true);
                 MessageBox.Show("Successful.");
             }
             catch (Exception ex)

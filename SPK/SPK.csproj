@@ -97,6 +97,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
@@ -115,6 +116,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthorizedUser\AuthorizedUser.cs" />
+    <Compile Include="frmFirst.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFirst.Designer.cs">
+      <DependentUpon>frmFirst.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +158,7 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NetworkBrowser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
@@ -402,6 +410,9 @@
     </Compile>
     <Compile Include="Utilities\Utils.cs" />
     <Compile Include="Utilities\ValidateFomControls.cs" />
+    <EmbeddedResource Include="frmFirst.resx">
+      <DependentUpon>frmFirst.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -440,6 +451,9 @@
     <EmbeddedResource Include="UserControls\Buttons\ButtonWithoutMenu.resx">
       <DependentUpon>ButtonWithoutMenu.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Panels\ExtendedPanel.resx">
+      <DependentUpon>ExtendedPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\AddAdmin.resx">
       <DependentUpon>AddAdmin.cs</DependentUpon>

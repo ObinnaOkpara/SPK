@@ -124,6 +124,8 @@
             this.panPasswordCover.Name = "panPasswordCover";
             this.panPasswordCover.Size = new System.Drawing.Size(150, 130);
             this.panPasswordCover.TabIndex = 8;
+            this.panPasswordCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
+            this.panPasswordCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
             // 
             // pictureBox5
             // 
@@ -165,6 +167,8 @@
             this.panStaffCover.Name = "panStaffCover";
             this.panStaffCover.Size = new System.Drawing.Size(150, 130);
             this.panStaffCover.TabIndex = 8;
+            this.panStaffCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
+            this.panStaffCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
             // 
             // pictureBox6
             // 
@@ -206,6 +210,8 @@
             this.panFeesCover.Name = "panFeesCover";
             this.panFeesCover.Size = new System.Drawing.Size(150, 130);
             this.panFeesCover.TabIndex = 8;
+            this.panFeesCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
+            this.panFeesCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
             // 
             // pictureBox7
             // 
@@ -247,6 +253,8 @@
             this.panResultCover.Name = "panResultCover";
             this.panResultCover.Size = new System.Drawing.Size(150, 130);
             this.panResultCover.TabIndex = 8;
+            this.panResultCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
+            this.panResultCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
             // 
             // pictureBox8
             // 
@@ -288,6 +296,8 @@
             this.PanSubjectCover.Name = "PanSubjectCover";
             this.PanSubjectCover.Size = new System.Drawing.Size(150, 130);
             this.PanSubjectCover.TabIndex = 8;
+            this.PanSubjectCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
+            this.PanSubjectCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
             // 
             // pictureBox4
             // 
@@ -329,6 +339,8 @@
             this.panClassCover.Name = "panClassCover";
             this.panClassCover.Size = new System.Drawing.Size(150, 130);
             this.panClassCover.TabIndex = 8;
+            this.panClassCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
+            this.panClassCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
             // 
             // pictureBox3
             // 
@@ -370,6 +382,9 @@
             this.panStudentCover.Name = "panStudentCover";
             this.panStudentCover.Size = new System.Drawing.Size(150, 130);
             this.panStudentCover.TabIndex = 7;
+            this.panStudentCover.Click += new System.EventHandler(this.panStudentCover_Click);
+            this.panStudentCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
+            this.panStudentCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
             // 
             // pictureBox2
             // 
@@ -411,6 +426,9 @@
             this.panProfileCover.Name = "panProfileCover";
             this.panProfileCover.Size = new System.Drawing.Size(150, 130);
             this.panProfileCover.TabIndex = 6;
+            this.panProfileCover.Click += new System.EventHandler(this.panProfileCover_Click);
+            this.panProfileCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
+            this.panProfileCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
             // 
             // pictureBox1
             // 

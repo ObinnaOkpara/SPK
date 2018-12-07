@@ -1,18 +1,9 @@
 ﻿using DB;
 using DB.Services.DataRepository;
 using DB.Services.Interfaces;
-using MySql.Data.MySqlClient;
 using SPK.AuthorizedUser;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Data.Entity;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -22,75 +13,15 @@ namespace SPK
     {
         bool _mousedown;
         Point startpt;
-        Thread thread;
-
-        bool timeDone = false;
-        bool loadDone = false;
-
-        System.Windows.Forms.Timer tim;
 
         private readonly IUnitOfWork _unitOfWork;
         public LoginForm()
         {
-            thread = new Thread(new ThreadStart(Splash));
-            thread.Start();
-
-            tim = new System.Windows.Forms.Timer();
-            tim.Interval = 5000;
-            tim.Tick += Tim_Tick;
-            tim.Start();
-
+            
             InitializeComponent();
-
-            this.WindowState = FormWindowState.Minimized;
 
             _unitOfWork = new UnitOfWork(new Model1());
             
-            var conString = new Model1().GetConfigConString();
-
-            var conn = new MySqlConnection(conString);
-
-            try
-            {
-                conn.Open();
-            }
-            catch
-            {
-                frmSetup frm = new frmSetup();
-                frm.Show();
-            }
-            finally
-            {
-                conn.Dispose();
-            }
-            
-            if (timeDone)
-            {
-                thread.Abort();
-                this.WindowState = FormWindowState.Normal;
-            }
-            loadDone = true;
-        }
-
-        private void Tim_Tick(object sender, EventArgs e)
-        {
-            if (loadDone)
-            {
-                thread.Abort();
-                this.WindowState = FormWindowState.Normal;
-            }
-            else
-            {
-                timeDone = true;
-            }
-            tim.Stop();
-        }
-
-        private void Splash()
-        {
-            var frm = new frmSplash();
-            
-            Application.Run(frm);
         }
 
         private async Task<bool> Login<TEntity>() where TEntity : class
@@ -138,6 +69,7 @@ namespace SPK
                     if (user != null)
                     {
                         AuthorizedUser<user>.CurrentUser = user;
+
                         return true;
                     }
                     else
@@ -153,6 +85,8 @@ namespace SPK
         
         private void btnSignIn_ClickEvent(object sender, EventArgs e)
         {
+            Cursor = Cursors.WaitCursor;
+
             if (cBoxType.Text == "Admin")
             {
                 var task = Login<user>();
@@ -163,12 +97,15 @@ namespace SPK
                 if (loginResult)
                 {
                     MessageBox.Show("Login Successful");
-                    var frm = new frmMain();
+
+                    Cursor = Cursors.Arrow;
+                    var frm = new frmMain("admin");
                     frm.Show();
-                    this.Hide();
+                    this.Close();
                 }
                 else
                 {
+                    Cursor = Cursors.Arrow;
                     MessageBox.Show("Invalid details");
                     return;
                 }
@@ -183,12 +120,15 @@ namespace SPK
                 if (loginResult)
                 {
                     MessageBox.Show("Login Successful");
-                    var frm = new frmMain();
+
+                    Cursor = Cursors.Arrow;
+                    var frm = new frmMain("principal");
                     frm.Show();
-                    this.Hide();
+                    this.Close();
                 }
                 else
                 {
+                    Cursor = Cursors.Arrow;
                     MessageBox.Show("Invalid details");
                     return;
                 }
@@ -203,18 +143,23 @@ namespace SPK
                 if (loginResult)
                 {
                     MessageBox.Show("Login Successful");
+
+                    Cursor = Cursors.Arrow;
                     var frm = new frmTeacher();
                     frm.Show();
-                    this.Hide();
+                    this.Close();
                 }
                 else
                 {
                     MessageBox.Show("Invalid details");
+
+                    Cursor = Cursors.Arrow;
                     return;
                 }
             }
             else
             {
+                Cursor = Cursors.Arrow;
                 MessageBox.Show("Please select an account");
                 return;
             }

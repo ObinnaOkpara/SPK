@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace SPK.AuthorizedUser
 {
-   static class AuthorizedUser<TEntity> where TEntity: class
+    static class AuthorizedUser<TEntity> where TEntity : class
     {
-        public static TEntity CurrentUser;        
+        public static TEntity CurrentUser;
     }
 }
