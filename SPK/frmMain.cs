@@ -18,9 +18,14 @@ namespace SPK
         bool _mousedown;
         Point startpt;
 
-        public frmMain()
+        string _userType = "";
+
+        public frmMain( string userType)
         {
             InitializeComponent();
+
+            _userType = userType;
+
             this.DoubleBuffered = true;
             this.SetStyle(ControlStyles.ResizeRedraw, true); // this is to avoid visual artifacts
         }
@@ -91,7 +96,7 @@ namespace SPK
 
         private void btnDashboard_ClickEvent(object sender, EventArgs e)
         {
-            showUserControl(new Dashboard());
+            showUserControl(new Dashboard(_userType));
         }
 
         private void updateSchoolInfoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -299,6 +304,52 @@ namespace SPK
             showUserControl(new ExportImportBehaviourExcel());
         }
 
+        private void SettingsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var frm = new frmSetup();
+            frm.Show();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            menuSettings.Show(Cursor.Position);
+        }
+
+        private void LogoutToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            var rtn = MessageBox.Show("Are you sure you want to Logout?", "Logout", MessageBoxButtons.YesNo);
+            if (rtn == DialogResult.Yes)
+            {
+                var frm = new LoginForm();
+                frm.Show();
+                this.Close();
+            }
+        }
+
+        private void ProfileToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if (_userType == "principal")
+            {
+                showUserControl(new PrincipalProfile());
+            }
+            else
+            {
+                showUserControl(new AdminProfile());
+            }
+        }
+
+        private void btnProfile_ClickEvent(object sender, EventArgs e)
+        {
+            if (_userType == "principal")
+            {
+                showUserControl(new PrincipalProfile());
+            }
+            else
+            {
+                showUserControl(new AdminProfile());
+            }
+        }
+        
         private void picClose_Click(object sender, EventArgs e)
         {
             Application.Exit();

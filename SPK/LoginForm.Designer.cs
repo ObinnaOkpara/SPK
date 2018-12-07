@@ -88,6 +88,7 @@
             // 
             // cBoxType
             // 
+            this.cBoxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.cBoxType.FormattingEnabled = true;
             this.cBoxType.Items.AddRange(new object[] {
