@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SPK.UserControls.Panels;
+using DB;
+using System.IO;
 
 namespace SPK.UserControls.SubForms
 {
@@ -73,6 +75,31 @@ namespace SPK.UserControls.SubForms
         public TeacherDash()
         {
             InitializeComponent();
+            if (LicenseManager.UsageMode != LicenseUsageMode.Designtime)
+            {
+                try
+                {
+                    using (var db = new Model1())
+                    {
+                        var school = db.administratives.FirstOrDefault();
+
+                        if (school != null)
+                        {
+                            School = school.school_name;
+                            ProfilePic = Image.FromFile(Path.Combine(Properties.Settings.Default.ImagePath, school.school_logo));
+                        }
+                        var session = db.current_season.FirstOrDefault();
+
+                        if (session != null)
+                        {
+                            Session = session.current_term + " - " + session.current_session + " Session";
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                }
+            }
         }
 
         private void panProfileCover_MouseHover(object sender, EventArgs e)
