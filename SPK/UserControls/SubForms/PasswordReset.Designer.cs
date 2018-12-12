@@ -28,22 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cboxType = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this._txtUsername = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.label2 = new System.Windows.Forms.Label();
             this._txtPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.picSchoolLogo = new System.Windows.Forms.PictureBox();
-            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
-            this._txtUsername = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cboxType = new System.Windows.Forms.ComboBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -81,6 +84,18 @@
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "PASSWORD RESET";
             // 
+            // picSchoolLogo
+            // 
+            this.picSchoolLogo.BackColor = System.Drawing.Color.White;
+            this.picSchoolLogo.Image = global::SPK.Properties.Resources.password;
+            this.picSchoolLogo.Location = new System.Drawing.Point(40, 18);
+            this.picSchoolLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.picSchoolLogo.Name = "picSchoolLogo";
+            this.picSchoolLogo.Size = new System.Drawing.Size(30, 32);
+            this.picSchoolLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSchoolLogo.TabIndex = 0;
+            this.picSchoolLogo.TabStop = false;
+            // 
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -99,6 +114,68 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(472, 281);
             this.panel3.TabIndex = 7;
+            // 
+            // cboxType
+            // 
+            this.cboxType.FormattingEnabled = true;
+            this.cboxType.Items.AddRange(new object[] {
+            "Student",
+            "Teacher",
+            "Principal",
+            "Admin"});
+            this.cboxType.Location = new System.Drawing.Point(193, 66);
+            this.cboxType.Name = "cboxType";
+            this.cboxType.Size = new System.Drawing.Size(249, 24);
+            this.cboxType.TabIndex = 19;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label4.Location = new System.Drawing.Point(72, 69);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(117, 17);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Account Type :";
+            // 
+            // _txtUsername
+            // 
+            this._txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this._txtUsername.Location = new System.Drawing.Point(193, 117);
+            this._txtUsername.Margin = new System.Windows.Forms.Padding(2);
+            this._txtUsername.Name = "_txtUsername";
+            this._txtUsername.Size = new System.Drawing.Size(249, 23);
+            this._txtUsername.TabIndex = 17;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label3.Location = new System.Drawing.Point(2, 120);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(186, 17);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Username/Reg Number :";
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnSave.BtnText = "SAVE CHANGES";
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnSave.Icon = global::SPK.Properties.Resources.icons8_save_64;
+            this.btnSave.Location = new System.Drawing.Point(139, 227);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnSave.Size = new System.Drawing.Size(209, 41);
+            this.btnSave.TabIndex = 15;
+            this.btnSave.ClickEvent += new System.EventHandler(this.btnSave_ClickEvent);
             // 
             // label2
             // 
@@ -134,78 +211,9 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "New Password :";
             // 
-            // picSchoolLogo
+            // errorProvider1
             // 
-            this.picSchoolLogo.BackColor = System.Drawing.Color.White;
-            this.picSchoolLogo.Image = global::SPK.Properties.Resources.password;
-            this.picSchoolLogo.Location = new System.Drawing.Point(40, 18);
-            this.picSchoolLogo.Margin = new System.Windows.Forms.Padding(2);
-            this.picSchoolLogo.Name = "picSchoolLogo";
-            this.picSchoolLogo.Size = new System.Drawing.Size(30, 32);
-            this.picSchoolLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSchoolLogo.TabIndex = 0;
-            this.picSchoolLogo.TabStop = false;
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnSave.BtnText = "SAVE CHANGES";
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnSave.Icon = global::SPK.Properties.Resources.icons8_save_64;
-            this.btnSave.Location = new System.Drawing.Point(139, 227);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnSave.Size = new System.Drawing.Size(209, 41);
-            this.btnSave.TabIndex = 15;
-            // 
-            // _txtUsername
-            // 
-            this._txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this._txtUsername.Location = new System.Drawing.Point(193, 117);
-            this._txtUsername.Margin = new System.Windows.Forms.Padding(2);
-            this._txtUsername.Name = "_txtUsername";
-            this._txtUsername.Size = new System.Drawing.Size(249, 23);
-            this._txtUsername.TabIndex = 17;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label3.Location = new System.Drawing.Point(2, 120);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(186, 17);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Username/Reg Number :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label4.Location = new System.Drawing.Point(72, 69);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 17);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Account Type :";
-            // 
-            // cboxType
-            // 
-            this.cboxType.FormattingEnabled = true;
-            this.cboxType.Items.AddRange(new object[] {
-            "Student",
-            "Teacher",
-            "Principal",
-            "Admin"});
-            this.cboxType.Location = new System.Drawing.Point(193, 66);
-            this.cboxType.Name = "cboxType";
-            this.cboxType.Size = new System.Drawing.Size(249, 24);
-            this.cboxType.TabIndex = 19;
+            this.errorProvider1.ContainerControl = this;
             // 
             // PasswordReset
             // 
@@ -217,9 +225,10 @@
             this.Size = new System.Drawing.Size(800, 580);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -239,5 +248,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox _txtUsername;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
