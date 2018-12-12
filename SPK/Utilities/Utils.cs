@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,28 @@ namespace SPK.Utilities
 {
     public static class Utils
     {
+
+        public static void LogException(Exception ex)
+        {
+            string filePath = @"";
+
+            using (StreamWriter writer = new StreamWriter(filePath,true))
+            {
+                writer.WriteLine("-------------------------------------------------------");
+                writer.WriteLine("Date : " + DateTime.Now.ToString());
+                writer.WriteLine();
+
+                while (ex != null)
+                {
+                    writer.WriteLine(ex.GetType().FullName);
+                    writer.WriteLine("Message : " + ex.Message);
+                    writer.WriteLine("StackTrace : " + ex.StackTrace);
+
+                    ex = ex.InnerException;
+                }
+            }
+        }
+
         public static void fitFormToScreen(Form form, int h, int w)
             {
 

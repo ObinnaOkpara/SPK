@@ -20,9 +20,11 @@ namespace SPK
 {
     public partial class frmSetup : Form
     {
-        public frmSetup()
+        string _from = "";
+        public frmSetup(string from)
         {
             InitializeComponent();
+            _from = from;
         }
         
         private void frmSetup_Load(object sender, EventArgs e)
@@ -98,6 +100,8 @@ namespace SPK
             {
                 conn.Open();
                 MessageBox.Show("Connection successful.");
+
+
             }
             catch (MySqlException ex)
             {
@@ -175,6 +179,17 @@ namespace SPK
                 Properties.Settings.Default.Save();
 
                 MessageBox.Show("Configuration was saved successfully.");
+
+                if (_from== "main")
+                {
+                    Close();
+                }
+                else
+                {
+                    LoginForm frm = new LoginForm();
+                    frm.Show();
+                    Close();
+                }
             }
             catch (Exception ex)
             {

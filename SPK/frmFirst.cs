@@ -49,7 +49,7 @@ namespace SPK
             }
             catch
             {
-                frmSetup frm = new frmSetup();
+                frmSetup frm = new frmSetup("login");
                 frm.Show();
             }
             finally

@@ -16,7 +16,7 @@ namespace SPK
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain("admin"));
+            Application.Run(new frmMain("Admin"));
         }
         
     }

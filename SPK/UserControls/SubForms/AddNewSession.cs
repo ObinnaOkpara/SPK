@@ -26,25 +26,33 @@ namespace SPK.UserControls.SubForms
         {
             if (ValidateFomControls.CheckTextboxes(this, errorProvider1))
             {
-                _unitOfWork = new UnitOfWork(new Model1());
-
-                if (_unitOfWork.SessionRepository.CheckIfItExists(_txtSession.Text))
+                try
                 {
-                    MessageBox.Show("This session already exists.");
-                    return;
+                    _unitOfWork = new UnitOfWork(new Model1());
+
+                    if (_unitOfWork.SessionRepository.CheckIfItExists(_txtSession.Text))
+                    {
+                        MessageBox.Show("This session already exists.");
+                        return;
+                    }
+
+                    var Session = new session()
+                    {
+                        sessions = _txtSession.Text,
+                        date_added = DateTime.Today.ToString("d"),
+                        time_added = DateTime.Now,
+                    };
+
+                    _unitOfWork.SessionRepository.Add(Session);
+                    await _unitOfWork.Save();
+                    _unitOfWork.Dispose();
+                    MessageBox.Show($"Session {_txtSession.Text} was added successfully.");
                 }
-
-                var Session = new session()
+                catch (Exception ex)
                 {
-                    sessions = _txtSession.Text,
-                    date_added = DateTime.Today.ToString("d"),
-                    time_added = DateTime.Now,
-                };
-                
-                _unitOfWork.SessionRepository.Add(Session);
-                await _unitOfWork.Save();
-                _unitOfWork.Dispose();
-                MessageBox.Show($"Session {_txtSession.Text} was added successfully.");
+                    Utils.LogException(ex);
+                    MessageBox.Show("Error occured. Contact support" );
+                }
             }
         }
     }

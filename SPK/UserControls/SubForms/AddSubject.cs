@@ -26,18 +26,26 @@ namespace SPK.UserControls.SubForms
         {
             if (ValidateFomControls.CheckTextboxes(this, errorProvider1))
             {
-                var _unitOfWork = new UnitOfWork(new Model1());
-                var sch_subj = CreateSchoolSubject();
-                if (!_unitOfWork.School_SubjectsRepository.CheckIfItExists(_txtSubject.Text))
+                try
                 {
-                    _unitOfWork.School_SubjectsRepository.Add(sch_subj);
-                    _unitOfWork.Save();
-                    _unitOfWork.Dispose();
-                    MessageBox.Show("Added");
+                    var _unitOfWork = new UnitOfWork(new Model1());
+                    var sch_subj = CreateSchoolSubject();
+                    if (!_unitOfWork.School_SubjectsRepository.CheckIfItExists(_txtSubject.Text))
+                    {
+                        _unitOfWork.School_SubjectsRepository.Add(sch_subj);
+                        _unitOfWork.Save();
+                        _unitOfWork.Dispose();
+                        MessageBox.Show("Added");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Already Added");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Already Added");
+                    Utils.LogException(ex);
+                    MessageBox.Show("An error occured. Please contact support");
                 }
                 
             }

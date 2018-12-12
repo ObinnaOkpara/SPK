@@ -24,8 +24,8 @@ namespace SPK.UserControls.SubForms
             if (LicenseManager.UsageMode != LicenseUsageMode.Designtime)
             {
                 dGridAllClass.Cursor = Cursors.WaitCursor;
-
                 backgroundWorker1.RunWorkerAsync();
+
             }
         }
 
@@ -33,30 +33,37 @@ namespace SPK.UserControls.SubForms
         {
             if (ValidateFomControls.CheckTextboxes(this, errorProvider1))
             {
-
-                var _unitOfWork = new UnitOfWork(new Model1());
-                if( _unitOfWork.dClassRepository.CheckIfItExists(_txtClassName.Text.Trim()))
+                try
                 {
-                    MessageBox.Show("This class already exists.");
-                    return;
+                    var _unitOfWork = new UnitOfWork(new Model1());
+                    if (_unitOfWork.dClassRepository.CheckIfItExists(_txtClassName.Text.Trim()))
+                    {
+                        MessageBox.Show("This class already exists.");
+                        return;
+                    }
+
+                    var cl = new _class()
+                    {
+                        classes = _txtClassName.Text.Trim(),
+                        date_added = DateTime.Today.ToString("d"),
+                        time_added = DateTime.Now
+                    };
+
+                    _unitOfWork.dClassRepository.Add(cl);
+                    _unitOfWork.Save();
+                    _unitOfWork.Dispose();
+                    MessageBox.Show("Class Added Successfully");
+
+                    using (var db = new Model1())
+                    {
+                        classes = db.classes.ToList();
+                        dGridAllClass.DataSource = classes;
+                    }
                 }
-
-                var cl = new _class()
+                catch (Exception ex)
                 {
-                    classes = _txtClassName.Text.Trim(),
-                    date_added = DateTime.Today.ToString("d"),
-                    time_added = DateTime.Now
-                };
-
-                _unitOfWork.dClassRepository.Add(cl);
-                _unitOfWork.Save();
-                _unitOfWork.Dispose();
-                MessageBox.Show("Class Added Successfully");
-
-                using (var db = new Model1())
-                {
-                    classes = db.classes.ToList();
-                    dGridAllClass.DataSource = classes;
+                    Utils.LogException(ex);
+                    MessageBox.Show("Error occured. Contact support" );
                 }
             }
         }
@@ -73,6 +80,9 @@ namespace SPK.UserControls.SubForms
         {
             dGridAllClass.DataSource = classes;
             dGridAllClass.Cursor = Cursors.Arrow;
+
+
+
         }
 
         private void dGridAllClass_CellContentClick(object sender, DataGridViewCellEventArgs e)

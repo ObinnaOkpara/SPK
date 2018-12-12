@@ -18,28 +18,40 @@ namespace SPK.UserControls.SubForms
     {
         List<_class> classes = new List<_class>();
         List<fee_allocation> fees_allo = new List<fee_allocation>();
-        bool _cellformat = false;
 
         private IUnitOfWork _unitOfWork;
         public AllocateFees()
         {
             InitializeComponent();
 
-            _unitOfWork = new UnitOfWork(new Model1());
-            //if (LicenseManager.UsageMode != LicenseUsageMode.Designtime)
+           
+            if (LicenseManager.UsageMode != LicenseUsageMode.Designtime)
+            {
+                 _unitOfWork = new UnitOfWork(new Model1());
+                backgroundWorker1.RunWorkerAsync();
+                cBoxClass.Cursor = Cursors.WaitCursor;
+                dGridStudents.Cursor = Cursors.WaitCursor;
+            }
 
 
-            backgroundWorker1.RunWorkerAsync();
-            cBoxClass.Cursor = Cursors.WaitCursor;
-            dGridStudents.Cursor = Cursors.WaitCursor;
+            
 
         }
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            using (var db = new Model1())
+            try
             {
-                classes = db.classes.ToList();
-                fees_allo = db.fee_allocation.ToList();
+                using (var db = new Model1())
+                {
+                    classes = db.classes.ToList();
+                    fees_allo = db.fee_allocation.ToList();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Utils.LogException(ex);
+                MessageBox.Show("Error occured. Please contact Support");
             }
         }
 
@@ -105,8 +117,9 @@ namespace SPK.UserControls.SubForms
                         MessageBox.Show("New Fee Allocation Added");
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    Utils.LogException(ex);
                     MessageBox.Show("An error occured. Contact Support");
                 }
             }
@@ -143,22 +156,31 @@ namespace SPK.UserControls.SubForms
         {
             if (!string.IsNullOrWhiteSpace( txtFeeedit.Text))
             {
-                using (var db = new Model1())
+                try
                 {
-                    var id = Convert.ToInt32(txtIDedit.Text);
-                    var feeallo = db.fee_allocation.Find(id);
+                    using (var db = new Model1())
+                    {
+                        var id = Convert.ToInt32(txtIDedit.Text);
+                        var feeallo = db.fee_allocation.Find(id);
 
-                    if (feeallo != null)
-                    {
-                        feeallo.fee_amount = Convert.ToInt32(txtFeeedit.Text);
-                        db.SaveChanges();
-                        MessageBox.Show("Fees Updated");
-                        dGridStudents.DataSource = db.fee_allocation.ToList();
+                        if (feeallo != null)
+                        {
+                            feeallo.fee_amount = Convert.ToInt32(txtFeeedit.Text);
+                            db.SaveChanges();
+                            MessageBox.Show("Fees Updated");
+                            dGridStudents.DataSource = db.fee_allocation.ToList();
+                        }
+                        else
+                        {
+                            MessageBox.Show("An error occured. Please contact support");
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("An error occured. Please contact support");
-                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Utils.LogException(ex);
+                    MessageBox.Show("An error occured. Please contact support");
                 }
             }
             else
@@ -181,17 +203,27 @@ namespace SPK.UserControls.SubForms
                 if (btn.Text == "Delete")
                 {
                     var _id = (int)senderGrid.CurrentRow.Cells["id"].Value;
-                    using (var db = new Model1())
+
+                    try
                     {
-                        var feee_allo = new fee_allocation() { id = _id };
-                        db.fee_allocation.Attach(feee_allo);
-                        db.fee_allocation.Remove(feee_allo);
-                        db.SaveChanges();
 
-                        fees_allo = db.fee_allocation.ToList();
-                        MessageBox.Show("Deleted");
-                        dGridStudents.DataSource = fees_allo;
+                        using (var db = new Model1())
+                        {
+                            var feee_allo = new fee_allocation() { id = _id };
+                            db.fee_allocation.Attach(feee_allo);
+                            db.fee_allocation.Remove(feee_allo);
+                            db.SaveChanges();
 
+                            fees_allo = db.fee_allocation.ToList();
+                            MessageBox.Show("Deleted");
+                            dGridStudents.DataSource = fees_allo;
+
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Utils.LogException(ex);
+                        MessageBox.Show("An error occured. Please contact support");
                     }
                 }
             }

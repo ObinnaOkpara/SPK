@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DB;
+using SPK.Utilities;
 
 namespace SPK.UserControls.SubForms
 {
@@ -25,10 +26,19 @@ namespace SPK.UserControls.SubForms
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            using (var db = new Model1())
+            try
             {
-                _teachers = db.teachers.ToList();
+                using (var db = new Model1())
+                {
+                    _teachers = db.teachers.ToList();
+                }
             }
+            catch (Exception ex)
+            {
+                Utils.LogException(ex);
+                MessageBox.Show("Error occured. Please contact support.");
+            }
+            
         }
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -48,17 +58,25 @@ namespace SPK.UserControls.SubForms
                 {
                     var _id = (int)senderGrid.CurrentRow.Cells[0].Value;
                     var status = (string)senderGrid.CurrentRow.Cells[7].Value;
-
-                    using (var db = new Model1())
+                    try
                     {
-                        var T = db.teachers.Find(_id);
-                        T.status = status;
-                        db.SaveChanges();
+                        using (var db = new Model1())
+                        {
+                            var T = db.teachers.Find(_id);
+                            T.status = status;
+                            db.SaveChanges();
 
-                        _teachers = db.teachers.ToList();
-                        dGridTeachers.DataSource = _teachers;
+                            _teachers = db.teachers.ToList();
+                            dGridTeachers.DataSource = _teachers;
 
+                        }
                     }
+                    catch (Exception ex)
+                    {
+                        Utils.LogException(ex);
+                        MessageBox.Show("Error occured. Please contact support.");
+                    }
+                   
                 }
             }
         }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DB;
+using SPK.Utilities;
 
 namespace SPK.UserControls.SubForms
 {
@@ -40,34 +41,43 @@ namespace SPK.UserControls.SubForms
             }
             else
             {
-                using (var db = new Model1())
+                try
                 {
-                    var dt = db.dates.FirstOrDefault();
-
-                    if (dt != null)
+                    using (var db = new Model1())
                     {
-                        dt.date_declared = DateTime.Now.ToString("d");
-                        dt.next_term_begins = dateTimePicker2.Text;
-                        dt.end_of_term = dateTimePicker1.Text;
-                        dt.time_declared = DateTime.Now;
+                        var dt = db.dates.FirstOrDefault();
 
-                        db.SaveChanges();
-                        MessageBox.Show("Dates have been updated");
-                    }
-                    else
-                    {
-                        var newdate = new date()
+                        if (dt != null)
                         {
-                            date_declared = DateTime.Now.ToString("d"),
-                            next_term_begins = dateTimePicker2.Text,
-                            end_of_term = dateTimePicker1.Text,
-                            time_declared = DateTime.Now
-                        };
-                        db.dates.Add(newdate);
-                        db.SaveChanges();
-                        MessageBox.Show("New Dates have been added");
+                            dt.date_declared = DateTime.Now.ToString("d");
+                            dt.next_term_begins = dateTimePicker2.Text;
+                            dt.end_of_term = dateTimePicker1.Text;
+                            dt.time_declared = DateTime.Now;
+
+                            db.SaveChanges();
+                            MessageBox.Show("Dates have been updated");
+                        }
+                        else
+                        {
+                            var newdate = new date()
+                            {
+                                date_declared = DateTime.Now.ToString("d"),
+                                next_term_begins = dateTimePicker2.Text,
+                                end_of_term = dateTimePicker1.Text,
+                                time_declared = DateTime.Now
+                            };
+                            db.dates.Add(newdate);
+                            db.SaveChanges();
+                            MessageBox.Show("New Dates have been added");
+                        }
                     }
                 }
+                catch (Exception ex)
+                {
+                    Utils.LogException(ex);
+                    MessageBox.Show("Error occured. Please contact support.");
+                }
+                
 
             }
 

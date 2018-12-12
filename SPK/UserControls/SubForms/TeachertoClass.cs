@@ -37,13 +37,22 @@ namespace SPK.UserControls.SubForms
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            using (var db = new Model1())
+            try
             {
-                classes = db.classes.ToList();
-                Subjects = db.school_subjects.ToList();
-                Teachers = db.teachers.ToList();
-                TnCs = db.teachers_classes.ToList();
+                using (var db = new Model1())
+                {
+                    classes = db.classes.ToList();
+                    Subjects = db.school_subjects.ToList();
+                    Teachers = db.teachers.ToList();
+                    TnCs = db.teachers_classes.ToList();
+                }
             }
+            catch (Exception ex)
+            {
+                Utils.LogException(ex);
+                MessageBox.Show("Error occured. Please contact support.");
+            }
+           
         }
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -84,18 +93,28 @@ namespace SPK.UserControls.SubForms
             if(ValidateFomControls.CheckComboBoxes(this, errorProvider1))
             {
                 var tc = CreateTeacherClass();
-                var _unitOfWork = new UnitOfWork(new Model1());
 
-                _unitOfWork.Teachers_ClassesRepository.Add(tc);
-                _unitOfWork.Save();
-                _unitOfWork.Dispose();
-                MessageBox.Show("Added");
-
-                using (var db = new Model1())
+                try
                 {
-                    TnCs = db.teachers_classes.ToList();
-                    dGridTeachers_Class.DataSource = TnCs;
+                    var _unitOfWork = new UnitOfWork(new Model1());
+
+                    _unitOfWork.Teachers_ClassesRepository.Add(tc);
+                    _unitOfWork.Save();
+                    _unitOfWork.Dispose();
+                    MessageBox.Show("Added");
+
+                    using (var db = new Model1())
+                    {
+                        TnCs = db.teachers_classes.ToList();
+                        dGridTeachers_Class.DataSource = TnCs;
+                    }
                 }
+                catch (Exception ex)
+                {
+                    Utils.LogException(ex);
+                    MessageBox.Show("Error occured. Please contact support.");
+                }
+                
             }
         }
 

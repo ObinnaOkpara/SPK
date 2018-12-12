@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DB;
+using SPK.Utilities;
 
 namespace SPK.UserControls.SubForms
 {
@@ -38,18 +39,37 @@ namespace SPK.UserControls.SubForms
         {
             if (bgAction==1)
             {
+                try
+                {
                 using (var db = new Model1())
                 {
                     current_Season = db.current_season.FirstOrDefault();
                     Classes = db.classes.ToList();
                 }
+                }
+                catch (Exception ex)
+                {
+                    Utils.LogException(ex);
+                    MessageBox.Show("Error occured. Please contact support.");
+                }
+                
             }
             else if (bgAction==2)
             {
-                using (var db = new Model1())
+                try
                 {
-                    Students = db.students.Where(x=>x._class == selectedClass).ToList();
+                    using (var db = new Model1())
+                    {
+                        Students = db.students.Where(x => x._class == selectedClass).ToList();
+                    }
+
                 }
+                catch (Exception ex)
+                {
+                    Utils.LogException(ex);
+                    MessageBox.Show("Error occured. Please contact support.");
+                }
+                
             }
         }
 

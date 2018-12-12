@@ -54,8 +54,8 @@ namespace SPK.UserControls.SubForms
                 }
                 catch (Exception ex)
                 {
-
-                    MessageBox.Show("Unable to open file " + ex.Message);
+                    Utils.LogException(ex);
+                    MessageBox.Show("Unable to open file " );
                 }
             }
             else
@@ -89,7 +89,8 @@ namespace SPK.UserControls.SubForms
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Unable to open file " + ex.Message);
+                    Utils.LogException(ex);
+                    MessageBox.Show("Unable to open file ");
                 }
             }
             else
@@ -140,7 +141,8 @@ namespace SPK.UserControls.SubForms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occured.\n" + ex.Message);
+                Utils.LogException(ex);
+                MessageBox.Show("An error occured.\n" );
             }
         }
 

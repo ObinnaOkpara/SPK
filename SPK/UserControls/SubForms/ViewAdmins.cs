@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DB.Services.Interfaces;
 using DB.Services.DataRepository;
 using DB;
+using SPK.Utilities;
 
 namespace SPK.UserControls.SubForms
 {
@@ -34,7 +35,16 @@ namespace SPK.UserControls.SubForms
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            _ListAdmins = _unitOfWork.UserRepository.FindAll().ToList();
+            try
+            {
+                _ListAdmins = _unitOfWork.UserRepository.FindAll().ToList();
+            }
+            catch (Exception ex)
+            {
+                Utils.LogException(ex);
+                MessageBox.Show("Error occured. Please contact support.");
+            }
+
         }
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -47,31 +57,40 @@ namespace SPK.UserControls.SubForms
         {
             var senderGrid = (DataGridView)sender;
 
-            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            try
             {
-                var btn = (DataGridViewButtonColumn)senderGrid.Columns[e.ColumnIndex];
-
-                if (btn.Text == "Delete")
+                if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
                 {
+                    var btn = (DataGridViewButtonColumn)senderGrid.Columns[e.ColumnIndex];
 
-                    var _id = (int)senderGrid.CurrentRow.Cells[0].Value;
-                    var name = (string)senderGrid.CurrentRow.Cells[1].Value;
-
-                    var result = MessageBox.Show("Do you want to delete " + name, "Confirmation", MessageBoxButtons.YesNo);
-                    if (result == DialogResult.Yes)
+                    if (btn.Text == "Delete")
                     {
-                        var ad = _unitOfWork.UserRepository.FindById(_id).Result;
-                        _unitOfWork.UserRepository.Remove(ad);
 
-                        _unitOfWork.Save();
+                        var _id = (int)senderGrid.CurrentRow.Cells[0].Value;
+                        var name = (string)senderGrid.CurrentRow.Cells[1].Value;
 
-                        MessageBox.Show("Deleted");
+                        var result = MessageBox.Show("Do you want to delete " + name, "Confirmation", MessageBoxButtons.YesNo);
+                        if (result == DialogResult.Yes)
+                        {
+                            var ad = _unitOfWork.UserRepository.FindById(_id).Result;
+                            _unitOfWork.UserRepository.Remove(ad);
 
-                        dgridAdmin.DataSource = _unitOfWork.UserRepository.FindAll().ToList();
-                    }                   
+                            _unitOfWork.Save();
 
+                            MessageBox.Show("Deleted");
+
+                            dgridAdmin.DataSource = _unitOfWork.UserRepository.FindAll().ToList();
+                        }
+
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                Utils.LogException(ex);
+                MessageBox.Show("Error occured. Please contact support.");
+            }
+
         }
     }
 }

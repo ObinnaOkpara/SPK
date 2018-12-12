@@ -22,12 +22,15 @@ namespace SPK.UserControls.SubForms
         public AddTeacher()
         {
             InitializeComponent();
+            if (LicenseManager.UsageMode != LicenseUsageMode.Designtime)
+            {
             _unitOfWork = new UnitOfWork(new Model1());
-            //if (LicenseManager.UsageMode != LicenseUsageMode.Designtime)
-
 
             backgroundWorker1.RunWorkerAsync();
             cBoxSubject.Cursor = Cursors.WaitCursor;
+
+            }
+
         }
 
         private teacher CreateTeacher()
@@ -64,29 +67,49 @@ namespace SPK.UserControls.SubForms
                 && ValidateFomControls.CheckPassword(_txtPassword.Text, _txtConfirmPassword.Text) 
                 && ValidateFomControls.CheckComboBoxes(this, errorProvider1))
             {
-                var teacher = CreateTeacher();
+                try
+                {
+                    var teacher = CreateTeacher();
 
-                if (teacher != null)
-                {
-                    _unitOfWork = new UnitOfWork(new Model1());
-                    _unitOfWork.TeacherRepository.Add(teacher);
-                    await _unitOfWork.Save();
-                    _unitOfWork.Dispose();
-                    MessageBox.Show("Teacher added");
+                    if (teacher != null)
+                    {
+                        _unitOfWork = new UnitOfWork(new Model1());
+                        _unitOfWork.TeacherRepository.Add(teacher);
+                        await _unitOfWork.Save();
+                        _unitOfWork.Dispose();
+                        MessageBox.Show("Teacher added");
+                    }
+                    else
+                    {
+                        ArgumentNullException ex = new ArgumentNullException("Teacher object", "Teacher object is null");
+                        Utils.LogException(ex);
+                        MessageBox.Show("Error occured. Contact support");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Error occured. Contact support");
+                    Utils.LogException(ex);
+                    MessageBox.Show("An error occured. Please contact support");
                 }
+                
             }
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            using (var db = new Model1())
+            try
             {
-                subjects = db.school_subjects.ToList();
+                using (var db = new Model1())
+                {
+                    subjects = db.school_subjects.ToList();
+                }
             }
+            catch (Exception ex)
+            {
+                Utils.LogException(ex);
+                MessageBox.Show("An error occured. Please contact support");
+            }
+            
         }
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)

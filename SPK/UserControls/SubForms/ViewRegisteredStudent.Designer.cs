@@ -35,23 +35,20 @@
             this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cBoxSession = new System.Windows.Forms.ComboBox();
+            this.sessionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.cBoxTerm = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cBoxSubject = new System.Windows.Forms.ComboBox();
+            this.schoolsubjectsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.cBoxClass = new System.Windows.Forms.ComboBox();
+            this.classBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnSearch = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dGridStudents = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btnSearch = new SPK.UserControls.Buttons.ButtonWithoutMenu();
-            this.schoolsubjectsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.classBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sessionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.subjectBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.regnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,15 +56,18 @@
             this.subjectsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.termDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sessionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subjectBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGridStudents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schoolsubjectsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGridStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.subjectBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -147,6 +147,10 @@
             this.cBoxSession.TabIndex = 80;
             this.cBoxSession.ValueMember = "sessions";
             // 
+            // sessionBindingSource
+            // 
+            this.sessionBindingSource.DataSource = typeof(DB.session);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -195,6 +199,10 @@
             this.cBoxSubject.TabIndex = 76;
             this.cBoxSubject.ValueMember = "subjects";
             // 
+            // schoolsubjectsBindingSource
+            // 
+            this.schoolsubjectsBindingSource.DataSource = typeof(DB.school_subjects);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -217,6 +225,24 @@
             this.cBoxClass.Size = new System.Drawing.Size(148, 24);
             this.cBoxClass.TabIndex = 74;
             this.cBoxClass.ValueMember = "classes";
+            // 
+            // classBindingSource
+            // 
+            this.classBindingSource.DataSource = typeof(DB._class);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnSearch.BtnText = "SHOW";
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnSearch.Icon = global::SPK.Properties.Resources.search_3;
+            this.btnSearch.Location = new System.Drawing.Point(652, 34);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnSearch.Size = new System.Drawing.Size(130, 45);
+            this.btnSearch.TabIndex = 15;
+            this.btnSearch.ClickEvent += new System.EventHandler(this.btnSearch_ClickEvent);
             // 
             // label2
             // 
@@ -273,52 +299,6 @@
             this.dGridStudents.Size = new System.Drawing.Size(770, 319);
             this.dGridStudents.TabIndex = 15;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.label3.Location = new System.Drawing.Point(282, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(163, 20);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Registered student";
-            // 
-            // backgroundWorker1
-            // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnSearch.BtnText = "SHOW";
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnSearch.Icon = global::SPK.Properties.Resources.search_3;
-            this.btnSearch.Location = new System.Drawing.Point(652, 34);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnSearch.Size = new System.Drawing.Size(130, 45);
-            this.btnSearch.TabIndex = 15;
-            this.btnSearch.ClickEvent += new System.EventHandler(this.btnSearch_ClickEvent);
-            // 
-            // schoolsubjectsBindingSource
-            // 
-            this.schoolsubjectsBindingSource.DataSource = typeof(DB.school_subjects);
-            // 
-            // classBindingSource
-            // 
-            this.classBindingSource.DataSource = typeof(DB._class);
-            // 
-            // sessionBindingSource
-            // 
-            this.sessionBindingSource.DataSource = typeof(DB.session);
-            // 
-            // subjectBindingSource
-            // 
-            this.subjectBindingSource.DataSource = typeof(DB.subject);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
@@ -362,6 +342,26 @@
             this.sessionDataGridViewTextBoxColumn.HeaderText = "session";
             this.sessionDataGridViewTextBoxColumn.Name = "sessionDataGridViewTextBoxColumn";
             // 
+            // subjectBindingSource
+            // 
+            this.subjectBindingSource.DataSource = typeof(DB.subject);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.label3.Location = new System.Drawing.Point(282, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(163, 20);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Registered student";
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -380,12 +380,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schoolsubjectsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridStudents)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schoolsubjectsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.subjectBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);

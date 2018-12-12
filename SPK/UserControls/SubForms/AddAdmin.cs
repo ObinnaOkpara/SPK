@@ -24,23 +24,29 @@ namespace SPK.UserControls.SubForms
         private async void btnSave_Click(object sender, EventArgs e)
         {
             if (ValidateControls())
-            {               
-
-                var admin = CreateAdmin();
-
-                if (admin != null)
+            {
+                try
                 {
-                    _unitOfWork = new UnitOfWork(new Model1());
-                    _unitOfWork.UserRepository.Add(admin);
-                    await _unitOfWork.Save();
-                    MessageBox.Show("Admin added");
+                    var admin = CreateAdmin();
+
+                    if (admin != null)
+                    {
+                        _unitOfWork = new UnitOfWork(new Model1());
+                        _unitOfWork.UserRepository.Add(admin);
+                        await _unitOfWork.Save();
+                        MessageBox.Show("Admin added");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error occured. Contact support");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
+                    Utilities.Utils.LogException(ex);
                     MessageBox.Show("Error occured. Contact support");
                 }
-            }          
-                       
+            }
         }
 
         user CreateAdmin()
@@ -50,7 +56,7 @@ namespace SPK.UserControls.SubForms
             {
                 _title = "Miss";
             }
-            else if(radMr.Checked)
+            else if (radMr.Checked)
             {
                 _title = "Mr";
             }
@@ -83,7 +89,7 @@ namespace SPK.UserControls.SubForms
 
         bool ValidateControls()
         {
-            if (string.Equals( _txtConfirmPassword.Text,_txtPassword.Text))
+            if (string.Equals(_txtConfirmPassword.Text, _txtPassword.Text))
             {
                 var txtboxes = Controls.OfType<TextBox>().Where(box => box.Name.StartsWith("_"));
 
@@ -101,7 +107,7 @@ namespace SPK.UserControls.SubForms
                 MessageBox.Show("Password not the same");
                 return false;
             }
-           
+
             return true;
         }
     }
