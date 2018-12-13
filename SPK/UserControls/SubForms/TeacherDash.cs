@@ -8,14 +8,98 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SPK.UserControls.Panels;
+using DB;
+using System.IO;
 
 namespace SPK.UserControls.SubForms
 {
     public partial class TeacherDash : UserControl
     {
+        private Image _ProfilePic { get; set; } //= Properties.Resources.command;
+        private string _School { get; set; } = "SCHOOL NAME";
+        private string _Session { get; set; } = "Third Term - 2017/2018 Session";
+        string _userType = "";
+
+
+        public Image ProfilePic
+        {
+            get { return _ProfilePic; }
+            set
+            {
+                _ProfilePic = value;
+                NotifyPropertyChanged("ProfilePic");
+            }
+        }
+
+        public string School
+        {
+            get { return _School; }
+            set
+            {
+                _School = value;
+                NotifyPropertyChanged("School");
+            }
+        }
+
+        public string Session
+        {
+            get { return _Session; }
+            set
+            {
+                _Session = value;
+                NotifyPropertyChanged("Session");
+            }
+        }
+        
+        private void NotifyPropertyChanged(string Property)
+        {
+            switch (Property)
+            {
+                case "ProfilePic":
+                    picSchoolLogo.Image = _ProfilePic;
+                    break;
+
+                case "School":
+                    lblSchool.Text = _School;
+                    break;
+
+                case "Session":
+                    lblTermNSession.Text = _Session;
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
         public TeacherDash()
         {
             InitializeComponent();
+            if (LicenseManager.UsageMode != LicenseUsageMode.Designtime)
+            {
+                try
+                {
+                    using (var db = new Model1())
+                    {
+                        var school = db.administratives.FirstOrDefault();
+
+                        if (school != null)
+                        {
+                            School = school.school_name;
+                            ProfilePic = Image.FromFile(Path.Combine(Properties.Settings.Default.ImagePath, school.school_logo));
+                        }
+                        var session = db.current_season.FirstOrDefault();
+
+                        if (session != null)
+                        {
+                            Session = session.current_term + " - " + session.current_session + " Session";
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                }
+            }
         }
 
         private void panProfileCover_MouseHover(object sender, EventArgs e)
@@ -45,7 +129,27 @@ namespace SPK.UserControls.SubForms
 
         private void panStudentCover_Click(object sender, EventArgs e)
         {
+            showUserControl(new uploadBehaviouralAnalysis());
+        }
 
+        private void panClassCover_Click(object sender, EventArgs e)
+        {
+            showUserControl(new ViewAttendance());
+        }
+
+        private void panViewStudent_Click(object sender, EventArgs e)
+        {
+            showUserControl(new ViewRegisteredStudent());
+        }
+
+        private void PanSubjectCover_Click(object sender, EventArgs e)
+        {
+            showUserControl(new RegisterSubject());
+        }
+
+        private void panResultCover_Click(object sender, EventArgs e)
+        {
+            showUserControl(new EnterStudentResult());
         }
     }
 }
