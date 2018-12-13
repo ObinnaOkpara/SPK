@@ -26,6 +26,8 @@ namespace SPK
 
             _userType = userType;
 
+            showUserControl(new Dashboard(_userType));
+
             this.DoubleBuffered = true;
             this.SetStyle(ControlStyles.ResizeRedraw, true); // this is to avoid visual artifacts
         }
@@ -349,7 +351,12 @@ namespace SPK
                 showUserControl(new AdminProfile());
             }
         }
-        
+
+        private void btnPassword_ClickEvent(object sender, EventArgs e)
+        {
+            showUserControl(new PasswordReset());
+        }
+
         private void picClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
