@@ -14,9 +14,15 @@ namespace SPK.Utilities
 
         public static void LogException(Exception ex)
         {
-            string filePath = @"";
+            string filePath = Path.Combine(Application.StartupPath, @"log");
 
-            using (StreamWriter writer = new StreamWriter(filePath,true))
+            if (!Directory.Exists(filePath))
+            {
+                Directory.CreateDirectory(filePath);
+            }
+
+
+            using (StreamWriter writer = new StreamWriter(Path.Combine(filePath,"log.txt"), true))
             {
                 writer.WriteLine("-------------------------------------------------------");
                 writer.WriteLine("Date : " + DateTime.Now.ToString());

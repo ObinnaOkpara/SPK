@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using SPK.UserControls.Panels;
 using DB;
 using System.IO;
+using SPK.Utilities;
 
 namespace SPK.UserControls.SubForms
 {
@@ -98,6 +99,8 @@ namespace SPK.UserControls.SubForms
                 }
                 catch (Exception ex)
                 {
+                    Utils.LogException(ex);
+                    MessageBox.Show("An error occurred. Please contact support");
                 }
             }
         }

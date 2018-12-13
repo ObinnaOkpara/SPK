@@ -120,7 +120,7 @@ namespace SPK.UserControls.SubForms
 
         private void btnSave_ClickEvent(object sender, EventArgs e)
         {
-            if (dGridStudentsBehaviour.RowCount < 1)
+            if (dGridStudentsBehaviour.RowCount > 0)
             {
                 Cursor = Cursors.WaitCursor;
 

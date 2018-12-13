@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using SPK.UserControls.Panels;
 using DB;
 using System.IO;
+using SPK.Utilities;
 
 namespace SPK.UserControls.SubForms
 {
@@ -77,8 +78,9 @@ namespace SPK.UserControls.SubForms
                         }
                     }
                 }
-                catch (System.IO.FileNotFoundException ex)
+                catch (Exception ex)
                 {
+                    Utils.LogException(ex);
                 }
             }
         }

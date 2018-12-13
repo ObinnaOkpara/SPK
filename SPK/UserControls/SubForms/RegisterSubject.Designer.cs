@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dGridStudReg = new SPK.UserControls.GridviewSerial.GridViewSerial();
             this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -46,19 +49,30 @@
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.picSchoolLogo = new System.Windows.Forms.PictureBox();
-            this.gridViewSerial1 = new SPK.UserControls.GridviewSerial.GridViewSerial();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.subjectBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.regnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subjectsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.termDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sessionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGridStudReg)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewSerial1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.gridViewSerial1);
+            this.panel2.Controls.Add(this.dGridStudReg);
             this.panel2.Controls.Add(this.btnSave);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -66,6 +80,28 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(788, 373);
             this.panel2.TabIndex = 14;
+            // 
+            // dGridStudReg
+            // 
+            this.dGridStudReg.AllowUserToAddRows = false;
+            this.dGridStudReg.AllowUserToDeleteRows = false;
+            this.dGridStudReg.AutoGenerateColumns = false;
+            this.dGridStudReg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGridStudReg.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn,
+            this.regnumberDataGridViewTextBoxColumn,
+            this.classDataGridViewTextBoxColumn,
+            this.subjectsDataGridViewTextBoxColumn,
+            this.termDataGridViewTextBoxColumn,
+            this.sessionDataGridViewTextBoxColumn,
+            this.Delete});
+            this.dGridStudReg.DataSource = this.subjectBindingSource;
+            this.dGridStudReg.Location = new System.Drawing.Point(3, 29);
+            this.dGridStudReg.Name = "dGridStudReg";
+            this.dGridStudReg.ReadOnly = true;
+            this.dGridStudReg.Size = new System.Drawing.Size(781, 286);
+            this.dGridStudReg.TabIndex = 17;
+            this.dGridStudReg.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridStudReg_CellContentClick);
             // 
             // btnSave
             // 
@@ -79,6 +115,7 @@
             this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
             this.btnSave.Size = new System.Drawing.Size(236, 47);
             this.btnSave.TabIndex = 16;
+            this.btnSave.ClickEvent += new System.EventHandler(this.btnSave_ClickEvent);
             // 
             // label3
             // 
@@ -194,7 +231,7 @@
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnSearch.BtnText = "SEARCH";
+            this.btnSearch.BtnText = "LOAD";
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
             this.btnSearch.Icon = global::SPK.Properties.Resources.search_3;
@@ -203,6 +240,7 @@
             this.btnSearch.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
             this.btnSearch.Size = new System.Drawing.Size(154, 47);
             this.btnSearch.TabIndex = 15;
+            this.btnSearch.ClickEvent += new System.EventHandler(this.btnSearch_ClickEvent);
             // 
             // label2
             // 
@@ -269,13 +307,76 @@
             this.picSchoolLogo.TabIndex = 0;
             this.picSchoolLogo.TabStop = false;
             // 
-            // gridViewSerial1
+            // backgroundWorker1
             // 
-            this.gridViewSerial1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridViewSerial1.Location = new System.Drawing.Point(3, 29);
-            this.gridViewSerial1.Name = "gridViewSerial1";
-            this.gridViewSerial1.Size = new System.Drawing.Size(781, 286);
-            this.gridViewSerial1.TabIndex = 17;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // subjectBindingSource
+            // 
+            this.subjectBindingSource.DataSource = typeof(DB.subject);
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 250;
+            // 
+            // regnumberDataGridViewTextBoxColumn
+            // 
+            this.regnumberDataGridViewTextBoxColumn.DataPropertyName = "reg_number";
+            this.regnumberDataGridViewTextBoxColumn.HeaderText = "Reg Number";
+            this.regnumberDataGridViewTextBoxColumn.Name = "regnumberDataGridViewTextBoxColumn";
+            this.regnumberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.regnumberDataGridViewTextBoxColumn.Width = 160;
+            // 
+            // classDataGridViewTextBoxColumn
+            // 
+            this.classDataGridViewTextBoxColumn.DataPropertyName = "_class";
+            this.classDataGridViewTextBoxColumn.HeaderText = "Class";
+            this.classDataGridViewTextBoxColumn.Name = "classDataGridViewTextBoxColumn";
+            this.classDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // subjectsDataGridViewTextBoxColumn
+            // 
+            this.subjectsDataGridViewTextBoxColumn.DataPropertyName = "subjects";
+            this.subjectsDataGridViewTextBoxColumn.HeaderText = "Subject";
+            this.subjectsDataGridViewTextBoxColumn.Name = "subjectsDataGridViewTextBoxColumn";
+            this.subjectsDataGridViewTextBoxColumn.ReadOnly = true;
+            this.subjectsDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // termDataGridViewTextBoxColumn
+            // 
+            this.termDataGridViewTextBoxColumn.DataPropertyName = "term";
+            this.termDataGridViewTextBoxColumn.HeaderText = "Term";
+            this.termDataGridViewTextBoxColumn.Name = "termDataGridViewTextBoxColumn";
+            this.termDataGridViewTextBoxColumn.ReadOnly = true;
+            this.termDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // sessionDataGridViewTextBoxColumn
+            // 
+            this.sessionDataGridViewTextBoxColumn.DataPropertyName = "session";
+            this.sessionDataGridViewTextBoxColumn.HeaderText = "Session";
+            this.sessionDataGridViewTextBoxColumn.Name = "sessionDataGridViewTextBoxColumn";
+            this.sessionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Delete
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Delete.HeaderText = "";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.UseColumnTextForButtonValue = true;
             // 
             // RegisterSubject
             // 
@@ -288,12 +389,14 @@
             this.Size = new System.Drawing.Size(800, 580);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGridStudReg)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewSerial1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -318,6 +421,16 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cBoxClass;
         private Buttons.ButtonWithoutMenu btnSave;
-        private GridviewSerial.GridViewSerial gridViewSerial1;
+        private GridviewSerial.GridViewSerial dGridStudReg;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn regnumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn classDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subjectsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn termDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sessionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.BindingSource subjectBindingSource;
     }
 }
