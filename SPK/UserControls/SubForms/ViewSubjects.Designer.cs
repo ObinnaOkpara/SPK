@@ -35,26 +35,26 @@
             this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dGridAllClass = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subjectsDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datesavedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.schoolsubjectsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSubject = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
-            this.schoolsubjectsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.SNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subjectsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridAllClass)).BeginInit();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.schoolsubjectsBindingSource)).BeginInit();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,20 +127,63 @@
             this.dGridAllClass.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGridAllClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGridAllClass.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.SNo,
-            this.id,
-            this.subjectsDataGridViewTextBoxColumn,
+            this.idDataGridViewTextBoxColumn,
+            this.subjectsDataGridViewTextBoxColumn1,
+            this.datesavedDataGridViewTextBoxColumn,
             this.Edit,
             this.Delete});
             this.dGridAllClass.DataSource = this.schoolsubjectsBindingSource;
-            this.dGridAllClass.Location = new System.Drawing.Point(12, 44);
-            this.dGridAllClass.Margin = new System.Windows.Forms.Padding(2);
+            this.dGridAllClass.Location = new System.Drawing.Point(3, 39);
             this.dGridAllClass.Name = "dGridAllClass";
             this.dGridAllClass.ReadOnly = true;
             this.dGridAllClass.RowTemplate.Height = 24;
-            this.dGridAllClass.Size = new System.Drawing.Size(557, 301);
-            this.dGridAllClass.TabIndex = 15;
-            this.dGridAllClass.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridAllClass_CellContentClick);
+            this.dGridAllClass.Size = new System.Drawing.Size(574, 315);
+            this.dGridAllClass.TabIndex = 16;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // subjectsDataGridViewTextBoxColumn1
+            // 
+            this.subjectsDataGridViewTextBoxColumn1.DataPropertyName = "subjects";
+            this.subjectsDataGridViewTextBoxColumn1.HeaderText = "subjects";
+            this.subjectsDataGridViewTextBoxColumn1.Name = "subjectsDataGridViewTextBoxColumn1";
+            this.subjectsDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // datesavedDataGridViewTextBoxColumn
+            // 
+            this.datesavedDataGridViewTextBoxColumn.DataPropertyName = "date_saved";
+            this.datesavedDataGridViewTextBoxColumn.HeaderText = "date_saved";
+            this.datesavedDataGridViewTextBoxColumn.Name = "datesavedDataGridViewTextBoxColumn";
+            this.datesavedDataGridViewTextBoxColumn.ReadOnly = true;
+            this.datesavedDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // Edit
+            // 
+            this.Edit.DataPropertyName = "id";
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "Edit";
+            this.Edit.UseColumnTextForButtonValue = true;
+            // 
+            // Delete
+            // 
+            this.Delete.DataPropertyName = "id";
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
+            // 
+            // schoolsubjectsBindingSource
+            // 
+            this.schoolsubjectsBindingSource.DataSource = typeof(DB.school_subjects);
             // 
             // label3
             // 
@@ -168,6 +211,22 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(558, 89);
             this.panel3.TabIndex = 10;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnSave.BtnText = "UPDATE";
+            this.btnSave.Enabled = false;
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnSave.Icon = global::SPK.Properties.Resources.icons8_save_64;
+            this.btnSave.Location = new System.Drawing.Point(410, 34);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnSave.Size = new System.Drawing.Size(142, 40);
+            this.btnSave.TabIndex = 15;
+            this.btnSave.ClickEvent += new System.EventHandler(this.btnSave_ClickEvent);
             // 
             // label2
             // 
@@ -204,70 +263,10 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Subject Name";
             // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnSave.BtnText = "UPDATE";
-            this.btnSave.Enabled = false;
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnSave.Icon = global::SPK.Properties.Resources.icons8_save_64;
-            this.btnSave.Location = new System.Drawing.Point(410, 34);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnSave.Size = new System.Drawing.Size(142, 40);
-            this.btnSave.TabIndex = 15;
-            this.btnSave.ClickEvent += new System.EventHandler(this.btnSave_ClickEvent);
-            // 
-            // schoolsubjectsBindingSource
-            // 
-            this.schoolsubjectsBindingSource.DataSource = typeof(DB.school_subjects);
-            // 
             // backgroundWorker1
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
-            // 
-            // SNo
-            // 
-            this.SNo.FillWeight = 20F;
-            this.SNo.HeaderText = "SNo";
-            this.SNo.Name = "SNo";
-            this.SNo.ReadOnly = true;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // subjectsDataGridViewTextBoxColumn
-            // 
-            this.subjectsDataGridViewTextBoxColumn.DataPropertyName = "subjects";
-            this.subjectsDataGridViewTextBoxColumn.HeaderText = "subjects";
-            this.subjectsDataGridViewTextBoxColumn.Name = "subjectsDataGridViewTextBoxColumn";
-            this.subjectsDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // Edit
-            // 
-            this.Edit.FillWeight = 50F;
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Text = "Edit";
-            this.Edit.UseColumnTextForButtonValue = true;
-            // 
-            // Delete
-            // 
-            this.Delete.FillWeight = 50F;
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
             // 
             // errorProvider1
             // 
@@ -290,9 +289,9 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridAllClass)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schoolsubjectsBindingSource)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.schoolsubjectsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -305,7 +304,6 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox picSchoolLogo;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dGridAllClass;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
         private Buttons.ButtonWithoutMenu btnSave;
@@ -314,11 +312,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource schoolsubjectsBindingSource;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subjectsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.DataGridView dGridAllClass;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subjectsDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datesavedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -38,31 +38,40 @@ namespace SPK.UserControls.SubForms
             {
                 Cursor = Cursors.WaitCursor;
 
-                using (var db = new Model1())
+                try
                 {
-                    List<student> students = db.students.Where(x => x._class == cBoxClass.Text).ToList();
-                    behaviorals = new List<behavioral>();
-
-                    foreach (var s in students)
+                    using (var db = new Model1())
                     {
-                        behaviorals.Add(new behavioral()
+                        List<student> students = db.students.Where(x => x._class == cBoxClass.Text).ToList();
+                        behaviorals = new List<behavioral>();
+
+                        foreach (var s in students)
                         {
-                            name = s.Fullname,
-                            reg_number = s.reg_number,
-                            term = cBoxTerm.Text,
-                            session = cBoxSession.Text,
-                            _class = cBoxClass.Text,
-                            attentiveness="1",
-                            attitude_to_work="1",
-                            hand_writting="1",
-                            health="1",
-                            musical_skills="1",
-                            politeness="1",
-                            sports="1",
-                        });
+                            behaviorals.Add(new behavioral()
+                            {
+                                name = s.Fullname,
+                                reg_number = s.reg_number,
+                                term = cBoxTerm.Text,
+                                session = cBoxSession.Text,
+                                _class = cBoxClass.Text,
+                                attentiveness = "1",
+                                attitude_to_work = "1",
+                                hand_writting = "1",
+                                health = "1",
+                                musical_skills = "1",
+                                politeness = "1",
+                                sports = "1",
+                            });
+                        }
+                        dGridStudentsBehaviour.DataSource = behaviorals;
                     }
-                    dGridStudentsBehaviour.DataSource = behaviorals;
                 }
+                catch (Exception ex)
+                {
+                    Utils.LogException(ex);
+                    MessageBox.Show("Error occured. Please contact support.");
+                }
+
 
                 Cursor = Cursors.Arrow;
             }
@@ -70,10 +79,18 @@ namespace SPK.UserControls.SubForms
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            using (var db = new Model1())
+            try
             {
-                Sessions = db.sessions.ToList();
-                Classes = db.classes.ToList();
+                using (var db = new Model1())
+                {
+                    Sessions = db.sessions.ToList();
+                    Classes = db.classes.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                Utils.LogException(ex);
+                MessageBox.Show("Error occured. Please contact support.");
             }
         }
 
@@ -107,33 +124,43 @@ namespace SPK.UserControls.SubForms
             {
                 Cursor = Cursors.WaitCursor;
 
-                using (var db = new Model1())
+                try
                 {
-                    var bs = new List<behavioral>();
-
-                    foreach (DataGridViewRow row in dGridStudentsBehaviour.Rows)
+                    using (var db = new Model1())
                     {
-                        bs.Add(new behavioral()
+                        var bs = new List<behavioral>();
+
+                        foreach (DataGridViewRow row in dGridStudentsBehaviour.Rows)
                         {
-                            date = DateTime.Now.Date.ToString("d"),
-                            name = row.Cells[1].Value.ToString(),
-                            reg_number = row.Cells[0].Value.ToString(),
-                            term = row.Cells[3].Value.ToString(),
-                            session = row.Cells[4].Value.ToString(),
-                            _class = row.Cells[2].Value.ToString(),
-                            attentiveness = row.Cells[8].Value.ToString(),
-                            attitude_to_work = row.Cells[9].Value.ToString(),
-                            hand_writting = row.Cells[5].Value.ToString(),
-                            health = row.Cells[10].Value.ToString(),
-                            musical_skills = row.Cells[6].Value.ToString(),
-                            politeness = row.Cells[11].Value.ToString(),
-                            sports = row.Cells[7].Value.ToString(),
-                        });
+                            bs.Add(new behavioral()
+                            {
+                                date = DateTime.Now.Date.ToString("d"),
+                                name = row.Cells[1].Value.ToString(),
+                                reg_number = row.Cells[0].Value.ToString(),
+                                term = row.Cells[3].Value.ToString(),
+                                session = row.Cells[4].Value.ToString(),
+                                _class = row.Cells[2].Value.ToString(),
+                                attentiveness = row.Cells[8].Value.ToString(),
+                                attitude_to_work = row.Cells[9].Value.ToString(),
+                                hand_writting = row.Cells[5].Value.ToString(),
+                                health = row.Cells[10].Value.ToString(),
+                                musical_skills = row.Cells[6].Value.ToString(),
+                                politeness = row.Cells[11].Value.ToString(),
+                                sports = row.Cells[7].Value.ToString(),
+                            });
+                        }
+                        db.behaviorals.AddRange(bs);
+                        db.SaveChanges();
+                        MessageBox.Show("Behaviours saved successfully.");
                     }
-                    db.behaviorals.AddRange(bs);
-                    db.SaveChanges();
-                    MessageBox.Show("Behaviours saved successfully.");
+
                 }
+                catch (Exception ex)
+                {
+                    Utils.LogException(ex);
+                    MessageBox.Show("Error occured. Please contact support.");
+                }
+
 
                 Cursor = Cursors.Arrow;
             }

@@ -31,10 +31,18 @@ namespace SPK.UserControls.SubForms
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            _listSubjects = _unitOfWork.School_SubjectsRepository.FindAll().ToList();
-            using (var db = new Model1())
+            try
             {
-                _listClass = db.jsses.ToList();
+                _listSubjects = _unitOfWork.School_SubjectsRepository.FindAll().ToList();
+                using (var db = new Model1())
+                {
+                    _listClass = db.jsses.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                Utils.LogException(ex);
+                MessageBox.Show("Error occured. Please contact support.");
             }
         }
 
@@ -57,22 +65,30 @@ namespace SPK.UserControls.SubForms
                     upload_date = DateTime.Now.ToString("d"),
                     upload_time = DateTime.Now
                 };
-
-                using (var db = new Model1())
+                try
                 {
-                    var isExist = db.jsses.Any(x => x.jss_subjects == subj.jss_subjects);
-                    if (!isExist)
+                    using (var db = new Model1())
                     {
-                        db.jsses.Add(subj);
-                        db.SaveChanges();
+                        var isExist = db.jsses.Any(x => x.jss_subjects == subj.jss_subjects);
+                        if (!isExist)
+                        {
+                            db.jsses.Add(subj);
+                            db.SaveChanges();
 
-                        dGridSubjecs.DataSource = db.jsses.ToList();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Subject already exists");
+                            dGridSubjecs.DataSource = db.jsses.ToList();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Subject already exists");
+                        }
+
                     }
 
+                }
+                catch (Exception ex)
+                {
+                    Utils.LogException(ex);
+                    MessageBox.Show("Error occured. Please contact support.");
                 }
             }
         }

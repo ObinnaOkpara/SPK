@@ -41,55 +41,64 @@ namespace SPK.UserControls.SubForms
             {
                 Cursor = Cursors.WaitCursor;
 
-                using (var db = new Model1())
+                try
                 {
-                    List<student> students = db.students.Where(x => x._class == cBoxClass.Text).ToList();
-                    if (students.Count<1)
+                    using (var db = new Model1())
                     {
-                        MessageBox.Show("No student in the selected class, Try again.");
-                        Cursor = Cursors.Arrow;
-                        return;
-                    }
+                        List<student> students = db.students.Where(x => x._class == cBoxClass.Text).ToList();
+                        if (students.Count < 1)
+                        {
+                            MessageBox.Show("No student in the selected class, Try again.");
+                            Cursor = Cursors.Arrow;
+                            return;
+                        }
 
-                    using (ExcelPackage excel = new ExcelPackage())
-                    {
-                        excel.Workbook.Worksheets.Add("Worksheet1");
+                        using (ExcelPackage excel = new ExcelPackage())
+                        {
+                            excel.Workbook.Worksheets.Add("Worksheet1");
 
-                        var headerRow = new List<string[]>()
+                            var headerRow = new List<string[]>()
                         {
                             new string[] {"S/N", "Reg No", "Name", "Class", "Term", "Session", "Hand Writing",
                                 "Musical Skills", "Sports", "Attentiveness", "Attitude to work", "Health", "Politeness"}
                         };
 
-                        var bodyRow = new List<string[]>();
+                            var bodyRow = new List<string[]>();
 
-                        for (int i = 0; i < students.Count; i++)
-                        {
-                            var s = students[i];
-
-                            bodyRow.Add(new string[]
+                            for (int i = 0; i < students.Count; i++)
                             {
+                                var s = students[i];
+
+                                bodyRow.Add(new string[]
+                                {
                                 (i+1).ToString(), s.reg_number, s.Fullname, cBoxClass.Text, cBoxTerm.Text, cBoxSession.Text,
                                 "", "", "", "", "", "", ""
-                            });
+                                });
+                            }
+
+                            string headerRange = "A1:" + char.ConvertFromUtf32(headerRow[0].Length + 64) + "1";
+                            string bodyRange = "A2:" + char.ConvertFromUtf32(headerRow[0].Length + 64) + (bodyRow.Count + 1).ToString();
+
+                            var workSheet = excel.Workbook.Worksheets["Worksheet1"];
+                            workSheet.Cells[headerRange].LoadFromArrays(headerRow);
+                            workSheet.Cells[bodyRange].LoadFromArrays(bodyRow);
+
+                            workSheet.Cells[headerRange].Style.Font.Bold = true;
+
+                            var fPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), cBoxClass.Text + ".xlsx");
+                            FileInfo excelFile = new FileInfo(fPath);
+                            excel.SaveAs(excelFile);
+
+                            MessageBox.Show("Excel file saved at : \n" + fPath);
                         }
-                        
-                        string headerRange = "A1:" + char.ConvertFromUtf32(headerRow[0].Length + 64) + "1";
-                        string bodyRange = "A2:" + char.ConvertFromUtf32(headerRow[0].Length + 64) + (bodyRow.Count + 1).ToString();
-
-                        var workSheet = excel.Workbook.Worksheets["Worksheet1"];
-                        workSheet.Cells[headerRange].LoadFromArrays(headerRow);
-                        workSheet.Cells[bodyRange].LoadFromArrays(bodyRow);
-
-                        workSheet.Cells[headerRange].Style.Font.Bold = true;
-
-                        var fPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), cBoxClass.Text + ".xlsx");
-                        FileInfo excelFile = new FileInfo(fPath);
-                        excel.SaveAs(excelFile);
-
-                        MessageBox.Show("Excel file saved at : \n" + fPath);
                     }
                 }
+                catch (Exception ex)
+                {
+                    Utils.LogException(ex);
+                    MessageBox.Show("Error occured. Please contact support.");
+                }
+               
 
                 Cursor = Cursors.Arrow;
             }
@@ -97,11 +106,20 @@ namespace SPK.UserControls.SubForms
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            using (var db = new Model1())
+            try
             {
-                Sessions = db.sessions.ToList();
-                Classes = db.classes.ToList();
+                using (var db = new Model1())
+                {
+                    Sessions = db.sessions.ToList();
+                    Classes = db.classes.ToList();
+                }
             }
+            catch (Exception ex)
+            {
+                Utils.LogException(ex);
+                MessageBox.Show("Error occured. Please contact support.");
+            }
+           
         }
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -145,7 +163,8 @@ namespace SPK.UserControls.SubForms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occured. \n" + ex.Message);
+                Utils.LogException(ex);
+                MessageBox.Show("An error occured. \n" );
             }
             Cursor = Cursors.Arrow;
         }
@@ -232,7 +251,8 @@ namespace SPK.UserControls.SubForms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occured. \n" + ex.Message);
+                Utils.LogException(ex);
+                MessageBox.Show("An error occured. \n" );
             }
 
             Cursor = Cursors.Arrow;

@@ -31,11 +31,21 @@ namespace SPK.UserControls.SubForms
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            _listSubjects = _unitOfWork.School_SubjectsRepository.FindAll().ToList();
-            using (var db = new Model1())
+            try
             {
-                _listClass = db.ssses.ToList();
+                _listSubjects = _unitOfWork.School_SubjectsRepository.FindAll().ToList();
+                using (var db = new Model1())
+                {
+                    _listClass = db.ssses.ToList();
+                }
+
             }
+            catch (Exception ex)
+            {
+                Utils.LogException(ex);
+                MessageBox.Show("Error occured. Please contact support.");
+            }
+
         }
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -48,7 +58,7 @@ namespace SPK.UserControls.SubForms
 
         private void btnSave_ClickEvent(object sender, EventArgs e)
         {
-            if (ValidateFomControls.CheckComboBoxes(this,errorProvider1))
+            if (ValidateFomControls.CheckComboBoxes(this, errorProvider1))
             {
                 var subj = new sss()
                 {
@@ -56,23 +66,32 @@ namespace SPK.UserControls.SubForms
                     upload_date = DateTime.Now.ToString("d"),
                     upload_time = DateTime.Now
                 };
-
-                using (var db = new Model1())
+                try
                 {
-                    var isExist = db.ssses.Any(x => x.sss_subjects == subj.sss_subjects);
-                    if (!isExist)
+                    using (var db = new Model1())
                     {
-                        db.ssses.Add(subj);
-                        db.SaveChanges();
+                        var isExist = db.ssses.Any(x => x.sss_subjects == subj.sss_subjects);
+                        if (!isExist)
+                        {
+                            db.ssses.Add(subj);
+                            db.SaveChanges();
 
-                        dGridSubjecs.DataSource = db.ssses.ToList();
+                            dGridSubjecs.DataSource = db.ssses.ToList();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Subject already exists");
+                        }
+
                     }
-                    else
-                    {
-                        MessageBox.Show("Subject already exists");
-                    }
-                                        
+
                 }
+                catch (Exception ex)
+                {
+                    Utils.LogException(ex);
+                    MessageBox.Show("Error occured. Please contact support.");
+                }
+
             }
         }
     }

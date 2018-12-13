@@ -26,6 +26,9 @@ namespace SPK.UserControls.SubForms
         {
             if (ValidateFomControls.CheckComboBoxes(this, errorProvider1))
             {
+                try
+                {
+
                 using (var db = new Model1())
                 {
                     var jssnum = db.jss_subject_number.FirstOrDefault();
@@ -56,6 +59,12 @@ namespace SPK.UserControls.SubForms
                         cBoxNum.SelectedIndex = -1;
                     }
                 }
+                }
+                catch (Exception ex)
+                {
+                    Utils.LogException(ex);
+                    MessageBox.Show("Error occured. Please contact support.");
+                }
             }
         }
 
@@ -63,45 +72,63 @@ namespace SPK.UserControls.SubForms
         {
             if (ValidateFomControls.CheckComboBoxes(this, errorProvider1))
             {
-                using (var db = new Model1())
+                try
                 {
-                    var sssnum = db.sss_subject_number.FirstOrDefault();
+                    using (var db = new Model1())
+                    {
+                        var sssnum = db.sss_subject_number.FirstOrDefault();
 
-                    if (sssnum != null)
-                    {
-                        sssnum.number_of_subject = Convert.ToInt32(cBoxNum.Text);
-                        db.SaveChanges();
-                        lblSSSnum.Text = string.Format("SSS Students must offer {0} subjects", cBoxNum.Text);
-                        MessageBox.Show("SSS Subject Number updated");
-                        cBoxNum.SelectedIndex = -1;
-                    }
-                    else
-                    {
-                        var _ssnum = new sss_subject_number()
+                        if (sssnum != null)
                         {
-                            declared_date = DateTime.Now.ToString("d"),
-                            declared_time = DateTime.Now,
-                            number_of_subject = Convert.ToInt32(cBoxNum.Text)
+                            sssnum.number_of_subject = Convert.ToInt32(cBoxNum.Text);
+                            db.SaveChanges();
+                            lblSSSnum.Text = string.Format("SSS Students must offer {0} subjects", cBoxNum.Text);
+                            MessageBox.Show("SSS Subject Number updated");
+                            cBoxNum.SelectedIndex = -1;
+                        }
+                        else
+                        {
+                            var _ssnum = new sss_subject_number()
+                            {
+                                declared_date = DateTime.Now.ToString("d"),
+                                declared_time = DateTime.Now,
+                                number_of_subject = Convert.ToInt32(cBoxNum.Text)
 
-                        };
+                            };
 
-                        db.sss_subject_number.Add(_ssnum);
-                        db.SaveChanges();
-                        lblSSSnum.Text = string.Format("SSS Students must offer {0} subjects", cBoxNum.Text);
-                        MessageBox.Show("SSS Subject Number added");
-                        cBoxNum.SelectedIndex = -1;
+                            db.sss_subject_number.Add(_ssnum);
+                            db.SaveChanges();
+                            lblSSSnum.Text = string.Format("SSS Students must offer {0} subjects", cBoxNum.Text);
+                            MessageBox.Show("SSS Subject Number added");
+                            cBoxNum.SelectedIndex = -1;
+                        }
                     }
+
+                }
+                catch (Exception ex)
+                {
+                    Utils.LogException(ex);
+                    MessageBox.Show("Error occured. Please contact support.");
                 }
             }
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            using (var db = new Model1())
+            try
             {
-                _jssnumber = db.jss_subject_number.FirstOrDefault().number_of_subject;
-                _sssnumber = db.sss_subject_number.FirstOrDefault().number_of_subject;
-               
+                using (var db = new Model1())
+                {
+                    _jssnumber = db.jss_subject_number.FirstOrDefault().number_of_subject;
+                    _sssnumber = db.sss_subject_number.FirstOrDefault().number_of_subject;
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Utils.LogException(ex);
+                MessageBox.Show("Error occured. Please contact support.");
             }
         }
 

@@ -30,10 +30,19 @@ namespace SPK.UserControls.SubForms
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            using (var db = new Model1())
+            try
             {
-                Classes = db.classes.ToList();
+                using (var db = new Model1())
+                {
+                    Classes = db.classes.ToList();
+                }
             }
+            catch (Exception ex)
+            {
+                Utils.LogException(ex);
+                MessageBox.Show("Error occured. Please contact support.");
+            }
+
         }
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -45,16 +54,25 @@ namespace SPK.UserControls.SubForms
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            using (var db = new Model1())
+            try
             {
-                var stu = db.students.FirstOrDefault(x=>x.reg_number == _txtRegNumber.Text);
-
-                if (stu == null) MessageBox.Show("No student was found with this reg number.");
-                else
+                using (var db = new Model1())
                 {
-                    _txtCurClass.Text = stu._class;
-                    btnFind.Enabled = false;
+                    var stu = db.students.FirstOrDefault(x => x.reg_number == _txtRegNumber.Text);
+
+                    if (stu == null) MessageBox.Show("No student was found with this reg number.");
+                    else
+                    {
+                        _txtCurClass.Text = stu._class;
+                        btnFind.Enabled = false;
+                    }
                 }
+
+            }
+            catch (Exception ex)
+            {
+                Utils.LogException(ex);
+                MessageBox.Show("Error occured. Please contact support.");
             }
         }
 
@@ -68,19 +86,28 @@ namespace SPK.UserControls.SubForms
                     return;
                 }
                 var rtn = MessageBox.Show($"Are you sure you want to move this student from {_txtCurClass.Text} to {cboxToClass.Text}?", "", MessageBoxButtons.YesNo);
-                if (rtn== DialogResult.Yes)
+                if (rtn == DialogResult.Yes)
                 {
-                    using (var db = new Model1())
+                    try
                     {
-                        var stu = db.students.FirstOrDefault(x => x.reg_number == _txtRegNumber.Text);
-
-                        if (stu == null) MessageBox.Show("No student was found with this reg number.");
-                        else
+                        using (var db = new Model1())
                         {
-                            stu._class = cboxToClass.Text;
-                            db.SaveChanges();
+                            var stu = db.students.FirstOrDefault(x => x.reg_number == _txtRegNumber.Text);
+
+                            if (stu == null) MessageBox.Show("No student was found with this reg number.");
+                            else
+                            {
+                                stu._class = cboxToClass.Text;
+                                db.SaveChanges();
+                            }
                         }
                     }
+                    catch (Exception ex)
+                    {
+                        Utils.LogException(ex);
+                        MessageBox.Show("Error occured. Please contact support.");
+                    }
+
                 }
             }
         }

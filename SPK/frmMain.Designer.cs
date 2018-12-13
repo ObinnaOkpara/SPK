@@ -101,6 +101,7 @@ namespace SPK
             this.SettingsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ProfileToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.LogoutToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewRegisteredStudent1 = new SPK.UserControls.SubForms.ViewRegisteredStudent();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -108,6 +109,7 @@ namespace SPK
             ((System.ComponentModel.ISupportInitialize)(this.picMinimise)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panContainer.SuspendLayout();
             this.MenuSchoolInfo.SuspendLayout();
             this.menuStudents.SuspendLayout();
             this.menuAttendance.SuspendLayout();
@@ -251,26 +253,25 @@ namespace SPK
             this.buttonWithoutMenu3.Margin = new System.Windows.Forms.Padding(2);
             this.buttonWithoutMenu3.Name = "buttonWithoutMenu3";
             this.buttonWithoutMenu3.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithoutMenu3.Size = new System.Drawing.Size(213, 41);
+            this.buttonWithoutMenu3.Size = new System.Drawing.Size(49, 41);
             this.buttonWithoutMenu3.TabIndex = 25;
             // 
-            // btnPassword
+            // buttonWithoutMenu1
             // 
-            this.btnPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.buttonWithoutMenu1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnPassword.BtnText = "Password Reset";
-            this.btnPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPassword.ForeColor = System.Drawing.Color.White;
-            this.btnPassword.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnPassword.Icon = global::SPK.Properties.Resources.icons8_password_64;
-            this.btnPassword.Location = new System.Drawing.Point(0, 621);
-            this.btnPassword.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPassword.Name = "btnPassword";
-            this.btnPassword.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnPassword.Size = new System.Drawing.Size(213, 41);
-            this.btnPassword.TabIndex = 24;
-            this.btnPassword.ClickEvent += new System.EventHandler(this.btnPassword_ClickEvent);
+            this.buttonWithoutMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.buttonWithoutMenu1.BtnText = "Password Reset";
+            this.buttonWithoutMenu1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonWithoutMenu1.ForeColor = System.Drawing.Color.White;
+            this.buttonWithoutMenu1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.buttonWithoutMenu1.Icon = global::SPK.Properties.Resources.icons8_password_64;
+            this.buttonWithoutMenu1.Location = new System.Drawing.Point(0, 621);
+            this.buttonWithoutMenu1.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonWithoutMenu1.Name = "buttonWithoutMenu1";
+            this.buttonWithoutMenu1.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.buttonWithoutMenu1.Size = new System.Drawing.Size(134, 41);
+            this.buttonWithoutMenu1.TabIndex = 24;
             // 
             // btnTeachers
             // 
@@ -1081,6 +1082,7 @@ namespace SPK
         private System.Windows.Forms.ToolStripMenuItem SettingsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ProfileToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem LogoutToolStripMenuItem3;
+        private UserControls.SubForms.ViewRegisteredStudent viewRegisteredStudent1;
     }
 }
 

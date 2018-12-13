@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SPK.UserControls.GridviewSerial
@@ -27,5 +23,24 @@ namespace SPK.UserControls.GridviewSerial
             e.Graphics.DrawString(strRowNumber, Font, b, e.RowBounds.Location.X + 15, e.RowBounds.Location.Y + ((e.RowBounds.Height - size.Height) / 2));
             base.OnRowPostPaint(e);
         }
+
+
+
+        //protected override void OnPaint(PaintEventArgs e)
+        //{
+        //    if (Rows.Count == 0)
+        //    {
+        //        using (Graphics grfx = e.Graphics)
+        //        {
+        //            //create a white rectangle for the text to be readable
+        //            //i ebuka ofoedu choose white. do your worst
+
+        //            grfx.FillRectangle(Brushes.White, new Rectangle(new Point(), new Size(Width, 25)));
+
+        //            // write ttext on the graphics
+        //            grfx.DrawString("No data returned", new Font("Arial", 12), Brushes.Black, new Point(3, 3));
+        //        }
+        //    }
+        //}
     }
 }

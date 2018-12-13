@@ -31,11 +31,22 @@ namespace SPK.UserControls.SubForms
 
                 if (principal != null)
                 {
-                    _unitOfWork = new UnitOfWork(new Model1());
-                    _unitOfWork.PrincipalRepository.Add(principal);
-                    await _unitOfWork.Save();
-                    _unitOfWork.Dispose();
-                    MessageBox.Show("Admin added");
+                    try
+                    {
+                        _unitOfWork = new UnitOfWork(new Model1());
+                        _unitOfWork.PrincipalRepository.Add(principal);
+                        await _unitOfWork.Save();
+                        _unitOfWork.Dispose();
+                        MessageBox.Show("Admin added");
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Utils.LogException(ex);
+
+                        MessageBox.Show("An error occured. Please contact Admin");
+                    }
+                    
                 }
                 else
                 {

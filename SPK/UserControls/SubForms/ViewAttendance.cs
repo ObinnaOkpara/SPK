@@ -14,11 +14,14 @@ namespace SPK.UserControls.SubForms
 {
     public partial class ViewAttendance : UserControl
     {
+
+
         List<_class> Classes = new List<_class>();
         List<session> Sessions = new List<session>();
 
         public ViewAttendance()
         {
+            // var s = new GridviewSerial.GridViewSerial();
             InitializeComponent();
 
             if (LicenseManager.UsageMode != LicenseUsageMode.Designtime)
@@ -33,10 +36,22 @@ namespace SPK.UserControls.SubForms
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            using (var db = new Model1())
+            try
             {
-                Sessions = db.sessions.ToList();
-                Classes = db.classes.ToList();
+                using (var db = new Model1())
+                {
+
+
+                    Sessions = db.sessions.ToList();
+                    Classes = db.classes.ToList();
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Utils.LogException(ex);
+                MessageBox.Show("Error occured. Please contact support." );
             }
         }
 
@@ -69,15 +84,23 @@ namespace SPK.UserControls.SubForms
             if (ValidateFomControls.CheckComboBoxes(this, errorProvider1))
             {
                 Cursor = Cursors.WaitCursor;
-
-                using (var db = new Model1())
+                try
                 {
-                    List<student_attendance> attendances = db.student_attendance.Where(x => x.session == cBoxSession.Text &&
-                    x.term == cBoxTerm.Text && x._class == cBoxClass.Text).ToList();
+                    using (var db = new Model1())
+                    {
+                        List<student_attendance> attendances = db.student_attendance.Where(x => x.session == cBoxSession.Text &&
+                        x.term == cBoxTerm.Text && x._class == cBoxClass.Text).ToList();
 
-                    dGridAttendance.DataSource = attendances;
+                        dGridAttendance.DataSource = attendances;
 
+                    }
                 }
+                catch (Exception ex)
+                {
+                    Utils.LogException(ex);
+                    MessageBox.Show("Error occured. Please contact support.");
+                }
+                
 
                 Cursor = Cursors.Arrow;
             }

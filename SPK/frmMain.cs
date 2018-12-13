@@ -308,7 +308,7 @@ namespace SPK
 
         private void SettingsToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            var frm = new frmSetup();
+            var frm = new frmSetup("main");
             frm.Show();
         }
 
