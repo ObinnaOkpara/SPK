@@ -65,23 +65,24 @@ namespace SPK.UserControls.SubForms
 
                     if (btn.Text == "Delete")
                     {
-
-                        var _id = (int)senderGrid.CurrentRow.Cells[0].Value;
-                        var name = (string)senderGrid.CurrentRow.Cells[1].Value;
-
-                        var result = MessageBox.Show("Do you want to delete " + name, "Confirmation", MessageBoxButtons.YesNo);
-                        if (result == DialogResult.Yes)
+                        if (senderGrid.CurrentRow != null)
                         {
-                            var ad = _unitOfWork.UserRepository.FindById(_id).Result;
-                            _unitOfWork.UserRepository.Remove(ad);
+                            var _id = (int)senderGrid.CurrentRow.Cells[0].Value;
+                            var name = (string)senderGrid.CurrentRow.Cells[1].Value;
 
-                            _unitOfWork.Save();
+                            var result = MessageBox.Show("Do you want to delete " + name, "Confirmation", MessageBoxButtons.YesNo);
+                            if (result == DialogResult.Yes)
+                            {
+                                var ad = _unitOfWork.UserRepository.FindById(_id).Result;
+                                _unitOfWork.UserRepository.Remove(ad);
 
-                            MessageBox.Show("Deleted");
+                                _unitOfWork.Save();
 
-                            dgridAdmin.DataSource = _unitOfWork.UserRepository.FindAll().ToList();
+                                MessageBox.Show("Deleted");
+
+                                dgridAdmin.DataSource = _unitOfWork.UserRepository.FindAll().ToList();
+                            }
                         }
-
                     }
                 }
             }

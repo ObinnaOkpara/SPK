@@ -130,17 +130,20 @@ namespace SPK.UserControls.SubForms
                     if (MessageBox.Show("Are you sure you want to delete this item?", "Delete Item", MessageBoxButtons.YesNo) != DialogResult.Yes)
                         return;
 
-                    var _id = (int)senderGrid.CurrentRow.Cells["id"].Value;
-                    using (var db = new Model1())
+                    if (senderGrid.CurrentRow != null)
                     {
-                        var tc = new teachers_classes() { id = _id };
-                        db.teachers_classes.Attach(tc);
-                        db.teachers_classes.Remove(tc);
-                        db.SaveChanges();
+                        var _id = (int)senderGrid.CurrentRow.Cells["id"].Value;
+                        using (var db = new Model1())
+                        {
+                            var tc = new teachers_classes() { id = _id };
+                            db.teachers_classes.Attach(tc);
+                            db.teachers_classes.Remove(tc);
+                            db.SaveChanges();
 
-                        TnCs = db.teachers_classes.ToList();
-                        dGridTeachers_Class.DataSource = TnCs;
+                            TnCs = db.teachers_classes.ToList();
+                            dGridTeachers_Class.DataSource = TnCs;
 
+                        }
                     }
                 }
             }

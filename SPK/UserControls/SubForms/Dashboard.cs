@@ -19,12 +19,12 @@ namespace SPK.UserControls.SubForms
         private Image _ProfilePic { get; set;  } //= Properties.Resources.command;
         private string _School { get; set; } = "SCHOOL NAME";
         private string _Session { get; set; } = "Third Term - 2017/2018 Session";
-        string _userType = "";
+        string _userType;
 
 
         public Image ProfilePic
         {
-            get { return _ProfilePic; }
+            get => _ProfilePic;
             set
             {
                 _ProfilePic = value;

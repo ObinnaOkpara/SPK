@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -196,6 +197,8 @@ namespace SPK.UserControls.SubForms
 
                         // Skip the row with the column names
                         string[] fields = csvParser.ReadFields();
+
+                        Debug.Assert(fields != null, nameof(fields) + " != null");
 
                         if (fields.Length != 13)
                         {
