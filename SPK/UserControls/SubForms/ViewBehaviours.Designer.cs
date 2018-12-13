@@ -30,15 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dGridStudentsBehaviour = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnDelete = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.cBoxSession = new System.Windows.Forms.ComboBox();
+            this.sessionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.cBoxTerm = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cBoxClass = new System.Windows.Forms.ComboBox();
+            this.classBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnSearch = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,39 +48,45 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.classBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sessionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.dGridBehaviour = new SPK.UserControls.GridviewSerial.GridViewSerial();
+            this.behavioralBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.regnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.termDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sessionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.handwrittingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.musicalskillsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sportsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.attentivenessDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.attitudetoworkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.healthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.politenessDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGridStudentsBehaviour)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGridBehaviour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behavioralBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.dGridStudentsBehaviour);
+            this.panel2.Controls.Add(this.dGridBehaviour);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(4, 208);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(792, 366);
             this.panel2.TabIndex = 32;
-            // 
-            // dGridStudentsBehaviour
-            // 
-            this.dGridStudentsBehaviour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGridStudentsBehaviour.Location = new System.Drawing.Point(9, 34);
-            this.dGridStudentsBehaviour.Name = "dGridStudentsBehaviour";
-            this.dGridStudentsBehaviour.RowTemplate.Height = 24;
-            this.dGridStudentsBehaviour.Size = new System.Drawing.Size(774, 322);
-            this.dGridStudentsBehaviour.TabIndex = 15;
             // 
             // label3
             // 
@@ -137,6 +144,10 @@
             this.cBoxSession.TabIndex = 90;
             this.cBoxSession.ValueMember = "sessions";
             // 
+            // sessionBindingSource
+            // 
+            this.sessionBindingSource.DataSource = typeof(DB.session);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -184,6 +195,10 @@
             this.cBoxClass.Size = new System.Drawing.Size(138, 24);
             this.cBoxClass.TabIndex = 84;
             this.cBoxClass.ValueMember = "classes";
+            // 
+            // classBindingSource
+            // 
+            this.classBindingSource.DataSource = typeof(DB._class);
             // 
             // btnSearch
             // 
@@ -268,18 +283,124 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // classBindingSource
-            // 
-            this.classBindingSource.DataSource = typeof(DB._class);
-            // 
-            // sessionBindingSource
-            // 
-            this.sessionBindingSource.DataSource = typeof(DB.session);
-            // 
             // backgroundWorker1
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // dGridBehaviour
+            // 
+            this.dGridBehaviour.AutoGenerateColumns = false;
+            this.dGridBehaviour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGridBehaviour.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.regnumberDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.classDataGridViewTextBoxColumn,
+            this.termDataGridViewTextBoxColumn,
+            this.sessionDataGridViewTextBoxColumn,
+            this.handwrittingDataGridViewTextBoxColumn,
+            this.musicalskillsDataGridViewTextBoxColumn,
+            this.sportsDataGridViewTextBoxColumn,
+            this.attentivenessDataGridViewTextBoxColumn,
+            this.attitudetoworkDataGridViewTextBoxColumn,
+            this.healthDataGridViewTextBoxColumn,
+            this.politenessDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn});
+            this.dGridBehaviour.DataSource = this.behavioralBindingSource;
+            this.dGridBehaviour.Location = new System.Drawing.Point(3, 30);
+            this.dGridBehaviour.Name = "dGridBehaviour";
+            this.dGridBehaviour.Size = new System.Drawing.Size(786, 333);
+            this.dGridBehaviour.TabIndex = 18;
+            // 
+            // behavioralBindingSource
+            // 
+            this.behavioralBindingSource.DataSource = typeof(DB.behavioral);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // regnumberDataGridViewTextBoxColumn
+            // 
+            this.regnumberDataGridViewTextBoxColumn.DataPropertyName = "reg_number";
+            this.regnumberDataGridViewTextBoxColumn.HeaderText = "REG NO";
+            this.regnumberDataGridViewTextBoxColumn.Name = "regnumberDataGridViewTextBoxColumn";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "NAME";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // classDataGridViewTextBoxColumn
+            // 
+            this.classDataGridViewTextBoxColumn.DataPropertyName = "_class";
+            this.classDataGridViewTextBoxColumn.HeaderText = "CLASS";
+            this.classDataGridViewTextBoxColumn.Name = "classDataGridViewTextBoxColumn";
+            // 
+            // termDataGridViewTextBoxColumn
+            // 
+            this.termDataGridViewTextBoxColumn.DataPropertyName = "term";
+            this.termDataGridViewTextBoxColumn.HeaderText = "TERM";
+            this.termDataGridViewTextBoxColumn.Name = "termDataGridViewTextBoxColumn";
+            // 
+            // sessionDataGridViewTextBoxColumn
+            // 
+            this.sessionDataGridViewTextBoxColumn.DataPropertyName = "session";
+            this.sessionDataGridViewTextBoxColumn.HeaderText = "SESSION";
+            this.sessionDataGridViewTextBoxColumn.Name = "sessionDataGridViewTextBoxColumn";
+            // 
+            // handwrittingDataGridViewTextBoxColumn
+            // 
+            this.handwrittingDataGridViewTextBoxColumn.DataPropertyName = "hand_writting";
+            this.handwrittingDataGridViewTextBoxColumn.HeaderText = "HAND WRITING";
+            this.handwrittingDataGridViewTextBoxColumn.Name = "handwrittingDataGridViewTextBoxColumn";
+            // 
+            // musicalskillsDataGridViewTextBoxColumn
+            // 
+            this.musicalskillsDataGridViewTextBoxColumn.DataPropertyName = "musical_skills";
+            this.musicalskillsDataGridViewTextBoxColumn.HeaderText = "MUSIC";
+            this.musicalskillsDataGridViewTextBoxColumn.Name = "musicalskillsDataGridViewTextBoxColumn";
+            // 
+            // sportsDataGridViewTextBoxColumn
+            // 
+            this.sportsDataGridViewTextBoxColumn.DataPropertyName = "sports";
+            this.sportsDataGridViewTextBoxColumn.HeaderText = "SPORTS";
+            this.sportsDataGridViewTextBoxColumn.Name = "sportsDataGridViewTextBoxColumn";
+            // 
+            // attentivenessDataGridViewTextBoxColumn
+            // 
+            this.attentivenessDataGridViewTextBoxColumn.DataPropertyName = "attentiveness";
+            this.attentivenessDataGridViewTextBoxColumn.HeaderText = "ATTENTIVENESS";
+            this.attentivenessDataGridViewTextBoxColumn.Name = "attentivenessDataGridViewTextBoxColumn";
+            // 
+            // attitudetoworkDataGridViewTextBoxColumn
+            // 
+            this.attitudetoworkDataGridViewTextBoxColumn.DataPropertyName = "attitude_to_work";
+            this.attitudetoworkDataGridViewTextBoxColumn.HeaderText = "ATTITUDE";
+            this.attitudetoworkDataGridViewTextBoxColumn.Name = "attitudetoworkDataGridViewTextBoxColumn";
+            // 
+            // healthDataGridViewTextBoxColumn
+            // 
+            this.healthDataGridViewTextBoxColumn.DataPropertyName = "health";
+            this.healthDataGridViewTextBoxColumn.HeaderText = "HEALTH";
+            this.healthDataGridViewTextBoxColumn.Name = "healthDataGridViewTextBoxColumn";
+            // 
+            // politenessDataGridViewTextBoxColumn
+            // 
+            this.politenessDataGridViewTextBoxColumn.DataPropertyName = "politeness";
+            this.politenessDataGridViewTextBoxColumn.HeaderText = "POLITE";
+            this.politenessDataGridViewTextBoxColumn.Name = "politenessDataGridViewTextBoxColumn";
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "DATE";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
             // 
             // ViewBehaviours
             // 
@@ -292,15 +413,16 @@
             this.Size = new System.Drawing.Size(800, 580);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGridStudentsBehaviour)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGridBehaviour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behavioralBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -308,7 +430,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dGridStudentsBehaviour;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
@@ -328,5 +449,21 @@
         private System.Windows.Forms.BindingSource classBindingSource;
         private System.Windows.Forms.BindingSource sessionBindingSource;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private GridviewSerial.GridViewSerial dGridBehaviour;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn regnumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn classDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn termDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sessionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn handwrittingDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn musicalskillsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sportsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn attentivenessDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn attitudetoworkDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn healthDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn politenessDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource behavioralBindingSource;
     }
 }
