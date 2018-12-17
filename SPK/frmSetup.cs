@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DB;
 using MySql.Data.MySqlClient;
+using SPK.Utilities;
 
 namespace SPK
 {
@@ -69,8 +70,9 @@ namespace SPK
                         }
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    Utils.LogException(ex);
                     MessageBox.Show("The system is not connected to a network.");
                 }
 
@@ -108,12 +110,15 @@ namespace SPK
                 switch (ex.Number)
                 {
                     case 0:
+                        Utils.LogException(ex);
                         MessageBox.Show("Cannot connect to server. Try another IP.");
                         break;
                     case 1045:
+                        Utils.LogException(ex);
                         MessageBox.Show("Invalid username/password.");
                         break;
                     default:
+                        Utils.LogException(ex);
                         MessageBox.Show(ex.Message);
                         break;
                 }
@@ -193,7 +198,8 @@ namespace SPK
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Utils.LogException(ex);
+                MessageBox.Show("An error occured. Please contact support");
             }
             
         }
@@ -209,7 +215,8 @@ namespace SPK
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                Utils.LogException(ex);
+                MessageBox.Show("An error occured. Please contact support");
             }
 
             Cursor = Cursors.Arrow;

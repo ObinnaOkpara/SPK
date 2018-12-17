@@ -26,7 +26,7 @@ namespace SPK.UserControls.SubForms
             {
                 cBoxClass.Cursor = Cursors.WaitCursor;
                 cBoxSession.Cursor = Cursors.WaitCursor;
-                cBoxTerm.Cursor = Cursors.WaitCursor;
+               // cBoxTerm.Cursor = Cursors.WaitCursor;
 
                 backgroundWorker1.RunWorkerAsync();
 
@@ -116,12 +116,17 @@ namespace SPK.UserControls.SubForms
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-
+            using (var db = new Model1())
+            {
+                ListSessions = db.sessions.ToList();
+                ListClasses = db.classes.ToList();
+            }
         }
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-
+            cBoxClass.DataSource = ListClasses;
+            cBoxSession.DataSource = ListSessions;
         }
     }
 }

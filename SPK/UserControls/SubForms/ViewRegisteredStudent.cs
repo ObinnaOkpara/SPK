@@ -23,9 +23,9 @@ namespace SPK.UserControls.SubForms
         public ViewRegisteredStudent()
         {
             InitializeComponent();
-            _unitOfWork = new UnitOfWork(new Model1());
             if (LicenseManager.UsageMode != LicenseUsageMode.Designtime)
             {
+                _unitOfWork = new UnitOfWork(new Model1());
                 backgroundWorker1.RunWorkerAsync();
             }
         }

@@ -258,20 +258,20 @@ namespace SPK
             // 
             // buttonWithoutMenu1
             // 
-            this.buttonWithoutMenu1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonWithoutMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.buttonWithoutMenu1.BtnText = "Password Reset";
-            this.buttonWithoutMenu1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonWithoutMenu1.ForeColor = System.Drawing.Color.White;
-            this.buttonWithoutMenu1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.buttonWithoutMenu1.Icon = global::SPK.Properties.Resources.icons8_password_64;
-            this.buttonWithoutMenu1.Location = new System.Drawing.Point(0, 621);
-            this.buttonWithoutMenu1.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonWithoutMenu1.Name = "buttonWithoutMenu1";
-            this.buttonWithoutMenu1.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.buttonWithoutMenu1.Size = new System.Drawing.Size(134, 41);
-            this.buttonWithoutMenu1.TabIndex = 24;
+            //this.buttonWithoutMenu1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            //| System.Windows.Forms.AnchorStyles.Right)));
+            //this.buttonWithoutMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            //this.buttonWithoutMenu1.BtnText = "Password Reset";
+            //this.buttonWithoutMenu1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //this.buttonWithoutMenu1.ForeColor = System.Drawing.Color.White;
+            //this.buttonWithoutMenu1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            //this.buttonWithoutMenu1.Icon = global::SPK.Properties.Resources.icons8_password_64;
+            //this.buttonWithoutMenu1.Location = new System.Drawing.Point(0, 621);
+            //this.buttonWithoutMenu1.Margin = new System.Windows.Forms.Padding(2);
+            //this.buttonWithoutMenu1.Name = "buttonWithoutMenu1";
+            //this.buttonWithoutMenu1.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            //this.buttonWithoutMenu1.Size = new System.Drawing.Size(134, 41);
+            //this.buttonWithoutMenu1.TabIndex = 24;
             // 
             // btnTeachers
             // 

@@ -21,9 +21,14 @@ namespace SPK.UserControls.SubForms
         public ViewAllPrincipal()
         {
             InitializeComponent();
-            _unitOfWork = new UnitOfWork(new Model1());
+
+            if (LicenseManager.UsageMode != LicenseUsageMode.Designtime)
+            {
+                _unitOfWork = new UnitOfWork(new Model1());
             dGridPrincipals.Cursor = Cursors.WaitCursor;
-            backgroundWorker1.RunWorkerAsync();           
+            backgroundWorker1.RunWorkerAsync();
+
+            }           
             
         }
 

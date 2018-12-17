@@ -14,7 +14,7 @@ namespace SPK.Utilities
 
         public static void LogException(Exception ex)
         {
-            string filePath = @"";
+            string filePath = Path.Combine( Application.StartupPath, "log/log.txt");
 
             using (StreamWriter writer = new StreamWriter(filePath,true))
             {
