@@ -56,7 +56,7 @@ namespace SPK
                 {
                     if (!System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
                     {
-                        MessageBox.Show("The system is not connected to a network.");
+                        lblMsg.Text = "The system is not connected to a network.";
                     }
                     else
                     {
@@ -71,7 +71,7 @@ namespace SPK
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("The system is not connected to a network.");
+                    lblMsg.Text = "The system is not connected to a network.";
                 }
 
             }
@@ -213,6 +213,33 @@ namespace SPK
             }
 
             Cursor = Cursors.Arrow;
+        }
+
+        private void btnTestServer_Click(object sender, EventArgs e)
+        {
+            var conString = $"SERVER=Localhost; DATABASE={txtDbName.Text.Trim()}; USER ID={txtUsername.Text.Trim()}; PASSWORD={txtPassword.Text.Trim()};";
+
+            var conn = new MySqlConnection(conString);
+
+            Cursor = Cursors.WaitCursor;
+
+            try
+            {
+                conn.Open();
+                MessageBox.Show("Connection successful.");
+
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Dispose();
+                Cursor = Cursors.Arrow;
+            }
+
         }
     }
 }

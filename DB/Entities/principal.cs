@@ -49,5 +49,12 @@ namespace DB
 
         [Column(TypeName = "timestamp")]
         public DateTime? time_registered { get; set; }
+
+        [NotMapped]
+        public string Fullname { get
+            {
+                return firstname + " " + lastname;
+            }
+        }
     }
 }
