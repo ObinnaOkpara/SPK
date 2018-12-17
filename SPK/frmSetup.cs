@@ -15,7 +15,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DB;
 using MySql.Data.MySqlClient;
-using SPK.Utilities;
 
 namespace SPK
 {
@@ -57,7 +56,7 @@ namespace SPK
                 {
                     if (!System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
                     {
-                        MessageBox.Show("The system is not connected to a network.");
+                        lblMsg.Text = "The system is not connected to a network.";
                     }
                     else
                     {
@@ -70,10 +69,9 @@ namespace SPK
                         }
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    Utils.LogException(ex);
-                    MessageBox.Show("The system is not connected to a network.");
+                    lblMsg.Text = "The system is not connected to a network.";
                 }
 
             }
@@ -110,15 +108,12 @@ namespace SPK
                 switch (ex.Number)
                 {
                     case 0:
-                        Utils.LogException(ex);
                         MessageBox.Show("Cannot connect to server. Try another IP.");
                         break;
                     case 1045:
-                        Utils.LogException(ex);
                         MessageBox.Show("Invalid username/password.");
                         break;
                     default:
-                        Utils.LogException(ex);
                         MessageBox.Show(ex.Message);
                         break;
                 }
@@ -198,8 +193,7 @@ namespace SPK
             }
             catch (Exception ex)
             {
-                Utils.LogException(ex);
-                MessageBox.Show("An error occured. Please contact support");
+                MessageBox.Show(ex.Message);
             }
             
         }
@@ -215,11 +209,37 @@ namespace SPK
             }
             catch (Exception ex)
             {
-                Utils.LogException(ex);
-                MessageBox.Show("An error occured. Please contact support");
+                MessageBox.Show(ex.ToString());
             }
 
             Cursor = Cursors.Arrow;
+        }
+
+        private void btnTestServer_Click(object sender, EventArgs e)
+        {
+            var conString = $"SERVER=Localhost; DATABASE={txtDbName.Text.Trim()}; USER ID={txtUsername.Text.Trim()}; PASSWORD={txtPassword.Text.Trim()};";
+
+            var conn = new MySqlConnection(conString);
+
+            Cursor = Cursors.WaitCursor;
+
+            try
+            {
+                conn.Open();
+                MessageBox.Show("Connection successful.");
+
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Dispose();
+                Cursor = Cursors.Arrow;
+            }
+
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using SPK.UserControls.SubForms;
+﻿using DB;
+using SPK.AuthorizedUser;
+using SPK.UserControls.SubForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +22,9 @@ namespace SPK
         public frmTeacher()
         {
             InitializeComponent();
+            
+            lblUserType.Text = "Teacher";
+            lblUsername.Text = AuthorizedUser<teacher>.CurrentUser.Fullname;
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
