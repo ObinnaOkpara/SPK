@@ -56,27 +56,29 @@ namespace SPK.UserControls.SubForms
                 var btn = (DataGridViewButtonColumn)senderGrid.Columns[e.ColumnIndex];
                 if (btn.Text == "Save Changes")
                 {
-                    var _id = (int)senderGrid.CurrentRow.Cells[0].Value;
-                    var status = (string)senderGrid.CurrentRow.Cells[7].Value;
-                    try
+                    if (senderGrid.CurrentRow != null)
                     {
-                        using (var db = new Model1())
+                        var _id = (int)senderGrid.CurrentRow.Cells[0].Value;
+                        var status = (string)senderGrid.CurrentRow.Cells[7].Value;
+                        try
                         {
-                            var T = db.teachers.Find(_id);
-                            T.status = status;
-                            db.SaveChanges();
+                            using (var db = new Model1())
+                            {
+                                var T = db.teachers.Find(_id);
+                                T.status = status;
+                                db.SaveChanges();
 
-                            _teachers = db.teachers.ToList();
-                            dGridTeachers.DataSource = _teachers;
+                                _teachers = db.teachers.ToList();
+                                dGridTeachers.DataSource = _teachers;
 
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Utils.LogException(ex);
+                            MessageBox.Show("Error occured. Please contact support.");
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        Utils.LogException(ex);
-                        MessageBox.Show("Error occured. Please contact support.");
-                    }
-                   
                 }
             }
         }

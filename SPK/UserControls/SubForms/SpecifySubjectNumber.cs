@@ -119,8 +119,19 @@ namespace SPK.UserControls.SubForms
             {
                 using (var db = new Model1())
                 {
-                    _jssnumber = db.jss_subject_number.FirstOrDefault().number_of_subject;
-                    _sssnumber = db.sss_subject_number.FirstOrDefault().number_of_subject;
+                    var _jss = db.jss_subject_number.FirstOrDefault();
+                    var _sss = db.sss_subject_number.FirstOrDefault();
+                    if (_jss != null)
+                    {
+                        _jssnumber = _jss.number_of_subject;
+                    }
+
+                    if (_sss != null)
+                    {
+                        _sssnumber = _sss.number_of_subject;
+                    }
+                    
+                    
 
                 }
 

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using SPK.UserControls.Panels;
 using DB;
 using System.IO;
+using SPK.Utilities;
 
 namespace SPK.UserControls.SubForms
 {
@@ -18,12 +19,12 @@ namespace SPK.UserControls.SubForms
         private Image _ProfilePic { get; set;  } //= Properties.Resources.command;
         private string _School { get; set; } = "SCHOOL NAME";
         private string _Session { get; set; } = "Third Term - 2017/2018 Session";
-        string _userType = "";
+        string _userType;
 
 
         public Image ProfilePic
         {
-            get { return _ProfilePic; }
+            get => _ProfilePic;
             set
             {
                 _ProfilePic = value;
@@ -77,8 +78,9 @@ namespace SPK.UserControls.SubForms
                         }
                     }
                 }
-                catch (System.IO.FileNotFoundException ex)
+                catch (Exception ex)
                 {
+                    Utils.LogException(ex);
                 }
             }
         }

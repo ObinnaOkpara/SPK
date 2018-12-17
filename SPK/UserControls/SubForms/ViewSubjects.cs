@@ -105,11 +105,12 @@ namespace SPK.UserControls.SubForms
                         txtSubject.Focus();
 
 
-                        _id = (int)senderGrid.CurrentRow.Cells["id"].Value;
+                        if (senderGrid.CurrentRow != null)
+                        {
+                            _id = (int) senderGrid.CurrentRow.Cells["id"].Value;
 
-                        txtSubject.Text = (string)senderGrid.CurrentRow.Cells[2].Value;
-
-
+                            txtSubject.Text = (string) senderGrid.CurrentRow.Cells[2].Value;
+                        }
                     }
                     else if (btn.Text == "Delete")
                     {

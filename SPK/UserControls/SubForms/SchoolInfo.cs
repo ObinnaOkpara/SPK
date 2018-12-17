@@ -42,15 +42,22 @@ namespace SPK.UserControls.SubForms
                     string filename = opFile.SafeFileName;
                     string tic = DateTime.Now.Ticks.ToString();
 
-                    var name = filename.Substring(0, filename.LastIndexOf('.'));
-                    var ext = filename.Substring(filename.LastIndexOf('.'));
+                    if (filename != null)
+                    {
+                        var name = filename.Substring(0, filename.LastIndexOf('.'));
+                        var ext = filename.Substring(filename.LastIndexOf('.'));
 
-                    filename = name + tic + ext;
+                        filename = name + tic + ext;
 
-                    _logoLocation = "admin/"  + filename;
-                    string filePath = opFile.FileName;
-                    File.Copy(filePath, Path.Combine(appPath, _logoLocation));
-                    picLogo.Image = new Bitmap(filePath);
+                        _logoLocation = "admin/"  + filename;
+                        string filePath = opFile.FileName;
+                        File.Copy(filePath, Path.Combine(appPath, _logoLocation));
+                        picLogo.Image = new Bitmap(filePath);
+                    }
+                    else
+                    {
+                        MessageBox.Show("File Not found.");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -77,15 +84,22 @@ namespace SPK.UserControls.SubForms
                     string filename = opFile.SafeFileName;
                     string tic = DateTime.Now.Ticks.ToString();
 
-                    var name = filename.Substring(0, filename.LastIndexOf('.'));
-                    var ext = filename.Substring(filename.LastIndexOf('.'));
+                    if (filename != null)
+                    {
+                        var name = filename.Substring(0, filename.LastIndexOf('.'));
+                        var ext = filename.Substring(filename.LastIndexOf('.'));
 
-                    filename = name + tic + ext;
+                        filename = name + tic + ext;
 
-                    _stampLocation = "admin/" + filename;
-                    string filePath = opFile.FileName;
-                    File.Copy(filePath, Path.Combine(appPath, _stampLocation));
-                    picStamp.Image = new Bitmap(filePath);
+                        _stampLocation = "admin/" + filename;
+                        string filePath = opFile.FileName;
+                        File.Copy(filePath, Path.Combine(appPath, _stampLocation));
+                        picStamp.Image = new Bitmap(filePath);
+                    }
+                    else
+                    {
+                        MessageBox.Show("File not found.");
+                    }
                 }
                 catch (Exception ex)
                 {

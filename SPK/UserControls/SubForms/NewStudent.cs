@@ -47,10 +47,13 @@ namespace SPK.UserControls.SubForms
                     string filename = opFile.SafeFileName;
                     string tic = DateTime.Now.Ticks.ToString();
 
-                    var name = filename.Substring(0, filename.LastIndexOf('.'));
-                    var ext = filename.Substring(filename.LastIndexOf('.'));
+                    if (filename != null)
+                    {
+                        var name = filename.Substring(0, filename.LastIndexOf('.'));
+                        var ext = filename.Substring(filename.LastIndexOf('.'));
 
-                    filename = name + tic + ext;
+                        filename = name + tic + ext;
+                    }
 
                     _pasportLocation = "image/" + filename;
                     string filePath = opFile.FileName;

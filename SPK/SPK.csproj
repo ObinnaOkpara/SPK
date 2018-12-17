@@ -732,6 +732,9 @@
     <None Include="Resources\icons8-export-64.png" />
     <None Include="Resources\icons8-import-64.png" />
     <None Include="Resources\view user.jpg" />
+    <Content Include="noImageFound.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="small.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
