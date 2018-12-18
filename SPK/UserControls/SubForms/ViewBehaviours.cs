@@ -97,6 +97,7 @@ namespace SPK.UserControls.SubForms
 
                             dGridBehaviour.Cursor = Cursors.Arrow;
                             MessageBox.Show("Records deleted");
+                            dGridBehaviour.DataSource = new List<behavioral>();
                         }
                         else
                         {
@@ -127,6 +128,9 @@ namespace SPK.UserControls.SubForms
         {
             cBoxClass.DataSource = ListClasses;
             cBoxSession.DataSource = ListSessions;
+
+            cBoxClass.Cursor = Cursors.Arrow;
+            cBoxSession.Cursor = Cursors.Arrow;
         }
     }
 }

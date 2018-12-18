@@ -64,7 +64,6 @@ namespace SPK.UserControls.SubForms
                     {
                         foreach (var std in studList)
                         {
-                            var get_Sub_total = 0;
                             var reg_number = std.reg_number;
 
                             //get a single student result list in a session and term
