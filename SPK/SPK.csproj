@@ -607,6 +607,7 @@
     <None Include="Properties\DataSources\DB.behavioral.datasource" />
     <None Include="Properties\DataSources\DB.fee_allocation.datasource" />
     <None Include="Properties\DataSources\DB.jss.datasource" />
+    <None Include="Properties\DataSources\DB.position.datasource" />
     <None Include="Properties\DataSources\DB.principal.datasource" />
     <None Include="Properties\DataSources\DB.results1.datasource" />
     <None Include="Properties\DataSources\DB.school_subjects1.datasource" />
