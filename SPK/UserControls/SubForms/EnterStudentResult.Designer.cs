@@ -30,27 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.cBoxSession = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cBoxTerm = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cBoxSubject = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cBoxClass = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblSubTitle = new System.Windows.Forms.Label();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
-            this.btnSearch = new SPK.UserControls.Buttons.ButtonWithoutMenu();
-            this.picSchoolLogo = new System.Windows.Forms.PictureBox();
-            this.classBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.schoolsubjectsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sessionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgridStudents = new SPK.UserControls.GridviewSerial.GridViewSerial();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fullnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,17 +37,38 @@
             this.firstCA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.secondCA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Exam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.cBoxSession = new System.Windows.Forms.ComboBox();
+            this.sessionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label6 = new System.Windows.Forms.Label();
+            this.cBoxTerm = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cBoxSubject = new System.Windows.Forms.ComboBox();
+            this.schoolsubjectsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.cBoxClass = new System.Windows.Forms.ComboBox();
+            this.classBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnSearch = new SPK.UserControls.Buttons.ButtonWithoutMenu();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblSubTitle = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgridStudents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schoolsubjectsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schoolsubjectsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgridStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,6 +84,77 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(792, 366);
             this.panel2.TabIndex = 18;
+            // 
+            // dgridStudents
+            // 
+            this.dgridStudents.AutoGenerateColumns = false;
+            this.dgridStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgridStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgridStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.fullnameDataGridViewTextBoxColumn,
+            this.regnumberDataGridViewTextBoxColumn,
+            this.firstCA,
+            this.secondCA,
+            this.Exam});
+            this.dgridStudents.DataSource = this.studentBindingSource;
+            this.dgridStudents.Location = new System.Drawing.Point(3, 30);
+            this.dgridStudents.Name = "dgridStudents";
+            this.dgridStudents.Size = new System.Drawing.Size(786, 284);
+            this.dgridStudents.TabIndex = 82;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // fullnameDataGridViewTextBoxColumn
+            // 
+            this.fullnameDataGridViewTextBoxColumn.DataPropertyName = "Fullname";
+            this.fullnameDataGridViewTextBoxColumn.HeaderText = "Fullname";
+            this.fullnameDataGridViewTextBoxColumn.Name = "fullnameDataGridViewTextBoxColumn";
+            this.fullnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // regnumberDataGridViewTextBoxColumn
+            // 
+            this.regnumberDataGridViewTextBoxColumn.DataPropertyName = "reg_number";
+            this.regnumberDataGridViewTextBoxColumn.HeaderText = "reg_number";
+            this.regnumberDataGridViewTextBoxColumn.Name = "regnumberDataGridViewTextBoxColumn";
+            // 
+            // firstCA
+            // 
+            this.firstCA.HeaderText = "1st CA";
+            this.firstCA.Name = "firstCA";
+            // 
+            // secondCA
+            // 
+            this.secondCA.HeaderText = "2nd CA";
+            this.secondCA.Name = "secondCA";
+            // 
+            // Exam
+            // 
+            this.Exam.HeaderText = "Exam";
+            this.Exam.Name = "Exam";
+            // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataSource = typeof(DB.student);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnSave.BtnText = "SAVE";
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnSave.Icon = global::SPK.Properties.Resources.icons8_save_64;
+            this.btnSave.Location = new System.Drawing.Point(316, 320);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnSave.Size = new System.Drawing.Size(158, 43);
+            this.btnSave.TabIndex = 81;
+            this.btnSave.ClickEvent += new System.EventHandler(this.btnSave_ClickEvent);
             // 
             // label3
             // 
@@ -127,6 +198,10 @@
             this.cBoxSession.Size = new System.Drawing.Size(145, 24);
             this.cBoxSession.TabIndex = 80;
             this.cBoxSession.ValueMember = "sessions";
+            // 
+            // sessionBindingSource
+            // 
+            this.sessionBindingSource.DataSource = typeof(DB.session);
             // 
             // label6
             // 
@@ -176,6 +251,10 @@
             this.cBoxSubject.TabIndex = 76;
             this.cBoxSubject.ValueMember = "subjects";
             // 
+            // schoolsubjectsBindingSource
+            // 
+            this.schoolsubjectsBindingSource.DataSource = typeof(DB.school_subjects);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -198,6 +277,24 @@
             this.cBoxClass.Size = new System.Drawing.Size(138, 24);
             this.cBoxClass.TabIndex = 74;
             this.cBoxClass.ValueMember = "classes";
+            // 
+            // classBindingSource
+            // 
+            this.classBindingSource.DataSource = typeof(DB._class);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnSearch.BtnText = "SHOW";
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnSearch.Icon = global::SPK.Properties.Resources.search_3;
+            this.btnSearch.Location = new System.Drawing.Point(623, 35);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnSearch.Size = new System.Drawing.Size(154, 47);
+            this.btnSearch.TabIndex = 15;
+            this.btnSearch.ClickEvent += new System.EventHandler(this.btnSearch_ClickEvent);
             // 
             // label2
             // 
@@ -253,34 +350,6 @@
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "RESULT MANAGEMENT";
             // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnSave.BtnText = "SAVE";
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnSave.Icon = global::SPK.Properties.Resources.icons8_save_64;
-            this.btnSave.Location = new System.Drawing.Point(316, 320);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnSave.Size = new System.Drawing.Size(158, 43);
-            this.btnSave.TabIndex = 81;
-            this.btnSave.ClickEvent += new System.EventHandler(this.btnSave_ClickEvent);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnSearch.BtnText = "SHOW";
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnSearch.Icon = global::SPK.Properties.Resources.search_3;
-            this.btnSearch.Location = new System.Drawing.Point(623, 35);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnSearch.Size = new System.Drawing.Size(154, 47);
-            this.btnSearch.TabIndex = 15;
-            this.btnSearch.ClickEvent += new System.EventHandler(this.btnSearch_ClickEvent);
-            // 
             // picSchoolLogo
             // 
             this.picSchoolLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
@@ -291,75 +360,6 @@
             this.picSchoolLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSchoolLogo.TabIndex = 0;
             this.picSchoolLogo.TabStop = false;
-            // 
-            // classBindingSource
-            // 
-            this.classBindingSource.DataSource = typeof(DB._class);
-            // 
-            // schoolsubjectsBindingSource
-            // 
-            this.schoolsubjectsBindingSource.DataSource = typeof(DB.school_subjects);
-            // 
-            // sessionBindingSource
-            // 
-            this.sessionBindingSource.DataSource = typeof(DB.session);
-            // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataSource = typeof(DB.student);
-            // 
-            // dgridStudents
-            // 
-            this.dgridStudents.AutoGenerateColumns = false;
-            this.dgridStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgridStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgridStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.fullnameDataGridViewTextBoxColumn,
-            this.regnumberDataGridViewTextBoxColumn,
-            this.firstCA,
-            this.secondCA,
-            this.Exam});
-            this.dgridStudents.DataSource = this.studentBindingSource;
-            this.dgridStudents.Location = new System.Drawing.Point(3, 30);
-            this.dgridStudents.Name = "dgridStudents";
-            this.dgridStudents.Size = new System.Drawing.Size(786, 284);
-            this.dgridStudents.TabIndex = 82;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // fullnameDataGridViewTextBoxColumn
-            // 
-            this.fullnameDataGridViewTextBoxColumn.DataPropertyName = "Fullname";
-            this.fullnameDataGridViewTextBoxColumn.HeaderText = "Fullname";
-            this.fullnameDataGridViewTextBoxColumn.Name = "fullnameDataGridViewTextBoxColumn";
-            this.fullnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // regnumberDataGridViewTextBoxColumn
-            // 
-            this.regnumberDataGridViewTextBoxColumn.DataPropertyName = "reg_number";
-            this.regnumberDataGridViewTextBoxColumn.HeaderText = "reg_number";
-            this.regnumberDataGridViewTextBoxColumn.Name = "regnumberDataGridViewTextBoxColumn";
-            // 
-            // firstCA
-            // 
-            this.firstCA.HeaderText = "1st CA";
-            this.firstCA.Name = "firstCA";
-            // 
-            // secondCA
-            // 
-            this.secondCA.HeaderText = "2nd CA";
-            this.secondCA.Name = "secondCA";
-            // 
-            // Exam
-            // 
-            this.Exam.HeaderText = "Exam";
-            this.Exam.Name = "Exam";
             // 
             // errorProvider1
             // 
@@ -381,16 +381,16 @@
             this.Size = new System.Drawing.Size(800, 580);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgridStudents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schoolsubjectsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schoolsubjectsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgridStudents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 

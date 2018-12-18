@@ -37,6 +37,12 @@ namespace SPK.Utilities
                     ep.SetError(cmbox, "Please select the required field");
                     return false;
                 }
+                else if (cmbox.Text == "--Select--")
+                {
+                    ep.SetError(cmbox, "Please select the required field");
+                    return false;
+                }
+                
                 ep.SetError(cmbox, null);
             }
 

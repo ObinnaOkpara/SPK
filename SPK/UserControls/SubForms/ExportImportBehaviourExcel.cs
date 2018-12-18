@@ -86,7 +86,7 @@ namespace SPK.UserControls.SubForms
 
                             workSheet.Cells[headerRange].Style.Font.Bold = true;
 
-                            var fPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), cBoxClass.Text + ".xlsx");
+                            var fPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), cBoxClass.Text + "Behaviour.xlsx");
                             FileInfo excelFile = new FileInfo(fPath);
                             excel.SaveAs(excelFile);
 
