@@ -795,7 +795,7 @@ namespace SPK
             this.CheckResultToolStripMenuItem6});
             this.menuResult.Name = "menuStudents";
             this.menuResult.ShowImageMargin = false;
-            this.menuResult.Size = new System.Drawing.Size(187, 136);
+            this.menuResult.Size = new System.Drawing.Size(187, 158);
             // 
             // UploadResultDirectlyToolStripMenuItem1
             // 
@@ -811,6 +811,7 @@ namespace SPK
             this.UploadResultwithExcelToolStripMenuItem2.Name = "UploadResultwithExcelToolStripMenuItem2";
             this.UploadResultwithExcelToolStripMenuItem2.Size = new System.Drawing.Size(186, 22);
             this.UploadResultwithExcelToolStripMenuItem2.Text = "Upload Result with Excel";
+            this.UploadResultwithExcelToolStripMenuItem2.Click += new System.EventHandler(this.UploadResultwithExcelToolStripMenuItem2_Click);
             // 
             // ViewUploadedResultToolStripMenuItem3
             // 
