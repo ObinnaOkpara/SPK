@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnDeleteAll = new SPK.UserControls.Buttons.ButtonWithoutMenu();
-            this.dGridStudents = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblSubTitle = new System.Windows.Forms.Label();
@@ -50,22 +49,34 @@
             this.label2 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.positionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dgridPResults = new SPK.UserControls.GridviewSerial.GridViewSerial();
+            this.regnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.termDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sessionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentssubtotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentssubaverageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classpositionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDelete = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGridStudents)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.positionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgridPResults)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.dgridPResults);
             this.panel2.Controls.Add(this.btnDeleteAll);
-            this.panel2.Controls.Add(this.dGridStudents);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(6, 199);
@@ -85,16 +96,6 @@
             this.btnDeleteAll.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
             this.btnDeleteAll.Size = new System.Drawing.Size(193, 46);
             this.btnDeleteAll.TabIndex = 82;
-            // 
-            // dGridStudents
-            // 
-            this.dGridStudents.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.dGridStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGridStudents.Location = new System.Drawing.Point(3, 30);
-            this.dGridStudents.Name = "dGridStudents";
-            this.dGridStudents.RowTemplate.Height = 24;
-            this.dGridStudents.Size = new System.Drawing.Size(785, 345);
-            this.dGridStudents.TabIndex = 15;
             // 
             // label3
             // 
@@ -154,6 +155,7 @@
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.btnDelete);
             this.panel3.Controls.Add(this.btnSearch);
             this.panel3.Controls.Add(this.cBoxSession);
             this.panel3.Controls.Add(this.label6);
@@ -175,10 +177,10 @@
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
             this.btnSearch.Icon = global::SPK.Properties.Resources.search_3;
-            this.btnSearch.Location = new System.Drawing.Point(622, 28);
+            this.btnSearch.Location = new System.Drawing.Point(493, 28);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnSearch.Size = new System.Drawing.Size(154, 47);
+            this.btnSearch.Size = new System.Drawing.Size(138, 47);
             this.btnSearch.TabIndex = 88;
             this.btnSearch.ClickEvent += new System.EventHandler(this.btnSearch_ClickEvent);
             // 
@@ -188,9 +190,9 @@
             this.cBoxSession.DisplayMember = "sessions";
             this.cBoxSession.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxSession.FormattingEnabled = true;
-            this.cBoxSession.Location = new System.Drawing.Point(423, 51);
+            this.cBoxSession.Location = new System.Drawing.Point(331, 51);
             this.cBoxSession.Name = "cBoxSession";
-            this.cBoxSession.Size = new System.Drawing.Size(180, 24);
+            this.cBoxSession.Size = new System.Drawing.Size(151, 24);
             this.cBoxSession.TabIndex = 87;
             this.cBoxSession.ValueMember = "sessions";
             // 
@@ -203,7 +205,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label6.Location = new System.Drawing.Point(419, 28);
+            this.label6.Location = new System.Drawing.Point(327, 28);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 17);
             this.label6.TabIndex = 86;
@@ -218,9 +220,9 @@
             "First Term",
             "Second Term",
             "Third Term"});
-            this.cBoxTerm.Location = new System.Drawing.Point(221, 51);
+            this.cBoxTerm.Location = new System.Drawing.Point(174, 51);
             this.cBoxTerm.Name = "cBoxTerm";
-            this.cBoxTerm.Size = new System.Drawing.Size(179, 24);
+            this.cBoxTerm.Size = new System.Drawing.Size(151, 24);
             this.cBoxTerm.TabIndex = 85;
             // 
             // label5
@@ -228,7 +230,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label5.Location = new System.Drawing.Point(217, 28);
+            this.label5.Location = new System.Drawing.Point(170, 28);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 17);
             this.label5.TabIndex = 84;
@@ -240,9 +242,9 @@
             this.cBoxClass.DisplayMember = "classes";
             this.cBoxClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxClass.FormattingEnabled = true;
-            this.cBoxClass.Location = new System.Drawing.Point(16, 51);
+            this.cBoxClass.Location = new System.Drawing.Point(10, 51);
             this.cBoxClass.Name = "cBoxClass";
-            this.cBoxClass.Size = new System.Drawing.Size(185, 24);
+            this.cBoxClass.Size = new System.Drawing.Size(158, 24);
             this.cBoxClass.TabIndex = 83;
             this.cBoxClass.ValueMember = "classes";
             // 
@@ -255,7 +257,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label1.Location = new System.Drawing.Point(12, 28);
+            this.label1.Location = new System.Drawing.Point(6, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 17);
             this.label1.TabIndex = 81;
@@ -281,6 +283,96 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // positionBindingSource
+            // 
+            this.positionBindingSource.DataSource = typeof(DB.position);
+            // 
+            // dgridPResults
+            // 
+            this.dgridPResults.AutoGenerateColumns = false;
+            this.dgridPResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgridPResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.regnumberDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.classDataGridViewTextBoxColumn,
+            this.termDataGridViewTextBoxColumn,
+            this.sessionDataGridViewTextBoxColumn,
+            this.studentssubtotalDataGridViewTextBoxColumn,
+            this.studentssubaverageDataGridViewTextBoxColumn,
+            this.classpositionDataGridViewTextBoxColumn});
+            this.dgridPResults.DataSource = this.positionBindingSource;
+            this.dgridPResults.Location = new System.Drawing.Point(3, 31);
+            this.dgridPResults.Name = "dgridPResults";
+            this.dgridPResults.Size = new System.Drawing.Size(785, 341);
+            this.dgridPResults.TabIndex = 83;
+            // 
+            // regnumberDataGridViewTextBoxColumn
+            // 
+            this.regnumberDataGridViewTextBoxColumn.DataPropertyName = "reg_number";
+            this.regnumberDataGridViewTextBoxColumn.HeaderText = "Reg Number";
+            this.regnumberDataGridViewTextBoxColumn.Name = "regnumberDataGridViewTextBoxColumn";
+            this.regnumberDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 220;
+            // 
+            // classDataGridViewTextBoxColumn
+            // 
+            this.classDataGridViewTextBoxColumn.DataPropertyName = "_class";
+            this.classDataGridViewTextBoxColumn.HeaderText = "Class";
+            this.classDataGridViewTextBoxColumn.Name = "classDataGridViewTextBoxColumn";
+            // 
+            // termDataGridViewTextBoxColumn
+            // 
+            this.termDataGridViewTextBoxColumn.DataPropertyName = "term";
+            this.termDataGridViewTextBoxColumn.HeaderText = "Term";
+            this.termDataGridViewTextBoxColumn.Name = "termDataGridViewTextBoxColumn";
+            // 
+            // sessionDataGridViewTextBoxColumn
+            // 
+            this.sessionDataGridViewTextBoxColumn.DataPropertyName = "session";
+            this.sessionDataGridViewTextBoxColumn.HeaderText = "Session";
+            this.sessionDataGridViewTextBoxColumn.Name = "sessionDataGridViewTextBoxColumn";
+            // 
+            // studentssubtotalDataGridViewTextBoxColumn
+            // 
+            this.studentssubtotalDataGridViewTextBoxColumn.DataPropertyName = "students_sub_total";
+            this.studentssubtotalDataGridViewTextBoxColumn.HeaderText = "Total";
+            this.studentssubtotalDataGridViewTextBoxColumn.Name = "studentssubtotalDataGridViewTextBoxColumn";
+            this.studentssubtotalDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // studentssubaverageDataGridViewTextBoxColumn
+            // 
+            this.studentssubaverageDataGridViewTextBoxColumn.DataPropertyName = "students_sub_average";
+            this.studentssubaverageDataGridViewTextBoxColumn.HeaderText = "Average";
+            this.studentssubaverageDataGridViewTextBoxColumn.Name = "studentssubaverageDataGridViewTextBoxColumn";
+            this.studentssubaverageDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // classpositionDataGridViewTextBoxColumn
+            // 
+            this.classpositionDataGridViewTextBoxColumn.DataPropertyName = "class_position";
+            this.classpositionDataGridViewTextBoxColumn.HeaderText = "Position";
+            this.classpositionDataGridViewTextBoxColumn.Name = "classpositionDataGridViewTextBoxColumn";
+            this.classpositionDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.Red;
+            this.btnDelete.BtnText = "DELETE";
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDelete.Icon = global::SPK.Properties.Resources.icons8_cancel_64;
+            this.btnDelete.Location = new System.Drawing.Point(642, 28);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnDelete.Size = new System.Drawing.Size(140, 47);
+            this.btnDelete.TabIndex = 92;
+            this.btnDelete.ClickEvent += new System.EventHandler(this.btnDelete_ClickEvent);
+            // 
             // ViewPublishedResult
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -292,7 +384,6 @@
             this.Size = new System.Drawing.Size(800, 580);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGridStudents)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).EndInit();
@@ -301,6 +392,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.positionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgridPResults)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -308,7 +401,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dGridStudents;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblSubTitle;
@@ -328,5 +420,16 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.BindingSource sessionBindingSource;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private GridviewSerial.GridViewSerial dgridPResults;
+        private System.Windows.Forms.DataGridViewTextBoxColumn regnumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn classDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn termDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sessionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentssubtotalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentssubaverageDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn classpositionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource positionBindingSource;
+        private Buttons.ButtonWithoutMenu btnDelete;
     }
 }

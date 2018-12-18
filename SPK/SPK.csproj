@@ -258,6 +258,12 @@
     <Compile Include="UserControls\SubForms\AddnViewClass.Designer.cs">
       <DependentUpon>AddnViewClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SubForms\ExcelUploadResult.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SubForms\ExcelUploadResult.Designer.cs">
+      <DependentUpon>ExcelUploadResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubForms\ExportImportBehaviourExcel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -510,6 +516,9 @@
       <DependentUpon>AddnViewClass.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SubForms\ExcelUploadResult.resx">
+      <DependentUpon>ExcelUploadResult.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SubForms\ExportImportBehaviourExcel.resx">
       <DependentUpon>ExportImportBehaviourExcel.cs</DependentUpon>
     </EmbeddedResource>
@@ -607,6 +616,7 @@
     <None Include="Properties\DataSources\DB.behavioral.datasource" />
     <None Include="Properties\DataSources\DB.fee_allocation.datasource" />
     <None Include="Properties\DataSources\DB.jss.datasource" />
+    <None Include="Properties\DataSources\DB.position.datasource" />
     <None Include="Properties\DataSources\DB.principal.datasource" />
     <None Include="Properties\DataSources\DB.results1.datasource" />
     <None Include="Properties\DataSources\DB.school_subjects1.datasource" />

@@ -146,5 +146,10 @@ namespace SPK
         {
             showUserControl(new ExportImportBehaviourExcel());
         }
+
+        private void UploadResultwithExcelToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            showUserControl(new ExcelUploadResult());
+        }
     }
 }

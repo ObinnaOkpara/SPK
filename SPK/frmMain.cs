@@ -408,5 +408,10 @@ namespace SPK
 
             Cursor = Cursors.Arrow;
         }
+
+        private void UploadResultwithExcelToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            showUserControl(new ExcelUploadResult());
+        }
     }
 }

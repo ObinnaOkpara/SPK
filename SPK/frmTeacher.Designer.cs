@@ -35,6 +35,7 @@
             this.ViewAttendanceToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBehaviour = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SaveBehaviourToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportOrImportBehaviourInExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ViewBehavioursToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuResult = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.UploadResultDirectlyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,7 +66,6 @@
             this.menuSubject = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.registerStudentSubjectToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.viewRegisteredSubjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportOrImportBehaviourInExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAttendance.SuspendLayout();
             this.menuBehaviour.SuspendLayout();
             this.menuResult.SuspendLayout();
@@ -125,7 +125,7 @@
             this.ViewBehavioursToolStripMenuItem2});
             this.menuBehaviour.Name = "menuStudents";
             this.menuBehaviour.ShowImageMargin = false;
-            this.menuBehaviour.Size = new System.Drawing.Size(249, 92);
+            this.menuBehaviour.Size = new System.Drawing.Size(249, 70);
             // 
             // SaveBehaviourToolStripMenuItem1
             // 
@@ -134,6 +134,14 @@
             this.SaveBehaviourToolStripMenuItem1.Size = new System.Drawing.Size(248, 22);
             this.SaveBehaviourToolStripMenuItem1.Text = "Save Behaviour";
             this.SaveBehaviourToolStripMenuItem1.Click += new System.EventHandler(this.SaveBehaviourToolStripMenuItem1_Click);
+            // 
+            // exportOrImportBehaviourInExcelToolStripMenuItem
+            // 
+            this.exportOrImportBehaviourInExcelToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.exportOrImportBehaviourInExcelToolStripMenuItem.Name = "exportOrImportBehaviourInExcelToolStripMenuItem";
+            this.exportOrImportBehaviourInExcelToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
+            this.exportOrImportBehaviourInExcelToolStripMenuItem.Text = "Export or Import Behaviour in Excel";
+            this.exportOrImportBehaviourInExcelToolStripMenuItem.Click += new System.EventHandler(this.exportOrImportBehaviourInExcelToolStripMenuItem_Click);
             // 
             // ViewBehavioursToolStripMenuItem2
             // 
@@ -154,7 +162,7 @@
             this.ViewUploadedResultToolStripMenuItem3});
             this.menuResult.Name = "menuStudents";
             this.menuResult.ShowImageMargin = false;
-            this.menuResult.Size = new System.Drawing.Size(187, 70);
+            this.menuResult.Size = new System.Drawing.Size(187, 92);
             // 
             // UploadResultDirectlyToolStripMenuItem1
             // 
@@ -169,6 +177,7 @@
             this.UploadResultwithExcelToolStripMenuItem2.Name = "UploadResultwithExcelToolStripMenuItem2";
             this.UploadResultwithExcelToolStripMenuItem2.Size = new System.Drawing.Size(186, 22);
             this.UploadResultwithExcelToolStripMenuItem2.Text = "Upload Result with Excel";
+            this.UploadResultwithExcelToolStripMenuItem2.Click += new System.EventHandler(this.UploadResultwithExcelToolStripMenuItem2_Click);
             // 
             // ViewUploadedResultToolStripMenuItem3
             // 
@@ -519,14 +528,6 @@
             this.viewRegisteredSubjectToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.viewRegisteredSubjectToolStripMenuItem.Text = "View Registered Subject";
             this.viewRegisteredSubjectToolStripMenuItem.Click += new System.EventHandler(this.viewRegisteredSubjectToolStripMenuItem_Click);
-            // 
-            // exportOrImportBehaviourInExcelToolStripMenuItem
-            // 
-            this.exportOrImportBehaviourInExcelToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.exportOrImportBehaviourInExcelToolStripMenuItem.Name = "exportOrImportBehaviourInExcelToolStripMenuItem";
-            this.exportOrImportBehaviourInExcelToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
-            this.exportOrImportBehaviourInExcelToolStripMenuItem.Text = "Export or Import Behaviour in Excel";
-            this.exportOrImportBehaviourInExcelToolStripMenuItem.Click += new System.EventHandler(this.exportOrImportBehaviourInExcelToolStripMenuItem_Click);
             // 
             // frmTeacher
             // 

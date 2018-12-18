@@ -3,26 +3,33 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DB;
+using DB.Services.DataRepository;
+using DB.Services.Interfaces;
 using SPK.Utilities;
 using OfficeOpenXml;
 using System.IO;
 using Microsoft.VisualBasic.FileIO;
+using System.Diagnostics;
 
 namespace SPK.UserControls.SubForms
 {
-    public partial class ExportImportBehaviourExcel : UserControl
+    public partial class ExcelUploadResult : UserControl
     {
-        List<_class> Classes = new List<_class>();
-        List<session> Sessions = new List<session>();
+        private List<student> students;
+        private List<_class> _Classes;
+        private List<subject> subjects;
+        private List<session> sessions;
+
+        private IUnitOfWork _unitOfWork;
+
         string fullFileName = "";
 
-        public ExportImportBehaviourExcel()
+        public ExcelUploadResult()
         {
             InitializeComponent();
 
@@ -30,10 +37,39 @@ namespace SPK.UserControls.SubForms
             {
                 cBoxClass.Cursor = Cursors.WaitCursor;
                 cBoxSession.Cursor = Cursors.WaitCursor;
-                btnExport.Cursor = Cursors.WaitCursor;
+                cBoxSubject.Cursor = Cursors.WaitCursor;
+
+                _unitOfWork = new UnitOfWork(new Model1());
 
                 backgroundWorker1.RunWorkerAsync();
             }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+                sessions = _unitOfWork.SessionRepository.FindAll().ToList();
+                subjects = _unitOfWork.SubjectsRepository.FindAll().ToList();
+                _Classes = _unitOfWork.dClassRepository.FindAll().ToList();
+
+            }
+            catch (Exception ex)
+            {
+                Utils.LogException(ex);
+                MessageBox.Show("An error occured. Please contact support");
+            }
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            cBoxClass.DataSource = _Classes;
+            cBoxSession.DataSource = sessions;
+            cBoxSubject.DataSource = subjects;
+            
+            cBoxClass.Cursor = Cursors.Arrow;
+            cBoxSession.Cursor = Cursors.Arrow;
+            cBoxSubject.Cursor = Cursors.Arrow;
         }
 
         private void btnExport_ClickEvent(object sender, EventArgs e)
@@ -60,8 +96,8 @@ namespace SPK.UserControls.SubForms
 
                             var headerRow = new List<string[]>()
                         {
-                            new string[] {"S/N", "Reg No", "Name", "Class", "Term", "Session", "Hand Writing",
-                                "Musical Skills", "Sports", "Attentiveness", "Attitude to work", "Health", "Politeness"}
+                            new string[] {"S/N", "Class", "Term", "Session", "Reg No", "Name", "Subject",
+                                "1ST CA", "2ND CA", "Exam score"}
                         };
 
                             var bodyRow = new List<string[]>();
@@ -72,8 +108,8 @@ namespace SPK.UserControls.SubForms
 
                                 bodyRow.Add(new string[]
                                 {
-                                (i+1).ToString(), s.reg_number, s.Fullname, cBoxClass.Text, cBoxTerm.Text, cBoxSession.Text,
-                                "", "", "", "", "", "", ""
+                                (i+1).ToString(), cBoxClass.Text, cBoxTerm.Text, cBoxSession.Text, s.reg_number, s.Fullname,
+                                cBoxSubject.Text, "", "", ""
                                 });
                             }
 
@@ -86,7 +122,7 @@ namespace SPK.UserControls.SubForms
 
                             workSheet.Cells[headerRange].Style.Font.Bold = true;
 
-                            var fPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), cBoxClass.Text + "Behaviour.xlsx");
+                            var fPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), cBoxClass.Text + cBoxSubject.Text + "Resullt.xlsx");
                             FileInfo excelFile = new FileInfo(fPath);
                             excel.SaveAs(excelFile);
 
@@ -99,52 +135,10 @@ namespace SPK.UserControls.SubForms
                     Utils.LogException(ex);
                     MessageBox.Show("Error occured. Please contact support.");
                 }
-               
+
 
                 Cursor = Cursors.Arrow;
             }
-        }
-
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-            try
-            {
-                using (var db = new Model1())
-                {
-                    Sessions = db.sessions.ToList();
-                    Classes = db.classes.ToList();
-                }
-            }
-            catch (Exception ex)
-            {
-                Utils.LogException(ex);
-                MessageBox.Show("Error occured. Please contact support.");
-            }
-           
-        }
-
-        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            if (Classes.Count < 1)
-            {
-                MessageBox.Show("No Class in the Database. \n Please, add Class first.");
-                return;
-            }
-            if (Sessions.Count < 1)
-            {
-                MessageBox.Show("No Session in the Database. \n Please, add Session first.");
-                return;
-            }
-
-            cBoxClass.DataSource = Classes;
-            cBoxClass.DisplayMember = "classes";
-
-            cBoxSession.DataSource = Sessions;
-            cBoxSession.DisplayMember = "sessions";
-
-            cBoxClass.Cursor = Cursors.Arrow;
-            cBoxSession.Cursor = Cursors.Arrow;
-            btnExport.Cursor = Cursors.Arrow;
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -165,7 +159,7 @@ namespace SPK.UserControls.SubForms
             catch (Exception ex)
             {
                 Utils.LogException(ex);
-                MessageBox.Show("An error occured. \n" );
+                MessageBox.Show("An error occured. \n");
             }
             Cursor = Cursors.Arrow;
         }
@@ -184,7 +178,7 @@ namespace SPK.UserControls.SubForms
 
                 if (fullFileName.EndsWith(".csv"))
                 {
-                    List<behavioral> behaviorals = new List<behavioral>();
+                    List<results1> results = new List<results1>();
                     using (TextFieldParser csvParser = new TextFieldParser(fullFileName))
                     {
                         var text = File.ReadAllText(fullFileName);
@@ -200,14 +194,14 @@ namespace SPK.UserControls.SubForms
 
                         Debug.Assert(fields != null, nameof(fields) + " != null");
 
-                        if (fields.Length != 13)
+                        if (fields.Length != 10)
                         {
                             MessageBox.Show("Invalid Format. Check the file and try again.");
                             Cursor = Cursors.Arrow;
                             return;
                         }
 
-                        if (fields[12] != "Politeness")
+                        if (fields[9] != "Exam score")
                         {
                             MessageBox.Show("Invalid Format. Check the file and try again.");
                             Cursor = Cursors.Arrow;
@@ -225,29 +219,44 @@ namespace SPK.UserControls.SubForms
                                 Cursor = Cursors.Arrow;
                                 return;
                             }
-
-                            behaviorals.Add(new behavioral()
+                            try
                             {
-                                date = DateTime.Now.Date.ToString("d"),
-                                name = fields[2],
-                                reg_number = fields[1],
-                                term = fields[4],
-                                session = fields[5],
-                                _class = fields[3],
-                                attentiveness = fields[9],
-                                attitude_to_work = fields[10],
-                                hand_writting = fields[6],
-                                health = fields[11],
-                                musical_skills = fields[7],
-                                politeness = fields[12],
-                                sports = fields[8],
-                            });
+                                results.Add(new results1()
+                                {
+                                    _class = fields[1],
+                                    term = fields[2],
+                                    session = fields[3],
+                                    reg_number = fields[4],
+                                    name = fields[5],
+                                    subjects = fields[6],
+                                    ca = Convert.ToInt32(fields[7]),
+                                    project = Convert.ToInt32(fields[8]),
+                                    exam = Convert.ToInt32(fields[9]),
+                                    date_of_upload = DateTime.Now.Date.ToString("d"),
+                                    time_of_upload = DateTime.Now,
+                                    subject_total = Convert.ToInt32(fields[7]) + Convert.ToInt32(fields[8]) + Convert.ToInt32(fields[9]),
+                                });
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Import Failed. One or more data not formatted properly.");
+                                Utils.LogException(ex);
+                                return;
+                            }
                         }
+
+                        var sortedResult = results.OrderByDescending(x => x.subject_total).ToList();
+
+                        for (int i = 0; i < sortedResult.Count; i++)
+                        {
+                            sortedResult[1].subject_rank = i + 1;
+                        }
+
                         using (var db = new Model1())
                         {
-                            db.behaviorals.AddRange(behaviorals);
+                            db.results1.AddRange(sortedResult);
                             db.SaveChanges();
-                            MessageBox.Show("Behaviours Saved Successfully.");
+                            MessageBox.Show("Result Uploaded Successfully.");
                         }
                     }
                 }
@@ -255,10 +264,11 @@ namespace SPK.UserControls.SubForms
             catch (Exception ex)
             {
                 Utils.LogException(ex);
-                MessageBox.Show("An error occured. \n" );
+                MessageBox.Show("An error occured. \n");
             }
 
             Cursor = Cursors.Arrow;
         }
+        
     }
 }

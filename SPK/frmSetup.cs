@@ -44,6 +44,19 @@ namespace SPK
             txtName.Text = Properties.Settings.Default.DbName;
         }
 
+        private void radClient_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radClient.Checked)
+            {
+                panServer.Visible = false;
+                panClient.Visible = true;
+                
+                txtName.Text = Properties.Settings.Default.ServerName;
+                txtIP.Text = Properties.Settings.Default.ServerIP;
+
+            }
+        }
+
         private void radServer_CheckedChanged(object sender, EventArgs e)
         {
             if (radServer.Checked)
@@ -241,5 +254,6 @@ namespace SPK
             }
 
         }
+
     }
 }

@@ -68,13 +68,75 @@ namespace SPK.UserControls.SubForms
 
         private void btnSearch_ClickEvent(object sender, EventArgs e)
         {
-            if (ValidateFomControls.CheckComboBoxes(this,errorProvider1))
+            try
             {
-                var _class = cBoxClass.Text;
-                var _session = cBoxSession.Text;
-                var _term = cBoxTerm.Text;
+                if (ValidateFomControls.CheckComboBoxes(this, errorProvider1))
+                {
+                    var _class = cBoxClass.Text;
+                    var _session = cBoxSession.Text;
+                    var _term = cBoxTerm.Text;
 
+                    using (var db = new Model1())
+                    {
+                        var positions = db.positions.Where(x => x._class == _class && x.session == _session && x.term == _term).ToList();
 
+                        if (positions == null)
+                        {
+                            MessageBox.Show("No Found.");
+                            return;
+                        }
+
+                        dgridPResults.DataSource = positions;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Utils.LogException(ex);
+                MessageBox.Show("An Error Occured. Please, Contact Support.");
+            }
+            
+        }
+
+        private void btnDelete_ClickEvent(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ValidateFomControls.CheckComboBoxes(this, errorProvider1))
+                {
+                    var rtn = MessageBox.Show("Are you sure you want to delete these data?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (rtn != DialogResult.Yes)
+                    {
+                        return;
+                    }
+
+                    var _class = cBoxClass.Text;
+                    var _session = cBoxSession.Text;
+                    var _term = cBoxTerm.Text;
+
+                    using (var db = new Model1())
+                    {
+                        var positions = db.positions.Where(x => x._class == _class && x.session == _session && x.term == _term);
+
+                        if (positions == null)
+                        {
+                            MessageBox.Show("No Found.");
+                            return;
+                        }
+                        else
+                        {
+                            db.positions.RemoveRange(positions);
+                            db.SaveChanges();
+                        }
+
+                        dgridPResults.DataSource = new position();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Utils.LogException(ex);
+                MessageBox.Show("An Error Occured. Please, Contact Support.");
             }
         }
     }
