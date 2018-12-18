@@ -2,6 +2,7 @@
 using DB.Services.DataRepository;
 using DB.Services.Interfaces;
 using SPK.AuthorizedUser;
+using SPK.Utilities;
 using System;
 using System.Drawing;
 using System.Threading.Tasks;
@@ -26,6 +27,8 @@ namespace SPK
 
         private async Task<bool> Login<TEntity>() where TEntity : class
         {
+           
+
             using (var db = new Model1())
             {
 
@@ -81,88 +84,98 @@ namespace SPK
                 return false;
 
             }
+            
         }
         
         private void btnSignIn_ClickEvent(object sender, EventArgs e)
         {
+            try
+            {
+
+                if (cBoxType.Text == "Admin")
+                {
+                    var task = Login<user>();
+
+                    task.Wait();
+
+                    var loginResult = task.Result;
+                    if (loginResult)
+                    {
+                        MessageBox.Show("Login Successful");
+
+                        Cursor = Cursors.Arrow;
+                        var frm = new frmMain("admin");
+                        frm.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        Cursor = Cursors.Arrow;
+                        MessageBox.Show("Invalid details");
+                        return;
+                    }
+                }
+                else if (cBoxType.Text == "Principal")
+                {
+                    var task = Login<principal>();
+
+                    task.Wait();
+
+                    var loginResult = task.Result;
+                    if (loginResult)
+                    {
+                        MessageBox.Show("Login Successful");
+
+                        Cursor = Cursors.Arrow;
+                        var frm = new frmMain("principal");
+                        frm.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        Cursor = Cursors.Arrow;
+                        MessageBox.Show("Invalid details");
+                        return;
+                    }
+                }
+                else if (cBoxType.Text == "Teacher")
+                {
+                    var task = Login<teacher>();
+
+                    task.Wait();
+
+                    var loginResult = task.Result;
+                    if (loginResult)
+                    {
+                        MessageBox.Show("Login Successful");
+
+                        Cursor = Cursors.Arrow;
+                        var frm = new frmTeacher();
+                        frm.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid details");
+
+                        Cursor = Cursors.Arrow;
+                        return;
+                    }
+                }
+                else
+                {
+                    Cursor = Cursors.Arrow;
+                    MessageBox.Show("Please select an account");
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                Utils.LogException(ex);
+                MessageBox.Show("An error occured. Please contact support");
+            }
             Cursor = Cursors.WaitCursor;
 
-            if (cBoxType.Text == "Admin")
-            {
-                var task = Login<user>();
-
-                task.Wait();
-
-                var loginResult = task.Result;
-                if (loginResult)
-                {
-                    MessageBox.Show("Login Successful");
-
-                    Cursor = Cursors.Arrow;
-                    var frm = new frmMain("admin");
-                    frm.Show();
-                    this.Close();
-                }
-                else
-                {
-                    Cursor = Cursors.Arrow;
-                    MessageBox.Show("Invalid details");
-                    return;
-                }
-            }
-            else if (cBoxType.Text == "Principal")
-            {
-                var task = Login<principal>();
-
-                task.Wait();
-
-                var loginResult = task.Result;
-                if (loginResult)
-                {
-                    MessageBox.Show("Login Successful");
-
-                    Cursor = Cursors.Arrow;
-                    var frm = new frmMain("principal");
-                    frm.Show();
-                    this.Close();
-                }
-                else
-                {
-                    Cursor = Cursors.Arrow;
-                    MessageBox.Show("Invalid details");
-                    return;
-                }
-            }
-            else if (cBoxType.Text == "Teacher")
-            {
-                var task = Login<teacher>();
-
-                task.Wait();
-
-                var loginResult = task.Result;
-                if (loginResult)
-                {
-                    MessageBox.Show("Login Successful");
-
-                    Cursor = Cursors.Arrow;
-                    var frm = new frmTeacher();
-                    frm.Show();
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Invalid details");
-
-                    Cursor = Cursors.Arrow;
-                    return;
-                }
-            }
-            else
-            {
-                Cursor = Cursors.Arrow;
-                MessageBox.Show("Please select an account");
-                return;
-            }
 
             // _unitOfWork.Dispose();
         }

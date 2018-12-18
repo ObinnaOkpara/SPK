@@ -1,4 +1,5 @@
 ﻿using DB;
+using SPK.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,12 +30,20 @@ namespace SPK
 
             var sch = new administrative();
             var stu = new student();
-
-            using (var db = new Model1())
+            try
             {
-                sch =db.administratives.FirstOrDefault();
-                stu =db.students.Find(studentId);
+                using (var db = new Model1())
+                {
+                    sch = db.administratives.FirstOrDefault();
+                    stu = db.students.Find(studentId);
+                }
             }
+            catch (Exception ex)
+            {
+                Utils.LogException(ex);
+                MessageBox.Show("An error occured. Contact support");
+            }
+            
 
             var p = new List<Microsoft.Reporting.WinForms.ReportParameter>();
             
