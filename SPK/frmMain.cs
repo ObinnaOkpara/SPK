@@ -1,4 +1,5 @@
 ﻿using DB;
+using MySql.Data.MySqlClient;
 using SPK.AuthorizedUser;
 using SPK.UserControls.Buttons;
 using SPK.UserControls.SubForms;
@@ -7,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -412,6 +414,41 @@ namespace SPK
         private void UploadResultwithExcelToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             showUserControl(new ExcelUploadResult());
+        }
+
+        private void exportDBToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var db = new Model1())
+            {
+                string constring = db.GetConfigConString();
+                string file = Path.Combine(Application.StartupPath, "backup.sql");
+
+                if (File.Exists(file))
+                {
+                    File.Delete(file);
+                }
+
+                using (MySqlConnection conn = new MySqlConnection(constring))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand())
+                    {
+                        using (MySqlBackup mb = new MySqlBackup(cmd))
+                        {
+                            cmd.Connection = conn;
+                            conn.Open();
+                            mb.ExportToFile(file);
+                            conn.Close();
+                        }
+                    }
+                }
+
+                var sql = File.ReadAllText(file);
+                sql = sql.Replace("INSERT INTO", "REPLACE INTO");
+
+                File.WriteAllText(file, sql);
+
+                MessageBox.Show("Backup done.");
+            }
         }
     }
 }
