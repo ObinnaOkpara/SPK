@@ -142,10 +142,12 @@ namespace SPK
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            try
+            if (radClient.Checked)
             {
-                if (radClient.Checked)
+                try
                 {
+                    Cursor = Cursors.WaitCursor;
+
                     Properties.Settings.Default.DbName = txtDbName.Text.Trim();
                     Properties.Settings.Default.DbUsername = txtUsername.Text.Trim();
                     Properties.Settings.Default.DbPassword = txtPassword.Text.Trim();
@@ -160,55 +162,79 @@ namespace SPK
                     db.AdjustConfigConString(constring);
                     db.Dispose();
                 }
-                else
+                catch (Exception ex)
                 {
-                    if (!Directory.Exists(@"c:/spk"))
-                    {
-                        MessageBox.Show("Please Create the shared spk folder.");
-                        return;
-                    }
-                    if (!Directory.Exists(@"c:/spk/admin") || !Directory.Exists(@"c:/spk/image"))
-                    {
-                        MessageBox.Show("Please Create the sub folders in the spk folder.");
-                        return;
-                    }
+                    Cursor = Cursors.Arrow;
+                    MessageBox.Show("An error occured. Please contact support.");
+                    Utilities.Utils.LogException(ex);
+                    return;
+                }
+            }
+            else
+            {
+                Cursor = Cursors.WaitCursor;
 
+                try
+                {
+                    var appPath = @"\\" + Path.Combine(Environment.MachineName, @"spk");
+                    File.Copy(Path.Combine(Environment.CurrentDirectory, "small.png"), Path.Combine(appPath, "small.png"), true);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Please create the shared spk folder first.");
+                    Utilities.Utils.LogException(ex);
+                    Cursor = Cursors.Arrow;
+                    return;
+                }
+
+                if (!Directory.Exists(@"c:/spk/admin") || !Directory.Exists(@"c:/spk/image"))
+                {
+                    MessageBox.Show("Please Create the sub folders in the spk folder.");
+                    return;
+                }
+
+                try
+                {
                     Properties.Settings.Default.DbName = txtDbName.Text;
                     Properties.Settings.Default.DbUsername = txtUsername.Text;
                     Properties.Settings.Default.DbPassword = txtPassword.Text;
                     Properties.Settings.Default.ServerIP = "127.0.0.1";
                     Properties.Settings.Default.ServerName = txtServerName.Text;
                     Properties.Settings.Default.AppType = "server";
-                    
+
                     Properties.Settings.Default.ImagePath = @"c:/spk/";
-                    
+
                     var constring = $"SERVER=Localhost; DATABASE={txtDbName.Text.Trim()}; USER ID={txtUsername.Text.Trim()}; PASSWORD={txtPassword.Text.Trim()};";
                     var db = new Model1();
                     db.AdjustConfigConString(constring);
                     db.Dispose();
                 }
-
-                Properties.Settings.Default.SetupDone = true;
-                Properties.Settings.Default.Save();
-
-                MessageBox.Show("Configuration was saved successfully.");
-
-                if (_from== "main")
+                catch (Exception ex)
                 {
-                    Close();
-                }
-                else
-                {
-                    LoginForm frm = new LoginForm();
-                    frm.Show();
-                    Close();
+                    Cursor = Cursors.Arrow;
+                    MessageBox.Show("An error occured. Please contact support.");
+                    Utilities.Utils.LogException(ex);
+                    return;
                 }
             }
-            catch (Exception ex)
+
+            Properties.Settings.Default.SetupDone = true;
+            Properties.Settings.Default.Save();
+
+            MessageBox.Show("Configuration was saved successfully.");
+
+            Cursor = Cursors.Arrow;
+
+            if (_from== "main")
             {
-                MessageBox.Show(ex.Message);
+                Close();
             }
-            
+            else
+            {
+                LoginForm frm = new LoginForm();
+                frm.Show();
+                Close();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -255,5 +281,9 @@ namespace SPK
 
         }
 
+        private void frmSetup_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -5,6 +5,7 @@ using SPK.AuthorizedUser;
 using SPK.Utilities;
 using System;
 using System.Drawing;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -91,6 +92,7 @@ namespace SPK
         {
             try
             {
+                Cursor = Cursors.WaitCursor;
 
                 if (cBoxType.Text == "Admin")
                 {
@@ -174,7 +176,7 @@ namespace SPK
                 Utils.LogException(ex);
                 MessageBox.Show("An error occured. Please contact support");
             }
-            Cursor = Cursors.WaitCursor;
+            Cursor = Cursors.Arrow;
 
 
             // _unitOfWork.Dispose();
@@ -228,6 +230,23 @@ namespace SPK
                 var curpos = PointToScreen(e.Location);
                 Location = new Point(curpos.X - startpt.X, curpos.Y - startpt.Y);
             }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            try
+            {
+                var appPath = @"\\" + Path.Combine(Environment.MachineName, @"spkq");
+                File.Copy(Path.Combine(Environment.CurrentDirectory, "small.png"), Path.Combine(appPath, "small.png"), true);
+                MessageBox.Show("Successful.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            Cursor = Cursors.Arrow;
         }
     }
 }
