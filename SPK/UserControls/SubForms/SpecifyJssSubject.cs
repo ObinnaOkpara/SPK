@@ -92,5 +92,49 @@ namespace SPK.UserControls.SubForms
                 }
             }
         }
+
+        private void dGridSubjecs_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+            var es = senderGrid.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+            try
+            {
+
+                if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+                {
+                    var btn = (DataGridViewButtonColumn)senderGrid.Columns[e.ColumnIndex];
+                    if (btn.Text == "Delete")
+                    {
+
+                        var result = MessageBox.Show("Do you want to delete ", "Confirmation", MessageBoxButtons.YesNo);
+                        if (result == DialogResult.Yes)
+                        {
+                            var _idDel = (int)senderGrid.CurrentRow.Cells[0].Value;
+
+                            using (var db = new Model1())
+                            {
+
+                                var ss = db.jsses.Find(_idDel);
+                                db.jsses.Remove(ss);
+                                db.SaveChanges();
+
+                                MessageBox.Show("Subject Deleted");
+                                dGridSubjecs.DataSource = db.jsses.ToList();
+                            }
+                            
+                            
+
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Utils.LogException(ex);
+                MessageBox.Show("An error occured. Please contact support");
+            }
+        }
     }
 }

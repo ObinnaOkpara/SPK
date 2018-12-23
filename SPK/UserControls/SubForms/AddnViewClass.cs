@@ -10,13 +10,14 @@ using System.Windows.Forms;
 using DB;
 using SPK.Utilities;
 using DB.Services.DataRepository;
+using DB.Services.Interfaces;
 
 namespace SPK.UserControls.SubForms
 {
     public partial class AddnViewClass : UserControl
     {
         List<_class> classes = new List<_class>();
-
+        private IUnitOfWork _unitOfWork;
         public AddnViewClass()
         {
             InitializeComponent();
@@ -63,7 +64,7 @@ namespace SPK.UserControls.SubForms
                 catch (Exception ex)
                 {
                     Utils.LogException(ex);
-                    MessageBox.Show("Error occured. Contact support" );
+                    MessageBox.Show("Error occured. Contact support");
                 }
             }
         }
@@ -85,9 +86,45 @@ namespace SPK.UserControls.SubForms
 
         }
 
-        private void dGridAllClass_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private async void dGridAllClass_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            var senderGrid = (DataGridView)sender;
+            var es = senderGrid.Rows[e.RowIndex].Cells[e.ColumnIndex];
 
+            try
+            {
+
+                if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+                {
+                    var btn = (DataGridViewButtonColumn)senderGrid.Columns[e.ColumnIndex];
+
+                    if (btn.Text == "Delete")
+                    {
+
+                        var result = MessageBox.Show("Do you want to delete ", "Confirmation", MessageBoxButtons.YesNo);
+                        if (result == DialogResult.Yes)
+                        {
+                            _unitOfWork = new UnitOfWork(new Model1());
+                            var _idDel = (int)senderGrid.CurrentRow.Cells[0].Value;
+                            var ss = await _unitOfWork.dClassRepository.FindById(_idDel);
+                            _unitOfWork.dClassRepository.Remove(ss);
+
+                           await _unitOfWork.Save();
+
+                            MessageBox.Show("Deleted");
+                            dGridAllClass.DataSource = _unitOfWork.dClassRepository.FindAll().ToList();
+
+                        }
+
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Utils.LogException(ex);
+                MessageBox.Show("An error occured. Please contact support");
+            }
         }
     }
 }

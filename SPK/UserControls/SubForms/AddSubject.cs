@@ -24,6 +24,21 @@ namespace SPK.UserControls.SubForms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+        }
+
+        private school_subjects CreateSchoolSubject()
+        {
+            var sch_subj = new school_subjects()
+            {
+                date_saved = DateTime.Today.ToString("d"),
+                subjects = _txtSubject.Text
+            };
+            return sch_subj;
+        }
+
+        private void btnSave_ClickEvent(object sender, EventArgs e)
+        {
+
             if (ValidateFomControls.CheckTextboxes(this, errorProvider1))
             {
                 try
@@ -35,7 +50,7 @@ namespace SPK.UserControls.SubForms
                         _unitOfWork.School_SubjectsRepository.Add(sch_subj);
                         _unitOfWork.Save();
                         _unitOfWork.Dispose();
-                        MessageBox.Show("Added");
+                        MessageBox.Show("New Subject Added");
                     }
                     else
                     {
@@ -47,18 +62,8 @@ namespace SPK.UserControls.SubForms
                     Utils.LogException(ex);
                     MessageBox.Show("An error occured. Please contact support");
                 }
-                
-            }
-        }
 
-        private school_subjects CreateSchoolSubject()
-        {
-            var sch_subj = new school_subjects()
-            {
-                date_saved = DateTime.Today.ToString("d"),
-                subjects = _txtSubject.Text
-            };
-            return sch_subj;
+            }
         }
     }
 }

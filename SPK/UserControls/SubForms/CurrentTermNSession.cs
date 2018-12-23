@@ -14,9 +14,15 @@ namespace SPK.UserControls.SubForms
 {
     public partial class CurrentTermNSession : UserControl
     {
+        private List<session> sessions;
         public CurrentTermNSession()
         {
             InitializeComponent();
+
+            if (LicenseManager.UsageMode != LicenseUsageMode.Designtime)
+            {
+                backgroundWorker1.RunWorkerAsync();
+            }
         }
 
         private void btnSave_ClickEvent(object sender, EventArgs e)
@@ -56,6 +62,22 @@ namespace SPK.UserControls.SubForms
                     Utils.LogException(ex);
                     MessageBox.Show("Error has occured. Please contact support");
                 }
+            }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            using (var db = new Model1())
+            {
+                sessions = db.sessions.ToList();
+            }
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (sessions != null)
+            {
+                cBoxSession.DataSource = sessions;
             }
         }
     }

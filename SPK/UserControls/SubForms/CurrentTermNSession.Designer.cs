@@ -41,10 +41,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.sessionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -107,14 +110,15 @@
             // 
             // cBoxSession
             // 
+            this.cBoxSession.DataSource = this.sessionBindingSource;
+            this.cBoxSession.DisplayMember = "sessions";
             this.cBoxSession.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxSession.FormattingEnabled = true;
-            this.cBoxSession.Items.AddRange(new object[] {
-            "--Select--"});
             this.cBoxSession.Location = new System.Drawing.Point(82, 136);
             this.cBoxSession.Name = "cBoxSession";
             this.cBoxSession.Size = new System.Drawing.Size(386, 24);
             this.cBoxSession.TabIndex = 81;
+            this.cBoxSession.ValueMember = "sessions";
             // 
             // cBoxTerm
             // 
@@ -181,6 +185,15 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // sessionBindingSource
+            // 
+            this.sessionBindingSource.DataSource = typeof(DB.session);
+            // 
             // CurrentTermNSession
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -195,6 +208,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -213,5 +227,7 @@
         private System.Windows.Forms.ComboBox cBoxSession;
         private System.Windows.Forms.ComboBox cBoxTerm;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.BindingSource sessionBindingSource;
     }
 }

@@ -30,30 +30,31 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dGridSubjecs = new SPK.UserControls.GridviewSerial.GridViewSerial();
+            this.jssBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.cBoxSubject = new System.Windows.Forms.ComboBox();
+            this.schoolsubjectsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.picSchoolLogo = new System.Windows.Forms.PictureBox();
-            this.schoolsubjectsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.jssBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dGridSubjecs = new SPK.UserControls.GridviewSerial.GridViewSerial();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jsssubjectsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jsssubjectsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGridSubjecs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jssBindingSource)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.schoolsubjectsBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schoolsubjectsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jssBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dGridSubjecs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +69,28 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(774, 358);
             this.panel2.TabIndex = 18;
+            // 
+            // dGridSubjecs
+            // 
+            this.dGridSubjecs.AllowUserToDeleteRows = false;
+            this.dGridSubjecs.AutoGenerateColumns = false;
+            this.dGridSubjecs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dGridSubjecs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGridSubjecs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.jsssubjectsDataGridViewTextBoxColumn,
+            this.Delete});
+            this.dGridSubjecs.DataSource = this.jssBindingSource;
+            this.dGridSubjecs.Location = new System.Drawing.Point(3, 34);
+            this.dGridSubjecs.Name = "dGridSubjecs";
+            this.dGridSubjecs.ReadOnly = true;
+            this.dGridSubjecs.Size = new System.Drawing.Size(768, 321);
+            this.dGridSubjecs.TabIndex = 15;
+            this.dGridSubjecs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridSubjecs_CellContentClick);
+            // 
+            // jssBindingSource
+            // 
+            this.jssBindingSource.DataSource = typeof(DB.jss);
             // 
             // label3
             // 
@@ -119,6 +142,10 @@
             this.cBoxSubject.Size = new System.Drawing.Size(380, 24);
             this.cBoxSubject.TabIndex = 79;
             this.cBoxSubject.ValueMember = "subjects";
+            // 
+            // schoolsubjectsBindingSource
+            // 
+            this.schoolsubjectsBindingSource.DataSource = typeof(DB.school_subjects);
             // 
             // label4
             // 
@@ -185,41 +212,6 @@
             this.picSchoolLogo.TabIndex = 0;
             this.picSchoolLogo.TabStop = false;
             // 
-            // schoolsubjectsBindingSource
-            // 
-            this.schoolsubjectsBindingSource.DataSource = typeof(DB.school_subjects);
-            // 
-            // jssBindingSource
-            // 
-            this.jssBindingSource.DataSource = typeof(DB.jss);
-            // 
-            // dGridSubjecs
-            // 
-            this.dGridSubjecs.AutoGenerateColumns = false;
-            this.dGridSubjecs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dGridSubjecs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGridSubjecs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.jsssubjectsDataGridViewTextBoxColumn});
-            this.dGridSubjecs.DataSource = this.jssBindingSource;
-            this.dGridSubjecs.Location = new System.Drawing.Point(3, 34);
-            this.dGridSubjecs.Name = "dGridSubjecs";
-            this.dGridSubjecs.Size = new System.Drawing.Size(768, 321);
-            this.dGridSubjecs.TabIndex = 15;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // jsssubjectsDataGridViewTextBoxColumn
-            // 
-            this.jsssubjectsDataGridViewTextBoxColumn.DataPropertyName = "jss_subjects";
-            this.jsssubjectsDataGridViewTextBoxColumn.HeaderText = "Jss Subjects";
-            this.jsssubjectsDataGridViewTextBoxColumn.Name = "jsssubjectsDataGridViewTextBoxColumn";
-            // 
             // backgroundWorker1
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
@@ -228,6 +220,30 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // jsssubjectsDataGridViewTextBoxColumn
+            // 
+            this.jsssubjectsDataGridViewTextBoxColumn.DataPropertyName = "jss_subjects";
+            this.jsssubjectsDataGridViewTextBoxColumn.HeaderText = "Jss Subjects";
+            this.jsssubjectsDataGridViewTextBoxColumn.Name = "jsssubjectsDataGridViewTextBoxColumn";
+            this.jsssubjectsDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Delete
+            // 
+            this.Delete.FillWeight = 30F;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
             // 
             // SpecifyJssSubject
             // 
@@ -240,14 +256,14 @@
             this.Size = new System.Drawing.Size(800, 580);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGridSubjecs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jssBindingSource)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.schoolsubjectsBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schoolsubjectsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jssBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dGridSubjecs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -269,9 +285,10 @@
         private System.Windows.Forms.BindingSource schoolsubjectsBindingSource;
         private System.Windows.Forms.BindingSource jssBindingSource;
         private GridviewSerial.GridViewSerial dGridSubjecs;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jsssubjectsDataGridViewTextBoxColumn;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jsssubjectsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }
 }

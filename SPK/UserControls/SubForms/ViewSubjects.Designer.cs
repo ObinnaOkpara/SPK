@@ -139,6 +139,7 @@
             this.dGridAllClass.RowTemplate.Height = 24;
             this.dGridAllClass.Size = new System.Drawing.Size(574, 315);
             this.dGridAllClass.TabIndex = 16;
+            this.dGridAllClass.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridAllClass_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
