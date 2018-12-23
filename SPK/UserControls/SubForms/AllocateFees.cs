@@ -103,18 +103,27 @@ namespace SPK.UserControls.SubForms
 
         private void btnSave_ClickEvent(object sender, EventArgs e)
         {
-            if (ValidateFomControls.CheckTextboxes(this, errorProvider1) &&
-                ValidateFomControls.CheckComboBoxes(this, errorProvider1))
+            if (!string.IsNullOrWhiteSpace( txtFee.Text))
             {
                 try
                 {
-                    var feea = CreateFeeAllocation();
+                    
                     using (var db = new Model1())
                     {
-                        db.fee_allocation.Add(feea);
-                        db.SaveChanges();
-                        dGridStudents.DataSource = db.fee_allocation.ToList();
-                        MessageBox.Show("New Fee Allocation Added");
+                        var ifExist = db.fee_allocation.Any(x => x.allocate_class == cBoxClass.Text.Substring(0,4) && x.student_type == cBoxType.Text);
+
+                        if (!ifExist)
+                        {
+                            var feea = CreateFeeAllocation();
+                            db.fee_allocation.Add(feea);
+                            db.SaveChanges();
+                            dGridStudents.DataSource = db.fee_allocation.ToList();
+                            MessageBox.Show("New Fee Allocation Added");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fee has already been allocted. Pick another class or student type");
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -123,6 +132,10 @@ namespace SPK.UserControls.SubForms
                     MessageBox.Show("An error occured. Contact Support");
                 }
             }
+            else
+            {
+                MessageBox.Show("Please input fee details");
+            }
 
         }
 
@@ -130,27 +143,14 @@ namespace SPK.UserControls.SubForms
         {
             var feeallo = new fee_allocation()
             {
-                allocate_class = cBoxClass.Text,
+                allocate_class = cBoxClass.Text.Substring(0,4),
                 date_allocated = DateTime.Today.ToString("d"),
                 fee_amount = Convert.ToInt32(txtFee.Text),
                 student_type = cBoxType.Text
             };
             return feeallo;
         }
-
-        private void dGridStudents_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dGridStudents.Rows.Count > 0)
-            {
-                foreach (DataGridViewRow row in dGridStudents.SelectedRows) // foreach datagridview selected rows values  
-                {
-                    txtIDedit.Text = row.Cells[0].Value.ToString();
-                    txteditclas.Text = row.Cells[1].Value.ToString();
-                    txtedittype.Text = row.Cells[2].Value.ToString();
-                    txtFeeedit.Text = row.Cells[3].Value.ToString();
-                }
-            }
-        }
+        
 
         private void btnUpdate_ClickEvent(object sender, EventArgs e)
         {
@@ -227,6 +227,17 @@ namespace SPK.UserControls.SubForms
                             Utils.LogException(ex);
                             MessageBox.Show("An error occured. Please contact support");
                         }
+                    }
+                }
+                else if(btn.Text == "Edit")
+                {
+                    if (senderGrid.CurrentRow != null)
+                    {
+                        
+                        txtIDedit.Text = senderGrid.CurrentRow.Cells[0].Value.ToString();
+                        txteditclas.Text = senderGrid.CurrentRow.Cells[2].Value.ToString();
+                        txtedittype.Text = senderGrid.CurrentRow.Cells[3].Value.ToString();
+                        txtFeeedit.Text = senderGrid.CurrentRow.Cells[4].Value.ToString();
                     }
                 }
             }
