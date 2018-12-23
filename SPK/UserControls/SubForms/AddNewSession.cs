@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -11,6 +12,7 @@ using DB.Services.Interfaces;
 using SPK.Utilities;
 using DB;
 using DB.Services.DataRepository;
+using System.Text.RegularExpressions;
 
 namespace SPK.UserControls.SubForms
 {
@@ -22,36 +24,70 @@ namespace SPK.UserControls.SubForms
             InitializeComponent();
         }
 
+        bool RegexCheckTextbox( string input)
+        {
+            Regex regex = new Regex(@"^\d{4}\/\d{4}$");
+
+            Match match = regex.Match(input);
+
+            return match.Success;
+        }
+
+        bool CheckIfSessionIsValid(string input)
+        {
+           
+            var firstyear = input.Substring(0, 4);
+
+            var secondYear = input.Substring(5, 4);
+
+            if (int.Parse(firstyear) > int.Parse(secondYear))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         private async void btnSave_ClickEvent(object sender, EventArgs e)
         {
             if (ValidateFomControls.CheckTextboxes(this, errorProvider1))
             {
-                try
+                if (RegexCheckTextbox(_txtSession.Text) && CheckIfSessionIsValid(_txtSession.Text))
                 {
-                    _unitOfWork = new UnitOfWork(new Model1());
-
-                    if (_unitOfWork.SessionRepository.CheckIfItExists(_txtSession.Text))
+                    try
                     {
-                        MessageBox.Show("This session already exists.");
-                        return;
+                        _unitOfWork = new UnitOfWork(new Model1());
+
+                        if (_unitOfWork.SessionRepository.CheckIfItExists(_txtSession.Text))
+                        {
+                            MessageBox.Show("This session already exists.");
+                            return;
+                        }
+
+                        var Session = new session()
+                        {
+                            sessions = _txtSession.Text,
+                            date_added = DateTime.Today.ToString("d"),
+                            time_added = DateTime.Now,
+                        };
+
+                        _unitOfWork.SessionRepository.Add(Session);
+                        await _unitOfWork.Save();
+                        _unitOfWork.Dispose();
+                        MessageBox.Show($"Session {_txtSession.Text} was added successfully.");
+                    }
+                    catch (Exception ex)
+                    {
+                        Utils.LogException(ex);
+                        MessageBox.Show("Error occured. Contact support");
                     }
 
-                    var Session = new session()
-                    {
-                        sessions = _txtSession.Text,
-                        date_added = DateTime.Today.ToString("d"),
-                        time_added = DateTime.Now,
-                    };
-
-                    _unitOfWork.SessionRepository.Add(Session);
-                    await _unitOfWork.Save();
-                    _unitOfWork.Dispose();
-                    MessageBox.Show($"Session {_txtSession.Text} was added successfully.");
                 }
-                catch (Exception ex)
+                else
                 {
-                    Utils.LogException(ex);
-                    MessageBox.Show("Error occured. Contact support" );
+                    MessageBox.Show("Please enter the session in the approved format");
                 }
             }
         }
