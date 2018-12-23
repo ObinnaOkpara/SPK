@@ -18,7 +18,7 @@ namespace SPK.UserControls.SubForms
     {
         private List<student> students;
         private List<_class> _Classes;
-        private List<subject> subjects;
+        private List<school_subjects> subjects;
         private List<session> sessions;
         private IUnitOfWork _unitOfWork;
 
@@ -144,7 +144,7 @@ namespace SPK.UserControls.SubForms
             try
             {
                 sessions = _unitOfWork.SessionRepository.FindAll().ToList();
-                subjects = _unitOfWork.SubjectsRepository.FindAll().ToList();
+                subjects = _unitOfWork.School_SubjectsRepository.FindAll().ToList();
                 // students = _unitOfWork.StudentRepository.FindAll().ToList();
                 _Classes = _unitOfWork.dClassRepository.FindAll().ToList();
 

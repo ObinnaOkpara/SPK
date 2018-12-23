@@ -26,7 +26,7 @@ namespace SPK.UserControls.SubForms
 
                 cBoxClass.Cursor = Cursors.WaitCursor;
                 cBoxSession.Cursor = Cursors.WaitCursor;
-                cBoxTerm.Cursor = Cursors.WaitCursor;
+                //cBoxTerm.Cursor = Cursors.WaitCursor;
                 btnSearch.Cursor = Cursors.WaitCursor;
 
 

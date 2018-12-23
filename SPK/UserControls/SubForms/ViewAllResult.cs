@@ -16,11 +16,17 @@ namespace SPK.UserControls.SubForms
     {
 
         List<results1> results;
-
+        List<_class> _Classes;
+        List<school_subjects> subjects;
+        List<session> sessions;
         public ViewAllResult()
         {
             InitializeComponent();
 
+            if (LicenseManager.UsageMode != LicenseUsageMode.Designtime)
+            {
+                backgroundWorker1.RunWorkerAsync();
+            }
         }
 
         private void btnSearch_ClickEvent(object sender, EventArgs e)
@@ -87,6 +93,23 @@ namespace SPK.UserControls.SubForms
             {
                 MessageBox.Show("No results loaded. Please load results to delete");
             }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            using (var db = new Model1())
+            {
+                sessions = db.sessions.ToList();
+                _Classes = db.classes.ToList();
+                subjects = db.school_subjects.ToList();
+            }
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            cBoxClass.DataSource = _Classes;
+            cBoxSession.DataSource = sessions;
+            cBoxSubject.DataSource = subjects;
         }
     }
 }

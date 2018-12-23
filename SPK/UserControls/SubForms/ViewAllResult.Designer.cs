@@ -48,34 +48,36 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cBoxSession = new System.Windows.Forms.ComboBox();
+            this.sessionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.cBoxTerm = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cBoxSubject = new System.Windows.Forms.ComboBox();
+            this.subjectBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.cBoxClass = new System.Windows.Forms.ComboBox();
+            this.classBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnSearch = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.schoolsubjectsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.classBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.schoolsubjectsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sessionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.results1BindingSource)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schoolsubjectsBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schoolsubjectsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -250,6 +252,10 @@
             this.cBoxSession.TabIndex = 80;
             this.cBoxSession.ValueMember = "sessions";
             // 
+            // sessionBindingSource
+            // 
+            this.sessionBindingSource.DataSource = typeof(DB.session);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -298,6 +304,10 @@
             this.cBoxSubject.TabIndex = 76;
             this.cBoxSubject.ValueMember = "subjects";
             // 
+            // subjectBindingSource
+            // 
+            this.subjectBindingSource.DataSource = typeof(DB.subject);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -320,6 +330,10 @@
             this.cBoxClass.Size = new System.Drawing.Size(147, 24);
             this.cBoxClass.TabIndex = 74;
             this.cBoxClass.ValueMember = "classes";
+            // 
+            // classBindingSource
+            // 
+            this.classBindingSource.DataSource = typeof(DB._class);
             // 
             // btnSearch
             // 
@@ -356,6 +370,10 @@
             this.label1.Size = new System.Drawing.Size(47, 17);
             this.label1.TabIndex = 12;
             this.label1.Text = "Class";
+            // 
+            // schoolsubjectsBindingSource
+            // 
+            this.schoolsubjectsBindingSource.DataSource = typeof(DB.school_subjects);
             // 
             // panel1
             // 
@@ -404,17 +422,10 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // classBindingSource
+            // backgroundWorker1
             // 
-            this.classBindingSource.DataSource = typeof(DB._class);
-            // 
-            // schoolsubjectsBindingSource
-            // 
-            this.schoolsubjectsBindingSource.DataSource = typeof(DB.school_subjects);
-            // 
-            // sessionBindingSource
-            // 
-            this.sessionBindingSource.DataSource = typeof(DB.session);
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
             // ViewAllResult
             // 
@@ -431,13 +442,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.results1BindingSource)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schoolsubjectsBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schoolsubjectsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -481,5 +493,6 @@
         private System.Windows.Forms.BindingSource schoolsubjectsBindingSource;
         private System.Windows.Forms.BindingSource classBindingSource;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.BindingSource subjectBindingSource;
     }
 }
