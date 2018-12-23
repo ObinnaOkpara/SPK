@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dGridSubjecs = new SPK.UserControls.GridviewSerial.GridViewSerial();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sss_subjects = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sssBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -47,6 +45,9 @@
             this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sss_subjects = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridSubjecs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sssBindingSource)).BeginInit();
@@ -80,28 +81,15 @@
             this.dGridSubjecs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGridSubjecs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
-            this.sss_subjects});
+            this.sss_subjects,
+            this.Delete});
             this.dGridSubjecs.DataSource = this.sssBindingSource;
             this.dGridSubjecs.Location = new System.Drawing.Point(3, 44);
             this.dGridSubjecs.Name = "dGridSubjecs";
             this.dGridSubjecs.ReadOnly = true;
             this.dGridSubjecs.Size = new System.Drawing.Size(781, 314);
             this.dGridSubjecs.TabIndex = 15;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // sss_subjects
-            // 
-            this.sss_subjects.DataPropertyName = "sss_subjects";
-            this.sss_subjects.HeaderText = "sss_subjects";
-            this.sss_subjects.Name = "sss_subjects";
-            this.sss_subjects.ReadOnly = true;
+            this.dGridSubjecs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridSubjecs_CellContentClick);
             // 
             // sssBindingSource
             // 
@@ -237,6 +225,29 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sss_subjects
+            // 
+            this.sss_subjects.DataPropertyName = "sss_subjects";
+            this.sss_subjects.HeaderText = "sss_subjects";
+            this.sss_subjects.Name = "sss_subjects";
+            this.sss_subjects.ReadOnly = true;
+            // 
+            // Delete
+            // 
+            this.Delete.FillWeight = 30F;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            // 
             // SpecifySssSubject
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -278,8 +289,9 @@
         private System.Windows.Forms.BindingSource schoolsubjectsBindingSource;
         private GridviewSerial.GridViewSerial dGridSubjecs;
         private System.Windows.Forms.BindingSource sssBindingSource;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sss_subjects;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cBoxSession = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -42,9 +43,14 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.classBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sessionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -67,14 +73,15 @@
             // 
             // cBoxSession
             // 
+            this.cBoxSession.DataSource = this.sessionBindingSource;
+            this.cBoxSession.DisplayMember = "sessions";
             this.cBoxSession.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxSession.FormattingEnabled = true;
-            this.cBoxSession.Items.AddRange(new object[] {
-            "--Select--"});
             this.cBoxSession.Location = new System.Drawing.Point(417, 54);
             this.cBoxSession.Name = "cBoxSession";
             this.cBoxSession.Size = new System.Drawing.Size(194, 24);
             this.cBoxSession.TabIndex = 87;
+            this.cBoxSession.ValueMember = "sessions";
             // 
             // label6
             // 
@@ -114,14 +121,15 @@
             // 
             // cBoxClass
             // 
+            this.cBoxClass.DataSource = this.classBindingSource;
+            this.cBoxClass.DisplayMember = "classes";
             this.cBoxClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxClass.FormattingEnabled = true;
-            this.cBoxClass.Items.AddRange(new object[] {
-            "--Select--"});
             this.cBoxClass.Location = new System.Drawing.Point(7, 54);
             this.cBoxClass.Name = "cBoxClass";
             this.cBoxClass.Size = new System.Drawing.Size(181, 24);
             this.cBoxClass.TabIndex = 83;
+            this.cBoxClass.ValueMember = "classes";
             // 
             // btnPublish
             // 
@@ -215,6 +223,19 @@
     " for each subject for that particular Class have been Uploaded Properly.";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // classBindingSource
+            // 
+            this.classBindingSource.DataSource = typeof(DB._class);
+            // 
+            // sessionBindingSource
+            // 
+            this.sessionBindingSource.DataSource = typeof(DB.session);
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
             // PublishUploadedResult
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -229,6 +250,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,5 +273,8 @@
         private Buttons.ButtonWithoutMenu btnPublish;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.BindingSource sessionBindingSource;
+        private System.Windows.Forms.BindingSource classBindingSource;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

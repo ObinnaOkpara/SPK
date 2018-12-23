@@ -107,9 +107,9 @@ namespace SPK.UserControls.SubForms
 
                         if (senderGrid.CurrentRow != null)
                         {
-                            _id = (int) senderGrid.CurrentRow.Cells["id"].Value;
+                            _id = (int) senderGrid.CurrentRow.Cells[0].Value;
 
-                            txtSubject.Text = (string) senderGrid.CurrentRow.Cells[2].Value;
+                            txtSubject.Text = (string) senderGrid.CurrentRow.Cells[1].Value;
                         }
                     }
                     else if (btn.Text == "Delete")
@@ -119,8 +119,8 @@ namespace SPK.UserControls.SubForms
                         if (result == DialogResult.Yes)
                         {
                             _unitOfWork = new UnitOfWork(new Model1());
-                            var _id = (int)senderGrid.CurrentRow.Cells["id"].Value;
-                            var ss = _unitOfWork.School_SubjectsRepository.FindById(_id).Result;
+                            var _idDel = (int)senderGrid.CurrentRow.Cells[0].Value;
+                            var ss = _unitOfWork.School_SubjectsRepository.FindById(_idDel).Result;
                             _unitOfWork.School_SubjectsRepository.Remove(ss);
 
                             _unitOfWork.Save();

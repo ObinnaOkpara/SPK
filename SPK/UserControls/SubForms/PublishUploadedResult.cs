@@ -14,9 +14,16 @@ namespace SPK.UserControls.SubForms
 {
     public partial class PublishUploadedResult : UserControl
     {
+        List<_class> _Classes;
+        List<session> sessions;
         public PublishUploadedResult()
         {
             InitializeComponent();
+
+            if (LicenseManager.UsageMode != LicenseUsageMode.Designtime)
+            {
+                backgroundWorker1.RunWorkerAsync();
+            }
         }
 
         private void btnPublish_ClickEvent(object sender, EventArgs e)
@@ -64,7 +71,6 @@ namespace SPK.UserControls.SubForms
                     {
                         foreach (var std in studList)
                         {
-                            var get_Sub_total = 0;
                             var reg_number = std.reg_number;
 
                             //get a single student result list in a session and term
@@ -174,6 +180,21 @@ namespace SPK.UserControls.SubForms
                 }
 
             }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            using (var db = new Model1())
+            {
+                _Classes = db.classes.ToList();
+                sessions = db.sessions.ToList();
+            }
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            cBoxClass.DataSource = _Classes;
+            cBoxSession.DataSource = sessions;
         }
     }
 }
