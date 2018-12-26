@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSetup));
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblMsg = new System.Windows.Forms.Label();
             this.txtDbName = new System.Windows.Forms.TextBox();
@@ -54,6 +55,7 @@
             this.txtServerName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panClient.SuspendLayout();
@@ -64,6 +66,7 @@
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.panServer);
             this.panel3.Controls.Add(this.lblMsg);
             this.panel3.Controls.Add(this.txtDbName);
             this.panel3.Controls.Add(this.label8);
@@ -75,7 +78,6 @@
             this.panel3.Controls.Add(this.btnSave);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.panClient);
-            this.panel3.Controls.Add(this.panServer);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.Location = new System.Drawing.Point(33, 25);
             this.panel3.Name = "panel3";
@@ -364,14 +366,25 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "SERVER IP ADDRESS :";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(228, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(248, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Make sure Xampp running on the server machine!!!";
+            // 
             // frmSetup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(713, 450);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.panel3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSetup";
-            this.Text = "frmSetup";
+            this.Text = "Setup Page";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmSetup_FormClosed);
             this.Load += new System.EventHandler(this.frmSetup_Load);
             this.panel3.ResumeLayout(false);
@@ -383,6 +396,7 @@
             this.panServer.ResumeLayout(false);
             this.panServer.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -414,5 +428,6 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Button btnTestServer;
         private System.Windows.Forms.Label lblMsg;
+        private System.Windows.Forms.Label label9;
     }
 }

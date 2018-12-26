@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(269, 188);
             this.Name = "frmFirst";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmFirst";
             this.ResumeLayout(false);

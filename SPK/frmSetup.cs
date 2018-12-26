@@ -75,6 +75,7 @@ namespace SPK
                     {
                         IPHostEntry host = Dns.GetHostEntry(Dns.GetHostName());
                         var addresses = host.AddressList.Where(ip => ip.AddressFamily == AddressFamily.InterNetwork);
+                        lbIPs.Items.Clear();
 
                         foreach (var address in addresses)
                         {
@@ -266,12 +267,11 @@ namespace SPK
             {
                 conn.Open();
                 MessageBox.Show("Connection successful.");
-
-
             }
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
+                Utilities.Utils.LogException(ex);
             }
             finally
             {

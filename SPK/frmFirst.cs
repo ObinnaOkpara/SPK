@@ -20,8 +20,7 @@ namespace SPK
 
         Thread thread;
         System.Windows.Forms.Timer tim;
-        LoginForm frmLogin = new LoginForm();
-
+        bool toLogin = false;
 
         public frmFirst()
         {
@@ -41,16 +40,18 @@ namespace SPK
 
             var conn = new MySqlConnection(conString);
 
+           toLogin = false;
+
             try
             {
                 conn.Open();
-                frmLogin.Show();
-                frmLogin.WindowState = FormWindowState.Minimized;
+                toLogin = true;
+
             }
             catch
             {
-                frmSetup frm = new frmSetup("login");
-                frm.Show();
+                toLogin = false;
+
             }
             finally
             {
@@ -60,8 +61,19 @@ namespace SPK
             if (timeDone)
             {
                 thread.Abort();
-                frmLogin.WindowState = FormWindowState.Normal;
+
                 this.Hide();
+
+                if (toLogin)
+                {
+                    LoginForm frmLogin = new LoginForm();
+                    frmLogin.Show();
+                }
+                else
+                {
+                    frmSetup frm = new frmSetup("login");
+                    frm.Show();
+                }
             }
             loadDone = true;
         }
@@ -71,8 +83,18 @@ namespace SPK
             if (loadDone)
             {
                 thread.Abort();
-                frmLogin.WindowState = FormWindowState.Normal;
                 this.Hide();
+
+                if (toLogin)
+                {
+                    LoginForm frmLogin = new LoginForm();
+                    frmLogin.Show();
+                }
+                else
+                {
+                    frmSetup frm = new frmSetup("login");
+                    frm.Show();
+                }
             }
             else
             {
