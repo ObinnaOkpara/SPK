@@ -14,7 +14,7 @@ namespace SPK.Utilities
 
         public static void LogException(Exception ex)
         {
-            string filePath = Path.Combine(Application.StartupPath, @"log");
+            string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), @"SPKlog");
 
             if (!Directory.Exists(filePath))
             {

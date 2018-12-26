@@ -231,22 +231,6 @@ namespace SPK
                 Location = new Point(curpos.X - startpt.X, curpos.Y - startpt.Y);
             }
         }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            Cursor = Cursors.WaitCursor;
-            try
-            {
-                var appPath = @"\\" + Path.Combine(Environment.MachineName, @"spkq");
-                File.Copy(Path.Combine(Environment.CurrentDirectory, "small.png"), Path.Combine(appPath, "small.png"), true);
-                MessageBox.Show("Successful.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-
-            Cursor = Cursors.Arrow;
-        }
+        
     }
 }
