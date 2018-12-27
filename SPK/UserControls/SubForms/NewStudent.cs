@@ -30,6 +30,7 @@ namespace SPK.UserControls.SubForms
 
         private void btnUploadStudentImage_Click(object sender, EventArgs e)
         {
+            //MessageBox.Show("ye");
             var opFile = new OpenFileDialog();
             opFile.Title = "Select Image";
             opFile.Filter = "jpg files (*.jpg)|*.jpg|All files (*.*)|*.*";
@@ -58,7 +59,9 @@ namespace SPK.UserControls.SubForms
                     _pasportLocation = "image/" + filename;
                     string filePath = opFile.FileName;
                     File.Copy(filePath, Path.Combine(appPath, filename));
-                    picStudentImage.Image = new Bitmap(_pasportLocation);
+                    var nfile = Path.Combine(appPath, filename);
+                    picStudentImage.SizeMode = PictureBoxSizeMode.StretchImage;
+                    picStudentImage.Image = new Bitmap(nfile);
                 }
                 catch (Exception ex)
                 {
@@ -73,8 +76,69 @@ namespace SPK.UserControls.SubForms
 
         }
 
-        private async void btnSave_Click(object sender, EventArgs e)
+        public string GetRegNumber()
         {
+            
+            using (var db = new Model1())
+            {
+                var curr_season = db.current_season.FirstOrDefault();
+                string session;
+               var last_std = db.students.OrderByDescending(st => st.id).FirstOrDefault();
+               
+
+                if (curr_season != null)
+                {
+
+                    session = curr_season.current_session;
+                    var term = curr_season.current_term;
+
+                    var session_of_reg = session.Substring(0, 4);
+
+                    if (term == "First Term")
+                    {
+                        term_code = 1;
+                    }
+                    else if (term == "Second Term")
+                    {
+                        term_code = 2;
+                    }
+                    else if (term == "Third Term")
+                    {
+                        term_code = 3;
+                    }
+
+                    if (last_std != null)
+                    {
+                        last_id = last_std.id;
+                        return session_of_reg + term_code + school_name + last_id.ToString("000");
+                    }
+                    else
+                    {
+                        return session_of_reg + term_code + school_name + "001";
+                    }
+                    
+                }
+                return null;
+
+
+            }
+        }
+
+       private void ClearTextboxes()
+        {
+            foreach (var c in Controls)
+            {
+                if (c is TextBox)
+                {
+                    (c as TextBox).Clear();
+                }
+               
+            }
+        }
+
+        private async void btnSave_ClickEvent(object sender, EventArgs e)
+        {
+
             try
             {
                 _unitOfWork = new UnitOfWork(new Model1());
@@ -84,7 +148,7 @@ namespace SPK.UserControls.SubForms
                     city = txtCity.Text,
 
                     contact_phone = txtStudentPhone.Text,
-                    date_of_reg = DateTime.Today.ToShortDateString(),
+                    date_of_reg = DateTime.Today.ToString("dd/MMM/yyyy"),
                     dob = dtpDoB.Value.Day.ToString(),
                     father_name = txtFatherName.Text,
                     father_occupation = txtFatherOccupation.Text,
@@ -121,56 +185,15 @@ namespace SPK.UserControls.SubForms
 
                 _unitOfWork.StudentRepository.Add(newStudent);
                 await _unitOfWork.Save();
+
+                MessageBox.Show("Student succesfully registered");
+                ClearTextboxes();
             }
             catch (Exception ex)
             {
                 Utils.LogException(ex);
                 MessageBox.Show("Error occured. Please contact support.");
             }
-          
-
-        }
-
-        string GetRegNumber()
-        {
-            
-            using (var db = new Model1())
-            {
-                var curr_season = db.current_season.FirstOrDefault();
-                string session;
-                last_id = db.students.Last().id;
-
-                if (curr_season != null)
-                {
-
-                    session = curr_season.current_session;
-                    var term = curr_season.current_term;
-
-                    var session_of_reg = session.Substring(0, 4);
-
-                    if (term == "First Term")
-                    {
-                        term_code = 1;
-                    }
-                    else if (term == "Second Term")
-                    {
-                        term_code = 2;
-                    }
-                    else if (term == "Third Term")
-                    {
-                        term_code = 3;
-                    }
-                    return session + term_code + school_name + last_id.ToString("000");
-                }
-                return null;
-
-
-            }
-        }
-
-        private void btnSave_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
