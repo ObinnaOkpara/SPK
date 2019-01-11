@@ -85,6 +85,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtFirstname = new System.Windows.Forms.TextBox();
             this.picStudentImage = new System.Windows.Forms.PictureBox();
+            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.btnUploadStudentImage = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -92,7 +93,6 @@
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
             this.panel3.SuspendLayout();
@@ -830,6 +830,20 @@
             this.picStudentImage.TabIndex = 12;
             this.picStudentImage.TabStop = false;
             // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.btnSave.BtnText = "SAVE CHANGES";
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
+            this.btnSave.Icon = global::SPK.Properties.Resources.icons8_save_64;
+            this.btnSave.Location = new System.Drawing.Point(253, 874);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
+            this.btnSave.Size = new System.Drawing.Size(250, 50);
+            this.btnSave.TabIndex = 11;
+            this.btnSave.ClickEvent += new System.EventHandler(this.btnSave_ClickEvent);
+            // 
             // btnUploadStudentImage
             // 
             this.btnUploadStudentImage.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -911,21 +925,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(775, 467);
             this.panel2.TabIndex = 5;
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnSave.BtnText = "SAVE CHANGES";
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(23)))));
-            this.btnSave.Icon = global::SPK.Properties.Resources.icons8_save_64;
-            this.btnSave.Location = new System.Drawing.Point(253, 874);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
-            this.btnSave.Size = new System.Drawing.Size(250, 50);
-            this.btnSave.TabIndex = 11;
-            this.btnSave.ClickEvent += new System.EventHandler(this.btnSave_ClickEvent);
-//            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // NewStudent
             // 
