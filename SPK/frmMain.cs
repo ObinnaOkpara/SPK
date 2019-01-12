@@ -400,7 +400,7 @@ namespace SPK
             }
         }
         
-        private void showUserControl (Control ctrl)
+        public void showUserControl (Control ctrl)
         {
             Cursor = Cursors.WaitCursor;
 
@@ -449,6 +449,11 @@ namespace SPK
 
                 MessageBox.Show("Backup done.");
             }
+        }
+
+        private void lblUsername_Click(object sender, EventArgs e)
+        {
+            showUserControl(new ViewStudents());
         }
     }
 }
