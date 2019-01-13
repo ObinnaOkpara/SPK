@@ -28,23 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cBoxClass = new System.Windows.Forms.ComboBox();
+            this.classBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnSearch = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dGridStudents = new System.Windows.Forms.DataGridView();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fullnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactphoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.regnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gen_password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Slip = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridStudents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -107,6 +124,7 @@
             // 
             // cBoxClass
             // 
+            this.cBoxClass.DataSource = this.classBindingSource;
             this.cBoxClass.DisplayMember = "classes";
             this.cBoxClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxClass.FormattingEnabled = true;
@@ -115,6 +133,10 @@
             this.cBoxClass.Size = new System.Drawing.Size(313, 24);
             this.cBoxClass.TabIndex = 74;
             this.cBoxClass.ValueMember = "classes";
+            // 
+            // classBindingSource
+            // 
+            this.classBindingSource.DataSource = typeof(DB._class);
             // 
             // btnSearch
             // 
@@ -128,6 +150,7 @@
             this.btnSearch.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
             this.btnSearch.Size = new System.Drawing.Size(154, 41);
             this.btnSearch.TabIndex = 15;
+            this.btnSearch.ClickEvent += new System.EventHandler(this.btnSearch_ClickEvent);
             // 
             // label2
             // 
@@ -165,13 +188,33 @@
             // 
             // dGridStudents
             // 
+            this.dGridStudents.AllowUserToAddRows = false;
+            this.dGridStudents.AllowUserToDeleteRows = false;
             this.dGridStudents.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dGridStudents.AutoGenerateColumns = false;
             this.dGridStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGridStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.fullnameDataGridViewTextBoxColumn,
+            this.genderDataGridViewTextBoxColumn,
+            this.classDataGridViewTextBoxColumn,
+            this.contactphoneDataGridViewTextBoxColumn,
+            this.regnumberDataGridViewTextBoxColumn,
+            this.gen_password,
+            this.Delete,
+            this.Slip});
+            this.dGridStudents.DataSource = this.studentBindingSource;
             this.dGridStudents.Location = new System.Drawing.Point(7, 31);
             this.dGridStudents.Name = "dGridStudents";
+            this.dGridStudents.ReadOnly = true;
             this.dGridStudents.RowTemplate.Height = 24;
             this.dGridStudents.Size = new System.Drawing.Size(773, 337);
             this.dGridStudents.TabIndex = 15;
+            this.dGridStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridStudents_CellContentClick);
+            // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataSource = typeof(DB.student);
             // 
             // label3
             // 
@@ -183,6 +226,81 @@
             this.label3.Size = new System.Drawing.Size(103, 20);
             this.label3.TabIndex = 14;
             this.label3.Text = "STUDENTS";
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // fullnameDataGridViewTextBoxColumn
+            // 
+            this.fullnameDataGridViewTextBoxColumn.DataPropertyName = "Fullname";
+            this.fullnameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.fullnameDataGridViewTextBoxColumn.Name = "fullnameDataGridViewTextBoxColumn";
+            this.fullnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // genderDataGridViewTextBoxColumn
+            // 
+            this.genderDataGridViewTextBoxColumn.DataPropertyName = "gender";
+            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
+            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+            this.genderDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // classDataGridViewTextBoxColumn
+            // 
+            this.classDataGridViewTextBoxColumn.DataPropertyName = "_class";
+            this.classDataGridViewTextBoxColumn.HeaderText = "Class";
+            this.classDataGridViewTextBoxColumn.Name = "classDataGridViewTextBoxColumn";
+            this.classDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // contactphoneDataGridViewTextBoxColumn
+            // 
+            this.contactphoneDataGridViewTextBoxColumn.DataPropertyName = "contact_phone";
+            this.contactphoneDataGridViewTextBoxColumn.HeaderText = "Contact Phone";
+            this.contactphoneDataGridViewTextBoxColumn.Name = "contactphoneDataGridViewTextBoxColumn";
+            this.contactphoneDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // regnumberDataGridViewTextBoxColumn
+            // 
+            this.regnumberDataGridViewTextBoxColumn.DataPropertyName = "reg_number";
+            this.regnumberDataGridViewTextBoxColumn.HeaderText = "Reg Number";
+            this.regnumberDataGridViewTextBoxColumn.Name = "regnumberDataGridViewTextBoxColumn";
+            this.regnumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // gen_password
+            // 
+            this.gen_password.DataPropertyName = "gen_password";
+            this.gen_password.HeaderText = "Password";
+            this.gen_password.Name = "gen_password";
+            this.gen_password.ReadOnly = true;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
+            // 
+            // Slip
+            // 
+            this.Slip.HeaderText = "Slip";
+            this.Slip.Name = "Slip";
+            this.Slip.ReadOnly = true;
+            this.Slip.Text = "SLIP";
+            this.Slip.UseColumnTextForButtonValue = true;
             // 
             // ViewStudents
             // 
@@ -198,9 +316,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridStudents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -219,5 +340,18 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dGridStudents;
         private System.Windows.Forms.Label label3;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.BindingSource classBindingSource;
+        private System.Windows.Forms.BindingSource studentBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn classDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contactphoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn regnumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gen_password;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.DataGridViewButtonColumn Slip;
     }
 }
