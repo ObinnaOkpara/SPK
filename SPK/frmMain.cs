@@ -146,7 +146,7 @@ namespace SPK
 
         private void viewStudentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            showUserControl(new ViewRegisteredStudent());
+            showUserControl(new ViewStudents());
         }
 
         private void InputAttendancetoolStripMenuItem1_Click(object sender, EventArgs e)

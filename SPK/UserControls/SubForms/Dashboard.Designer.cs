@@ -34,37 +34,37 @@
             this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panPasswordCover = new SPK.UserControls.Panels.ExtendedPanel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.panStaffCover = new SPK.UserControls.Panels.ExtendedPanel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.panFeesCover = new SPK.UserControls.Panels.ExtendedPanel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.panResultCover = new SPK.UserControls.Panels.ExtendedPanel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.PanSubjectCover = new SPK.UserControls.Panels.ExtendedPanel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panClassCover = new SPK.UserControls.Panels.ExtendedPanel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panStudentCover = new SPK.UserControls.Panels.ExtendedPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panProfileCover = new SPK.UserControls.Panels.ExtendedPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panPasswordCover = new SPK.UserControls.Panels.ExtendedPanel();
-            this.panStaffCover = new SPK.UserControls.Panels.ExtendedPanel();
-            this.panFeesCover = new SPK.UserControls.Panels.ExtendedPanel();
-            this.panResultCover = new SPK.UserControls.Panels.ExtendedPanel();
-            this.PanSubjectCover = new SPK.UserControls.Panels.ExtendedPanel();
-            this.panClassCover = new SPK.UserControls.Panels.ExtendedPanel();
-            this.panStudentCover = new SPK.UserControls.Panels.ExtendedPanel();
-            this.panProfileCover = new SPK.UserControls.Panels.ExtendedPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
             this.panel2.SuspendLayout();
@@ -159,6 +159,17 @@
             this.panel7.Size = new System.Drawing.Size(150, 130);
             this.panel7.TabIndex = 7;
             // 
+            // panPasswordCover
+            // 
+            this.panPasswordCover.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panPasswordCover.Location = new System.Drawing.Point(0, 0);
+            this.panPasswordCover.Name = "panPasswordCover";
+            this.panPasswordCover.Size = new System.Drawing.Size(150, 130);
+            this.panPasswordCover.TabIndex = 8;
+            this.panPasswordCover.Click += new System.EventHandler(this.panPasswordCover_Click);
+            this.panPasswordCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
+            this.panPasswordCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
+            // 
             // pictureBox5
             // 
             this.pictureBox5.Image = global::SPK.Properties.Resources.password;
@@ -191,6 +202,17 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(150, 130);
             this.panel8.TabIndex = 6;
+            // 
+            // panStaffCover
+            // 
+            this.panStaffCover.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panStaffCover.Location = new System.Drawing.Point(0, 0);
+            this.panStaffCover.Name = "panStaffCover";
+            this.panStaffCover.Size = new System.Drawing.Size(150, 130);
+            this.panStaffCover.TabIndex = 8;
+            this.panStaffCover.Click += new System.EventHandler(this.panStaffCover_Click);
+            this.panStaffCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
+            this.panStaffCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
             // 
             // pictureBox6
             // 
@@ -225,6 +247,17 @@
             this.panel9.Size = new System.Drawing.Size(150, 130);
             this.panel9.TabIndex = 5;
             // 
+            // panFeesCover
+            // 
+            this.panFeesCover.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panFeesCover.Location = new System.Drawing.Point(0, 0);
+            this.panFeesCover.Name = "panFeesCover";
+            this.panFeesCover.Size = new System.Drawing.Size(150, 130);
+            this.panFeesCover.TabIndex = 8;
+            this.panFeesCover.Click += new System.EventHandler(this.panFeesCover_Click);
+            this.panFeesCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
+            this.panFeesCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
+            // 
             // pictureBox7
             // 
             this.pictureBox7.Image = global::SPK.Properties.Resources.fees;
@@ -257,6 +290,17 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(150, 130);
             this.panel10.TabIndex = 4;
+            // 
+            // panResultCover
+            // 
+            this.panResultCover.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panResultCover.Location = new System.Drawing.Point(0, 0);
+            this.panResultCover.Name = "panResultCover";
+            this.panResultCover.Size = new System.Drawing.Size(150, 130);
+            this.panResultCover.TabIndex = 8;
+            this.panResultCover.Click += new System.EventHandler(this.panResultCover_Click);
+            this.panResultCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
+            this.panResultCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
             // 
             // pictureBox8
             // 
@@ -291,6 +335,17 @@
             this.panel6.Size = new System.Drawing.Size(150, 130);
             this.panel6.TabIndex = 3;
             // 
+            // PanSubjectCover
+            // 
+            this.PanSubjectCover.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanSubjectCover.Location = new System.Drawing.Point(0, 0);
+            this.PanSubjectCover.Name = "PanSubjectCover";
+            this.PanSubjectCover.Size = new System.Drawing.Size(150, 130);
+            this.PanSubjectCover.TabIndex = 8;
+            this.PanSubjectCover.Click += new System.EventHandler(this.PanSubjectCover_Click);
+            this.PanSubjectCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
+            this.PanSubjectCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
+            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::SPK.Properties.Resources.subject;
@@ -323,6 +378,17 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(150, 130);
             this.panel5.TabIndex = 2;
+            // 
+            // panClassCover
+            // 
+            this.panClassCover.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panClassCover.Location = new System.Drawing.Point(0, 0);
+            this.panClassCover.Name = "panClassCover";
+            this.panClassCover.Size = new System.Drawing.Size(150, 130);
+            this.panClassCover.TabIndex = 8;
+            this.panClassCover.Click += new System.EventHandler(this.panClassCover_Click);
+            this.panClassCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
+            this.panClassCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
             // 
             // pictureBox3
             // 
@@ -357,6 +423,17 @@
             this.panel4.Size = new System.Drawing.Size(150, 130);
             this.panel4.TabIndex = 1;
             // 
+            // panStudentCover
+            // 
+            this.panStudentCover.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panStudentCover.Location = new System.Drawing.Point(0, 0);
+            this.panStudentCover.Name = "panStudentCover";
+            this.panStudentCover.Size = new System.Drawing.Size(150, 130);
+            this.panStudentCover.TabIndex = 7;
+            this.panStudentCover.Click += new System.EventHandler(this.panStudentCover_Click);
+            this.panStudentCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
+            this.panStudentCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::SPK.Properties.Resources.student5;
@@ -390,6 +467,17 @@
             this.panel3.Size = new System.Drawing.Size(150, 130);
             this.panel3.TabIndex = 0;
             // 
+            // panProfileCover
+            // 
+            this.panProfileCover.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panProfileCover.Location = new System.Drawing.Point(0, 0);
+            this.panProfileCover.Name = "panProfileCover";
+            this.panProfileCover.Size = new System.Drawing.Size(150, 130);
+            this.panProfileCover.TabIndex = 6;
+            this.panProfileCover.Click += new System.EventHandler(this.panProfileCover_Click);
+            this.panProfileCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
+            this.panProfileCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SPK.Properties.Resources.Icons8_flat_businessman_svg;
@@ -409,94 +497,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "PROFILE";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panPasswordCover
-            // 
-            this.panPasswordCover.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panPasswordCover.Location = new System.Drawing.Point(0, 0);
-            this.panPasswordCover.Name = "panPasswordCover";
-            this.panPasswordCover.Size = new System.Drawing.Size(150, 130);
-            this.panPasswordCover.TabIndex = 8;
-            this.panPasswordCover.Click += new System.EventHandler(this.panPasswordCover_Click);
-            this.panPasswordCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
-            this.panPasswordCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
-            // 
-            // panStaffCover
-            // 
-            this.panStaffCover.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panStaffCover.Location = new System.Drawing.Point(0, 0);
-            this.panStaffCover.Name = "panStaffCover";
-            this.panStaffCover.Size = new System.Drawing.Size(150, 130);
-            this.panStaffCover.TabIndex = 8;
-            this.panStaffCover.Click += new System.EventHandler(this.panStaffCover_Click);
-            this.panStaffCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
-            this.panStaffCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
-            // 
-            // panFeesCover
-            // 
-            this.panFeesCover.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panFeesCover.Location = new System.Drawing.Point(0, 0);
-            this.panFeesCover.Name = "panFeesCover";
-            this.panFeesCover.Size = new System.Drawing.Size(150, 130);
-            this.panFeesCover.TabIndex = 8;
-            this.panFeesCover.Click += new System.EventHandler(this.panFeesCover_Click);
-            this.panFeesCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
-            this.panFeesCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
-            // 
-            // panResultCover
-            // 
-            this.panResultCover.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panResultCover.Location = new System.Drawing.Point(0, 0);
-            this.panResultCover.Name = "panResultCover";
-            this.panResultCover.Size = new System.Drawing.Size(150, 130);
-            this.panResultCover.TabIndex = 8;
-            this.panResultCover.Click += new System.EventHandler(this.panResultCover_Click);
-            this.panResultCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
-            this.panResultCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
-            // 
-            // PanSubjectCover
-            // 
-            this.PanSubjectCover.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanSubjectCover.Location = new System.Drawing.Point(0, 0);
-            this.PanSubjectCover.Name = "PanSubjectCover";
-            this.PanSubjectCover.Size = new System.Drawing.Size(150, 130);
-            this.PanSubjectCover.TabIndex = 8;
-            this.PanSubjectCover.Click += new System.EventHandler(this.PanSubjectCover_Click);
-            this.PanSubjectCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
-            this.PanSubjectCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
-            // 
-            // panClassCover
-            // 
-            this.panClassCover.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panClassCover.Location = new System.Drawing.Point(0, 0);
-            this.panClassCover.Name = "panClassCover";
-            this.panClassCover.Size = new System.Drawing.Size(150, 130);
-            this.panClassCover.TabIndex = 8;
-            this.panClassCover.Click += new System.EventHandler(this.panClassCover_Click);
-            this.panClassCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
-            this.panClassCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
-            // 
-            // panStudentCover
-            // 
-            this.panStudentCover.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panStudentCover.Location = new System.Drawing.Point(0, 0);
-            this.panStudentCover.Name = "panStudentCover";
-            this.panStudentCover.Size = new System.Drawing.Size(150, 130);
-            this.panStudentCover.TabIndex = 7;
-            this.panStudentCover.Click += new System.EventHandler(this.panStudentCover_Click);
-            this.panStudentCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
-            this.panStudentCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
-            // 
-            // panProfileCover
-            // 
-            this.panProfileCover.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panProfileCover.Location = new System.Drawing.Point(0, 0);
-            this.panProfileCover.Name = "panProfileCover";
-            this.panProfileCover.Size = new System.Drawing.Size(150, 130);
-            this.panProfileCover.TabIndex = 6;
-            this.panProfileCover.Click += new System.EventHandler(this.panProfileCover_Click);
-            this.panProfileCover.MouseLeave += new System.EventHandler(this.panProfileCover_MouseLeave);
-            this.panProfileCover.MouseHover += new System.EventHandler(this.panProfileCover_MouseHover);
             // 
             // Dashboard
             // 

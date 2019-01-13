@@ -139,7 +139,7 @@ namespace SPK
 
         private void viewRegisteredSubjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            showUserControl(new ViewRegisteredStudent());
+            showUserControl(new ViewStudents());
         }
 
         private void exportOrImportBehaviourInExcelToolStripMenuItem_Click(object sender, EventArgs e)

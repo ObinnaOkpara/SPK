@@ -25,7 +25,7 @@ namespace SPK.UserControls.SubForms
             if (LicenseManager.UsageMode != LicenseUsageMode.Designtime)
             {
                 backgroundWorker1.RunWorkerAsync();
-                dGridStudents.Cursor = Cursors.WaitCursor;
+                cBoxClass.Cursor = Cursors.WaitCursor;
             }
         }
 
@@ -68,6 +68,7 @@ namespace SPK.UserControls.SubForms
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             cBoxClass.DataSource = _Classes;
+            cBoxClass.Cursor = Cursors.Arrow;
         }
 
         private void dGridStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)

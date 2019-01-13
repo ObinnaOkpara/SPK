@@ -142,7 +142,7 @@ namespace SPK.UserControls.SubForms
 
         private void panViewStudent_Click(object sender, EventArgs e)
         {
-            showUserControl(new ViewRegisteredStudent());
+            showUserControl(new ViewStudents());
         }
 
         private void PanSubjectCover_Click(object sender, EventArgs e)
