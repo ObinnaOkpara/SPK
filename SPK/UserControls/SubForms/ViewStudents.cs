@@ -121,10 +121,13 @@ namespace SPK.UserControls.SubForms
                         var editfrm = new EditStudent(_idStudent);
 
                         var newform = new Form();
+                        newform.Size = new Size(800, 580);
                         
-                        newform.ShowDialog();
                         newform.Controls.Add(editfrm);
+
                         editfrm.Dock = DockStyle.Fill;
+
+                        newform.ShowDialog();
                     }
                 }
             }

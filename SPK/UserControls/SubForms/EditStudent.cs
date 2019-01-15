@@ -11,6 +11,7 @@ using DB;
 using DB.Services.DataRepository;
 using SPK.Utilities;
 using System.IO;
+using System.Globalization;
 
 namespace SPK.UserControls.SubForms
 {
@@ -54,7 +55,10 @@ namespace SPK.UserControls.SubForms
 
             txtStudentPhone.Text = Student.contact_phone;
             // date_of_reg = DateTime.Today.ToString("dd/MMM/yyyy"),
-            dtpDoB.Value = DateTime.Parse(Student.dob);
+            var month = DateTime.ParseExact(Student.mob, "MMMM", CultureInfo.InvariantCulture).Month.ToString();
+
+            dtpDoB.Value = DateTime.Parse(Student.dob+ "/" + month + "/" + Student.yob);
+            
             txtFatherName.Text = Student.father_name;
             txtFatherOccupation.Text = Student.father_occupation;
             txtFatherPhone.Text = Student.father_phone;
@@ -82,8 +86,6 @@ namespace SPK.UserControls.SubForms
             cBoxState.Text = Student.state;
             //time_of_reg = DateTime.Now.ToLocalTime(),
             txtCurClass.Text = Student._class;
-            dtpDoB.Value = DateTime.Parse(Student.mob);
-            dtpDoB.Value = DateTime.Parse(Student.yob);
         }
 
         private async void btnSave_ClickEventAsync(object sender, EventArgs e)
