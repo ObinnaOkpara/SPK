@@ -113,6 +113,19 @@ namespace SPK.UserControls.SubForms
                         slip.Show();
                         
                     }
+                    else if (btn.Text == "Edit")
+                    {
+                        _unitOfWork = new UnitOfWork(new Model1());
+                        var _idStudent = (int)senderGrid.CurrentRow.Cells[0].Value;
+
+                        var editfrm = new EditStudent(_idStudent);
+
+                        var newform = new Form();
+                        
+                        newform.ShowDialog();
+                        newform.Controls.Add(editfrm);
+                        editfrm.Dock = DockStyle.Fill;
+                    }
                 }
             }
             catch (Exception ex)

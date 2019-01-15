@@ -34,6 +34,10 @@
             this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.txtRegNumber = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
             this.cBoxSex = new System.Windows.Forms.ComboBox();
             this.dtpDoB = new System.Windows.Forms.DateTimePicker();
             this.cBoxCountry = new System.Windows.Forms.ComboBox();
@@ -93,6 +97,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
             this.panel2.SuspendLayout();
@@ -162,6 +167,10 @@
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.txtPassword);
+            this.panel3.Controls.Add(this.label31);
+            this.panel3.Controls.Add(this.txtRegNumber);
+            this.panel3.Controls.Add(this.label30);
             this.panel3.Controls.Add(this.cBoxSex);
             this.panel3.Controls.Add(this.dtpDoB);
             this.panel3.Controls.Add(this.cBoxCountry);
@@ -226,6 +235,46 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(763, 939);
             this.panel3.TabIndex = 4;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.txtPassword.Location = new System.Drawing.Point(309, 54);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(232, 23);
+            this.txtPassword.TabIndex = 75;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label31.Location = new System.Drawing.Point(306, 31);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(77, 17);
+            this.label31.TabIndex = 74;
+            this.label31.Text = "Password";
+            // 
+            // txtRegNumber
+            // 
+            this.txtRegNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRegNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.txtRegNumber.Location = new System.Drawing.Point(309, 103);
+            this.txtRegNumber.Name = "txtRegNumber";
+            this.txtRegNumber.Size = new System.Drawing.Size(232, 23);
+            this.txtRegNumber.TabIndex = 75;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label30.Location = new System.Drawing.Point(306, 80);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(98, 17);
+            this.label30.TabIndex = 74;
+            this.label30.Text = "Reg Number";
             // 
             // cBoxSex
             // 
@@ -856,6 +905,7 @@
             this.btnSave.SideColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(113)))));
             this.btnSave.Size = new System.Drawing.Size(250, 50);
             this.btnSave.TabIndex = 11;
+            this.btnSave.ClickEvent += new System.EventHandler(this.btnSave_ClickEventAsync);
             // 
             // btnUploadStudentImage
             // 
@@ -870,6 +920,7 @@
             this.btnUploadStudentImage.TabIndex = 7;
             this.btnUploadStudentImage.Text = "Browse...";
             this.btnUploadStudentImage.UseVisualStyleBackColor = false;
+            this.btnUploadStudentImage.Click += new System.EventHandler(this.btnUploadStudentImage_Click);
             // 
             // label4
             // 
@@ -923,6 +974,11 @@
             this.label1.Size = new System.Drawing.Size(72, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Surname";
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
             // EditStudent
             // 
@@ -1010,5 +1066,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.Label label1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.TextBox txtRegNumber;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label label31;
     }
 }
