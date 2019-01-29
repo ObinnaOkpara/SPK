@@ -35,7 +35,7 @@ namespace SPK.UserControls.SubForms
             opFile.Title = "Select Image";
             opFile.Filter = "jpg files (*.jpg)|*.jpg|All files (*.*)|*.*";
 
-            string appPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures), @"spk\image\");
+            string appPath = Properties.Settings.Default.ImagePath;
             if (Directory.Exists(appPath) == false)
             {
                 Directory.CreateDirectory(appPath);
@@ -177,7 +177,7 @@ namespace SPK.UserControls.SubForms
                     state = cBoxState.Text,
                     time_of_reg = DateTime.Now.ToLocalTime(),
                     _class = txtCurClass.Text,
-                    mob = dtpDoB.Value.Month.ToString(),
+                    mob = dtpDoB.Value.Month.ToString("MMMM"),
                     yob = dtpDoB.Value.Year.ToString(),
 
 

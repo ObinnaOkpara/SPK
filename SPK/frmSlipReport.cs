@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
+using System.Drawing.Imaging;
 
 namespace SPK
 {
@@ -22,6 +23,20 @@ namespace SPK
         {
             InitializeComponent();
             studentId = StudentId;
+        }
+
+        public string imgToString(string path)
+        {
+            string img = "";
+            using (var b = new Bitmap(path))
+            {
+                using (var ms = new MemoryStream())
+                {
+                    b.Save(ms, ImageFormat.Png);
+                    img = Convert.ToBase64String(ms.ToArray());
+                    return img;
+                }
+            }
         }
 
         private void frmSlipReport_Load(object sender, EventArgs e)
@@ -53,11 +68,11 @@ namespace SPK
 
                 if (File.Exists(schLogo))
                 {
-                    p.Add(new ReportParameter("Schoollogo", schLogo));
+                    p.Add(new ReportParameter("Schoollogo", imgToString(schLogo)));
                 }
                 else
                 {
-                    p.Add(new ReportParameter("Schoollogo", Path.Combine(Application.StartupPath, "noImageFound.png")));
+                    p.Add(new ReportParameter("Schoollogo", imgToString(Path.Combine(Application.StartupPath, "noImageFound.png"))));
                 }
 
                 p.Add(new Microsoft.Reporting.WinForms.ReportParameter("Schoolname", sch.school_name));
@@ -66,14 +81,14 @@ namespace SPK
 
             if (stu != null)
             {
-                var stuPassport = Path.Combine(appPath, stu.passport);
-                if (File.Exists(stuPassport))
+                var stuPassportPath = Path.Combine(appPath, stu.passport);
+                if (File.Exists(stuPassportPath))
                 {
-                    p.Add(new ReportParameter("Studentimg", stuPassport));
+                    p.Add(new ReportParameter("Studentimg", imgToString(stuPassportPath)));
                 }
                 else
                 {
-                    p.Add(new ReportParameter("Studentimg", Path.Combine(Application.StartupPath, "noImageFound.png")));
+                    p.Add(new ReportParameter("Studentimg", imgToString(Path.Combine(Application.StartupPath, "noImageFound.png"))));
                 }
 
                 p.Add(new ReportParameter("Surname", stu.lastname));

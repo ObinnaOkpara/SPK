@@ -84,9 +84,9 @@
             this.lblSubTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubTitle.Location = new System.Drawing.Point(35, 63);
             this.lblSubTitle.Name = "lblSubTitle";
-            this.lblSubTitle.Size = new System.Drawing.Size(165, 17);
+            this.lblSubTitle.Size = new System.Drawing.Size(184, 17);
             this.lblSubTitle.TabIndex = 2;
-            this.lblSubTitle.Text = "Add students in Class";
+            this.lblSubTitle.Text = "View students in a Class";
             // 
             // lblTitle
             // 

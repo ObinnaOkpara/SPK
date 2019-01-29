@@ -122,6 +122,7 @@ namespace SPK.UserControls.SubForms
 
                         var newform = new Form();
                         newform.Size = new Size(800, 580);
+                        newform.StartPosition = FormStartPosition.CenterScreen;
                         
                         newform.Controls.Add(editfrm);
 

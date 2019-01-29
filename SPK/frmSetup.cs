@@ -158,6 +158,9 @@ namespace SPK
 
                     Properties.Settings.Default.ImagePath = @"\\" + Path.Combine(Properties.Settings.Default.ServerName, @"spk\");
 
+                    Properties.Settings.Default.SetupDone = true;
+                    Properties.Settings.Default.Save();
+
                     var constring = $"SERVER={txtIP.Text.Trim()}; DATABASE={txtDbName.Text.Trim()}; USER ID={txtUsername.Text.Trim()}; PASSWORD={txtPassword.Text.Trim()};";
                     var db = new Model1();
                     db.AdjustConfigConString(constring);
@@ -205,6 +208,9 @@ namespace SPK
 
                     Properties.Settings.Default.ImagePath = @"c:/spk/";
 
+                    Properties.Settings.Default.SetupDone = true;
+                    Properties.Settings.Default.Save();
+
                     var constring = $"SERVER=Localhost; DATABASE={txtDbName.Text.Trim()}; USER ID={txtUsername.Text.Trim()}; PASSWORD={txtPassword.Text.Trim()};";
                     var db = new Model1();
                     db.AdjustConfigConString(constring);
@@ -218,9 +224,6 @@ namespace SPK
                     return;
                 }
             }
-
-            Properties.Settings.Default.SetupDone = true;
-            Properties.Settings.Default.Save();
 
             MessageBox.Show("Configuration was saved successfully.");
 

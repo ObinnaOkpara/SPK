@@ -32,14 +32,15 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgridStudents = new SPK.UserControls.GridviewSerial.GridViewSerial();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fullnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.regnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstCA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.secondCA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Exam = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.subjectBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnSave = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.label3 = new System.Windows.Forms.Label();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.cBoxSession = new System.Windows.Forms.ComboBox();
             this.sessionBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -60,8 +61,10 @@
             this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.currentseasonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgridStudents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).BeginInit();
@@ -70,6 +73,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.currentseasonBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -87,17 +91,18 @@
             // 
             // dgridStudents
             // 
+            this.dgridStudents.AllowUserToAddRows = false;
             this.dgridStudents.AutoGenerateColumns = false;
             this.dgridStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgridStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgridStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
-            this.fullnameDataGridViewTextBoxColumn,
+            this.name,
             this.regnumberDataGridViewTextBoxColumn,
             this.firstCA,
             this.secondCA,
             this.Exam});
-            this.dgridStudents.DataSource = this.studentBindingSource;
+            this.dgridStudents.DataSource = this.subjectBindingSource;
             this.dgridStudents.Location = new System.Drawing.Point(3, 30);
             this.dgridStudents.Name = "dgridStudents";
             this.dgridStudents.Size = new System.Drawing.Size(786, 284);
@@ -110,17 +115,16 @@
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.Visible = false;
             // 
-            // fullnameDataGridViewTextBoxColumn
+            // name
             // 
-            this.fullnameDataGridViewTextBoxColumn.DataPropertyName = "Fullname";
-            this.fullnameDataGridViewTextBoxColumn.HeaderText = "Fullname";
-            this.fullnameDataGridViewTextBoxColumn.Name = "fullnameDataGridViewTextBoxColumn";
-            this.fullnameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Fullname";
+            this.name.Name = "name";
             // 
             // regnumberDataGridViewTextBoxColumn
             // 
             this.regnumberDataGridViewTextBoxColumn.DataPropertyName = "reg_number";
-            this.regnumberDataGridViewTextBoxColumn.HeaderText = "reg_number";
+            this.regnumberDataGridViewTextBoxColumn.HeaderText = "Reg Number";
             this.regnumberDataGridViewTextBoxColumn.Name = "regnumberDataGridViewTextBoxColumn";
             // 
             // firstCA
@@ -138,9 +142,9 @@
             this.Exam.HeaderText = "Exam";
             this.Exam.Name = "Exam";
             // 
-            // studentBindingSource
+            // subjectBindingSource
             // 
-            this.studentBindingSource.DataSource = typeof(DB.student);
+            this.subjectBindingSource.DataSource = typeof(DB.subject);
             // 
             // btnSave
             // 
@@ -167,6 +171,10 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "SCORE SHEET";
             // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataSource = typeof(DB.student);
+            // 
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -189,15 +197,15 @@
             // 
             // cBoxSession
             // 
-            this.cBoxSession.DataSource = this.sessionBindingSource;
-            this.cBoxSession.DisplayMember = "sessions";
+            this.cBoxSession.DataSource = this.currentseasonBindingSource;
+            this.cBoxSession.DisplayMember = "current_session";
             this.cBoxSession.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxSession.FormattingEnabled = true;
             this.cBoxSession.Location = new System.Drawing.Point(472, 58);
             this.cBoxSession.Name = "cBoxSession";
             this.cBoxSession.Size = new System.Drawing.Size(145, 24);
             this.cBoxSession.TabIndex = 80;
-            this.cBoxSession.ValueMember = "sessions";
+            this.cBoxSession.ValueMember = "current_session";
             // 
             // sessionBindingSource
             // 
@@ -295,6 +303,7 @@
             this.btnSearch.Size = new System.Drawing.Size(154, 47);
             this.btnSearch.TabIndex = 15;
             this.btnSearch.ClickEvent += new System.EventHandler(this.btnSearch_ClickEvent);
+            this.btnSearch.Load += new System.EventHandler(this.btnSearch_Load);
             // 
             // label2
             // 
@@ -370,6 +379,10 @@
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
+            // currentseasonBindingSource
+            // 
+            this.currentseasonBindingSource.DataSource = typeof(DB.current_season);
+            // 
             // EnterStudentResult
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -382,6 +395,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgridStudents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -392,6 +406,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.currentseasonBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -421,13 +436,15 @@
         private System.Windows.Forms.BindingSource schoolsubjectsBindingSource;
         private System.Windows.Forms.BindingSource classBindingSource;
         private GridviewSerial.GridViewSerial dgridStudents;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fullnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn regnumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstCA;
         private System.Windows.Forms.DataGridViewTextBoxColumn secondCA;
         private System.Windows.Forms.DataGridViewTextBoxColumn Exam;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.BindingSource subjectBindingSource;
+        private System.Windows.Forms.BindingSource currentseasonBindingSource;
     }
 }

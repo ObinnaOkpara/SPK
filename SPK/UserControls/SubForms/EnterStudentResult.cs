@@ -16,10 +16,10 @@ namespace SPK.UserControls.SubForms
 {
     public partial class EnterStudentResult : UserControl
     {
-        private List<student> students;
+        private List<subject> regStudents;
         private List<_class> _Classes;
         private List<school_subjects> subjects;
-        private List<session> sessions;
+        private current_season session;
         private IUnitOfWork _unitOfWork;
 
 
@@ -40,11 +40,14 @@ namespace SPK.UserControls.SubForms
         {
             if (ValidateFomControls.CheckComboBoxes(this, errorProvider1))
             {
-                students = _unitOfWork.StudentRepository.FindAll().Where(x => x._class == cBoxClass.Text).ToList();
+                regStudents = _unitOfWork.SubjectsRepository.FindAll().Where(x => x._class == cBoxClass.Text && x.session== cBoxSession.Text && x.subjects == cBoxSubject.Text && x.term == cBoxTerm.Text).ToList();
 
-                dgridStudents.DataSource = students;
-
-
+                if (regStudents.Count<1)
+                {
+                    MessageBox.Show("No Registered Student Found.");
+                    return;
+                }
+                dgridStudents.DataSource = regStudents;
             }
         }
 
@@ -54,8 +57,7 @@ namespace SPK.UserControls.SubForms
             if (dgridStudents.RowCount > 0)
             {
                 Cursor = Cursors.WaitCursor;
-
-
+                
                 try
                 {
                     using (var db = new Model1())
@@ -68,7 +70,7 @@ namespace SPK.UserControls.SubForms
 
                         if (db.results1.Any(x => x._class == ca_ && x.session == ss_ && x.term == tr_ && x.subjects == subj_))
                         {
-                            MessageBox.Show("One or more result for this class exists. Please delete the class result before updating");
+                            MessageBox.Show("Result for this class already exists. Please delete the class result before updating");
                         }
                         else
                         {
@@ -143,7 +145,10 @@ namespace SPK.UserControls.SubForms
         {
             try
             {
-                sessions = _unitOfWork.SessionRepository.FindAll().ToList();
+                using (var db = new Model1())
+                {
+                    session = db.current_season.Last();
+                }
                 subjects = _unitOfWork.School_SubjectsRepository.FindAll().ToList();
                 // students = _unitOfWork.StudentRepository.FindAll().ToList();
                 _Classes = _unitOfWork.dClassRepository.FindAll().ToList();
@@ -159,8 +164,13 @@ namespace SPK.UserControls.SubForms
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             cBoxClass.DataSource = _Classes;
-            cBoxSession.DataSource = sessions;
+            cBoxSession.DataSource = session;
             cBoxSubject.DataSource = subjects;
+
+        }
+
+        private void btnSearch_Load(object sender, EventArgs e)
+        {
 
         }
     }

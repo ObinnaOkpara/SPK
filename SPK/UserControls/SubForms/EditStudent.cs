@@ -48,8 +48,8 @@ namespace SPK.UserControls.SubForms
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            Cursor = Cursors.Arrow;
-
+            string appPath = Properties.Settings.Default.ImagePath;
+            
             txtStudentAddress.Text = Student.address;
             txtCity.Text = Student.city;
 
@@ -75,7 +75,7 @@ namespace SPK.UserControls.SubForms
             cBoxCountry.Text = Student.nationality;
             txtStudentOtherContact.Text = Student.nearest_contact1;
             txtOthernames.Text = Student.othername;
-            picStudentImage.ImageLocation = Student.passport;
+            picStudentImage.ImageLocation =Path.Combine( appPath, Student.passport);
             txtPrevSchool.Text = Student.previous_school;
             txtRegNumber.Text = Student.reg_number;
             txtSponsorRelationship.Text = Student.relationship;
@@ -86,6 +86,8 @@ namespace SPK.UserControls.SubForms
             cBoxState.Text = Student.state;
             //time_of_reg = DateTime.Now.ToLocalTime(),
             txtCurClass.Text = Student._class;
+
+            Cursor = Cursors.Arrow;
         }
 
         private async void btnSave_ClickEventAsync(object sender, EventArgs e)
@@ -131,7 +133,7 @@ namespace SPK.UserControls.SubForms
                    _student.state = cBoxState.Text;
                     _student.time_of_reg = DateTime.Now.ToLocalTime();
                   _student._class = txtCurClass.Text;
-                   _student.mob = dtpDoB.Value.Month.ToString();
+                   _student.mob = dtpDoB.Value.ToString("MMMM");
                   _student.yob = dtpDoB.Value.Year.ToString();
                 
                 await _unitOfWork.Save();
@@ -154,7 +156,7 @@ namespace SPK.UserControls.SubForms
             opFile.Title = "Select Image";
             opFile.Filter = "jpg files (*.jpg)|*.jpg|All files (*.*)|*.*";
 
-            string appPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures), @"spk\image\");
+            string appPath = Properties.Settings.Default.ImagePath;
             if (Directory.Exists(appPath) == false)
             {
                 Directory.CreateDirectory(appPath);
@@ -177,8 +179,8 @@ namespace SPK.UserControls.SubForms
 
                     _pasportLocation = "image/" + filename;
                     string filePath = opFile.FileName;
-                    File.Copy(filePath, Path.Combine(appPath, filename));
-                    var nfile = Path.Combine(appPath, filename);
+                    File.Copy(filePath, Path.Combine(appPath, "image", filename));
+                    var nfile = Path.Combine(appPath, "image", filename);
                     picStudentImage.SizeMode = PictureBoxSizeMode.StretchImage;
                     picStudentImage.Image = new Bitmap(nfile);
                 }

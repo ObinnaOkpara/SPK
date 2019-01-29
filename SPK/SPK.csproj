@@ -668,6 +668,7 @@
     <None Include="Properties\app.manifest" />
     <None Include="Properties\DataSources\DB.administrative.datasource" />
     <None Include="Properties\DataSources\DB.behavioral.datasource" />
+    <None Include="Properties\DataSources\DB.current_season.datasource" />
     <None Include="Properties\DataSources\DB.fee_allocation.datasource" />
     <None Include="Properties\DataSources\DB.jss.datasource" />
     <None Include="Properties\DataSources\DB.position.datasource" />
