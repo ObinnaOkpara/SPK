@@ -15,7 +15,7 @@ namespace SPK.UserControls.SubForms
     public partial class RegisterSubject : UserControl
     {
         List<_class> Classes = new List<_class>();
-        List<session> Sessions = new List<session>();
+        private current_season session;
         List<school_subjects> Subjects = new List<school_subjects>();
 
         public RegisterSubject()
@@ -39,7 +39,7 @@ namespace SPK.UserControls.SubForms
             {
                 using (var db = new Model1())
                 {
-                    Sessions = db.sessions.ToList();
+                    session = db.current_season.FirstOrDefault();
                     Classes = db.classes.ToList();
                     Subjects = db.school_subjects.ToList();
                 }
@@ -63,11 +63,15 @@ namespace SPK.UserControls.SubForms
                 MessageBox.Show("No Class in the Database. \n Please, add Class first.");
                 return;
             }
-            if (Sessions.Count < 1)
+            if (session == null)
             {
-                MessageBox.Show("No Session in the Database. \n Please, add Session first.");
-                return;
+                MessageBox.Show("Please enter current session.");
             }
+            else
+            {
+                cBoxSession.Items.Add(session.current_session);
+            }
+
             if (Subjects.Count < 1)
             {
                 MessageBox.Show("No Subject in the Database. \n Please, add Subject first.");
@@ -76,10 +80,7 @@ namespace SPK.UserControls.SubForms
 
             cBoxClass.DataSource = Classes;
             cBoxClass.DisplayMember = "classes";
-
-            cBoxSession.DataSource = Sessions;
-            cBoxSession.DisplayMember = "sessions";
-
+            
             cBoxSubject.DataSource = Subjects;
             cBoxSubject.DisplayMember = "subjects";
         }

@@ -43,7 +43,6 @@
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.cBoxSession = new System.Windows.Forms.ComboBox();
-            this.sessionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.cBoxTerm = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -55,25 +54,26 @@
             this.btnSearch = new SPK.UserControls.Buttons.ButtonWithoutMenu();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.currentseasonBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sessionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.picSchoolLogo = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.currentseasonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgridStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.subjectBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schoolsubjectsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.currentseasonBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.currentseasonBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -197,19 +197,12 @@
             // 
             // cBoxSession
             // 
-            this.cBoxSession.DataSource = this.currentseasonBindingSource;
-            this.cBoxSession.DisplayMember = "current_session";
             this.cBoxSession.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxSession.FormattingEnabled = true;
             this.cBoxSession.Location = new System.Drawing.Point(472, 58);
             this.cBoxSession.Name = "cBoxSession";
             this.cBoxSession.Size = new System.Drawing.Size(145, 24);
             this.cBoxSession.TabIndex = 80;
-            this.cBoxSession.ValueMember = "current_session";
-            // 
-            // sessionBindingSource
-            // 
-            this.sessionBindingSource.DataSource = typeof(DB.session);
             // 
             // label6
             // 
@@ -303,7 +296,6 @@
             this.btnSearch.Size = new System.Drawing.Size(154, 47);
             this.btnSearch.TabIndex = 15;
             this.btnSearch.ClickEvent += new System.EventHandler(this.btnSearch_ClickEvent);
-            this.btnSearch.Load += new System.EventHandler(this.btnSearch_Load);
             // 
             // label2
             // 
@@ -326,6 +318,14 @@
             this.label1.Size = new System.Drawing.Size(47, 17);
             this.label1.TabIndex = 12;
             this.label1.Text = "Class";
+            // 
+            // currentseasonBindingSource
+            // 
+            this.currentseasonBindingSource.DataSource = typeof(DB.current_season);
+            // 
+            // sessionBindingSource
+            // 
+            this.sessionBindingSource.DataSource = typeof(DB.session);
             // 
             // panel1
             // 
@@ -379,10 +379,6 @@
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
-            // currentseasonBindingSource
-            // 
-            this.currentseasonBindingSource.DataSource = typeof(DB.current_season);
-            // 
             // EnterStudentResult
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -399,14 +395,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schoolsubjectsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.currentseasonBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchoolLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.currentseasonBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

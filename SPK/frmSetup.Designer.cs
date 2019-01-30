@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSetup));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panServer = new System.Windows.Forms.Panel();
+            this.btnTestServer = new System.Windows.Forms.Button();
+            this.lbIPs = new System.Windows.Forms.ListBox();
+            this.txtServerName = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.lblMsg = new System.Windows.Forms.Label();
             this.txtDbName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -49,17 +55,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtIP = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.panServer = new System.Windows.Forms.Panel();
-            this.btnTestServer = new System.Windows.Forms.Button();
-            this.lbIPs = new System.Windows.Forms.ListBox();
-            this.txtServerName = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
+            this.panServer.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panClient.SuspendLayout();
-            this.panServer.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -83,6 +83,75 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(650, 413);
             this.panel3.TabIndex = 4;
+            // 
+            // panServer
+            // 
+            this.panServer.Controls.Add(this.btnTestServer);
+            this.panServer.Controls.Add(this.lbIPs);
+            this.panServer.Controls.Add(this.txtServerName);
+            this.panServer.Controls.Add(this.label4);
+            this.panServer.Controls.Add(this.label5);
+            this.panServer.Location = new System.Drawing.Point(70, 227);
+            this.panServer.Name = "panServer";
+            this.panServer.Size = new System.Drawing.Size(509, 136);
+            this.panServer.TabIndex = 11;
+            this.panServer.Visible = false;
+            // 
+            // btnTestServer
+            // 
+            this.btnTestServer.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnTestServer.BackColor = System.Drawing.Color.White;
+            this.btnTestServer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTestServer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTestServer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnTestServer.Location = new System.Drawing.Point(164, 106);
+            this.btnTestServer.Name = "btnTestServer";
+            this.btnTestServer.Size = new System.Drawing.Size(149, 27);
+            this.btnTestServer.TabIndex = 19;
+            this.btnTestServer.Text = "Test Connection";
+            this.btnTestServer.UseVisualStyleBackColor = false;
+            this.btnTestServer.Click += new System.EventHandler(this.btnTestServer_Click);
+            // 
+            // lbIPs
+            // 
+            this.lbIPs.FormattingEnabled = true;
+            this.lbIPs.ItemHeight = 16;
+            this.lbIPs.Location = new System.Drawing.Point(201, 49);
+            this.lbIPs.Name = "lbIPs";
+            this.lbIPs.Size = new System.Drawing.Size(264, 52);
+            this.lbIPs.TabIndex = 4;
+            // 
+            // txtServerName
+            // 
+            this.txtServerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtServerName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.txtServerName.Location = new System.Drawing.Point(201, 13);
+            this.txtServerName.Name = "txtServerName";
+            this.txtServerName.ReadOnly = true;
+            this.txtServerName.Size = new System.Drawing.Size(264, 23);
+            this.txtServerName.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label4.Location = new System.Drawing.Point(52, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(128, 17);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "SERVER NAME :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label5.Location = new System.Drawing.Point(4, 51);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(177, 17);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "SERVER IP ADDRESS :";
             // 
             // lblMsg
             // 
@@ -297,75 +366,6 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "SERVER IP ADDRESS :";
             // 
-            // panServer
-            // 
-            this.panServer.Controls.Add(this.btnTestServer);
-            this.panServer.Controls.Add(this.lbIPs);
-            this.panServer.Controls.Add(this.txtServerName);
-            this.panServer.Controls.Add(this.label4);
-            this.panServer.Controls.Add(this.label5);
-            this.panServer.Location = new System.Drawing.Point(70, 227);
-            this.panServer.Name = "panServer";
-            this.panServer.Size = new System.Drawing.Size(509, 136);
-            this.panServer.TabIndex = 11;
-            this.panServer.Visible = false;
-            // 
-            // btnTestServer
-            // 
-            this.btnTestServer.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnTestServer.BackColor = System.Drawing.Color.White;
-            this.btnTestServer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTestServer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTestServer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.btnTestServer.Location = new System.Drawing.Point(164, 106);
-            this.btnTestServer.Name = "btnTestServer";
-            this.btnTestServer.Size = new System.Drawing.Size(149, 27);
-            this.btnTestServer.TabIndex = 19;
-            this.btnTestServer.Text = "Test Connection";
-            this.btnTestServer.UseVisualStyleBackColor = false;
-            this.btnTestServer.Click += new System.EventHandler(this.btnTestServer_Click);
-            // 
-            // lbIPs
-            // 
-            this.lbIPs.FormattingEnabled = true;
-            this.lbIPs.ItemHeight = 16;
-            this.lbIPs.Location = new System.Drawing.Point(201, 49);
-            this.lbIPs.Name = "lbIPs";
-            this.lbIPs.Size = new System.Drawing.Size(264, 52);
-            this.lbIPs.TabIndex = 4;
-            // 
-            // txtServerName
-            // 
-            this.txtServerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtServerName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.txtServerName.Location = new System.Drawing.Point(201, 13);
-            this.txtServerName.Name = "txtServerName";
-            this.txtServerName.ReadOnly = true;
-            this.txtServerName.Size = new System.Drawing.Size(264, 23);
-            this.txtServerName.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label4.Location = new System.Drawing.Point(52, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(128, 17);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "SERVER NAME :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label5.Location = new System.Drawing.Point(4, 51);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(177, 17);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "SERVER IP ADDRESS :";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -389,12 +389,12 @@
             this.Load += new System.EventHandler(this.frmSetup_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panServer.ResumeLayout(false);
+            this.panServer.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panClient.ResumeLayout(false);
             this.panClient.PerformLayout();
-            this.panServer.ResumeLayout(false);
-            this.panServer.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

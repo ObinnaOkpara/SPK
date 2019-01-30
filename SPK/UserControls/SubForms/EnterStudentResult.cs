@@ -45,6 +45,7 @@ namespace SPK.UserControls.SubForms
                 if (regStudents.Count<1)
                 {
                     MessageBox.Show("No Registered Student Found.");
+                    dgridStudents.DataSource = new List<subject>();
                     return;
                 }
                 dgridStudents.DataSource = regStudents;
@@ -147,7 +148,7 @@ namespace SPK.UserControls.SubForms
             {
                 using (var db = new Model1())
                 {
-                    session = db.current_season.Last();
+                    session = db.current_season.FirstOrDefault();
                 }
                 subjects = _unitOfWork.School_SubjectsRepository.FindAll().ToList();
                 // students = _unitOfWork.StudentRepository.FindAll().ToList();
@@ -163,14 +164,16 @@ namespace SPK.UserControls.SubForms
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            if (session==null)
+            {
+                MessageBox.Show("Please enter current session.");
+            }
+            else
+            {
+                cBoxSession.Items.Add(session.current_session);
+            }
             cBoxClass.DataSource = _Classes;
-            cBoxSession.DataSource = session;
             cBoxSubject.DataSource = subjects;
-
-        }
-
-        private void btnSearch_Load(object sender, EventArgs e)
-        {
 
         }
     }
