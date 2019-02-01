@@ -174,7 +174,6 @@ namespace SPK.UserControls.SubForms
             }
             cBoxClass.DataSource = _Classes;
             cBoxSubject.DataSource = subjects;
-
         }
     }
 }

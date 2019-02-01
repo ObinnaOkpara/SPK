@@ -20,10 +20,9 @@ namespace SPK.UserControls.SubForms
 {
     public partial class ExcelUploadResult : UserControl
     {
-        private List<student> students;
         private List<_class> _Classes;
         private List<subject> subjects;
-        private List<session> sessions;
+        private current_season session;
 
         private IUnitOfWork _unitOfWork;
 
@@ -49,7 +48,10 @@ namespace SPK.UserControls.SubForms
         {
             try
             {
-                sessions = _unitOfWork.SessionRepository.FindAll().ToList();
+                using (var db = new Model1())
+                {
+                    session = db.current_season.FirstOrDefault();
+                }
                 subjects = _unitOfWork.SubjectsRepository.FindAll().ToList();
                 _Classes = _unitOfWork.dClassRepository.FindAll().ToList();
 
@@ -63,10 +65,17 @@ namespace SPK.UserControls.SubForms
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            if (session == null)
+            {
+                MessageBox.Show("Please enter current session.");
+            }
+            else
+            {
+                cBoxSession.Items.Add(session.current_session);
+            }
             cBoxClass.DataSource = _Classes;
-            cBoxSession.DataSource = sessions;
             cBoxSubject.DataSource = subjects;
-            
+
             cBoxClass.Cursor = Cursors.Arrow;
             cBoxSession.Cursor = Cursors.Arrow;
             cBoxSubject.Cursor = Cursors.Arrow;
@@ -80,54 +89,52 @@ namespace SPK.UserControls.SubForms
 
                 try
                 {
-                    using (var db = new Model1())
+                    List<subject> subjects = _unitOfWork.SubjectsRepository.FindAll().Where(x => x._class == cBoxClass.Text && x.session == cBoxSession.Text && x.subjects == cBoxSubject.Text && x.term == cBoxTerm.Text).ToList();
+
+                    if (subjects.Count < 1)
                     {
-                        List<student> students = db.students.Where(x => x._class == cBoxClass.Text).ToList();
-                        if (students.Count < 1)
-                        {
-                            MessageBox.Show("No student in the selected class, Try again.");
-                            Cursor = Cursors.Arrow;
-                            return;
-                        }
+                        MessageBox.Show("No student registered for the selected subject in the selected class, Try again.");
+                        Cursor = Cursors.Arrow;
+                        return;
+                    }
 
-                        using (ExcelPackage excel = new ExcelPackage())
-                        {
-                            excel.Workbook.Worksheets.Add("Worksheet1");
+                    using (ExcelPackage excel = new ExcelPackage())
+                    {
+                        excel.Workbook.Worksheets.Add("Worksheet1");
 
-                            var headerRow = new List<string[]>()
+                        var headerRow = new List<string[]>()
                         {
                             new string[] {"S/N", "Class", "Term", "Session", "Reg No", "Name", "Subject",
                                 "1ST CA", "2ND CA", "Exam score"}
                         };
 
-                            var bodyRow = new List<string[]>();
+                        var bodyRow = new List<string[]>();
 
-                            for (int i = 0; i < students.Count; i++)
+                        for (int i = 0; i < subjects.Count; i++)
+                        {
+                            var s = subjects[i];
+
+                            bodyRow.Add(new string[]
                             {
-                                var s = students[i];
-
-                                bodyRow.Add(new string[]
-                                {
-                                (i+1).ToString(), cBoxClass.Text, cBoxTerm.Text, cBoxSession.Text, s.reg_number, s.Fullname,
+                                (i+1).ToString(), cBoxClass.Text, cBoxTerm.Text, cBoxSession.Text, s.reg_number, s.name,
                                 cBoxSubject.Text, "", "", ""
-                                });
-                            }
-
-                            string headerRange = "A1:" + char.ConvertFromUtf32(headerRow[0].Length + 64) + "1";
-                            string bodyRange = "A2:" + char.ConvertFromUtf32(headerRow[0].Length + 64) + (bodyRow.Count + 1).ToString();
-
-                            var workSheet = excel.Workbook.Worksheets["Worksheet1"];
-                            workSheet.Cells[headerRange].LoadFromArrays(headerRow);
-                            workSheet.Cells[bodyRange].LoadFromArrays(bodyRow);
-
-                            workSheet.Cells[headerRange].Style.Font.Bold = true;
-
-                            var fPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), cBoxClass.Text + cBoxSubject.Text + "Resullt.xlsx");
-                            FileInfo excelFile = new FileInfo(fPath);
-                            excel.SaveAs(excelFile);
-
-                            MessageBox.Show("Excel file saved at : \n" + fPath);
+                            });
                         }
+
+                        string headerRange = "A1:" + char.ConvertFromUtf32(headerRow[0].Length + 64) + "1";
+                        string bodyRange = "A2:" + char.ConvertFromUtf32(headerRow[0].Length + 64) + (bodyRow.Count + 1).ToString();
+
+                        var workSheet = excel.Workbook.Worksheets["Worksheet1"];
+                        workSheet.Cells[headerRange].LoadFromArrays(headerRow);
+                        workSheet.Cells[bodyRange].LoadFromArrays(bodyRow);
+
+                        workSheet.Cells[headerRange].Style.Font.Bold = true;
+
+                        var fPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), cBoxClass.Text + cBoxSubject.Text + "Resullt.xlsx");
+                        FileInfo excelFile = new FileInfo(fPath);
+                        excel.SaveAs(excelFile);
+
+                        MessageBox.Show("Excel file saved at : \n" + fPath);
                     }
                 }
                 catch (Exception ex)
@@ -269,6 +276,6 @@ namespace SPK.UserControls.SubForms
 
             Cursor = Cursors.Arrow;
         }
-        
+
     }
 }
