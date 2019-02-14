@@ -36,6 +36,31 @@ namespace SPK
             if (userType=="admin") lblUsername.Text = AuthorizedUser<user>.CurrentUser.fullname;
             else lblUsername.Text = AuthorizedUser<principal>.CurrentUser.Fullname;
 
+            var LiPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "winr.t");
+
+            if (File.Exists(LiPath))
+            {
+                var dateString = File.ReadAllText(LiPath);
+                if (dateString == "expired")
+                {
+                    panExpired.Visible = true;
+                    panExpired.BringToFront();
+                }
+                else
+                {
+                    var date = DateTime.Parse(dateString);
+                    if (date.AddDays(15) < DateTime.Now)
+                    {
+                        File.WriteAllText(LiPath, "expired");
+                        panExpired.Visible = true;
+                        panExpired.BringToFront();
+                    }
+                }
+            }
+            else
+            {
+                File.WriteAllText(LiPath, DateTime.Now.ToString());
+            }
             //this.DoubleBuffered = true;
             //this.SetStyle(ControlStyles.ResizeRedraw, true); // this is to avoid visual artifacts
         }
